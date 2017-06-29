@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/prueba_clases/src"
+    modelPluginID="prueba_clases" modelName="Errores" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>../../../prueba1/Grammar2Model.examples.DDL2Model/files/metamodels/Errores.ecore</foreignModel>
+  <genPackages prefix="Errors" disposableProviderFactory="true" ecorePackage="Errores.ecore#/">
+    <genClasses ecoreClass="Errores.ecore#//Errores">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//Errores/errores"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//Error"/>
+    <genClasses ecoreClass="Errores.ecore#//ForeignError">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ForeignError/nameFk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ForeignError/porcent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/tableCont"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/tableRef"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//Table/nameTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//Table/columnCont"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//ColumnFk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ColumnFk/nameColumn"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//CheckError">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//CheckError/nameTable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//CheckError/nameCk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//CheckError/porcent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//CheckError/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//ColumnCk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ColumnCk/columnName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//ColumnCk/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//ValueCk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ValueCk/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

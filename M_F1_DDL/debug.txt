@@ -1,0 +1,751 @@
+GVQ Interpreter version 0.3
+
+Executing...
+Models created.
+Initializing indexRules...
+Initializing packages...
+Initializing hashes...
+
+Executing rules...
+RULE: mapStatements
+RULE: mapStatements... executing!
+  Model Element DDLDefinition created
+  Executing queries...
+    Query df with 1 result nodes - CONTENT : [/Users/fjavier/Copy/workspace/M_F1_DDL/files/src/example.sql example.sql CREATE TABLE BUSINESS_ENTITY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , PUBLISHER_ID VARCHAR ( 20 ) NULL , OPERATOR VARCHAR ( 255 ) NOT NULL , LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , BUSINESS VARCHAR ( 255 ) NOT NULL , DESCR_ID INT NOT NULL , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ) ; CREATE TABLE BUSINESS_DESCR ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , LANG_CODE VARCHAR ( 5 ) NULL , DESCR VARCHAR ( 255 ) NOT NULL , CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) , CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; CREATE TABLE BUSINESS_CATEGORY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , CATEGORY_ID INT NOT NULL , TMODEL_KEY_REF VARCHAR ( 41 ) NULL , KEY_NAME VARCHAR ( 255 ) NULL , KEY_VALUE VARCHAR ( 255 ) NOT NULL , CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) , CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ALTER TABLE BUSINESS_DESCR DROP CONSTRAINT BUSINESS_KEY ; ALTER TABLE BUSINESS_DESCR DROP CONSTRAINT PAQUITO ; ALTER TABLE BUSINESS_CATEGORY DROP CONSTRAINT BUSINESS_F_KEY ; ]
+    Query stats with 6 result nodes
+    Query types with 1 result nodes - CONTENT in line 3: [VARCHAR ]
+  Executing mappings...
+    - QUERY_RESULT: 1 bindings:
+      (1/1) result node: type (kind). Rule... calling mapDataTypes rule
+
+      RULE: mapDataTypes... executing!
+        Model Element DataType created
+        Executing queries...
+          Query t with 1 result nodes - CONTENT in line 3: [VARCHAR ]
+          Query tps with 16 result nodes
+        Executing mappings...
+          - QUERY_RESULT: 16 bindings:
+            (1/16) result node: type (kind). Rule... calling mapVarChar rule
+
+            RULE: mapVarChar... executing!
+              Model Element VarChar created
+              Executing queries...
+                Query t with 1 result nodes - CONTENT in line 3: [VARCHAR ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: t - 
+                  node: type (kind) - leaf: CHARACTERS (kind) - VARCHAR (value) 
+
+            (2/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (3/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (4/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (5/16) result node: type (kind). Rule... calling mapTimestamp rule
+
+            RULE: mapTimestamp... executing!
+              Model Element Timestamp created
+              Executing queries...
+                Query t with 1 result nodes - CONTENT in line 7: [TIMESTAMP ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: t - 
+                  node: type (kind) - leaf: TIMES (kind) - TIMESTAMP (value) 
+
+            (6/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (7/16) result node: type (kind). Rule... calling mapInt rule
+
+            RULE: mapInt... executing!
+              Model Element Int created
+              Executing queries...
+                Query t with 1 result nodes - CONTENT in line 9: [INT ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: t - 
+                  node: type (kind) - leaf: EXACTO (kind) - INT (value) 
+
+            (8/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (9/16) result node: type (kind). Rule... calling mapNumber rule
+
+            RULE: mapNumber... executing!
+              Model Element Number created
+              Executing queries...
+                Query t with 1 result nodes - CONTENT in line 16: [NUMBER ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: t - 
+                  node: type (kind) - leaf: EXACTO (kind) - NUMBER (value) 
+
+            (10/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (11/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (12/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (13/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@4178feba (kind: type))calling mapInt rule
+
+            RULE: mapInt... cached!!
+            (14/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (15/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+            (16/16) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+            RULE: mapVarChar... cached!!
+
+    - QUERY_RESULT: 6 bindings:
+      (1/6) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query fk with 0 result nodes
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE BUSINESS_ENTITY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , PUBLISHER_ID VARCHAR ( 20 ) NULL , OPERATOR VARCHAR ( 255 ) NOT NULL , LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , BUSINESS VARCHAR ( 255 ) NOT NULL , DESCR_ID INT NOT NULL , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ) ; ]
+          Query ck with 0 result nodes
+          Query cc with 7 result nodes
+          Query ct with 1 result nodes - CONTENT in line 1: [CREATE TABLE BUSINESS_ENTITY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , PUBLISHER_ID VARCHAR ( 20 ) NULL , OPERATOR VARCHAR ( 255 ) NOT NULL , LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , BUSINESS VARCHAR ( 255 ) NOT NULL , DESCR_ID INT NOT NULL , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 10: [CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: table (kind) - leaf: ID (kind) - BUSINESS_ENTITY (value) 
+          - QUERY_RESULT: 7 bindings:
+            (1/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 3: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 3: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 3: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 3: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 3: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 41 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 4: [AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 4: [AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 4: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 4: [AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 4: [AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - AUTHORIZED_NAME (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (3/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 5: [PUBLISHER_ID VARCHAR ( 20 ) NULL , ]
+                Query nn with 0 result nodes
+                Query n with 1 result nodes - CONTENT in line 5: [PUBLISHER_ID VARCHAR ( 20 ) NULL , ]
+                Query type with 1 result nodes - CONTENT in line 5: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 5: [PUBLISHER_ID VARCHAR ( 20 ) NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 5: [PUBLISHER_ID VARCHAR ( 20 ) NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - PUBLISHER_ID (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 20 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - true (value)
+
+            (4/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 6: [OPERATOR VARCHAR ( 255 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 6: [OPERATOR VARCHAR ( 255 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 6: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 6: [OPERATOR VARCHAR ( 255 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 6: [OPERATOR VARCHAR ( 255 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - OPERATOR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (5/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 7: [LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 7: [LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 7: [TIMESTAMP ]
+                Query prec with 1 result nodes - CONTENT in line 7: [LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 7: [LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - LAST_UPDATE (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@273f212a (kind: type))calling mapTimestamp rule
+
+                  RULE: mapTimestamp... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 3 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (6/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 8: [BUSINESS VARCHAR ( 255 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 8: [BUSINESS VARCHAR ( 255 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 8: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 8: [BUSINESS VARCHAR ( 255 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 8: [BUSINESS VARCHAR ( 255 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (7/7) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 9: [DESCR_ID INT NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 9: [DESCR_ID INT NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 9: [INT ]
+                Query prec with 0 result nodes
+                Query cc with 1 result nodes - CONTENT in line 9: [DESCR_ID INT NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - DESCR_ID (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@4178feba (kind: type))calling mapInt rule
+
+                  RULE: mapInt... cached!!
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 10: [CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ]
+                Query cpk with 1 result nodes - CONTENT in line 10: [BUSINESS_KEY ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: pk (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+
+      (2/6) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query fk with 1 result nodes - CONTENT in line 21: [CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ]
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE BUSINESS_DESCR ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , LANG_CODE VARCHAR ( 5 ) NULL , DESCR VARCHAR ( 255 ) NOT NULL , CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) , CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+          Query ck with 1 result nodes - CONTENT in line 19: [CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) ]
+          Query cc with 4 result nodes
+          Query ct with 1 result nodes - CONTENT in line 13: [CREATE TABLE BUSINESS_DESCR ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , LANG_CODE VARCHAR ( 5 ) NULL , DESCR VARCHAR ( 255 ) NOT NULL , CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) , CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 20: [CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: table (kind) - leaf: ID (kind) - BUSINESS_DESCR (value) 
+          - QUERY_RESULT: 4 bindings:
+            (1/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 15: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 15: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 15: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 15: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 15: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 41 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 16: [BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 16: [BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 16: [NUMBER ]
+                Query prec with 1 result nodes - CONTENT in line 16: [BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 16: [BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_DESCR_ID (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@5323961b (kind: type))calling mapNumber rule
+
+                  RULE: mapNumber... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 3 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (3/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 17: [LANG_CODE VARCHAR ( 5 ) NULL , ]
+                Query nn with 0 result nodes
+                Query n with 1 result nodes - CONTENT in line 17: [LANG_CODE VARCHAR ( 5 ) NULL , ]
+                Query type with 1 result nodes - CONTENT in line 17: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 17: [LANG_CODE VARCHAR ( 5 ) NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 17: [LANG_CODE VARCHAR ( 5 ) NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - LANG_CODE (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 5 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - true (value)
+
+            (4/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 18: [DESCR VARCHAR ( 255 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 18: [DESCR VARCHAR ( 255 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 18: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 18: [DESCR VARCHAR ( 255 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 18: [DESCR VARCHAR ( 255 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - DESCR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 20: [CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) ]
+                Query cpk with 2 result nodes
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: pk (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_DESCR_ID (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: fk (kind). Rule... calling mapFk rule
+
+            RULE: mapFk... executing!
+              Model Element Fk created
+              Executing queries...
+                Query crfk with 1 result nodes - CONTENT in line 21: [BUSINESS_KEY ]
+                Query cfk with 1 result nodes - CONTENT in line 21: [BUSINESS_KEY ]
+                Query tab with 1 result nodes - CONTENT in line 13: [CREATE TABLE BUSINESS_DESCR ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , LANG_CODE VARCHAR ( 5 ) NULL , DESCR VARCHAR ( 255 ) NOT NULL , CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) , CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+                Query aux with 2 result nodes
+                Query table with 1 result nodes - CONTENT : [CREATE TABLE BUSINESS_ENTITY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , PUBLISHER_ID VARCHAR ( 20 ) NULL , OPERATOR VARCHAR ( 255 ) NOT NULL , LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , BUSINESS VARCHAR ( 255 ) NOT NULL , DESCR_ID INT NOT NULL , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ) ; ]
+                Query disabled with 1 result nodes - CONTENT in line 35: [ALTER TABLE BUSINESS_DESCR DROP CONSTRAINT BUSINESS_KEY ; ]
+                Query ctr with 1 result nodes - CONTENT in line 21: [BUSINESS_ENTITY ]
+                Query fcfk with 1 result nodes - CONTENT in line 21: [CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcfk - 
+                  node: fk (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_ACCESS: variable: cfk - 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_ACCESS: variable: crfk - 
+                  node: references_column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+                  RULE: mapTable... cached!!
+                  - IF detected...true!
+                  - VALUE: status (property) - DISABLED (value)
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: ck (kind). Rule... calling mapCk rule
+
+            RULE: mapCk... executing!
+              Model Element Ck created
+              Executing queries...
+                Query cck with 1 result nodes - CONTENT in line 19: [CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) ]
+                Query fcck with 1 result nodes - CONTENT in line 19: [CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) ]
+                Query leck with 2 result nodes
+                Query aux with 2 result nodes
+                Query table with 1 result nodes - CONTENT in line 13: [CREATE TABLE BUSINESS_DESCR ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , BUSINESS_DESCR_ID NUMBER ( 3 ) NOT NULL , LANG_CODE VARCHAR ( 5 ) NULL , DESCR VARCHAR ( 255 ) NOT NULL , CONSTRAINT PAQUITO CHECK ( LANG_CODE = 'Laboratorio UMU' OR DESCR = 'Laboratorio Dep. DIS' ) , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY , BUSINESS_DESCR_ID ) , CONSTRAINT BUSINESS_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+                Query disabled with 1 result nodes - CONTENT in line 36: [ALTER TABLE BUSINESS_DESCR DROP CONSTRAINT PAQUITO ; ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cck - 
+                  node: ck (kind) - leaf: ID (kind) - PAQUITO (value) 
+                - QUERY_RESULT: 2 bindings:
+                  (1/2) result node: log_expresion (kind). Rule... calling mapValuesCk rule
+
+                  RULE: mapValuesCk... executing!
+                    Model Element ValuesCk created
+                    Executing queries...
+                      Query le with 1 result nodes - CONTENT in line 19: [LANG_CODE = 'Laboratorio UMU' OR ]
+                      Query column with 1 result nodes - CONTENT in line 19: [LANG_CODE ]
+                      Query number with 0 result nodes
+                      Query value_list with 0 result nodes
+                    Executing mappings...
+                        - IF detected...false! executing ELSE part 
+                          - QUERY_ACCESS: variable: le - 
+                            node: log_expresion (kind) - leaf: COMPARATOR (kind) - = (value) 
+                            - IF detected...false! executing ELSE part 
+                              - QUERY_ACCESS: variable: le - 
+                                node: log_expresion (kind) - leaf: CVALUE (kind) - 'Laboratorio UMU' (value) 
+                      - QUERY_ACCESS: variable: le - 
+                        node: log_expresion (kind) - leaf: LOG_CONJ (kind) - OR (value) 
+                      - QUERY_ACCESS: variable: column - 
+                        node: column_ck (kind) - leaf: ID (kind) - LANG_CODE (value) 
+
+                  (2/2) result node: log_expresion (kind). Rule... calling mapValuesCk rule
+
+                  RULE: mapValuesCk... executing!
+                    Model Element ValuesCk created
+                    Executing queries...
+                      Query le with 1 result nodes - CONTENT in line 19: [DESCR = 'Laboratorio Dep. DIS' ]
+                      Query column with 1 result nodes - CONTENT in line 19: [DESCR ]
+                      Query number with 0 result nodes
+                      Query value_list with 0 result nodes
+                    Executing mappings...
+                        - IF detected...false! executing ELSE part 
+                          - QUERY_ACCESS: variable: le - 
+                            node: log_expresion (kind) - leaf: COMPARATOR (kind) - = (value) 
+                            - IF detected...false! executing ELSE part 
+                              - QUERY_ACCESS: variable: le - 
+                                node: log_expresion (kind) - leaf: CVALUE (kind) - 'Laboratorio Dep. DIS' (value) 
+                      - QUERY_ACCESS: variable: le - 
+                        node: log_expresion (kind) - LEAF NOT FOUND
+                      - QUERY_ACCESS: variable: column - 
+                        node: column_ck (kind) - leaf: ID (kind) - DESCR (value) 
+
+                  - IF detected...true!
+                  - VALUE: status (property) - DISABLED (value)
+
+
+      (3/6) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query fk with 1 result nodes - CONTENT in line 32: [CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ]
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE BUSINESS_CATEGORY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , CATEGORY_ID INT NOT NULL , TMODEL_KEY_REF VARCHAR ( 41 ) NULL , KEY_NAME VARCHAR ( 255 ) NULL , KEY_VALUE VARCHAR ( 255 ) NOT NULL , CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) , CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+          Query ck with 0 result nodes
+          Query cc with 5 result nodes
+          Query ct with 1 result nodes - CONTENT in line 24: [CREATE TABLE BUSINESS_CATEGORY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , CATEGORY_ID INT NOT NULL , TMODEL_KEY_REF VARCHAR ( 41 ) NULL , KEY_NAME VARCHAR ( 255 ) NULL , KEY_VALUE VARCHAR ( 255 ) NOT NULL , CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) , CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 31: [CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: table (kind) - leaf: ID (kind) - BUSINESS_CATEGORY (value) 
+          - QUERY_RESULT: 5 bindings:
+            (1/5) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 26: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 26: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 26: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 26: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 26: [BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 41 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/5) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 27: [CATEGORY_ID INT NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 27: [CATEGORY_ID INT NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 27: [INT ]
+                Query prec with 0 result nodes
+                Query cc with 1 result nodes - CONTENT in line 27: [CATEGORY_ID INT NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - CATEGORY_ID (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@4178feba (kind: type))calling mapInt rule
+
+                  RULE: mapInt... cached!!
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (3/5) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 28: [TMODEL_KEY_REF VARCHAR ( 41 ) NULL , ]
+                Query nn with 0 result nodes
+                Query n with 1 result nodes - CONTENT in line 28: [TMODEL_KEY_REF VARCHAR ( 41 ) NULL , ]
+                Query type with 1 result nodes - CONTENT in line 28: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 28: [TMODEL_KEY_REF VARCHAR ( 41 ) NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 28: [TMODEL_KEY_REF VARCHAR ( 41 ) NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - TMODEL_KEY_REF (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 41 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - true (value)
+
+            (4/5) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 29: [KEY_NAME VARCHAR ( 255 ) NULL , ]
+                Query nn with 0 result nodes
+                Query n with 1 result nodes - CONTENT in line 29: [KEY_NAME VARCHAR ( 255 ) NULL , ]
+                Query type with 1 result nodes - CONTENT in line 29: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 29: [KEY_NAME VARCHAR ( 255 ) NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 29: [KEY_NAME VARCHAR ( 255 ) NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - KEY_NAME (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - true (value)
+
+            (5/5) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 30: [KEY_VALUE VARCHAR ( 255 ) NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 30: [KEY_VALUE VARCHAR ( 255 ) NOT NULL , ]
+                Query n with 0 result nodes
+                Query type with 1 result nodes - CONTENT in line 30: [VARCHAR ]
+                Query prec with 1 result nodes - CONTENT in line 30: [KEY_VALUE VARCHAR ( 255 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 30: [KEY_VALUE VARCHAR ( 255 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: column (kind) - leaf: ID (kind) - KEY_VALUE (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: type (kind). Rule...  (unique detected - gts.modernization.model.CST.impl.NodeImpl@400c02a (kind: type))calling mapVarChar rule
+
+                  RULE: mapVarChar... cached!!
+                  - IF detected...true!
+                  - QUERY_ACCESS: variable: cc - 
+                    node: column (kind) - leaf: NUMBER (kind) - 255 (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 31: [CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) ]
+                Query cpk with 2 result nodes
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: pk (kind) - leaf: ID (kind) - BUSINESS_P_KEY (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                  node: column_list (kind) - leaf: ID (kind) - CATEGORY_ID (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: fk (kind). Rule... calling mapFk rule
+
+            RULE: mapFk... executing!
+              Model Element Fk created
+              Executing queries...
+                Query crfk with 1 result nodes - CONTENT in line 32: [BUSINESS_KEY ]
+                Query cfk with 1 result nodes - CONTENT in line 32: [BUSINESS_KEY ]
+                Query tab with 1 result nodes - CONTENT in line 24: [CREATE TABLE BUSINESS_CATEGORY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , CATEGORY_ID INT NOT NULL , TMODEL_KEY_REF VARCHAR ( 41 ) NULL , KEY_NAME VARCHAR ( 255 ) NULL , KEY_VALUE VARCHAR ( 255 ) NOT NULL , CONSTRAINT BUSINESS_P_KEY PRIMARY KEY ( BUSINESS_KEY , CATEGORY_ID ) , CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ) ; ]
+                Query aux with 1 result nodes - CONTENT in line 37: [ALTER TABLE BUSINESS_CATEGORY DROP CONSTRAINT BUSINESS_F_KEY ; ]
+                Query table with 1 result nodes - CONTENT : [CREATE TABLE BUSINESS_ENTITY ( BUSINESS_KEY VARCHAR ( 41 ) NOT NULL , AUTHORIZED_NAME VARCHAR ( 255 ) NOT NULL , PUBLISHER_ID VARCHAR ( 20 ) NULL , OPERATOR VARCHAR ( 255 ) NOT NULL , LAST_UPDATE TIMESTAMP ( 3 ) NOT NULL , BUSINESS VARCHAR ( 255 ) NOT NULL , DESCR_ID INT NOT NULL , CONSTRAINT BUSINESS_KEY PRIMARY KEY ( BUSINESS_KEY ) ) ; ]
+                Query disabled with 1 result nodes - CONTENT in line 37: [ALTER TABLE BUSINESS_CATEGORY DROP CONSTRAINT BUSINESS_F_KEY ; ]
+                Query ctr with 1 result nodes - CONTENT in line 32: [BUSINESS_ENTITY ]
+                Query fcfk with 1 result nodes - CONTENT in line 32: [CONSTRAINT BUSINESS_F_KEY FOREIGN KEY ( BUSINESS_KEY ) REFERENCES BUSINESS_ENTITY ( BUSINESS_KEY ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcfk - 
+                  node: fk (kind) - leaf: ID (kind) - BUSINESS_F_KEY (value) 
+                - QUERY_ACCESS: variable: cfk - 
+                  node: column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_ACCESS: variable: crfk - 
+                  node: references_column_list (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+                  RULE: mapTable... cached!!
+                  - IF detected...true!
+                  - VALUE: status (property) - DISABLED (value)
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+
+      (4/6) result node: data_definition_statement (kind). Rule... RULE NOT FOUND!  FROM: data_definition_statement TO: statements
+      (5/6) result node: data_definition_statement (kind). Rule... RULE NOT FOUND!  FROM: data_definition_statement TO: statements
+      (6/6) result node: data_definition_statement (kind). Rule... RULE NOT FOUND!  FROM: data_definition_statement TO: statements
+
+
+Saving...

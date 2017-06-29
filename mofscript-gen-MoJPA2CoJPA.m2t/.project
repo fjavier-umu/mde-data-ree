@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>mofscript-gen-MoJPA2CoJPA.m2t</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Tablaa.java%20</name>
+			<type>1</type>
+			<location>/Tablaa.java</location>
+		</link>
+		<link>
+			<name>persistence.xml%20</name>
+			<type>1</type>
+			<location>/persistence.xml</location>
+		</link>
+	</linkedResources>
+</projectDescription>

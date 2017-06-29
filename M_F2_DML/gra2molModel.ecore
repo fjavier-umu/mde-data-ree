@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:ViewDefinition xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <rules name="mapInsertsStatements">
+    <from name="insertsStatements" alias="is"/>
+    <to name="InsertsStatements"/>
+    <queries variable="ins">
+      <filter type="INDIRECT">
+        <element name="insertInto" mark="true"/>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="insertsInto">
+        <value type="QUERY_RESULT" value="ins"/>
+      </inits>
+    </inits>
+  </rules>
+  <rules name="mapInsertInto">
+    <from name="insertInto" alias="insertInto"/>
+    <to name="InsertInto"/>
+    <queries variable="col">
+      <filter>
+        <element name="insertInto"/>
+        <next type="INDIRECT">
+          <element name="column" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="re">
+      <filter>
+        <element name="insertInto"/>
+        <next>
+          <element name="registry" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tableName">
+        <value type="QUERY_ACCESS" value="insertInto" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columns">
+        <value type="QUERY_RESULT" value="col"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="registry">
+        <value type="QUERY_RESULT" value="re"/>
+      </inits>
+    </inits>
+  </rules>
+  <rules name="mapColumns">
+    <from name="column" alias="c"/>
+    <to name="Column"/>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="c" extension="ID"/>
+      </inits>
+    </inits>
+  </rules>
+  <rules name="mapRegistry">
+    <from name="registry" alias="re"/>
+    <to name="Registry"/>
+    <queries variable="values">
+      <filter>
+        <element name="re"/>
+        <next type="INDIRECT">
+          <element name="value" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="registryValues">
+        <value type="QUERY_RESULT" value="values"/>
+      </inits>
+    </inits>
+  </rules>
+  <rules name="mapValue">
+    <from name="value" alias="v"/>
+    <to name="Value"/>
+    <queries variable="id">
+      <filter>
+        <element name="v" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="ID"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="cvalue">
+      <filter>
+        <element name="v" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="CVALUE"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="number">
+      <filter>
+        <element name="v" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="insert">
+      <filter type="INDIRECT">
+        <element name="insertInto" mark="true"/>
+        <next type="INDIRECT">
+          <element name="value"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="CHECK">
+            <element name="this"/>
+            <parameters value="v" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="value">
+          <value type="QUERY_ACCESS" value="v" extension="ID"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="id"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="value">
+          <value type="OPERATION_REMOVE_QUOTES" value="v" extension="CVALUE"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="cvalue"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="value">
+          <value type="QUERY_ACCESS" value="v" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="number"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="column">
+        <value type="OPERATION_EXTENSION" value="InferColumnFromValue">
+          <params value="v" type="VARIABLE"/>
+          <params value="insert" type="VARIABLE"/>
+        </value>
+      </inits>
+    </inits>
+  </rules>
+</Core:ViewDefinition>

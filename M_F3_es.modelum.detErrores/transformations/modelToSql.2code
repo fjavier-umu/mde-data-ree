@@ -1,0 +1,14 @@
+
+main do
+  compose_file 'createTable.sql' do |file|
+    DML_DDL::Table.all_objects.each do |table|
+     apply_template 'templates/create_table.rtemplate', :table => table
+  	end
+  end
+  
+  compose_file 'insertInto.sql' do |file|
+    DML_DDL::Table.all_objects.each do |table|
+     apply_template 'templates/insert_into.rtemplate', :table => table
+  	end
+  end
+end

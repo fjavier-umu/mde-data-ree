@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ERR:Errores xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ERR="http://modelum.es/gra2mol/examples/Error">
+  <errores xsi:type="ERR:CheckError" nameTable="examenes" nameCk="conv_ck" porcent="80">
+    <columns columnName="conv">
+      <values value="F"/>
+      <values value="J"/>
+      <values value="S"/>
+    </columns>
+  </errores>
+  <errores xsi:type="ERR:ForeignError" nameFk="alumnos_afiliaciones_fk" porcent="99">
+    <tableCont nameTable="alumnos">
+      <columnCont nameColumn="afi_identificador"/>
+      <columnCont nameColumn="afi_letra"/>
+    </tableCont>
+    <tableRef nameTable="afiliaciones">
+      <columnCont nameColumn="afi_identificador"/>
+      <columnCont nameColumn="afi_letra"/>
+    </tableRef>
+  </errores>
+</ERR:Errores>

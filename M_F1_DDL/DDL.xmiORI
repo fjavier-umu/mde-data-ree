@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DDL:DDLDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DDL="http://modelum.es/DDL">
+  <statements xsi:type="DDL:Table" tableName="BUSINESS_ENTITY">
+    <columns columnName="BUSINESS_KEY" precision="41" columnType="//@dataType/@types.0"/>
+    <columns columnName="AUTHORIZED_NAME" precision="255" columnType="//@dataType/@types.0"/>
+    <columns columnName="PUBLISHER_ID" columnNull="true" precision="20" columnType="//@dataType/@types.0"/>
+    <columns columnName="OPERATOR" precision="255" columnType="//@dataType/@types.0"/>
+    <columns columnName="LAST_UPDATE" precision="3" columnType="//@dataType/@types.1"/>
+    <columns columnName="BUSINESS" precision="255" columnType="//@dataType/@types.0"/>
+    <columns columnName="DESCR_ID" columnType="//@dataType/@types.2"/>
+    <columnsPk namePk="BUSINESS_KEY">
+      <columnName>BUSINESS_KEY</columnName>
+    </columnsPk>
+  </statements>
+  <statements xsi:type="DDL:Table" tableName="BUSINESS_DESCR">
+    <columns columnName="BUSINESS_KEY" precision="41" columnType="//@dataType/@types.0"/>
+    <columns columnName="BUSINESS_DESCR_ID" precision="3" columnType="//@dataType/@types.3"/>
+    <columns columnName="LANG_CODE" columnNull="true" precision="5" columnType="//@dataType/@types.0"/>
+    <columns columnName="DESCR" precision="255" columnType="//@dataType/@types.0"/>
+    <columnsPk namePk="BUSINESS_KEY">
+      <columnName>BUSINESS_KEY</columnName>
+      <columnName>BUSINESS_DESCR_ID</columnName>
+    </columnsPk>
+    <columnsFk nameFk="BUSINESS_KEY" references="//@statements.0" status="DISABLED">
+      <columnName>BUSINESS_KEY</columnName>
+      <columnReference>BUSINESS_KEY</columnReference>
+    </columnsFk>
+    <checks nameCk="PAQUITO" status="DISABLED">
+      <valuesCk comparator="=" columnName="LANG_CODE" logConjuntion="OR">
+        <value>Laboratorio UMU</value>
+      </valuesCk>
+      <valuesCk comparator="=" columnName="DESCR">
+        <value>Laboratorio Dep. DIS</value>
+      </valuesCk>
+    </checks>
+  </statements>
+  <statements xsi:type="DDL:Table" tableName="BUSINESS_CATEGORY">
+    <columns columnName="BUSINESS_KEY" precision="41" columnType="//@dataType/@types.0"/>
+    <columns columnName="CATEGORY_ID" columnType="//@dataType/@types.2"/>
+    <columns columnName="TMODEL_KEY_REF" columnNull="true" precision="41" columnType="//@dataType/@types.0"/>
+    <columns columnName="KEY_NAME" columnNull="true" precision="255" columnType="//@dataType/@types.0"/>
+    <columns columnName="KEY_VALUE" precision="255" columnType="//@dataType/@types.0"/>
+    <columnsPk namePk="BUSINESS_P_KEY">
+      <columnName>BUSINESS_KEY</columnName>
+      <columnName>CATEGORY_ID</columnName>
+    </columnsPk>
+    <columnsFk nameFk="BUSINESS_F_KEY" references="//@statements.0" status="DISABLED">
+      <columnName>BUSINESS_KEY</columnName>
+      <columnReference>BUSINESS_KEY</columnReference>
+    </columnsFk>
+  </statements>
+  <dataType>
+    <types xsi:type="DDL:VarChar" name="VARCHAR"/>
+    <types xsi:type="DDL:Timestamp" name="TIMESTAMP"/>
+    <types xsi:type="DDL:Int" name="INT"/>
+    <types xsi:type="DDL:Number" name="NUMBER"/>
+  </dataType>
+</DDL:DDLDefinition>

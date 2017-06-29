@@ -1,0 +1,38 @@
+-- Automatic Generation Insert's Of TABLE: <%= table.tableName %>
+<%
+tableName = table.tableName
+registries = Array.new
+columns = "("
+
+cols = table.columns
+for i in 0..cols.length-1
+  columns += cols[i].columnName
+  if (i+1 <= cols.length-1)
+    columns += ","
+  end
+end
+columns += ")"
+
+insert = "INSERT INTO " + tableName + " " + columns + " VALUES "
+ 
+table.registries.each do |registry|
+  values = "("
+  registryValues = registry.registryValues
+  for i in 0..registryValues.length-1
+    if (registryValues[i].column.columnType.kind_of? DML_DDL::Characters)
+      values += "'" + registryValues[i].value + "'"
+    else
+      values += registryValues[i].value
+    end
+    if (i+1 <= registryValues.length-1)
+      values += ","
+    end
+  end
+  values += ");"
+  
+  registries << insert + values 
+end
+-%>
+<% registries.each do |registry| -%>
+  <%= registry %>
+<% end -%>

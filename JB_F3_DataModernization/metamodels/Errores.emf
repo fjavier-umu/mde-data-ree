@@ -1,0 +1,42 @@
+@namespace(uri="http://modelum.es/gra2mol/examples/Error", prefix="ERR")
+package errors;
+
+class Errores {
+   val Error[*] errores;
+}
+
+class Error {
+   
+}
+
+class ForeignError extends Error {
+   attr String nameFk;
+   attr Integer porcent;
+   val Table tableCont;
+   val Table tableRef;   
+}
+
+class Table {
+   attr String nameTable;
+   val ColumnFk[*] columnCont;
+}
+
+class ColumnFk {
+   attr String nameColumn;
+}
+
+class CheckError extends Error {
+   attr String nameTable;
+   attr String nameCk;
+   attr Integer porcent;
+   val ColumnCk[*] columns;
+}
+
+class ColumnCk {
+   attr String columnName;
+   val ValueCk[*] values;
+}
+
+class ValueCk {
+   attr String value;
+}

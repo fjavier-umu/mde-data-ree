@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------------------
+-- Gra2MoL transformation definition for extracting DML models from DML Scripts
+--
+-- TODO: 
+--  * Fill in it!! :D
+--------------------------------------------------------------------------------------
+
+rule 'mapInsertsStatements'
+	from insertsStatements is
+	to InsertsStatements 
+	queries 
+		ins : //#insertInto;
+	mappings
+		insertsInto = ins;
+end_rule
+
+rule 'mapInsertInto'
+	from insertInto insertInto
+	to InsertInto
+	queries
+		col : /insertInto//#column;
+		re : /insertInto/#registry;
+	mappings
+		tableName = insertInto.ID;
+		columns = col;
+		registry = re;
+end_rule
+
+rule 'mapColumns'
+	from column c
+	to Column
+	queries
+	mappings
+		columnName = c.ID;
+end_rule
+
+rule 'mapRegistry'
+	from registry re
+	to Registry
+	queries
+		values : /re//#value;
+	mappings
+		registryValues = values;
+end_rule
+
+rule 'mapValue'
+	from value v
+	to Value
+	queries
+		id : /#v{ID.exists};
+		cvalue : /#v{CVALUE.exists};
+		number : /#v{NUMBER.exists};
+		
+		insert : //#insertInto//value{this.check(v)};
+	mappings
+		if (id.hasResults) then
+			value = v.ID;
+		end_if
+		if (cvalue.hasResults) then
+			value = removeQuotes v.CVALUE;
+		end_if
+		if (number.hasResults) then
+			value = v.NUMBER;
+		end_if
+		
+		column = ext InferColumnFromValue(v,insert);
+end_rule

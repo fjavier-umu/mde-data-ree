@@ -1,0 +1,197 @@
+/**
+ *
+ * Template Transformation Example
+ *
+ */
+texttransformation MoJPA2CoJPA (in ec:"http://modelum.es/gra2mol/examples/JPA") {
+	  ec.PersistenceUnit::main () {
+			file ( 'c:/persistence.xml ' )
+		'
+		<?xml version="1.0" encoding="UTF-8"?>
+		<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+			<persistence-unit name="PracticaJPA" transaction-type="RESOURCE_LOCAL">
+				<non-jta-data-source>MySQL_3306</non-jta-data-source>
+		'		
+		    self.entities ->forEach(c:ec.Entity) {
+		'		<class>'c.name'</class>
+		'
+		    }
+		'		<properties>
+					<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+					<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/jpa"/>
+					<property name="eclipselink.jdbc.user" value="root"/>
+					<property name="eclipselink.jdbc.password" value="root"/>
+					<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+				</properties>
+			</persistence-unit>
+		</persistence>
+		'
+		    
+		// Recorro todas las anotaciones, aunque no todas van a ser tabla con el nuevo MM de BnB
+	    self.entities ->forEach(a:ec.Entity) {
+			a.anotations ->forEach(n:ec.Anotation) {
+				n.defAnotacion(a)
+	    	}    
+	    }
+	    
+	}
+
+
+	
+
+  abstract ec.Anotation::defAnotacion();
+
+
+    
+  ec.Table::defAnotacion(e:ec.Entity) {
+		file ( 'c:/' + self.name.toLower().firstToUpper() + '.java ' )
+	'
+	package jpa;
+	
+	import java.io.Serializable;
+	import java.util.Date;
+	import javax.persistence.Entity;
+	import javax.persistence.Id;
+	import javax.persistence.ManyToOne;
+	import javax.persistence.Table;
+	
+	//' e.comment '
+	@Entity
+	@Table(schema="jpa")'
+    e.PrimaryKey()'
+	public class ' + self.name.toLower().firstToUpper() + ' implements Serializable {
+'
+		// Recorro todas las anotaciones, aunque no todas van a ser tabla con el nuevo MM de BnB
+		e.Variables()
+	
+'
+		@ManyToOne // esto no vale
+		private Cliente cliente; // esto no vale
+	
+		private static final long serialVersionUID = 1L;
+	
+		public 'self.name.toLower().firstToUpper() '() {
+			super();
+		}
+		public 'self.name.toLower().firstToUpper()'('
+		
+		e.Parametros()
+
+		') {' newline(1) 
+		
+
+		e.Constructores()
+		'		}' newline(2)
+
+		e.GetSet()
+	
+  }
+
+// Creamos un fichero con la clase de la clave primaria
+ ec.EntityPk::defAnotacion(c:ec.Entity){
+  
+ 	file ( 'c:/' + self.name.toLower().firstToUpper() + '.java ' )
+ 	 	
+ 	
+ 	'
+	 public class ' self.name.toLower().firstToUpper()' implements Serializable{
+	
+	
+	    private static final long serialVersionUID = 1L;
+'	    
+	
+	
+ 			stdout.print ('-------------------------------------'  + '\n')
+ 			stdout.print ('entidad '  +c.name + '\n')
+ 			stdout.print ('pk '  +self.name + '\n')
+    	    self .properties ->forEach(a:ec.Property) {
+				stdout.print ('propiedad 1de pk '  +a.name + '\n')
+					var yList:List = c.Property->select(p:ec.Property)// | p.name.equals(a.name)) 
+				     yList->forEach(pp:ec.Property) {
+						stdout.print ('xxxxxxxxxxxxxxxxxxxxxxxxxxx'+ '\n')
+						stdout.print ('propiedad de entidad'  +pp.name + '\n')
+						pp.anotations ->forEach(co:ec.Column) { 
+						'	   	private ' c.type.toLower().firstToUpper() ' ' c.name.toLower().firstToUpper()
+ 						}
+					}
+ 			}
+	
+'
+	    public 'self.name.toLower().firstToUpper()  '(){
+	    }
+	
+	
+	    public boolean equals(Object o){
+			@toDo
+	    }
+	
+	    public int hashCode(){
+	        @toDo
+	
+	    }
+	}'
+ }  
+ 
+// Creamos un fichero con la clase para cada tabla 
+  ec.Entity::Variables() : String {
+    	    var x:boolean=false
+    	    self.properties ->forEach(a:ec.Property) {
+				a.anotations ->forEach(c:ec.Column) {		
+					'	   	private ' c.type.toLower().firstToUpper() ' ' c.name.toLower().firstToUpper()  
+					if (c.nullable ) { ' Not Null' }
+					';' newline(1)
+				}	
+	    } 
+  }  
+  
+ // Función que  
+  ec.Entity::Parametros() : String {
+    	    var x:boolean=false
+    	    self.properties ->forEach(a:ec.Property) {
+				a.anotations ->forEach(c:ec.Column) {		
+					if (x) {', '}
+					x=true
+					c.type.toLower().firstToUpper() ' ' c.name.toLower().firstToUpper()
+					//c.defAnotacion(2)
+				}	
+	    } 
+  }  	
+
+  ec.Entity::Constructores() : String {
+    	    var x:boolean=false
+    	    self.properties ->forEach(a:ec.Property) {
+				a.anotations ->forEach(c:ec.Column) {		
+
+	   			'			this.'self.name.toLower().firstToUpper()' = ' self.name.toLower().firstToUpper() ';' newline(1)
+
+				}	
+	    } 
+  }  
+ 	
+  ec.Entity::GetSet() : String {
+    	    var x:boolean=false
+    	    self.properties ->forEach(a:ec.Property) {
+				a.anotations ->forEach(c:ec.Column) {		
+
+				newline(1)
+				'		public int get'c.name.toLower().firstToUpper()'() {
+					return this.'c.name.toLower().firstToUpper()';
+		}
+			
+		public void set'c.name.toLower().firstToUpper()'('c.type' 'c.name.toLower().firstToUpper()') {
+					this.'c.name.toLower().firstToUpper()' = 'c.name.toLower().firstToUpper()';
+		}' newline(1)
+
+				}	
+	    } 
+  }  	 	
+  
+    ec.Entity::PrimaryKey() : String {
+    	    var xList:List = self.anotations->select(t:ec.EntityPk)
+			xList->forEach(p:ec.EntityPk) {
+				 '
+	@IdClass(' +p.name.toLower().firstToUpper()  +'.class)'
+			}
+  }  	 
+
+}

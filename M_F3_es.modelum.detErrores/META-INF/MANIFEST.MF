@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DetErrores Plug-in
+Bundle-SymbolicName: M_F3_es.modelum.detErrores;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: es.modelum.deterrores.Activator
+Bundle-Vendor: Francisco Moya Arnao
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ gts.age.preferences,
+ gts.eclipse.core,
+ gts.rubytl.core,
+ org.eclipse.emf.ecore.xmi
+Eclipse-LazyStart: true

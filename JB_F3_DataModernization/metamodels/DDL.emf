@@ -1,0 +1,62 @@
+@namespace(uri="http://modelum.es/gra2mol/examples/DDLExtraction", prefix="DDL")
+package DDL;
+
+class Statement {
+}
+
+class DataDefinition extends Statement {
+}
+
+class CreatePk {
+  attr String namePk;
+  attr String[*] columnName;
+}
+
+class CreateFk {
+  attr String nameFk;
+  attr String[*] columnName;
+  ref CreateTable references;
+  attr String[*] columnReference;
+}
+
+class CreateCk {
+  attr String nameCk;
+  attr String nameColumn;
+  attr String[*] valuesCk;
+}
+
+class CreateColumn {
+  attr String columnName;
+  attr String commentColumn;
+  attr String columnType;
+  attr boolean columnNull;
+}
+
+class CreateDatabase extends DataDefinition {
+  attr String databaseName;
+}
+
+class CreateTable extends DataDefinition {
+  attr String tableName;
+  attr String commentTable;
+  val CreateColumn[*] columns;
+  val CreatePk columnsPk;
+  val CreateFk[*] columnsFk;
+  val CreateCk[*] checks;
+}
+
+class CreateCommentTable extends DataDefinition {
+  attr String tableName;
+  attr String tableComment;
+}
+
+class CreateCommentColumn extends DataDefinition {
+  attr String tableName;
+  attr String columnName;
+  attr String columnComment;
+}
+
+class DDLDefinition {
+  val Statement[*] statements;
+}
+

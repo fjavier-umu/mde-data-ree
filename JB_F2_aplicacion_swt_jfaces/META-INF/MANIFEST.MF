@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: aplicacion_swt_jfaces
+Bundle-SymbolicName: JB_F2_aplicacion_swt_jfaces
+Bundle-Version: 0.1.0
+Require-Bundle: org.eclipse.emf.ecore

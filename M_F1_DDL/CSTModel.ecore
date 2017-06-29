@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CST:Node xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:CST="http://gts.inf.um.es/modernization/cst" kind="CST">
+  <children xsi:type="CST:Node" kind="file">
+    <children xsi:type="CST:Leaf" kind="path" value="/Users/fjavier/Copy/workspace/M_F1_DDL/files/src/example.sql"/>
+    <children xsi:type="CST:Leaf" kind="filename" value="example.sql"/>
+    <children xsi:type="CST:Node" kind="data_definition">
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="1"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="1"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_ENTITY" pos="13"
+              line="1"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="2"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="2" line="3"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="15"
+                  line="3"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="22" line="3"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="41" pos="23" line="3"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="25" line="3"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="27" line="3"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="35" line="3"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="AUTHORIZED_NAME" pos="2"
+                line="4"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="18"
+                  line="4"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="25" line="4"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="26" line="4"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="29" line="4"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="31" line="4"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="39" line="4"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="PUBLISHER_ID" pos="2" line="5"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="15"
+                  line="5"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="22" line="5"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="23" line="5"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="25" line="5"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NULL" pos="27" line="5"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="31" line="5"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="OPERATOR" pos="2" line="6"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="11"
+                  line="6"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="18" line="6"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="19" line="6"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="22" line="6"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="24" line="6"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="32" line="6"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="LAST_UPDATE" pos="2" line="7"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="TIMES" value="TIMESTAMP" pos="14"
+                  line="7"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="23" line="7"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="3" pos="24" line="7"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="25" line="7"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="27" line="7"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="35" line="7"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS" pos="2" line="8"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="11"
+                  line="8"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="18" line="8"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="19" line="8"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="22" line="8"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="24" line="8"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="32" line="8"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="DESCR_ID" pos="2" line="9"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="EXACTO" value="INT" pos="11" line="9"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="15" line="9"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="23" line="9"/>
+          </children>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="10"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="13"
+                line="10"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="26"
+                line="10"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="38" line="10"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="39"
+                  line="10"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="51" line="10"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="11"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="11"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="13"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="13"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_DESCR" pos="13"
+              line="13"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="14"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="2" line="15"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="15"
+                  line="15"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="22" line="15"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="41" pos="23" line="15"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="25" line="15"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="27" line="15"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="35" line="15"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_DESCR_ID" pos="2"
+                line="16"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="EXACTO" value="NUMBER" pos="20"
+                  line="16"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="26" line="16"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="3" pos="27" line="16"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="28" line="16"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="30" line="16"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="38" line="16"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="LANG_CODE" pos="2" line="17"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="12"
+                  line="17"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="19" line="17"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="5" pos="20" line="17"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="21" line="17"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NULL" pos="23" line="17"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="27" line="17"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="DESCR" pos="2" line="18"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="8"
+                  line="18"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="15" line="18"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="16" line="18"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="19" line="18"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="21" line="18"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="29" line="18"/>
+          </children>
+          <children xsi:type="CST:Node" kind="ck">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="19"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="PAQUITO" pos="13" line="19"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CHECK" pos="21" line="19"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="27" line="19"/>
+            <children xsi:type="CST:Node" kind="log_expresion">
+              <children xsi:type="CST:Node" kind="column_ck">
+                <children xsi:type="CST:Leaf" kind="ID" value="LANG_CODE" pos="28"
+                    line="19"/>
+              </children>
+              <children xsi:type="CST:Leaf" kind="COMPARATOR" value="=" pos="38" line="19"/>
+              <children xsi:type="CST:Leaf" kind="CVALUE" value="'Laboratorio UMU'"
+                  pos="40" line="19"/>
+              <children xsi:type="CST:Leaf" kind="LOG_CONJ" value="OR" pos="58" line="19"/>
+            </children>
+            <children xsi:type="CST:Node" kind="log_expresion">
+              <children xsi:type="CST:Node" kind="column_ck">
+                <children xsi:type="CST:Leaf" kind="ID" value="DESCR" pos="61" line="19"/>
+              </children>
+              <children xsi:type="CST:Leaf" kind="COMPARATOR" value="=" pos="67" line="19"/>
+              <children xsi:type="CST:Leaf" kind="CVALUE" value="'Laboratorio Dep. DIS'"
+                  pos="69" line="19"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="91" line="19"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="92" line="19"/>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="20"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="13"
+                line="20"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="26"
+                line="20"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="38" line="20"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="39"
+                  line="20"/>
+              <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="51" line="20"/>
+            </children>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_DESCR_ID" pos="52"
+                  line="20"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="69" line="20"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="70" line="20"/>
+          <children xsi:type="CST:Node" kind="fk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="21"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="13"
+                line="21"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="FOREIGN KEY" pos="26"
+                line="21"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="38" line="21"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="39"
+                  line="21"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="51" line="21"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="REFERENCES" pos="53"
+                line="21"/>
+            <children xsi:type="CST:Node" kind="table_references">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_ENTITY" pos="64"
+                  line="21"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="80" line="21"/>
+            <children xsi:type="CST:Node" kind="references_column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="81"
+                  line="21"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="93" line="21"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="22"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="22"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="24"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="24"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_CATEGORY" pos="13"
+              line="24"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="25"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="2" line="26"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="15"
+                  line="26"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="22" line="26"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="41" pos="23" line="26"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="25" line="26"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="27" line="26"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="35" line="26"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="CATEGORY_ID" pos="2" line="27"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="EXACTO" value="INT" pos="14" line="27"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="18" line="27"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="26" line="27"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="TMODEL_KEY_REF" pos="2"
+                line="28"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="17"
+                  line="28"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="24" line="28"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="41" pos="25" line="28"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="27" line="28"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NULL" pos="29" line="28"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="33" line="28"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="KEY_NAME" pos="2" line="29"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="11"
+                  line="29"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="18" line="29"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="19" line="29"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="22" line="29"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NULL" pos="24" line="29"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="28" line="29"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="KEY_VALUE" pos="2" line="30"/>
+            <children xsi:type="CST:Node" kind="type">
+              <children xsi:type="CST:Leaf" kind="CHARACTERS" value="VARCHAR" pos="12"
+                  line="30"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="19" line="30"/>
+            <children xsi:type="CST:Leaf" kind="NUMBER" value="255" pos="20" line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="23" line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="25" line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="33" line="30"/>
+          </children>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="31"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_P_KEY" pos="13"
+                line="31"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="28"
+                line="31"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="40" line="31"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="41"
+                  line="31"/>
+              <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="53" line="31"/>
+            </children>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="CATEGORY_ID" pos="54"
+                  line="31"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="65" line="31"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="66" line="31"/>
+          <children xsi:type="CST:Node" kind="fk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="2"
+                line="32"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_F_KEY" pos="13"
+                line="32"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="FOREIGN KEY" pos="28"
+                line="32"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="40" line="32"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="41"
+                  line="32"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="53" line="32"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="REFERENCES" pos="55"
+                line="32"/>
+            <children xsi:type="CST:Node" kind="table_references">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_ENTITY" pos="66"
+                  line="32"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="82" line="32"/>
+            <children xsi:type="CST:Node" kind="references_column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="83"
+                  line="32"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="95" line="32"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="33"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="33"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="disabled_constraint">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="ALTER TABLE" line="35"/>
+          <children xsi:type="CST:Node" kind="table_references">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_DESCR" pos="12"
+                line="35"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="DROP CONSTRAINT" pos="27"
+              line="35"/>
+          <children xsi:type="CST:Node" kind="name_constraint">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_KEY" pos="43"
+                line="35"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="55" line="35"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="disabled_constraint">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="ALTER TABLE" line="36"/>
+          <children xsi:type="CST:Node" kind="table_references">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_DESCR" pos="12"
+                line="36"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="DROP CONSTRAINT" pos="27"
+              line="36"/>
+          <children xsi:type="CST:Node" kind="name_constraint">
+            <children xsi:type="CST:Leaf" kind="ID" value="PAQUITO" pos="43" line="36"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="50" line="36"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="disabled_constraint">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="ALTER TABLE" line="37"/>
+          <children xsi:type="CST:Node" kind="table_references">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_CATEGORY" pos="12"
+                line="37"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="DROP CONSTRAINT" pos="30"
+              line="37"/>
+          <children xsi:type="CST:Node" kind="name_constraint">
+            <children xsi:type="CST:Leaf" kind="ID" value="BUSINESS_F_KEY" pos="46"
+                line="37"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="60" line="37"/>
+        </children>
+      </children>
+    </children>
+  </children>
+</CST:Node>

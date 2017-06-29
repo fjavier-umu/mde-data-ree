@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ERR:Errores xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ERR="http://modelum.es/gra2mol/examples/Error">
+	<errores xsi:type="ForeignError" nameFk="PREU_MATRICULA_CENTROS_CONVOCATORIAS_fk" porcent="83">
+		<tableCont nameTable="PREU_MATRICULA">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="COD_CLASE_MATRICULA"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableCont>
+		<tableRef nameTable="CENTROS_CONVOCATORIAS">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableRef>
+	</errores>
+	<errores xsi:type="ForeignError" nameFk="PREU_MATRICULA_CENTROS_CONVOCATORIAS_fk_2" porcent="100">
+		<tableCont nameTable="PREU_MATRICULA">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="COD_PRUEBA"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableCont>
+		<tableRef nameTable="CENTROS_CONVOCATORIAS">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableRef>
+	</errores>
+	<errores xsi:type="CheckError" nameTable="CENTROS_CONVOCATORIAS" nameCk="CENTROS_CONVOCATORIAS_MATRICUL" porcent="100">
+		<columns columnName="ESTADO_MATRICULA">
+			<values value="C"/>
+			<values value="B"/>
+		</columns>
+	</errores>
+	<errores xsi:type="ForeignError" nameFk="PREU_MATRICULA_CENTROS_CONVOCATORIAS_fk_3" porcent="100">
+		<tableCont nameTable="PREU_MATRICULA">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableCont>
+		<tableRef nameTable="CENTROS_CONVOCATORIAS">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableRef>
+	</errores>
+	<errores xsi:type="ForeignError" nameFk="REPRESENTANTES_CENTROS_CONVOCATORIAS_fk_4" porcent="100">
+		<tableCont nameTable="REPRESENTANTES">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableCont>
+		<tableRef nameTable="CENTROS_CONVOCATORIAS">
+			<columnCont nameColumn="AÑO"/>
+			<columnCont nameColumn="CONV"/>
+			<columnCont nameColumn="COD_TIPO_ACCESO"/>
+			<columnCont nameColumn="COD_CENTRO"/>
+		</tableRef>
+	</errores>
+	<errores xsi:type="CheckError" nameTable="CENTROS_CONVOCATORIAS" nameCk="CENTROS_CONVOCATORIAS_TRIBUNAL" porcent="100">
+		<columns columnName="ESTADO_TRIBUNAL">
+			<values value="B"/>
+			<values value="I"/>
+			<values value="C"/>
+		</columns>
+	</errores>
+	<errores xsi:type="CheckError" nameTable="MINERVA_NOTICIAS" nameCk="CK_MINERVA_NOTICIAS_TIPO" porcent="100">
+		<columns columnName="not_tipo">
+			<values value="N"/>
+			<values value="L"/>
+			<values value="A"/>
+		</columns>
+	</errores>
+</ERR:Errores>
+

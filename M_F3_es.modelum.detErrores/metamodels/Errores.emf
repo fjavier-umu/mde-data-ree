@@ -1,0 +1,30 @@
+@namespace(uri="http://modelum.es/Error", prefix="ERR")
+package errors;
+
+import "platform:/resource/M_F3_es.modelum.detErrores/metamodels/DML_DDL.ecore";
+
+class Errores {
+  val Error[*] errores;
+}
+
+class Error {
+  attr Integer[1] ~id;
+  attr Boolean[1] apply;
+}
+
+class ForeignError extends Error {
+  attr Integer porcent;
+  ref DML_DDL.Table tableCont;
+  ref DML_DDL.Table tableRef;
+  ref DML_DDL.Column[*] fkColumns;
+  ref DML_DDL.Fk fk;
+  ref DML_DDL.Registry[*] registriesFk;
+}
+
+class CheckError extends Error {
+  attr Integer porcent;
+  ref DML_DDL.Ck ck;
+  ref DML_DDL.Table table;
+  ref DML_DDL.Registry[*] registriesCk;
+}
+

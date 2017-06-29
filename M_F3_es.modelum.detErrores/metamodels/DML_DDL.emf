@@ -1,0 +1,231 @@
+@namespace(uri="http://modelum.es/DML_DDL", prefix="DML_DDL")
+package DML_DDL;
+
+class Statement {
+}
+
+class DataDefinition extends Statement {
+}
+
+class DataType {
+  val Type[*] types;
+}
+
+class DDLDefinition {
+  val Statement[*] statements;
+  val DataType dataType;
+}
+
+class Pk {
+  attr String namePk;
+  attr String[*] columnName;
+}
+
+class Fk {
+  attr String nameFk;
+  attr String[*] columnName;
+  ref Table references;
+  attr String[*] columnReference;
+  attr String status;
+}
+
+class Ck {
+  attr String nameCk;
+  attr String status = "";
+  val ValuesCk[*] valuesCk;
+}
+
+class ValuesCk {
+  attr String[*] value;
+  attr String comparator;
+  attr String columnName;
+  attr String logConjuntion;
+}
+
+class Column {
+  attr String columnName;
+  attr String commentColumn;
+  attr boolean columnNull;
+  attr int precision = 0;
+  attr int scale = 0;
+  ref Type[1] columnType;
+}
+
+class Database extends DataDefinition {
+  attr String databaseName;
+}
+
+class Table extends DataDefinition {
+  attr String tableName;
+  attr String commentTable;
+  val Column[*] columns;
+  val Pk columnsPk;
+  val Fk[*] columnsFk;
+  val Ck[*] checks;
+  val Registry[*] registries;
+}
+
+class Registry {
+  val Value[*] registryValues;
+}
+
+class Value {
+  attr String value;
+  ref Column[1] column;
+}
+
+class CommentTable extends DataDefinition {
+  attr String tableName;
+  attr String tableComment;
+}
+
+class CommentColumn extends DataDefinition {
+  attr String tableName;
+  attr String columnName;
+  attr String columnComment;
+}
+
+class Type {
+  attr String name;
+}
+
+class Exacto extends Type {
+}
+
+class Integer extends Exacto {
+}
+
+class SmallInteger extends Exacto {
+}
+
+class Int extends Exacto {
+}
+
+class SmallInt extends Exacto {
+}
+
+class Number extends Exacto {
+}
+
+class Numeric extends Exacto {
+}
+
+class Decimal extends Exacto {
+}
+
+class Aproximado extends Type {
+}
+
+class Real extends Aproximado {
+}
+
+class DoublePrecision extends Aproximado {
+}
+
+class Float extends Aproximado {
+}
+
+class Long extends Aproximado {
+}
+
+class LongRaw extends Aproximado {
+}
+
+class Characters extends Type {
+  attr String n = "";
+}
+
+class Character extends Characters {
+}
+
+class CharacterVarying extends Characters {
+}
+
+class Char extends Characters {
+}
+
+class VarChar extends Characters {
+}
+
+class VarChar2 extends Characters {
+}
+
+class Text extends Characters {
+}
+
+class NVarChar2 extends Characters {
+}
+
+class NChar extends Characters {
+}
+
+class CharVarying extends Characters {
+}
+
+class NationalChar extends Characters {
+}
+
+class NationalCharVarying extends Characters {
+}
+
+class NationalCharacter extends Characters {
+}
+
+class NationalCharacterVarying extends Characters {
+}
+
+class NCharVarying extends Characters {
+}
+
+class Clob extends Characters {
+}
+
+class NClob extends Characters {
+}
+
+class Bits extends Type {
+  attr String n = "";
+}
+
+class Bit extends Bits {
+}
+
+class BitVarying extends Bit {
+}
+
+class Times extends Type {
+}
+
+class Date extends Times {
+}
+
+class Time extends Times {
+}
+
+class Timestamp extends Times {
+}
+
+class Intervals extends Type {
+}
+
+class YearMonth extends Intervals {
+}
+
+class DayTime extends Intervals {
+}
+
+class Binaries extends Type {
+}
+
+class BinaryDouble extends Binaries {
+}
+
+class BinaryFloat extends Binaries {
+}
+
+class BFile extends Binaries {
+}
+
+class Blob extends Binaries {
+}
+

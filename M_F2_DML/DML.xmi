@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DML:InsertsStatements xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DML="http://modelum.es/DML">
+  <insertsInto tableName="BUSINESS_ENTITY">
+    <registry>
+      <registryValues value="MODELUM" column="//@insertsInto.0/@columns.0"/>
+      <registryValues value="DML" column="//@insertsInto.0/@columns.1"/>
+      <registryValues value="DML.es" column="//@insertsInto.0/@columns.2"/>
+      <registryValues value="Francisco" column="//@insertsInto.0/@columns.3"/>
+      <registryValues value="12345" column="//@insertsInto.0/@columns.4"/>
+      <registryValues value="MODELUM" column="//@insertsInto.0/@columns.5"/>
+      <registryValues value="8" column="//@insertsInto.0/@columns.6"/>
+    </registry>
+    <columns columnName="BUSINESS_KEY"/>
+    <columns columnName="AUTHORIZED_NAME"/>
+    <columns columnName="PUBLISHER_ID"/>
+    <columns columnName="OPERATOR"/>
+    <columns columnName="LAST_UPDATE"/>
+    <columns columnName="BUSINESS"/>
+    <columns columnName="DESCR_ID"/>
+  </insertsInto>
+  <insertsInto tableName="BUSINESS_ENTITY">
+    <registry>
+      <registryValues value="MODELUM" column="//@insertsInto.1/@columns.0"/>
+      <registryValues value="DDL" column="//@insertsInto.1/@columns.1"/>
+      <registryValues value="DDL.es" column="//@insertsInto.1/@columns.2"/>
+      <registryValues value="Luis" column="//@insertsInto.1/@columns.3"/>
+      <registryValues value="12345" column="//@insertsInto.1/@columns.4"/>
+      <registryValues value="MODELUM" column="//@insertsInto.1/@columns.5"/>
+      <registryValues value="9" column="//@insertsInto.1/@columns.6"/>
+    </registry>
+    <columns columnName="BUSINESS_KEY"/>
+    <columns columnName="AUTHORIZED_NAME"/>
+    <columns columnName="PUBLISHER_ID"/>
+    <columns columnName="OPERATOR"/>
+    <columns columnName="LAST_UPDATE"/>
+    <columns columnName="BUSINESS"/>
+    <columns columnName="DESCR_ID"/>
+  </insertsInto>
+  <insertsInto tableName="BUSINESS_DESCR">
+    <registry>
+      <registryValues value="M" column="//@insertsInto.2/@columns.0"/>
+      <registryValues value="9" column="//@insertsInto.2/@columns.1"/>
+      <registryValues value="Laboratorio Investigacion UMU" column="//@insertsInto.2/@columns.2"/>
+      <registryValues value="Laboratorio Dep" column="//@insertsInto.2/@columns.3"/>
+    </registry>
+    <columns columnName="BUSINESS_KEY"/>
+    <columns columnName="BUSINESS_DESCR_ID"/>
+    <columns columnName="LANG_CODE"/>
+    <columns columnName="DESCR"/>
+  </insertsInto>
+  <insertsInto tableName="BUSINESS_DESCR">
+    <registry>
+      <registryValues value="MODELUM" column="//@insertsInto.3/@columns.0"/>
+      <registryValues value="9" column="//@insertsInto.3/@columns.1"/>
+      <registryValues value="Laboratorio Investigacion UMU" column="//@insertsInto.3/@columns.2"/>
+      <registryValues value="Laboratorio Dep. DIS" column="//@insertsInto.3/@columns.3"/>
+    </registry>
+    <columns columnName="BUSINESS_KEY"/>
+    <columns columnName="BUSINESS_DESCR_ID"/>
+    <columns columnName="LANG_CODE"/>
+    <columns columnName="DESCR"/>
+  </insertsInto>
+</DML:InsertsStatements>

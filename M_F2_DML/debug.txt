@@ -1,0 +1,776 @@
+GVQ Interpreter version 0.3
+
+Executing...
+Models created.
+Initializing indexRules...
+Initializing packages...
+Initializing hashes...
+
+Executing rules...
+RULE: mapInsertsStatements
+RULE: mapInsertsStatements... executing!
+  Model Element InsertsStatements created
+  Executing queries...
+    Query is with 1 result nodes - CONTENT : [/Users/fjavier/Copy/workspace/M_F2_DML/files/src/example.sql example.sql INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+    Query ins with 4 result nodes
+  Executing mappings...
+    - QUERY_RESULT: 4 bindings:
+      (1/4) result node: insertInto (kind). Rule... calling mapInsertInto rule
+
+      RULE: mapInsertInto... executing!
+        Model Element InsertInto created
+        Executing queries...
+          Query col with 7 result nodes
+          Query re with 1 result nodes - CONTENT in line 1: [( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ]
+          Query insertInto with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: insertInto - 
+            node: insertInto (kind) - leaf: ID (kind) - BUSINESS_ENTITY (value) 
+          - QUERY_RESULT: 7 bindings:
+            (1/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [BUSINESS_KEY , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+
+            (2/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [AUTHORIZED_NAME , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - AUTHORIZED_NAME (value) 
+
+            (3/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [PUBLISHER_ID , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - PUBLISHER_ID (value) 
+
+            (4/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [OPERATOR , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - OPERATOR (value) 
+
+            (5/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [LAST_UPDATE , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - LAST_UPDATE (value) 
+
+            (6/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [BUSINESS , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS (value) 
+
+            (7/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 1: [DESCR_ID ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - DESCR_ID (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: registry (kind). Rule... calling mapRegistry rule
+
+            RULE: mapRegistry... executing!
+              Model Element Registry created
+              Executing queries...
+                Query values with 7 result nodes
+                Query re with 1 result nodes - CONTENT in line 1: [( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ]
+              Executing mappings...
+                - QUERY_RESULT: 7 bindings:
+                  (1/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: ['MODELUM' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 1: ['MODELUM' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'MODELUM' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (2/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: ['DML' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 1: ['DML' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'DML' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (3/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: ['DML.es' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 1: ['DML.es' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'DML.es' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (4/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: ['Francisco' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 1: ['Francisco' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Francisco' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (5/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: [12345 , ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 1: [12345 , ]
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 12345 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (6/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: ['MODELUM' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 1: ['MODELUM' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'MODELUM' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (7/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 1: [8 ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 1: [8 ]
+                      Query insert with 1 result nodes - CONTENT in line 1: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DML' , 'DML.es' , 'Francisco' , 12345 , 'MODELUM' , 8 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 8 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+
+
+      (2/4) result node: insertInto (kind). Rule... calling mapInsertInto rule
+
+      RULE: mapInsertInto... executing!
+        Model Element InsertInto created
+        Executing queries...
+          Query col with 7 result nodes
+          Query re with 1 result nodes - CONTENT in line 2: [( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ]
+          Query insertInto with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: insertInto - 
+            node: insertInto (kind) - leaf: ID (kind) - BUSINESS_ENTITY (value) 
+          - QUERY_RESULT: 7 bindings:
+            (1/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [BUSINESS_KEY , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+
+            (2/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [AUTHORIZED_NAME , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - AUTHORIZED_NAME (value) 
+
+            (3/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [PUBLISHER_ID , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - PUBLISHER_ID (value) 
+
+            (4/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [OPERATOR , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - OPERATOR (value) 
+
+            (5/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [LAST_UPDATE , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - LAST_UPDATE (value) 
+
+            (6/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [BUSINESS , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS (value) 
+
+            (7/7) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 2: [DESCR_ID ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - DESCR_ID (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: registry (kind). Rule... calling mapRegistry rule
+
+            RULE: mapRegistry... executing!
+              Model Element Registry created
+              Executing queries...
+                Query values with 7 result nodes
+                Query re with 1 result nodes - CONTENT in line 2: [( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ]
+              Executing mappings...
+                - QUERY_RESULT: 7 bindings:
+                  (1/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: ['MODELUM' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 2: ['MODELUM' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'MODELUM' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (2/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: ['DDL' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 2: ['DDL' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'DDL' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (3/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: ['DDL.es' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 2: ['DDL.es' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'DDL.es' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (4/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: ['Luis' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 2: ['Luis' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Luis' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (5/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: [12345 , ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 2: [12345 , ]
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 12345 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (6/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: ['MODELUM' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 2: ['MODELUM' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'MODELUM' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (7/7) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 2: [9 ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 2: [9 ]
+                      Query insert with 1 result nodes - CONTENT in line 2: [INSERT INTO BUSINESS_ENTITY ( BUSINESS_KEY , AUTHORIZED_NAME , PUBLISHER_ID , OPERATOR , LAST_UPDATE , BUSINESS , DESCR_ID ) VALUES ( 'MODELUM' , 'DDL' , 'DDL.es' , 'Luis' , 12345 , 'MODELUM' , 9 ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 9 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+
+
+      (3/4) result node: insertInto (kind). Rule... calling mapInsertInto rule
+
+      RULE: mapInsertInto... executing!
+        Model Element InsertInto created
+        Executing queries...
+          Query col with 4 result nodes
+          Query re with 1 result nodes - CONTENT in line 3: [( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ]
+          Query insertInto with 1 result nodes - CONTENT in line 3: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: insertInto - 
+            node: insertInto (kind) - leaf: ID (kind) - BUSINESS_DESCR (value) 
+          - QUERY_RESULT: 4 bindings:
+            (1/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 3: [BUSINESS_KEY , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+
+            (2/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 3: [BUSINESS_DESCR_ID , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_DESCR_ID (value) 
+
+            (3/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 3: [LANG_CODE , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - LANG_CODE (value) 
+
+            (4/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 3: [DESCR ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - DESCR (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: registry (kind). Rule... calling mapRegistry rule
+
+            RULE: mapRegistry... executing!
+              Model Element Registry created
+              Executing queries...
+                Query values with 4 result nodes
+                Query re with 1 result nodes - CONTENT in line 3: [( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ]
+              Executing mappings...
+                - QUERY_RESULT: 4 bindings:
+                  (1/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 3: ['M' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 3: ['M' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 3: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'M' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (2/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 3: [9 , ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 3: [9 , ]
+                      Query insert with 1 result nodes - CONTENT in line 3: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 9 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (3/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 3: ['Laboratorio Investigacion UMU' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 3: ['Laboratorio Investigacion UMU' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 3: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Laboratorio Investigacion UMU' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (4/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 3: ['Laboratorio Dep' ]
+                      Query cvalue with 1 result nodes - CONTENT in line 3: ['Laboratorio Dep' ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 3: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'M' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Laboratorio Dep' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+
+
+      (4/4) result node: insertInto (kind). Rule... calling mapInsertInto rule
+
+      RULE: mapInsertInto... executing!
+        Model Element InsertInto created
+        Executing queries...
+          Query col with 4 result nodes
+          Query re with 1 result nodes - CONTENT in line 4: [( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ]
+          Query insertInto with 1 result nodes - CONTENT in line 4: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: insertInto - 
+            node: insertInto (kind) - leaf: ID (kind) - BUSINESS_DESCR (value) 
+          - QUERY_RESULT: 4 bindings:
+            (1/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 4: [BUSINESS_KEY , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_KEY (value) 
+
+            (2/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 4: [BUSINESS_DESCR_ID , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - BUSINESS_DESCR_ID (value) 
+
+            (3/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 4: [LANG_CODE , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - LANG_CODE (value) 
+
+            (4/4) result node: column (kind). Rule... calling mapColumns rule
+
+            RULE: mapColumns... executing!
+              Model Element Column created
+              Executing queries...
+                Query c with 1 result nodes - CONTENT in line 4: [DESCR ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - DESCR (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: registry (kind). Rule... calling mapRegistry rule
+
+            RULE: mapRegistry... executing!
+              Model Element Registry created
+              Executing queries...
+                Query values with 4 result nodes
+                Query re with 1 result nodes - CONTENT in line 4: [( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ]
+              Executing mappings...
+                - QUERY_RESULT: 4 bindings:
+                  (1/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 4: ['MODELUM' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 4: ['MODELUM' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 4: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'MODELUM' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (2/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 4: [9 , ]
+                      Query cvalue with 0 result nodes
+                      Query number with 1 result nodes - CONTENT in line 4: [9 , ]
+                      Query insert with 1 result nodes - CONTENT in line 4: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: NUMBER (kind) - 9 (value) 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (3/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 4: ['Laboratorio Investigacion UMU' , ]
+                      Query cvalue with 1 result nodes - CONTENT in line 4: ['Laboratorio Investigacion UMU' , ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 4: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Laboratorio Investigacion UMU' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+                  (4/4) result node: value (kind). Rule... calling mapValue rule
+
+                  RULE: mapValue... executing!
+                    Model Element Value created
+                    Executing queries...
+                      Query id with 0 result nodes
+                      Query v with 1 result nodes - CONTENT in line 4: ['Laboratorio Dep. DIS' ]
+                      Query cvalue with 1 result nodes - CONTENT in line 4: ['Laboratorio Dep. DIS' ]
+                      Query number with 0 result nodes
+                      Query insert with 1 result nodes - CONTENT in line 4: [INSERT INTO BUSINESS_DESCR ( BUSINESS_KEY , BUSINESS_DESCR_ID , LANG_CODE , DESCR ) VALUES ( 'MODELUM' , 9 , 'Laboratorio Investigacion UMU' , 'Laboratorio Dep. DIS' ) ; ]
+                    Executing mappings...
+                        - IF detected...false! it doesn't have ELSE part 
+                        - IF detected...true!
+                        - QUERY_ACCESS: variable: v - 
+                          node: value (kind) - leaf: CVALUE (kind) - 'Laboratorio Dep. DIS' (value) 
+                        - IF detected...false! it doesn't have ELSE part 
+                      - OPERATION_EXTENSION:  column (node value)calling mapColumns rule
+
+                      RULE: mapColumns... cached!!
+
+
+
+
+
+Saving...
