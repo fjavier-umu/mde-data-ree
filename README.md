@@ -1,7 +1,8 @@
 # mde-data-ree
 Model-Driven Engineering in Data Reengineering
 
-"Projects for the MDE-based data reengineering process, including the data quality improvement stage."
+--> "Projects for the MDE-based data reengineering process, including the data quality improvement stage."
+
 JB_F1_DataModernization		
 JB_F2_aplicacion_swt_jfaces	
 JB_F3_DataModernization		
@@ -10,14 +11,16 @@ M_F3_es.modelum.detErrores
 mofscript-gen-MoJPA2CoJPA.m2t
 M_F1_DDL
 
-"Projects for the MDE-based data reengineering process, including the data quality improvement stage.
+--> "Projects for the MDE-based data reengineering process, including the data quality improvement stage.
+
 Version for the Models4Migration tool."
 CDTI_DDL2JPAInvokeByAnt
 CDTI_F1_DDL
 CDTI_F1_DML
 CDTI_F2_6_DataModernization
 
-"Projects for the automated normalisation process."
+--> "Projects for the automated normalisation process."
+
 Y_F1_CodeAnalysisFindingDefects
 Y_F1_conexp2fdsWithDuplicateColumns
 Y_F2_database2cexFiles
