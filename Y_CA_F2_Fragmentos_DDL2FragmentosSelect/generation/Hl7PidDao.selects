@@ -1,0 +1,78 @@
+SELECT MAX(obr.resultsReportStatusChange) 
+
+
+
+ FROM Hl7Pid pid, Hl7Obr obr 
+
+
+
+
+ WHERE obr.pidId = pid.id 
+
+
+
+
+ AND pid.messageId = :messageId
+
+
+
+
+ FROM Hl7Pid pid, Hl7Obr obr, Hl7Obx obx 
+
+
+
+
+ WHERE obx.observationResultStatus like :observationResultStatus 
+
+
+
+
+ AND obx.obrId = obr.id 
+
+
+
+
+ AND obr.pidId = pid.id 
+
+
+
+
+ AND pid.messageId = :messageId
+
+
+
+
+
+
+SELECT DISTINCT pid.messageId, MAX(obr.resultsReportStatusChange) 
+
+
+
+ FROM Hl7Pid pid, Hl7Orc orc, Hl7Obr obr 
+
+
+
+
+ WHERE orc.fillerOrderNumber like :fillerOrderNumber 
+
+
+
+
+ AND orc.pidId = pid.id 
+
+
+
+
+ AND obr.pidId = pid.id 
+
+
+
+
+ GROUP BY pid.messageId 
+
+
+
+
+ ORDER BY obr.resultsReportStatusChange
+
+

@@ -1,0 +1,10 @@
+SELECT x FROM  PharmacyInfo x where x.id2 = ? order by x.id desc
+
+
+SELECT x FROM  PharmacyInfo x where x.id = ?
+
+
+
+ select max(id) as maxrec from PharmacyInfo where status = 1 group by id2 order by name
+
+

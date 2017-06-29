@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Fragmentos:Aplicacion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Fragmentos="http://modelum.es/Fragmentos">
+  <ficheros nombre="/ABCDParser.java">
+    <fragmentos numLinea="56" posCaracter="37" texto="cmlFileManagement.ABCDLogger"/>
+    <fragmentos numLinea="71" posCaracter="19" texto="Starting save"/>
+    <fragmentos numLinea="75" posCaracter="22" texto="Saving Report for "/>
+    <fragmentos numLinea="75" posCaracter="61" texto=" printed on "/>
+    <fragmentos numLinea="75" posCaracter="93" texto=" "/>
+    <fragmentos numLinea="75" posCaracter="115" texto=" # B "/>
+    <fragmentos numLinea="75" posCaracter="141" texto=" #C "/>
+    <fragmentos numLinea="75" posCaracter="166" texto=" #D "/>
+    <fragmentos numLinea="77" posCaracter="22" texto="Report save to the database ID ="/>
+    <fragmentos numLinea="106" posCaracter="52" texto="null"/>
+    <fragmentos numLinea="107" posCaracter="22" texto="Could not find provider "/>
+    <fragmentos numLinea="107" posCaracter="56" texto=" now trying provider "/>
+    <fragmentos numLinea="107" posCaracter="120" texto="  for lab: "/>
+    <fragmentos numLinea="112" posCaracter="52" texto="null"/>
+    <fragmentos numLinea="113" posCaracter="22" texto="Could not find provider "/>
+    <fragmentos numLinea="113" posCaracter="89" texto="either  for lab: "/>
+    <fragmentos numLinea="114" posCaracter="22" texto="Setting Provider No to 0"/>
+    <fragmentos numLinea="115" posCaracter="23" texto="0"/>
+    <fragmentos numLinea="121" posCaracter="45" texto="CML"/>
+    <fragmentos numLinea="130" posCaracter="24" texto="0"/>
+    <fragmentos numLinea="132" posCaracter="27" texto="%"/>
+    <fragmentos numLinea="133" posCaracter="28" texto="%"/>
+    <fragmentos numLinea="134" posCaracter="26" texto="%"/>
+    <fragmentos numLinea="150" posCaracter="66" texto="LAB_NOMATCH_NAMES"/>
+    <fragmentos numLinea="150" posCaracter="86" texto="yes"/>
+    <fragmentos numLinea="151" posCaracter="19" texto="select demographic_no from demographic where hin='"/>
+    <fragmentos numLinea="151" posCaracter="79" texto="' and "/>
+    <fragmentos numLinea="152" posCaracter="5" texto=" year_of_birth like '"/>
+    <fragmentos numLinea="152" posCaracter="37" texto="' and "/>
+    <fragmentos numLinea="153" posCaracter="19" texto=" month_of_birth like '"/>
+    <fragmentos numLinea="153" posCaracter="53" texto="' and "/>
+    <fragmentos numLinea="154" posCaracter="19" texto=" date_of_birth like '"/>
+    <fragmentos numLinea="154" posCaracter="50" texto="' and "/>
+    <fragmentos numLinea="155" posCaracter="19" texto=" sex like '"/>
+    <fragmentos numLinea="155" posCaracter="37" texto="%' "/>
+    <fragmentos numLinea="157" posCaracter="19" texto="select demographic_no from demographic where hin='"/>
+    <fragmentos numLinea="157" posCaracter="79" texto="' and "/>
+    <fragmentos numLinea="158" posCaracter="19" texto=" last_name like '"/>
+    <fragmentos numLinea="158" posCaracter="63" texto="%' and "/>
+    <fragmentos numLinea="159" posCaracter="19" texto=" first_name like '"/>
+    <fragmentos numLinea="159" posCaracter="65" texto="%' and "/>
+    <fragmentos numLinea="160" posCaracter="5" texto=" year_of_birth like '"/>
+    <fragmentos numLinea="160" posCaracter="37" texto="' and "/>
+    <fragmentos numLinea="161" posCaracter="19" texto=" month_of_birth like '"/>
+    <fragmentos numLinea="161" posCaracter="53" texto="' and "/>
+    <fragmentos numLinea="162" posCaracter="19" texto=" date_of_birth like '"/>
+    <fragmentos numLinea="162" posCaracter="50" texto="' and "/>
+    <fragmentos numLinea="163" posCaracter="19" texto=" sex like '"/>
+    <fragmentos numLinea="163" posCaracter="37" texto="%' "/>
+    <fragmentos numLinea="172" posCaracter="47" texto="demographic_no"/>
+    <fragmentos numLinea="177" posCaracter="39" texto="Error"/>
+    <fragmentos numLinea="182" posCaracter="19" texto="0"/>
+    <fragmentos numLinea="183" posCaracter="24" texto="Could not find patient for lab: "/>
+    <fragmentos numLinea="183" posCaracter="66" texto="# of possible matches :"/>
+    <fragmentos numLinea="189" posCaracter="22" texto="CML"/>
+    <fragmentos numLinea="197" posCaracter="19" texto="Init - provider Hash table"/>
+    <fragmentos numLinea="200" posCaracter="23" texto="select provider_no, ohip_no from provider where ohip_no != '' "/>
+    <fragmentos numLinea="206" posCaracter="50" texto="ohip_no"/>
+    <fragmentos numLinea="207" posCaracter="52" texto="provider_no"/>
+    <fragmentos numLinea="208" posCaracter="25" texto="Possible provider HashMap key "/>
+    <fragmentos numLinea="208" posCaracter="62" texto=" lab "/>
+    <fragmentos numLinea="209" posCaracter="62" texto="null"/>
+    <fragmentos numLinea="209" posCaracter="87" texto="null"/>
+    <fragmentos numLinea="211" posCaracter="28" texto="Adding  to provider HashMap key "/>
+    <fragmentos numLinea="211" posCaracter="67" texto=" lab "/>
+    <fragmentos numLinea="216" posCaracter="36" texto="Error"/>
+    <fragmentos numLinea="218" posCaracter="19" texto="provider hash table :"/>
+    <fragmentos numLinea="223" posCaracter="19" texto="Begin parsing"/>
+    <fragmentos numLinea="229" posCaracter="35" texto="sss "/>
+    <fragmentos numLinea="251" posCaracter="33" texto="A"/>
+    <fragmentos numLinea="252" posCaracter="29" texto="Processing new report"/>
+    <fragmentos numLinea="269" posCaracter="29" texto="B"/>
+    <fragmentos numLinea="273" posCaracter="35" texto="A"/>
+    <fragmentos numLinea="339" posCaracter="41" texto="B "/>
+    <fragmentos numLinea="339" posCaracter="57" texto=" "/>
+    <fragmentos numLinea="339" posCaracter="71" texto=" "/>
+    <fragmentos numLinea="339" posCaracter="86" texto=" "/>
+    <fragmentos numLinea="377" posCaracter="29" texto="C"/>
+    <fragmentos numLinea="382" posCaracter="35" texto="D"/>
+    <fragmentos numLinea="413" posCaracter="65" texto="DD MMM YY"/>
+    <fragmentos numLinea="431" posCaracter="41" texto="C "/>
+    <fragmentos numLinea="431" posCaracter="52" texto=" "/>
+    <fragmentos numLinea="431" posCaracter="65" texto=" "/>
+    <fragmentos numLinea="431" posCaracter="73" texto=" "/>
+    <fragmentos numLinea="431" posCaracter="85" texto=" ("/>
+    <fragmentos numLinea="431" posCaracter="98" texto="-"/>
+    <fragmentos numLinea="431" posCaracter="110" texto=")"/>
+    <fragmentos numLinea="449" posCaracter="22" texto="C"/>
+    <fragmentos numLinea="478" posCaracter="41" texto="D "/>
+    <fragmentos numLinea="478" posCaracter="52" texto=" "/>
+    <fragmentos numLinea="480" posCaracter="41" texto="DTYPE INVALID"/>
+    <fragmentos numLinea="495" posCaracter="22" texto="D"/>
+  </ficheros>
+</Fragmentos:Aplicacion>
+  

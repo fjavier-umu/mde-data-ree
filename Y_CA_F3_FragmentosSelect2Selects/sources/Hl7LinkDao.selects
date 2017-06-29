@@ -1,0 +1,127 @@
+SELECT DISTINCT link.id, obr.requestedDateTime, obr.diagnosticServiceSectId 
+
+
+
+ FROM Hl7Link link, Hl7Obr obr 
+
+
+
+
+ WHERE link.demographicNo = :demoId 
+
+
+
+
+ AND link.id = obr.id 
+
+
+
+
+ AND (
+
+
+
+
+ link.status = 'N' 
+
+
+
+
+ OR link.status = 'A' 
+
+
+
+
+ OR link.status = 'S'
+
+
+
+
+ ORDER BY obr.requestedDateTime DESC
+
+
+
+SELECT DISTINCT provider.ProviderNo, provider.LastName, provider.FirstName FROM Hl7Link hl7_link, Demographic demographic, Provider provider 
+
+
+
+ WHERE hl7_link.demographicNo = demographic.DemographicNo 
+
+
+
+
+ AND demographic.ProviderNo = provider.ProviderNo 
+
+
+
+
+ AND demographic.ProviderNo IS NOT NULL
+
+
+
+
+ FROM Hl7Link hl7_link, Demographic demographic, Hl7Pid hl7_pid, Hl7Obr hl7_obr, Hl7Message hl7_message, Provider provider 
+
+
+
+
+ WHERE demographic.ProviderNo = provider.ProviderNo 
+
+
+
+
+ AND hl7_link.id = hl7_obr.pidId 
+
+
+
+
+ AND hl7_link.id = hl7_pid.id 
+
+
+
+
+ AND demographic.ProviderNo = :providerNo 
+
+
+
+
+ AND hl7_message.id = hl7_pid.messageId 
+
+
+
+
+ AND demographic.DemographicNo = hl7_link.demographicNo 
+
+
+
+
+ AND hl7_link.status != 'P'
+
+
+
+
+
+
+SELECT DISTINCT hl7_pid.pid_id, hl7_pid.patient_name, hl7_obr.ordering_provider, hl7_obr.result_copies_to, hl7_link.status, hl7_link.signed_on, provider.last_name, provider.first_name, hl7_message.date_time  FROM hl7_link, demographic, hl7_pid, hl7_obr, hl7_message, provider WHERE demographic.provider_no = provider.provider_no AND hl7_link.pid_id=hl7_obr.pid_id AND hl7_link.pid_id=hl7_pid.pid_id AND demographic.provider_no='@provider_no' AND hl7_message.message_id=hl7_pid.message_id AND demographic.demographic_no=hl7_link.demographic_no AND hl7_link.status!='P'
+
+
+SELECT DISTINCT hl7_pid.pid_id, hl7_pid.patient_name, hl7_obr.ordering_provider, hl7_obr.result_copies_to, hl7_link.status, hl7_link.signed_on, provider.last_name, provider.first_name, hl7_message.date_time  FROM hl7_link, demographic, hl7_pid, hl7_obr, hl7_message, provider WHERE demographic.provider_no = provider.provider_no AND hl7_link.pid_id=hl7_obr.pid_id AND hl7_link.pid_id=hl7_pid.pid_id AND hl7_message.message_id=hl7_pid.message_id AND demographic.demographic_no=hl7_link.demographic_no AND hl7_link.status!='P'
+
+
+SELECT DISTINCT hl7_pid.pid_id, hl7_pid.patient_name, hl7_obr.ordering_provider, hl7_obr.result_copies_to, hl7_link.status, hl7_link.signed_on, hl7_message.date_time, '' as `last_name`, '' as `first_name` FROM hl7_pid left join hl7_link on hl7_link.pid_id=hl7_pid.pid_id left join hl7_obr on hl7_pid.pid_id=hl7_obr.pid_id left join hl7_message on hl7_message.message_id=hl7_pid.message_id WHERE hl7_link.status='P' OR hl7_link.status is null
+
+
+
+  AND hl7_message.date_time >= '
+
+
+
+
+  AND hl7_message.date_time <= '
+
+
+
+
+  ORDER BY @orderby
+
+

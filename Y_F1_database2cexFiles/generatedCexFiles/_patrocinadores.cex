@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ConceptualSystem>
+	<Version MajorNumber="1" MinorNumber="0"/>
+	<Contexts>
+		<Context Identifier="0" Type="Binary">
+			<Attributes>
+				<Attribute Identifier="0">
+					<Name>SEDE</Name>
+				</Attribute>
+				<Attribute Identifier="1">
+					<Name>PATROCINADOR</Name>
+				</Attribute>
+			</Attributes>
+			<Objects>
+				<Object>
+					<Name>('Corea','Samsung')('Corea','LG')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="0"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Japón','Sony')('Japón','Panasonic')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="0"/>
+					</Intent>
+				</Object>
+			</Objects>
+		</Context>
+	</Contexts>
+	<RecalculationPolicy Value="Clear"/>
+	<Lattices/>
+</ConceptualSystem>

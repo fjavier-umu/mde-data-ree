@@ -1,0 +1,2 @@
+SELECT x FROM QuickListUser x WHERE x.quickListName=? AND x.providerNo=?
+

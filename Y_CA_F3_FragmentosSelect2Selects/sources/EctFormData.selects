@@ -1,0 +1,94 @@
+SELECT max(ID) ID, demographic_no, formCreated, date(formEdited) 'lastEdited', max(formEdited) 'frmEdited' FROM 
+
+
+
+  WHERE demographic_no=
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT form_no, demographic_no, form_date from 
+
+
+
+  where demographic_no=
+
+
+
+
+  order by form_no desc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT ID, demographic_no, formCreated, formEdited FROM 
+
+
+
+  WHERE demographic_no=
+
+
+
+
+  ORDER BY ID DESC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT form_no, demographic_no, form_date from 
+
+
+
+  where demographic_no=
+
+
+
+
+  order by form_no desc
+
+
+
+
+
+
+
+
+
+
+
+
+
+

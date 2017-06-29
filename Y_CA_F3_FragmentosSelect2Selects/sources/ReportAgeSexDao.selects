@@ -1,0 +1,50 @@
+SELECT d.demographic_no, FLOOR(DATEDIFF(CURRENT_DATE(), STR_TO_DATE(CONCAT(d.year_of_birth,'-',d.month_of_birth,'-',d.date_of_birth), '%Y-%m-%d' )) / 365.25), d.roster_status, d.sex, d.provider_no, CURRENT_DATE(), d.patient_status, d.date_joined 
+
+
+
+ FROM demographic d WHERE d.year_of_birth >= :yearOfBirth
+
+
+
+
+
+
+
+ select count(x) from ReportAgeSex x where (x.status<>'OP' and x.status<>'IN' and x.status<>'DE') and x.roster=? and x.sex like ? and x.providerNo = ? and x.age >= ? and x.dateJoined >= ? and x.dateJoined <= ?
+
+
+
+
+ select count(x)  from ReportAgeSex x  where (x.status<>'OP' and x.status<>'IN' and x.status<>'DE') and x.roster<>? and x.sex like ? and x.providerNo=? and x.age >= ? and x.age <=? and x.dateJoined >=? and x.dateJoined <=?
+
+
+
+
+ ( x.status <> 'OP' and x.status <> 'IN' and x.status <> 'DE') and 
+
+
+
+
+ x.roster like ? and 
+
+
+
+
+ x.sex like ? and 
+
+
+
+
+ x.providerNo=? and 
+
+
+
+
+ x.age >= ? and 
+
+
+
+
+ x.age <=? and 
+
+

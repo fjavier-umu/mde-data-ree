@@ -1,0 +1,12 @@
+SELECT ss.id.siteId FROM ProviderSite ss WHERE ss.id.providerNo = :pNo 
+
+
+
+ ORDER BY p.LastName, p.FirstName
+
+
+
+
+ select x.id.providerNo from ProviderSite x, Site s where x.id.siteId=s.siteId and s.name=?
+
+

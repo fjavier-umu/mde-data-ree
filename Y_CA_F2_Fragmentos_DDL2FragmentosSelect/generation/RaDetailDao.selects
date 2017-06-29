@@ -1,0 +1,78 @@
+SELECT rad from RaDetail rad WHERE rad.billingNo = :billingNo order by rad.raHeaderNo desc, rad.id 
+
+
+SELECT rad from RaDetail rad WHERE rad.raHeaderNo = :raHeaderNo
+
+
+SELECT distinct(rad.billingNo) from RaDetail rad WHERE rad.raHeaderNo = :raHeaderNo and rad.providerOhipNo = :providerOhipNo and rad.errorCode not in (:codes)
+
+
+SELECT rad from RaHeader rah, RaDetail rad WHERE rah.paymentDate >= ? and rah.paymentDate < ? and rah.id = rad.raHeaderNo order by rad.raHeaderNo, rad.billingNo, rad.serviceCode
+
+
+SELECT rad from RaHeader rah, RaDetail rad WHERE rah.paymentDate >= ? and rah.paymentDate < ? and rah.id = rad.raHeaderNo and rad.providerOhipNo = ? order by rad.raHeaderNo, rad.billingNo, rad.serviceCode
+
+
+SELECT rad from RaDetail rad where rad.claimNo = ?
+
+
+SELECT rad from RaDetail rad WHERE rad.raHeaderNo = :raHeaderNo and rad.errorCode<>'' and rad.errorCode<>:error1 and rad.errorCode<>:error2 and rad.errorCode<>'EV' and rad.errorCode<>'55' and rad.errorCode<>'57' and rad.errorCode<>'HM' and (rad.serviceCode<>'Q200A' or rad.errorCode<>'I9') and rad.providerOhipNo like :ohip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT errorCode from RaDetail rad where rad.billingNo = (:billingNo) and rad.errorCode!='' and rad.raHeaderNo=(select max(rad2.raHeaderNo) from RaDetail rad2 where rad2.billingNo=(:billingNo))
+
+
+
+ r.billingNo = :billingNo AND r.serviceDate = :serviceDate and r.providerOhipNo = :providerNo
+
+
+
+
+
+
+
+ r.billingNo = :billingNo AND r.errorCode = :errorCode
+
+
+
+
+ AND r.providerOhipNo = :providerOhipNo 
+
+
+
+
+ AND r.errorCode <> '' 
+
+
+
+
+ AND r.errorCode NOT IN (:codes)
+
+
+
+
+ r.raHeaderNo = :raHeaderNo AND r.billingNo = :billingNo
+
+
+
+
+ r.raHeaderNo = :raHeaderNo AND r.serviceCode in (:serviceCodes)
+
+
+
+
+ r.raHeaderNo = :raHeaderNo AND r.providerOhipNo = :providerOhipNo
+
+

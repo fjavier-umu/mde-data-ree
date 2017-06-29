@@ -1,0 +1,5 @@
+SELECT f FROM PHRVerification f WHERE f.demographicNo =? and archived = ? order by createdDate desc
+
+
+SELECT f FROM PHRVerification f WHERE f.demographicNo =? and archived = ? order by createdDate desc
+

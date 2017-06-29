@@ -1,0 +1,37 @@
+SELECT MIN(obr.resultStatus) FROM Hl7Pid pid, Hl7Obr obr, Hl7Obx obx 
+
+
+
+ WHERE obr.pidId = pid.id 
+
+
+
+
+ AND obx.obrId = obr.id 
+
+
+
+
+ AND pid.messageId = :messageId
+
+
+
+
+ FROM Hl7Pid pid, Hl7Obr obr, Hl7Obx obx 
+
+
+
+
+ WHERE obr.pidId = pid.id 
+
+
+
+
+ AND obx.obrId = obr.id 
+
+
+
+
+ AND pid.messageId = :messageId
+
+

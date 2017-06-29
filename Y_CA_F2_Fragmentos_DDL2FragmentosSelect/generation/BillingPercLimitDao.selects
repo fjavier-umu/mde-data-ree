@@ -1,0 +1,10 @@
+SELECT MAX(b2.effective_date) FROM BillingPercLimit b2 
+
+
+
+ WHERE b2.effective_date <= :date and b2.service_code = :serviceCode
+
+
+
+
+

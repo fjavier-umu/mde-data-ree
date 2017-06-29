@@ -1,0 +1,42 @@
+@namespace(uri="http://modelum.es/Selects", prefix="Selects")
+package Selects;
+
+abstract class NamedElement {
+  attr String nombre;
+}
+
+class Aplicacion {
+  val Fichero[*] ficheros;
+}
+
+class Fichero extends NamedElement {
+  val Select[*] selects;
+}
+
+class Select {
+  val From[1] parte_from;
+  val Where[1] parte_where;
+}
+
+class From {
+  val Tabla[+] tablas;
+}
+
+class Where {
+  val Join[*] joins;
+}
+
+class Tabla extends NamedElement {
+  attr String tabAlias;
+}
+
+class Join {
+  val Operando[1] operando1;
+  val Operando[1] operando2;
+}
+
+class Operando {
+  attr String columna;
+  attr String tabla;
+}
+

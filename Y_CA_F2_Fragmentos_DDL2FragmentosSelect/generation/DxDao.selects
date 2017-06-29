@@ -1,0 +1,26 @@
+SELECT x from DxAssociation x where x.codeType = ?1 and x.code = ?2
+
+
+SELECT 
+
+
+
+ , description FROM 
+
+
+
+
+
+
+
+
+
+
+ , description from 
+
+
+
+
+ %' or description like '%
+
+

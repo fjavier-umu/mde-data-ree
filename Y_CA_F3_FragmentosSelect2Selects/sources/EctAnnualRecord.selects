@@ -1,0 +1,102 @@
+SELECT demographic_no, CONCAT(last_name, ', ', first_name) AS pName, 
+
+
+
+ year_of_birth, month_of_birth, date_of_birth 
+
+
+
+
+ FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formAnnual WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+  name = 
+
+
+
+
+  type = 
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formAnnual WHERE demographic_no=
+
+
+
+  AND ID=0
+
+
+
+
+
+
+
+ name = 
+
+
+
+
+  type =
+
+
+
+
+
+
+
+
+
+SELECT LAST_INSERT_ID()
+

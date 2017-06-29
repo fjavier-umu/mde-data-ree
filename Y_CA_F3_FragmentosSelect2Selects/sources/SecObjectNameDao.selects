@@ -1,0 +1,5 @@
+SELECT s FROM SecObjectName s order by s.id
+
+
+SELECT distinct(s.id) FROM SecObjectName s order by s.id
+

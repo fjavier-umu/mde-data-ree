@@ -1,0 +1,350 @@
+SELECT b.visitType, count(b) FROM BillingONCHeader1 b 
+
+
+
+ WHERE b.status <> 'D' 
+
+
+
+
+ AND b.appointmentNo <> '0' 
+
+
+
+
+ AND b.apptProviderNo = :providerNo 
+
+
+
+
+ AND b.billingDate >= :dateBegin 
+
+
+
+
+ AND b.billingDate <= :dateEnd 
+
+
+
+
+ GROUP BY b.visitType
+
+
+
+
+
+
+SELECT b.visitType, count(b) FROM BillingONCHeader1 b 
+
+
+
+ WHERE b.status <> 'D' 
+
+
+
+
+ AND b.appointmentNo <> '0' 
+
+
+
+
+ AND b.creator = :providerNo 
+
+
+
+
+ AND b.billingDate >= :dateBegin 
+
+
+
+
+ AND b.billingDate <= :dateEnd 
+
+
+
+
+ GROUP BY b.visitType
+
+
+
+
+
+
+
+ select count(b) from BillingONCHeader1 b where b.visitType = '00' and b.faciltyNum = ? and b.status <> 'D' and b.billingDate >=? and b.billingDate <=?
+
+
+
+
+ WHERE b.status = :status 
+
+
+
+
+
+
+
+ AND b.providerNo = :providerNo 
+
+
+
+
+
+
+
+ AND b.billingDate >= :startDate 
+
+
+
+
+ AND b.billingDate <= :endDate 
+
+
+
+
+ AND b.demographicNo = :demoNo 
+
+
+
+
+  AND h.billingDate > :dateBegin AND h.billingDate <= :dateEnd 
+
+
+
+
+  AND h.billingDate <= :dateEnd 
+
+
+
+
+ h.providerNo = :providerNo AND h.status IN (:statuses) 
+
+
+
+
+  AND h.payProgram IN (:programs) ORDER BY h.billingDate, h.billingTime
+
+
+
+
+
+
+
+ FROM BillingONCHeader1 b, Demographic d WHERE b.id = :id AND b.demographicNo = d.DemographicNo
+
+
+
+
+
+
+
+ h.status = :status
+
+
+
+
+
+
+
+ h.providerNo = :providerNo
+
+
+
+
+
+
+
+ h.demographicNo = :demographicNo
+
+
+
+
+
+
+
+ select h FROM BillingONItem b, BillingONCHeader1 h WHERE h.id = b.ch1Id and h.demographicNo=? and (b.dx =? or b.dx1 = ? or b.dx2=?)
+
+
+
+
+ FROM BillingONCHeader1 ch1, BillingONItem bi
+
+
+
+
+ ch1.id = bi.ch1Id
+
+
+
+
+ bi.status != 'D'
+
+
+
+
+ ch1.status = :status
+
+
+
+
+
+
+
+ ch1.providerNo = :providerNo
+
+
+
+
+
+
+
+ ch1.demographicNo = :demographicNo
+
+
+
+
+
+
+
+ bi.dx = :dx
+
+
+
+
+
+
+
+ FROM BillingONCHeader1 b WHERE b.demographicNo = :demoNo 
+
+
+
+
+ AND b.status != 'D' 
+
+
+
+
+ ORDER BY b.billingDate DESC, b.billingTime DESC, b.id DESC
+
+
+
+
+ FROM BillingONCHeader1 b WHERE b.demographicNo = :demoNo 
+
+
+
+
+ AND b.billingDate >= :dateStart 
+
+
+
+
+ AND b.billingDate <= :dateEnd 
+
+
+
+
+ AND b.status != 'D' 
+
+
+
+
+ ORDER BY b.billingDate DESC, b.billingTime DESC, b.id DESC
+
+
+
+
+ FROM BillingONCHeader1 bch, Demographic d
+
+
+
+
+ bch.demographicNo = d.DemographicNo
+
+
+
+
+ bch.demographicNo = :demoNo
+
+
+
+
+
+
+
+ FROM Demographic d, BillingONCHeader1 bc, BillingONItem bi 
+
+
+
+
+ WHERE bc.demographicNo = d.DemographicNo 
+
+
+
+
+ AND bc.id = bi.ch1Id 
+
+
+
+
+ AND bi.dx in (:dxCodes) 
+
+
+
+
+ AND bi.serviceDate >= :from and bi.serviceDate <= :to 
+
+
+
+
+ GROUP BY d.demographicNo, bi.dx 
+
+
+
+
+ ORDER BY d.demographicNo, bi.serviceDate
+
+
+
+SELECT b FROM BillingONCHeader1 b, BillingONItem bd 
+
+
+
+ WHERE b.demographicNo = :demoNo 
+
+
+
+
+ AND bd.ch1Id=b.id 
+
+
+
+
+ AND bd.serviceCode IN (:serviceCodes) 
+
+
+
+
+ AND b.billingDate >= :from 
+
+
+
+
+ AND b.billingDate <= :to 
+
+
+
+
+ AND bd.status <> 'D' 
+
+
+
+
+ AND b.status <> 'D' 
+
+
+
+
+ ORDER BY b.billingDate DESC
+
+

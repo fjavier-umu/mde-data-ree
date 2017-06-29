@@ -1,0 +1,5 @@
+SELECT x FROM ServiceClient x WHERE x.name=?
+
+
+SELECT x FROM ServiceClient x WHERE x.key=?
+

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CST:Node xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:CST="http://gts.inf.um.es/modernization/cst" kind="CST">
+  <children xsi:type="CST:Node" kind="file">
+    <children xsi:type="CST:Leaf" kind="path" value="/Users/fjavier/UMU/Tesis/workspace/Y_F1_conexp2fdsWithDuplicateColumns/sources/torneosDDL.sql"/>
+    <children xsi:type="CST:Leaf" kind="filename" value="/torneosDDL.sql"/>
+    <children xsi:type="CST:Node" kind="data_definition">
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="database">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="1"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="DATABASE" pos="7" line="1"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="IF NOT EXISTS" pos="16"
+              line="1"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="TORNEOS" pos="30" line="1"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="37" line="1"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="3"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="3"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="ESTADIOS" pos="13" line="3"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="4"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO" pos="1" line="5"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="9"
+                    line="5"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="16" line="5"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="30" pos="17" line="5"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="19" line="5"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="21" line="5"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="29" line="5"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="CAPACIDAD" pos="1" line="6"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="numeric_type">
+                <children xsi:type="CST:Node" kind="exact_numeric_type">
+                  <children xsi:type="CST:Leaf" kind="TOKEN" value="INT" pos="11"
+                      line="6"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="15" line="6"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="23" line="6"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="CONSTRUCTORA" pos="1" line="7"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="14"
+                    line="7"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="21" line="7"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="22" line="7"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="24" line="7"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="26" line="7"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="34" line="7"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="SEDE_CONSTRUCTORA" pos="1"
+                line="8"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="19"
+                    line="8"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="26" line="8"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="27" line="8"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="29" line="8"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="31" line="8"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="39" line="8"/>
+          </children>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="1"
+                line="9"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="ESTADIOS_PK" pos="12" line="9"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="24"
+                line="9"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="35" line="9"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO" pos="36" line="9"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="43" line="9"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="10"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="10"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="12"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="12"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADORES" pos="13"
+              line="12"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="13"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR" pos="1" line="14"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="14"
+                    line="14"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="21" line="14"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="22" line="14"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="24" line="14"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="26" line="14"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="34" line="14"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="SEDE" pos="1" line="15"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="6"
+                    line="15"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="13" line="15"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="14" line="15"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="16" line="15"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="18" line="15"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="26" line="15"/>
+          </children>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="1"
+                line="16"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR_PK" pos="12"
+                line="16"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="28"
+                line="16"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="39" line="16"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR" pos="40"
+                  line="16"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="52" line="16"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="17"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="17"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="CREATE" line="19"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="TABLE" pos="7" line="19"/>
+          <children xsi:type="CST:Leaf" kind="ID" value="GANADORES_DE_TORNEOS" pos="13"
+              line="19"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="(" line="20"/>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="TORNEO" pos="1" line="21"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="8"
+                    line="21"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="15" line="21"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="16" line="21"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="18" line="21"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="20" line="21"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="28" line="21"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="ANYO" pos="1" line="22"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="6"
+                    line="22"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="13" line="22"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="4" pos="14" line="22"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="15" line="22"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="17" line="22"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="25" line="22"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="GANADOR" pos="1" line="23"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="9"
+                    line="23"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="16" line="23"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="30" pos="17" line="23"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="19" line="23"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="21" line="23"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="29" line="23"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="FECHA_NAC_GANADOR" pos="1"
+                line="24"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="datetime_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="DATE" pos="19" line="24"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="24" line="24"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="32" line="24"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="ARBITRO" pos="1" line="25"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="9"
+                    line="25"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="16" line="25"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="30" pos="17" line="25"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="19" line="25"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="21" line="25"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="29" line="25"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="FECHA_NAC_ARBITRO" pos="1"
+                line="26"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="datetime_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="DATE" pos="19" line="26"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="24" line="26"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="32" line="26"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO" pos="1" line="27"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="9"
+                    line="27"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="16" line="27"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="30" pos="17" line="27"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="19" line="27"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="21" line="27"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="29" line="27"/>
+          </children>
+          <children xsi:type="CST:Node" kind="column">
+            <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR" pos="1" line="28"/>
+            <children xsi:type="CST:Node" kind="data_type">
+              <children xsi:type="CST:Node" kind="character_string_type">
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="VARCHAR" pos="14"
+                    line="28"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="21" line="28"/>
+                <children xsi:type="CST:Leaf" kind="NUMBER" value="20" pos="22" line="28"/>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="24" line="28"/>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="NOT NULL" pos="26" line="28"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="34" line="28"/>
+          </children>
+          <children xsi:type="CST:Node" kind="pk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="1"
+                line="29"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="GANADORES_DE_TORNEOS_PK"
+                pos="12" line="29"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="PRIMARY KEY" pos="36"
+                line="29"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="47" line="29"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="TORNEO" pos="48" line="29"/>
+              <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="54" line="29"/>
+            </children>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="ANYO" pos="56" line="29"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="60" line="29"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="," pos="61" line="29"/>
+          <children xsi:type="CST:Node" kind="fk">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="CONSTRAINT" pos="1"
+                line="30"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO_FK" pos="12" line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="FOREIGN KEY" pos="23"
+                line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="34" line="30"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO" pos="35" line="30"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="42" line="30"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="REFERENCES" pos="44"
+                line="30"/>
+            <children xsi:type="CST:Node" kind="table_references">
+              <children xsi:type="CST:Leaf" kind="ID" value="ESTADIOS" pos="55" line="30"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="63" line="30"/>
+            <children xsi:type="CST:Node" kind="references_column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="ESTADIO" pos="64" line="30"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="71" line="30"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=")" line="31"/>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="1" line="31"/>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="data_definition_statement">
+        <children xsi:type="CST:Node" kind="alter_table">
+          <children xsi:type="CST:Leaf" kind="TOKEN" value="ALTER TABLE" line="33"/>
+          <children xsi:type="CST:Node" kind="table_references">
+            <children xsi:type="CST:Leaf" kind="ID" value="GANADORES_DE_TORNEOS" pos="12"
+                line="33"/>
+          </children>
+          <children xsi:type="CST:Node" kind="alter_table_specification">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="ADD CONSTRAINT" pos="33"
+                line="33"/>
+            <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR_FK" pos="48"
+                line="33"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="FOREIGN KEY" pos="64"
+                line="33"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="75" line="33"/>
+            <children xsi:type="CST:Node" kind="column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR" pos="76"
+                  line="33"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="88" line="33"/>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="REFERENCES" pos="90"
+                line="33"/>
+            <children xsi:type="CST:Node" kind="table_references">
+              <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADORES" pos="101"
+                  line="33"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="(" pos="115" line="33"/>
+            <children xsi:type="CST:Node" kind="references_column_list">
+              <children xsi:type="CST:Leaf" kind="ID" value="PATROCINADOR" pos="116"
+                  line="33"/>
+            </children>
+            <children xsi:type="CST:Leaf" kind="TOKEN" value=")" pos="128" line="33"/>
+          </children>
+          <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="129" line="33"/>
+        </children>
+      </children>
+    </children>
+  </children>
+</CST:Node>

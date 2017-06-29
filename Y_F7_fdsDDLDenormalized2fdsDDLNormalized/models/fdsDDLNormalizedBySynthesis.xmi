@@ -1,0 +1,90 @@
+<fds:Database name='TORNEOS' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://modelum.es/fds ../metamodels/fds.ecore' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI' xmlns:fds='http://modelum.es/fds'>
+  <tables name='ESTADIOS_1' xsi:type='fds:Table'>
+    <columns name='CONSTRUCTORA' xsi:type='fds:Column'/>
+    <columns name='SEDE_CONSTRUCTORA' xsi:type='fds:Column'/>
+    <functionalDependencies determinant='#//@tables.0/@columns.0' xsi:type='fds:FunctionalDependency' dependant='#//@tables.0/@columns.1'/>
+    <restrictions name='ESTADIOS_1_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='ESTADIOS_1_PK_CONSTRUCTORA' xsi:type='fds:RestrictionColumn' column='#//@tables.0/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='ESTADIOS_2' xsi:type='fds:Table'>
+    <columns name='ESTADIO' xsi:type='fds:Column'/>
+    <columns name='CAPACIDAD' xsi:type='fds:Column'/>
+    <restrictions name='ESTADIOS_2_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='ESTADIOS_2_PK_ESTADIO' xsi:type='fds:RestrictionColumn' column='#//@tables.1/@columns.0'/>
+      <restrictionsColumns name='ESTADIOS_2_PK_CAPACIDAD' xsi:type='fds:RestrictionColumn' column='#//@tables.1/@columns.1'/>
+    </restrictions>
+    <restrictions name='ESTADIOS_2_ESTADIOS_FK' xsi:type='fds:ForeignKey' primaryKey='#//@tables.2/@restrictions.0'>
+      <restrictionsColumns name='ESTADIOS_2_ESTADIOS_FK_ESTADIO' pkRestrictionColumn='#//@tables.2/@restrictions.0/@restrictionsColumns.0' xsi:type='fds:RestrictionColumn' column='#//@tables.1/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='ESTADIOS' xsi:type='fds:Table'>
+    <columns name='ESTADIO' xsi:type='fds:Column'/>
+    <restrictions name='ESTADIOS_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='ESTADIOS_PK_ESTADIO' xsi:type='fds:RestrictionColumn' column='#//@tables.2/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='GANADORES_DE_TORNEOS_1' xsi:type='fds:Table'>
+    <columns name='GANADOR' xsi:type='fds:Column'/>
+    <columns name='FECHA_NAC_GANADOR' xsi:type='fds:Column'/>
+    <functionalDependencies determinant='#//@tables.3/@columns.0' xsi:type='fds:FunctionalDependency' dependant='#//@tables.3/@columns.1'/>
+    <restrictions name='GANADORES_DE_TORNEOS_1_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_1_PK_GANADOR' xsi:type='fds:RestrictionColumn' column='#//@tables.3/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='GANADORES_DE_TORNEOS_2' xsi:type='fds:Table'>
+    <columns name='ARBITRO' xsi:type='fds:Column'/>
+    <columns name='FECHA_NAC_ARBITRO' xsi:type='fds:Column'/>
+    <functionalDependencies determinant='#//@tables.4/@columns.0' xsi:type='fds:FunctionalDependency' dependant='#//@tables.4/@columns.1'/>
+    <restrictions name='GANADORES_DE_TORNEOS_2_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_2_PK_ARBITRO' xsi:type='fds:RestrictionColumn' column='#//@tables.4/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='GANADORES_DE_TORNEOS_3' xsi:type='fds:Table'>
+    <columns name='TORNEO' xsi:type='fds:Column'/>
+    <columns name='ANYO' xsi:type='fds:Column'/>
+    <columns name='ESTADIO' xsi:type='fds:Column'/>
+    <columns name='PATROCINADOR' xsi:type='fds:Column'/>
+    <restrictions name='ESTADIO_FK' xsi:type='fds:ForeignKey' primaryKey='#//@tables.2/@restrictions.0'>
+      <restrictionsColumns name='ESTADIO_FK_ESTADIO' pkRestrictionColumn='#//@tables.2/@restrictions.0/@restrictionsColumns.0' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.2'/>
+    </restrictions>
+    <restrictions name='PATROCINADOR_FK' xsi:type='fds:ForeignKey' primaryKey='#//@tables.8/@restrictions.0'>
+      <restrictionsColumns name='PATROCINADOR_FK_PATROCINADOR' pkRestrictionColumn='#//@tables.8/@restrictions.0/@restrictionsColumns.0' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.3'/>
+    </restrictions>
+    <restrictions name='GANADORES_DE_TORNEOS_3_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_PK_TORNEO' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.0'/>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_PK_ANYO' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.1'/>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_PK_ESTADIO' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.2'/>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_PK_PATROCINADOR' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.3'/>
+    </restrictions>
+    <restrictions name='GANADORES_DE_TORNEOS_3_GANADORES_DE_TORNEOS_FK' xsi:type='fds:ForeignKey' primaryKey='#//@tables.6/@restrictions.0'>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_GANADORES_DE_TORNEOS_FK_TORNEO' pkRestrictionColumn='#//@tables.6/@restrictions.0/@restrictionsColumns.0' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.0'/>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_3_GANADORES_DE_TORNEOS_FK_ANYO' pkRestrictionColumn='#//@tables.6/@restrictions.0/@restrictionsColumns.1' xsi:type='fds:RestrictionColumn' column='#//@tables.5/@columns.1'/>
+    </restrictions>
+  </tables>
+  <tables name='GANADORES_DE_TORNEOS' xsi:type='fds:Table'>
+    <columns name='TORNEO' xsi:type='fds:Column'/>
+    <columns name='ANYO' xsi:type='fds:Column'/>
+    <restrictions name='GANADORES_DE_TORNEOS_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_PK_TORNEO' xsi:type='fds:RestrictionColumn' column='#//@tables.6/@columns.0'/>
+      <restrictionsColumns name='GANADORES_DE_TORNEOS_PK_ANYO' xsi:type='fds:RestrictionColumn' column='#//@tables.6/@columns.1'/>
+    </restrictions>
+  </tables>
+  <tables name='PATROCINADORES_1' xsi:type='fds:Table'>
+    <columns name='PATROCINADOR' xsi:type='fds:Column'/>
+    <columns name='SEDE' xsi:type='fds:Column'/>
+    <restrictions name='PATROCINADORES_1_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='PATROCINADORES_1_PK_PATROCINADOR' xsi:type='fds:RestrictionColumn' column='#//@tables.7/@columns.0'/>
+      <restrictionsColumns name='PATROCINADORES_1_PK_SEDE' xsi:type='fds:RestrictionColumn' column='#//@tables.7/@columns.1'/>
+    </restrictions>
+    <restrictions name='PATROCINADORES_1_PATROCINADORES_FK' xsi:type='fds:ForeignKey' primaryKey='#//@tables.8/@restrictions.0'>
+      <restrictionsColumns name='PATROCINADORES_1_PATROCINADORES_FK_PATROCINADOR' pkRestrictionColumn='#//@tables.8/@restrictions.0/@restrictionsColumns.0' xsi:type='fds:RestrictionColumn' column='#//@tables.7/@columns.0'/>
+    </restrictions>
+  </tables>
+  <tables name='PATROCINADORES' xsi:type='fds:Table'>
+    <columns name='PATROCINADOR' xsi:type='fds:Column'/>
+    <restrictions name='PATROCINADOR_PK' xsi:type='fds:PrimaryKey'>
+      <restrictionsColumns name='PATROCINADOR_PK_PATROCINADOR' xsi:type='fds:RestrictionColumn' column='#//@tables.8/@columns.0'/>
+    </restrictions>
+  </tables>
+</fds:Database>

@@ -1,0 +1,132 @@
+SELECT x FROM ProviderData x WHERE x.ohipNo=?
+
+
+
+ select x from ProviderData x where x.id=?1
+
+
+
+
+ From ProviderData p where p.id like ?
+
+
+
+
+  and p.status = :status 
+
+
+
+
+
+
+
+ From ProviderData p where p.lastName like :lastName 
+
+
+
+
+  and p.firstName like :firstName 
+
+
+
+
+  and p.status = :status 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ select x from ProviderData x order by x.lastName
+
+
+
+
+ select * from provider p inner join providersite s on s.provider_no = p.provider_no 
+
+
+
+
+  where s.site_id in (select site_id from providersite where provider_no=?)
+
+
+
+
+ select u.id, u.role_name, p.provider_no, p.first_name, p.last_name from provider p LEFT JOIN secUserRole u ON  p.provider_no=u.provider_no 
+
+
+
+
+  where p.last_name like '
+
+
+
+
+ ' and p.first_name like '
+
+
+
+
+ ' and p.status='1' order by p.first_name, p.last_name, u.role_name
+
+
+
+
+ select * from provider p  
+
+
+
+
+ where team in (select team from provider where team is not null and team <> '' and provider_no=?)
+
+
+
+
+ p.providerType = :pt and p.ohipNo like :in order by p.lastName
+
+
+
+
+ p.providerType = :pt and p.status = '1' order by p.lastName, p.firstName
+
+
+
+
+ WHERE p.firstName like :fn
+
+
+
+
+
+
+
+
+
+
+  p.lastName like :ln
+
+
+
+
+
+
+
+
+
+
+  ORDER BY p.lastName, p.firstName
+
+
+
+
+
+
+SELECT p.id FROM ProviderData p ORDER BY CAST(p.id AS integer) ASC
+

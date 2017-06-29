@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DDL:DDLDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DDL="http://modelum.es/DDL">
+  <statements xsi:type="DDL:Database" name="Torneos"/>
+  <statements xsi:type="DDL:Table" name="Constructoras">
+    <columns name="Constructora">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Sede_constructora">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="Constructoras_PK">
+      <columnName>Constructora</columnName>
+    </pks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="Estadios">
+    <columns name="Estadio">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="Capacidad">
+      <type xsi:type="DDL:Int"/>
+    </columns>
+    <columns name="Ciudad">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Construc">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="Estadios_PK">
+      <columnName>Estadio</columnName>
+      <columnName>Capacidad</columnName>
+      <columnName>Ciudad</columnName>
+    </pks>
+    <fks name="Estadios_Constructoras_FK" references="//@statements.1">
+      <columnName>Construc</columnName>
+      <columnReference>Constructora</columnReference>
+    </fks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="Ganadores">
+    <columns name="Ganador">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="Fecha_nacimiento_ganador">
+      <type xsi:type="DDL:Date"/>
+    </columns>
+    <pks name="Ganadores_PK">
+      <columnName>Ganador</columnName>
+    </pks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="Patrocinadores">
+    <columns name="Patrocinador">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Sede">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="Patrocinadores_PK">
+      <columnName>Patrocinador</columnName>
+    </pks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="Torneos_anyos">
+    <columns name="Torneo">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Anyo">
+      <type xsi:type="DDL:Varchar" length="4"/>
+    </columns>
+    <columns name="Gana">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="Estadio">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="Capacidad">
+      <type xsi:type="DDL:Int"/>
+    </columns>
+    <columns name="Lugar">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Patro">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="Sede">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="Torneos_anyos_PK">
+      <columnName>Torneo</columnName>
+      <columnName>Anyo</columnName>
+    </pks>
+  </statements>
+</DDL:DDLDefinition>

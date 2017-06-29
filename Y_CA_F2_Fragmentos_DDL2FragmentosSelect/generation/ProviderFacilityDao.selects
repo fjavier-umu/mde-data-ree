@@ -1,0 +1,2 @@
+SELECT x FROM ProviderFacility x WHERE x.id.providerNo=? AND x.id.facilityId=?
+

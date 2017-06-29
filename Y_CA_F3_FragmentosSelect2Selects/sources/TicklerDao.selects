@@ -1,0 +1,60 @@
+SELECT t FROM Tickler t WHERE t.demographicNo = ?1 and t.status = ?2 and t.serviceDate >= ?3 and t.serviceDate <= ?4 order by t.serviceDate desc
+
+
+SELECT t FROM Tickler t WHERE t.demographicNo = ?1 and t.status = 'A' and t.serviceDate <= ?2 order by t.serviceDate desc
+
+
+
+ select t FROM Tickler t where t.status = 'A' and (t.serviceDate >= ?1 and t.serviceDate <= ?2) and t.demographicNo = ?3 order by t.serviceDate desc
+
+
+
+
+ select count(t) FROM Tickler t where t.status = 'A' and t.serviceDate <= ?1 and (t.taskAssignedTo  = ?2 or t.taskAssignedTo='All Providers')
+
+
+
+
+ select t FROM Tickler t where t.serviceDate >= ? and t.serviceDate <= ? 
+
+
+
+
+ select count(t) FROM Tickler t where t.serviceDate >= ? and t.serviceDate <= ? 
+
+
+
+
+ select t FROM Tickler t, Demographic d where t.serviceDate >= ? and t.serviceDate <= ? and d.DemographicNo = cast(t.demographicNo as integer) and d.ProviderNo = '
+
+
+
+
+  and t.creator IN (
+
+
+
+
+  and t.taskAssignedTo IN (
+
+
+
+
+  and t.status = ?
+
+
+
+
+  and t.demographicNo = ?
+
+
+
+
+  and t.demographicNo = ?
+
+
+
+
+  and t.message = ? 
+
+

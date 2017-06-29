@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:Transformation xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <rules xsi:type="Core:StandardRule" name="mapDDLDefinition">
+    <queries variable="dataDefinitionStatements">
+      <filter type="INDIRECT">
+        <element name="data_definition_statement" mark="true"/>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="statements">
+        <value type="QUERY_RESULT" value="dataDefinitionStatements"/>
+      </inits>
+    </inits>
+    <from name="data_definition" alias="dd">
+      <filter variable="dd">
+        <filter>
+          <element name="data_definition" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="DDLDefinition"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapDatabase">
+    <queries variable="database">
+      <filter>
+        <element name="dds"/>
+        <next>
+          <element name="database" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="database" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="dds">
+      <filter variable="dds">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="database"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Database"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapTable">
+    <queries variable="tab">
+      <filter>
+        <element name="dds"/>
+        <next>
+          <element name="table" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="cols">
+      <filter>
+        <element name="tab"/>
+        <next>
+          <element name="column" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="primaryKeys">
+      <filter>
+        <element name="tab"/>
+        <next>
+          <element name="pk" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="candidateKeys">
+      <filter>
+        <element name="tab"/>
+        <next>
+          <element name="ck" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="foreignKeys">
+      <filter>
+        <element name="tab"/>
+        <next>
+          <element name="fk" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alterTables">
+      <filter type="RECURSIVE">
+        <element name="alter_table" mark="true"/>
+        <next>
+          <element name="table_references"/>
+          <expression xsi:type="Query:FilterExpressionUnit">
+            <element name="ID"/>
+            <parameters value="tab" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alterTableSpecifications">
+      <filter>
+        <element name="alterTables"/>
+        <next>
+          <element name="alter_table_specification" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="checs">
+      <filter>
+        <element name="tab"/>
+        <next>
+          <element name="chec" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="tab" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columns">
+        <value type="QUERY_RESULT" value="cols"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="pks">
+        <value type="QUERY_RESULT" value="primaryKeys"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="cks">
+        <value type="QUERY_RESULT" value="candidateKeys"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="fks">
+        <value type="QUERY_RESULT" value="foreignKeys"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="checks">
+        <value type="QUERY_RESULT" value="checs"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="fks">
+          <value type="QUERY_RESULT" value="alterTableSpecifications"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="alterTables"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="dds">
+      <filter variable="dds">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="table"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Table"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapColumn">
+    <queries variable="type">
+      <filter>
+        <element name="c"/>
+        <next>
+          <element name="data_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isNotNull">
+      <filter>
+        <element name="c" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionComplex">
+          <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="TOKEN"/>
+          </expressions>
+          <expressions xsi:type="Query:FilterExpressionUnit">
+            <element name="TOKEN"/>
+            <parameters value="NOT NULL"/>
+          </expressions>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="c" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="type">
+        <value type="QUERY_RESULT" value="type"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="columnNull">
+          <value value="false"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitElement" element="columnNull">
+            <value value="true"/>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="isNotNull"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="column" alias="c">
+      <filter variable="c">
+        <filter>
+          <element name="column" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Column"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapPk">
+    <queries variable="columns">
+      <filter>
+        <element name="pk"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="pk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="columns" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="pk" alias="pk">
+      <filter variable="pk">
+        <filter>
+          <element name="pk" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Pk"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCk">
+    <queries variable="columns">
+      <filter>
+        <element name="ck"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="ck" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="columns" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="ck" alias="ck">
+      <filter variable="ck">
+        <filter>
+          <element name="ck" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Ck"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapFk">
+    <queries variable="columns">
+      <filter>
+        <element name="fk"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="reference">
+      <filter>
+        <element name="fk"/>
+        <next>
+          <element name="table_references" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="referencedTable">
+      <filter type="INDIRECT">
+        <element name="data_definition_statement" mark="true"/>
+        <next>
+          <element name="table"/>
+          <expression xsi:type="Query:FilterExpressionUnit">
+            <element name="ID"/>
+            <parameters value="reference" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="referencedColumns">
+      <filter>
+        <element name="fk"/>
+        <next>
+          <element name="references_column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="fk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="columns" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="references">
+        <value type="QUERY_RESULT" value="referencedTable"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnReference">
+        <value type="QUERY_ACCESS" value="referencedColumns" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="fk" alias="fk">
+      <filter variable="fk">
+        <filter>
+          <element name="fk" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Fk"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapFk2">
+    <queries variable="columns">
+      <filter>
+        <element name="ats"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="reference">
+      <filter>
+        <element name="ats"/>
+        <next>
+          <element name="table_references" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="referencedTable">
+      <filter type="INDIRECT">
+        <element name="data_definition_statement" mark="true"/>
+        <next>
+          <element name="table"/>
+          <expression xsi:type="Query:FilterExpressionUnit">
+            <element name="ID"/>
+            <parameters value="reference" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="referencedColumns">
+      <filter>
+        <element name="ats"/>
+        <next>
+          <element name="references_column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="ats" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="columns" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="references">
+        <value type="QUERY_RESULT" value="referencedTable"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnReference">
+        <value type="QUERY_ACCESS" value="referencedColumns" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="alter_table_specification" alias="ats">
+      <filter variable="ats">
+        <filter>
+          <element name="alter_table_specification" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Fk"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCheck">
+    <queries variable="logicalExpr">
+      <filter>
+        <element name="c"/>
+        <next>
+          <element name="log_expresion" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="c" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="valuesCheck">
+        <value type="QUERY_RESULT" value="logicalExpr"/>
+      </inits>
+    </inits>
+    <from name="chec" alias="c">
+      <filter variable="c">
+        <filter>
+          <element name="chec" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Check"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapValuesCheck">
+    <queries variable="column">
+      <filter>
+        <element name="le"/>
+        <next>
+          <element name="column_chec" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="value_list">
+      <filter>
+        <element name="le"/>
+        <next>
+          <element name="value_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="number">
+      <filter>
+        <element name="le" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="column" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="logConjuntion">
+        <value type="QUERY_ACCESS" value="le" extension="LOG_CONJ"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="comparator">
+          <value value="="/>
+        </inits>
+        <inits xsi:type="Core:InitUnitElement" element="value">
+          <value type="OPERATION_REMOVE_QUOTES" value="value_list" extension="CVALUE"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitElement" element="comparator">
+            <value type="QUERY_ACCESS" value="le" extension="COMPARATOR"/>
+          </inits>
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="value">
+              <value type="QUERY_ACCESS" value="le" extension="NUMBER"/>
+            </inits>
+            <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+              <inits xsi:type="Core:InitUnitElement" element="value">
+                <value type="OPERATION_REMOVE_QUOTES" value="le" extension="CVALUE"/>
+              </inits>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+              <element name="number"/>
+            </expression>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="value_list"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="log_expresion" alias="le">
+      <filter variable="le">
+        <filter>
+          <element name="log_expresion" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="ValuesCheck"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCharacter">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="character_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="CHARACTER"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Character"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapChar">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="character_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="CHAR"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Char"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCharacterVarying">
+    <queries variable="cst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="character_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="cst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="CHARACTER VARYING"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="CharacterVarying"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapVarchar">
+    <queries variable="cst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="character_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="cst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="VARCHAR"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Varchar"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNationalCharacter">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NATIONAL CHARACTER"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NationalCharacter"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNationalChar">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NATIONAL CHAR"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NationalChar"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNChar">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NCHAR"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NChar"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNationalCharacterVarying">
+    <queries variable="ncst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="ncst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NATIONAL CHARACTER VARYING"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NationalCharacterVarying"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNationalCharVarying">
+    <queries variable="ncst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="ncst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NATIONAL CHAR VARYING"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NationalCharVarying"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNCharVarying">
+    <queries variable="ncst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="national_character_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="ncst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="national_character_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NCHAR VARYING"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="NCharVarying"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapBit">
+    <queries variable="hasLength">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="bit_string_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="length">
+          <value type="QUERY_ACCESS" value="hasLength" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasLength"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="bit_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="BIT"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Bit"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapBitVarying">
+    <queries variable="bst">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="bit_string_type" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="length">
+        <value type="QUERY_ACCESS" value="bst" extension="NUMBER"/>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="bit_string_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="BIT VARYING"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="BitVarying"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapNumeric">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasScale">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER" position="1"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER">
+            <params value="0" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="scale">
+          <value type="QUERY_ACCESS" value="hasScale" extension="NUMBER">
+            <params value="1" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasScale"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="NUMERIC"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Numeric"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapDecimal">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasScale">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER" position="1"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER">
+            <params value="0" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="scale">
+          <value type="QUERY_ACCESS" value="hasScale" extension="NUMBER">
+            <params value="1" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasScale"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="DECIMAL"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Decimal"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapDec">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasScale">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="exact_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER" position="1"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER">
+            <params value="0" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="scale">
+          <value type="QUERY_ACCESS" value="hasScale" extension="NUMBER">
+            <params value="1" type="NUMBER_VALUE"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasScale"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="DEC"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Dec"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapInteger">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="INTEGER"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Integer"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapInt">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="INT"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Int"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapSmallInt">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="exact_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="SMALLINT"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="SmallInt"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapFloat">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="numeric_type"/>
+          <next>
+            <element name="approximate_numeric_type" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="NUMBER"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="approximate_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="FLOAT"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Float"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapReal">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="approximate_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="REAL"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Real"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapDoublePrecision">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="numeric_type"/>
+            <next>
+              <element name="approximate_numeric_type"/>
+              <expression xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN"/>
+                <parameters value="DOUBLE PRECISION"/>
+              </expression>
+            </next>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="DoublePrecision"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapDate">
+    <inits/>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="datetime_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="DATE"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Date"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapTime">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="datetime_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="withTimeZone">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="datetime_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionComplex" type="OR">
+            <expressions xsi:type="Query:FilterExpressionComplex">
+              <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+                <element name="TOKEN" position="1"/>
+              </expressions>
+              <expressions xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN" position="1"/>
+                <parameters value="WITH TIME ZONE"/>
+              </expressions>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionComplex">
+              <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+                <element name="TOKEN" position="3"/>
+              </expressions>
+              <expressions xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN" position="3"/>
+                <parameters value="WITH TIME ZONE"/>
+              </expressions>
+            </expressions>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="withTimeZone">
+          <value value="true"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitElement" element="withTimeZone">
+            <value value="false"/>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="withTimeZone"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="datetime_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="TIME"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Time"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapTimeStamp">
+    <queries variable="hasPrecision">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="datetime_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="NUMBER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="withTimeZone">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="datetime_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionComplex" type="OR">
+            <expressions xsi:type="Query:FilterExpressionComplex">
+              <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+                <element name="TOKEN" position="1"/>
+              </expressions>
+              <expressions xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN" position="1"/>
+                <parameters value="WITH TIME ZONE"/>
+              </expressions>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionComplex">
+              <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+                <element name="TOKEN" position="3"/>
+              </expressions>
+              <expressions xsi:type="Query:FilterExpressionUnit">
+                <element name="TOKEN" position="3"/>
+                <parameters value="WITH TIME ZONE"/>
+              </expressions>
+            </expressions>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="precision">
+          <value type="QUERY_ACCESS" value="hasPrecision" extension="NUMBER"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasPrecision"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="withTimeZone">
+          <value value="true"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitElement" element="withTimeZone">
+            <value value="false"/>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="withTimeZone"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="datetime_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="TIMESTAMP"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="TimeStamp"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapInterval">
+    <queries variable="hasSingleField">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="interval_type"/>
+          <next>
+            <element name="interval_qualifier"/>
+            <next>
+              <element name="single_datetime_field" mark="true"/>
+            </next>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasNonSecondDatetimeField">
+      <filter>
+        <element name="hasSingleField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NON_SECOND_DATETIME_FIELD"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="hasSinglePrecision1">
+      <filter>
+        <element name="hasSingleField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="hasSinglePrecision2">
+      <filter>
+        <element name="hasSingleField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER" position="1"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="startField">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="interval_type"/>
+          <next>
+            <element name="interval_qualifier"/>
+            <next>
+              <element name="start_field" mark="true"/>
+            </next>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="endField">
+      <filter>
+        <element name="dt"/>
+        <next>
+          <element name="interval_type"/>
+          <next>
+            <element name="interval_qualifier"/>
+            <next>
+              <element name="end_field" mark="true"/>
+            </next>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasPrecision1">
+      <filter>
+        <element name="startField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="endFieldHasNonSecondDatetimeField">
+      <filter>
+        <element name="endField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NON_SECOND_DATETIME_FIELD"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="hasPrecision2">
+      <filter>
+        <element name="endField" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitGroup" type="IF">
+          <inits xsi:type="Core:InitUnitElement" element="field1">
+            <value type="QUERY_ACCESS" value="hasSingleField" extension="NON_SECOND_DATETIME_FIELD"/>
+          </inits>
+          <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+            <inits xsi:type="Core:InitUnitElement" element="field1">
+              <value type="QUERY_ACCESS" value="hasSingleField" extension="TOKEN">
+                <params value="0" type="NUMBER_VALUE"/>
+              </value>
+            </inits>
+          </inits>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+            <element name="hasNonSecondDatetimeField"/>
+          </expression>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="IF">
+          <inits xsi:type="Core:InitUnitElement" element="precision1">
+            <value type="QUERY_ACCESS" value="hasSingleField" extension="NUMBER">
+              <params value="0" type="NUMBER_VALUE"/>
+            </value>
+          </inits>
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="precision2">
+              <value type="QUERY_ACCESS" value="hasSingleField" extension="NUMBER">
+                <params value="1" type="NUMBER_VALUE"/>
+              </value>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+              <element name="hasSinglePrecision2"/>
+            </expression>
+          </inits>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+            <element name="hasSinglePrecision1"/>
+          </expression>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitElement" element="field1">
+            <value type="QUERY_ACCESS" value="startField" extension="NON_SECOND_DATETIME_FIELD"/>
+          </inits>
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="precision1">
+              <value type="QUERY_ACCESS" value="startField" extension="NUMBER"/>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+              <element name="hasPrecision1"/>
+            </expression>
+          </inits>
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="field2">
+              <value type="QUERY_ACCESS" value="endField" extension="NON_SECOND_DATETIME_FIELD"/>
+            </inits>
+            <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+              <inits xsi:type="Core:InitUnitElement" element="field2">
+                <value type="QUERY_ACCESS" value="endField" extension="TOKEN">
+                  <params value="0" type="NUMBER_VALUE"/>
+                </value>
+              </inits>
+              <inits xsi:type="Core:InitUnitGroup" type="IF">
+                <inits xsi:type="Core:InitUnitElement" element="precision2">
+                  <value type="QUERY_ACCESS" value="endField" extension="NUMBER"/>
+                </inits>
+                <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+                  <element name="hasPrecision2"/>
+                </expression>
+              </inits>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+              <element name="endFieldHasNonSecondDatetimeField"/>
+            </expression>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasSingleField"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="data_type" alias="dt">
+      <filter variable="dt">
+        <filter>
+          <element name="data_type" mark="true"/>
+          <next>
+            <element name="interval_type"/>
+            <expression xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="INTERVAL"/>
+            </expression>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="Interval"/>
+  </rules>
+</Core:Transformation>

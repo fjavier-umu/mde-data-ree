@@ -1,0 +1,45 @@
+SELECT DISTINCT b.service_code, b.description, b.value, b.percentage 
+
+
+
+ FROM ctl_billingservice c left outer join billingservice b on b.service_code=
+
+
+
+
+ c.service_code where b.region = ? and c.service_group= ? and c.servicetype = ? order by c.service_order
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT b.service_code, b.description , b.value, b.percentage 
+
+
+
+ FROM ctl_billingservice c left outer join billingservice b on b.service_code=
+
+
+
+
+ c.service_code where b.region = ? and c.service_group = ? and c.servicetype = ?
+
+
+
+
+  and b.billingservice_date in (select max(b2.billingservice_date) from billingservice b2 where b2.billingservice_date <= ? and b2.service_code = b.service_code) order by c.service_order
+
+
+
+SELECT billinglocation,billinglocation_desc FROM billinglocation WHERE region = ?
+
+
+SELECT visittype, visit_desc FROM billingvisit WHERE region = ?
+
+
+SELECT sidetype, sidedesc FROM wcb_side
+

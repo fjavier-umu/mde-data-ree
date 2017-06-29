@@ -1,0 +1,584 @@
+Gra2MoL Interpreter version 0.3
+
+Executing...
+Models created.
+Initializing indexRules...
+Initializing mixinRules...
+Initializing packages...
+Initializing hashes...
+
+Executing rules...
+RULE: mapDDLDefinition
+RULE: mapDDLDefinition... executing!
+  Model Element DDLDefinition created
+  Executing queries...
+    Query dd with 1 result nodes - CONTENT : [/Users/fjavier/UMU/Tesis/workspace/Y_F1_conexp2fdsWithDuplicateColumns/sources/torneosDDL.sql /torneosDDL.sql CREATE DATABASE IF NOT EXISTS TORNEOS ; CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE VARCHAR ( 20 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ) ; ALTER TABLE GANADORES_DE_TORNEOS ADD CONSTRAINT PATROCINADOR_FK FOREIGN KEY ( PATROCINADOR ) REFERENCES PATROCINADORES ( PATROCINADOR ) ; ]
+    Query dataDefinitionStatements with 5 result nodes
+  Executing mappings...
+    - QUERY_RESULT: 5 bindings:
+      (1/5) result node: data_definition_statement (kind). Rule... calling mapDatabase rule
+
+      RULE: mapDatabase
+      RULE: mapDatabase... executing!
+        Model Element Database created
+        Executing queries...
+          Query dds with 1 result nodes - CONTENT : [CREATE DATABASE IF NOT EXISTS TORNEOS ; ]
+          Query database with 1 result nodes - CONTENT in line 1: [CREATE DATABASE IF NOT EXISTS TORNEOS ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: database - 
+            node: database (kind) - leaf: ID (kind) - TORNEOS (value) 
+
+      (2/5) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query cols with 4 result nodes
+          Query dds with 1 result nodes - CONTENT : [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+          Query alterTableSpecifications with 0 result nodes
+          Query foreignKeys with 0 result nodes
+          Query alterTables with 0 result nodes
+          Query primaryKeys with 1 result nodes - CONTENT in line 9: [CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ]
+          Query tab with 1 result nodes - CONTENT in line 3: [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+          Query checs with 0 result nodes
+          Query candidateKeys with 0 result nodes
+        Executing mappings...
+          - QUERY_ACCESS: variable: tab - 
+            node: table (kind) - leaf: ID (kind) - ESTADIOS (value) 
+          - QUERY_RESULT: 4 bindings:
+            (1/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 5: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 5: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 5: [VARCHAR ( 30 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 30 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (2/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 6: [CAPACIDAD INT NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 6: [CAPACIDAD INT NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [INT ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - CAPACIDAD (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapInt rule
+
+                  RULE: mapInt
+                  RULE: mapInt... executing!
+                    Model Element Int created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [INT ]
+                    Executing mappings...
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (3/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 7: [CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 7: [CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - CONSTRUCTORA (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 7: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (4/4) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 8: [SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 8: [SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - SEDE_CONSTRUCTORA (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 8: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query columns with 1 result nodes - CONTENT in line 9: [ESTADIO ]
+                Query pk with 1 result nodes - CONTENT in line 9: [CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: pk - 
+                  node: pk (kind) - leaf: ID (kind) - ESTADIOS_PK (value) 
+                - QUERY_ACCESS: variable: columns - 
+                  node: column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+            - IF detected...false! it doesn't have ELSE part 
+
+      (3/5) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query cols with 2 result nodes
+          Query dds with 1 result nodes - CONTENT : [CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE VARCHAR ( 20 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; ]
+          Query alterTableSpecifications with 0 result nodes
+          Query foreignKeys with 0 result nodes
+          Query alterTables with 0 result nodes
+          Query primaryKeys with 1 result nodes - CONTENT in line 16: [CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ]
+          Query tab with 1 result nodes - CONTENT in line 12: [CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE VARCHAR ( 20 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; ]
+          Query checs with 0 result nodes
+          Query candidateKeys with 0 result nodes
+        Executing mappings...
+          - QUERY_ACCESS: variable: tab - 
+            node: table (kind) - leaf: ID (kind) - PATROCINADORES (value) 
+          - QUERY_RESULT: 2 bindings:
+            (1/2) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 14: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 14: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 14: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (2/2) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 15: [SEDE VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 15: [SEDE VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - SEDE (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 15: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query columns with 1 result nodes - CONTENT in line 16: [PATROCINADOR ]
+                Query pk with 1 result nodes - CONTENT in line 16: [CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: pk - 
+                  node: pk (kind) - leaf: ID (kind) - PATROCINADOR_PK (value) 
+                - QUERY_ACCESS: variable: columns - 
+                  node: column_list (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+            - IF detected...false! it doesn't have ELSE part 
+
+      (4/5) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+      RULE: mapTable
+      RULE: mapTable... executing!
+        Model Element Table created
+        Executing queries...
+          Query cols with 8 result nodes
+          Query dds with 1 result nodes - CONTENT : [CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ) ; ]
+          Query alterTableSpecifications with 1 result nodes - CONTENT in line 33: [ADD CONSTRAINT PATROCINADOR_FK FOREIGN KEY ( PATROCINADOR ) REFERENCES PATROCINADORES ( PATROCINADOR ) ]
+          Query foreignKeys with 1 result nodes - CONTENT in line 30: [CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ]
+          Query alterTables with 1 result nodes - CONTENT in line 33: [ALTER TABLE GANADORES_DE_TORNEOS ADD CONSTRAINT PATROCINADOR_FK FOREIGN KEY ( PATROCINADOR ) REFERENCES PATROCINADORES ( PATROCINADOR ) ; ]
+          Query primaryKeys with 1 result nodes - CONTENT in line 29: [CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) ]
+          Query tab with 1 result nodes - CONTENT in line 19: [CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ) ; ]
+          Query checs with 0 result nodes
+          Query candidateKeys with 0 result nodes
+        Executing mappings...
+          - QUERY_ACCESS: variable: tab - 
+            node: table (kind) - leaf: ID (kind) - GANADORES_DE_TORNEOS (value) 
+          - QUERY_RESULT: 8 bindings:
+            (1/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 21: [TORNEO VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 21: [TORNEO VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - TORNEO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 21: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (2/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 22: [ANYO VARCHAR ( 4 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 22: [ANYO VARCHAR ( 4 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 4 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - ANYO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 4 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 22: [VARCHAR ( 4 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 4 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (3/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 23: [GANADOR VARCHAR ( 30 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 23: [GANADOR VARCHAR ( 30 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - GANADOR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 23: [VARCHAR ( 30 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 30 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (4/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 24: [FECHA_NAC_GANADOR DATE NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 24: [FECHA_NAC_GANADOR DATE NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [DATE ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - FECHA_NAC_GANADOR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapDate rule
+
+                  RULE: mapDate
+                  RULE: mapDate... executing!
+                    Model Element Date created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [DATE ]
+                    Executing mappings...
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (5/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 25: [ARBITRO VARCHAR ( 30 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 25: [ARBITRO VARCHAR ( 30 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - ARBITRO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 25: [VARCHAR ( 30 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 30 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (6/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 26: [FECHA_NAC_ARBITRO DATE NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 26: [FECHA_NAC_ARBITRO DATE NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [DATE ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - FECHA_NAC_ARBITRO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapDate rule
+
+                  RULE: mapDate
+                  RULE: mapDate... executing!
+                    Model Element Date created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [DATE ]
+                    Executing mappings...
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (7/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 27: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 27: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 30 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 27: [VARCHAR ( 30 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 30 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+            (8/8) result node: column (kind). Rule... calling mapColumn rule
+
+            RULE: mapColumn
+            RULE: mapColumn... executing!
+              Model Element Column created
+              Executing queries...
+                Query isNotNull with 1 result nodes - CONTENT in line 28: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query c with 1 result nodes - CONTENT in line 28: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query type with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: c - 
+                  node: column (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_type (kind). Rule... calling mapVarchar rule
+
+                  RULE: mapVarchar
+                  RULE: mapVarchar... executing!
+                    Model Element Varchar created
+                    Executing queries...
+                      Query dt with 1 result nodes - CONTENT : [VARCHAR ( 20 ) ]
+                      Query cst with 1 result nodes - CONTENT in line 28: [VARCHAR ( 20 ) ]
+                    Executing mappings...
+                      - QUERY_ACCESS: variable: cst - 
+                        node: character_string_type (kind) - leaf: NUMBER (kind) - 20 (value) 
+
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: pk (kind). Rule... calling mapPk rule
+
+            RULE: mapPk
+            RULE: mapPk... executing!
+              Model Element Pk created
+              Executing queries...
+                Query columns with 2 result nodes
+                Query pk with 1 result nodes - CONTENT in line 29: [CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: pk - 
+                  node: pk (kind) - leaf: ID (kind) - GANADORES_DE_TORNEOS_PK (value) 
+                - QUERY_ACCESS: variable: columns - 
+                  node: column_list (kind) - leaf: ID (kind) - TORNEO (value) 
+                  node: column_list (kind) - leaf: ID (kind) - ANYO (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: fk (kind). Rule... calling mapFk rule
+
+            RULE: mapFk
+            RULE: mapFk... executing!
+              Model Element Fk created
+              Executing queries...
+                Query fk with 1 result nodes - CONTENT in line 30: [CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ]
+                Query referencedColumns with 1 result nodes - CONTENT in line 30: [ESTADIO ]
+                Query columns with 1 result nodes - CONTENT in line 30: [ESTADIO ]
+                Query referencedTable with 1 result nodes - CONTENT : [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+                Query reference with 1 result nodes - CONTENT in line 30: [ESTADIOS ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fk - 
+                  node: fk (kind) - leaf: ID (kind) - ESTADIO_FK (value) 
+                - QUERY_ACCESS: variable: columns - 
+                  node: column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+                  RULE: mapTable
+                  RULE: mapTable... cached!!
+                - QUERY_ACCESS: variable: referencedColumns - 
+                  node: references_column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+            - IF detected...true!
+            - QUERY_RESULT: 1 bindings:
+              (1/1) result node: alter_table_specification (kind). Rule... calling mapFk2 rule
+
+              RULE: mapFk2
+              RULE: mapFk2... executing!
+                Model Element Fk created
+                Executing queries...
+                  Query referencedColumns with 1 result nodes - CONTENT in line 33: [PATROCINADOR ]
+                  Query columns with 1 result nodes - CONTENT in line 33: [PATROCINADOR ]
+                  Query referencedTable with 1 result nodes - CONTENT : [CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE VARCHAR ( 20 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; ]
+                  Query ats with 1 result nodes - CONTENT in line 33: [ADD CONSTRAINT PATROCINADOR_FK FOREIGN KEY ( PATROCINADOR ) REFERENCES PATROCINADORES ( PATROCINADOR ) ]
+                  Query reference with 1 result nodes - CONTENT in line 33: [PATROCINADORES ]
+                Executing mappings...
+                  - QUERY_ACCESS: variable: ats - 
+                    node: alter_table_specification (kind) - leaf: ID (kind) - PATROCINADOR_FK (value) 
+                  - QUERY_ACCESS: variable: columns - 
+                    node: column_list (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                  - QUERY_RESULT: 1 bindings:
+                    (1/1) result node: data_definition_statement (kind). Rule... calling mapTable rule
+
+                    RULE: mapTable
+                    RULE: mapTable... cached!!
+                  - QUERY_ACCESS: variable: referencedColumns - 
+                    node: references_column_list (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+
+
+      (5/5) result node: data_definition_statement (kind). Rule... RULE NOT FOUND!  FROM: data_definition_statement TO: statements
+
+
+Saving...

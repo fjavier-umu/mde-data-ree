@@ -1,0 +1,591 @@
+SELECT hl7.label, hl7.lab_no, hl7.obr_date, hl7.discipline, hl7.accessionNum, hl7.final_result_count, patientLabRouting.id 
+
+
+
+ FROM hl7TextInfo hl7, patientLabRouting 
+
+
+
+
+ WHERE patientLabRouting.lab_no = hl7.lab_no 
+
+
+
+
+ AND patientLabRouting.lab_type = 'HL7' AND patientLabRouting.demographic_no=
+
+
+
+
+  GROUP BY hl7.lab_no
+
+
+
+SELECT consultdocs.document_no FROM consultdocs, patientLabRouting 
+
+
+
+ WHERE patientLabRouting.id = consultdocs.document_no AND 
+
+
+
+
+ consultdocs.requestId = 
+
+
+
+
+  AND consultdocs.doctype = 'L' AND consultdocs.deleted IS NULL ORDER BY consultdocs.document_no
+
+
+
+
+ select * from providerLabRouting plr where plr.lab_type='DOC' and plr.lab_no=
+
+
+
+
+  and plr.provider_no='
+
+
+
+ SELECT X.id, X.lab_no as document_no, X.status, X.lab_type as doctype, d.last_name, d.first_name, hin, sex, d.demographic_no as module_id, doc.observationdate, doc.doctype as description, date(doc.updatedatetime) 
+
+
+
+  FROM document doc, 
+
+
+
+ (SELECT plr.id, plr.lab_type, plr.lab_no, plr.status 
+
+
+
+   FROM patientLabRouting plr2, providerLabRouting plr, hl7TextInfo info 
+
+
+
+
+   WHERE plr.lab_no = plr2.lab_no 
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+     AND plr.status like '%
+
+
+
+
+     AND plr.lab_type = 'HL7'   
+
+
+
+
+     AND plr2.lab_type = 'HL7' 
+
+
+
+
+     AND plr2.demographic_no = '0' 
+
+
+
+
+     AND info.lab_no = plr.lab_no 
+
+
+
+
+ AND info.result_status = 'A'
+
+
+
+
+ AND (info.result_status IS NULL OR info.result_status != 'A')
+
+
+
+ SELECT plr.id, plr.lab_type, plr.lab_no, plr.status 
+
+
+
+  FROM providerLabRouting plr  
+
+
+
+
+  WHERE plr.lab_type = 'DOC' AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+  ORDER BY id DESC 
+
+
+
+
+  LEFT JOIN demographic d 
+
+
+
+
+  ON d.demographic_no = -1 
+
+
+
+
+  WHERE X.lab_type = 'DOC' AND doc.document_no = X.lab_no 
+
+
+
+ SELECT plr.id, doc.document_no, plr.status, d.last_name, d.first_name, hin, sex, d.demographic_no as module_id, doc.observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime) 
+
+
+
+  FROM demographic d, providerLabRouting plr, document doc, 
+
+
+
+ (SELECT * FROM 
+
+
+ (SELECT DISTINCT plr.id, plr.lab_type  FROM providerLabRouting plr, ctl_document cd 
+
+
+
+
+
+
+  (cd.module_id = '
+
+
+
+
+ AND cd.document_no = plr.lab_no
+
+
+
+
+ AND plr.lab_type = 'DOC'  
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+  ORDER BY id DESC) AS Y
+
+
+
+ SELECT * FROM
+
+
+ (SELECT DISTINCT plr.id, plr.lab_type  FROM providerLabRouting plr, patientLabRouting plr2
+
+
+
+
+
+
+ plr.lab_type = 'HL7' AND plr2.lab_type = 'HL7'
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+  ORDER BY id DESC) AS Z
+
+
+
+
+  ORDER BY id DESC 
+
+
+
+
+  WHERE X.lab_type = 'DOC' and X.id = plr.id and doc.document_no = plr.lab_no and d.demographic_no = '
+
+
+
+ SELECT plr.id, doc.document_no, plr.status, d.last_name, d.first_name, hin, sex, d.demographic_no as module_id, doc.observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime) 
+
+
+
+  FROM demographic d, providerLabRouting plr, document doc,  
+
+
+
+ (SELECT * FROM 
+
+
+ (SELECT * FROM  
+
+
+(SELECT DISTINCT plr.id, plr.lab_type, d.demographic_no 
+
+
+
+ FROM providerLabRouting plr, ctl_document cd, demographic d 
+
+
+
+
+
+
+
+ (d.first_name like '%
+
+
+
+
+ %' AND d.last_name like '%
+
+
+
+
+ %' AND d.hin like '%
+
+
+
+
+ AND cd.module_id = d.demographic_no 
+
+
+
+
+ + status
+
+
+
+
+  + providerNo + 
+
+
+
+
+ + status
+
+
+
+
+  + providerNo + 
+
+
+
+ SELECT doc.document_no, plr.status, last_name, first_name, hin, sex, module_id, observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime)
+
+
+
+  FROM document doc, 
+
+
+
+
+  AND pl.provider_no = '
+
+
+
+
+      AND (pl.lab_type = 'DOC' OR (pl.lab_no = info.lab_no AND (info.result_status IS NULL OR info.result_status != 'A'))) 
+
+
+
+
+  AND pl.lab_type = 'DOC' 
+
+
+
+(SELECT module_id, document_no FROM ctl_document cd 
+
+
+
+ WHERE cd.module = 'demographic' AND cd.module_id != '-1') AS Y 
+
+
+
+
+ ON plr.lab_type = 'DOC' AND plr.lab_no = Y.document_no
+
+
+
+(SELECT demographic_no, first_name, last_name, hin, sex 
+
+
+
+ FROM demographic d) AS Z 
+
+
+
+
+ ON Y.module_id = Z.demographic_no 
+
+
+
+
+ WHERE doc.document_no = plr.lab_no
+
+
+
+ SELECT id, document_no, status, demographic_no as module_id, observationdate, doctype, last_name, first_name, hin, sex, docdesc, updateDateLoc
+
+
+
+
+
+ (SELECT plr.id, doc.document_no, plr.status, observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime) as updateDateLoc, docdesc
+
+
+
+  FROM providerLabRouting plr, document doc
+
+
+
+
+  WHERE plr.lab_type = 'DOC' 
+
+
+
+
+  AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '0' 
+
+
+
+
+  AND doc.document_no = plr.lab_no
+
+
+
+
+  ORDER BY id DESC 
+
+
+
+
+  LEFT JOIN demographic d
+
+
+
+
+  ON d.demographic_no = -1
+
+
+
+SELECT plr.id, doc.document_no, plr.status, last_name, first_name, hin, sex, module_id, observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime) 
+
+
+
+ FROM ctl_document cd, demographic d, providerLabRouting plr, document doc 
+
+
+
+
+ WHERE d.demographic_no = '
+
+
+
+
+ AND cd.module_id = d.demographic_no 
+
+
+
+
+ AND cd.document_no = plr.lab_no 
+
+
+
+
+ AND plr.lab_type = 'DOC' 
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+ AND doc.document_no = cd.document_no 
+
+
+
+
+  ORDER BY id DESC 
+
+
+
+SELECT plr.id, doc.document_no, plr.status, last_name, first_name, hin, sex, module_id, observationdate, plr.lab_type as doctype, doc.doctype as description, date(doc.updatedatetime) 
+
+
+
+ FROM ctl_document cd, demographic d, providerLabRouting plr, document doc 
+
+
+
+
+ WHERE d.first_name like '%
+
+
+
+
+ %' AND d.last_name like '%
+
+
+
+
+ %' AND d.hin like '%
+
+
+
+
+ AND cd.module_id = d.demographic_no 
+
+
+
+
+ AND cd.document_no = plr.lab_no 
+
+
+
+
+ AND plr.lab_type = 'DOC' 
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+ AND doc.document_no = cd.document_no 
+
+
+
+
+  ORDER BY id DESC 
+
+
+
+ SELECT * 
+
+
+ FROM (SELECT plr.id, doc.document_no, plr.status, last_name, first_name, hin, sex, module_id, observationdate, plr.lab_type as doctype, docdesc, updatedatetime 
+
+
+
+  FROM ctl_document cd, demographic d, providerLabRouting plr, document doc 
+
+
+
+
+  WHERE (cd.module_id = d.demographic_no) 
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+ SELECT X.id, X.lab_no as document_no, X.status, last_name, first_name, hin, sex, X.module_id, X.observationdate, X.lab_type as doctype, docdesc, updatedatetime 
+
+
+ FROM (SELECT plr.id, plr.lab_no, plr.status, plr.lab_type, cd.module_id, observationdate, docdesc, updatedatetime 
+
+
+
+  FROM ctl_document cd, providerLabRouting plr, document d 
+
+
+
+
+  WHERE plr.lab_type = 'DOC' 
+
+
+
+
+ AND plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+  AND plr.lab_no = cd.document_no 
+
+
+
+
+  AND cd.module_id = -1 
+
+
+
+
+  AND d.document_no = cd.document_no 
+
+
+
+
+  LEFT JOIN demographic d 
+
+
+
+
+  ON d.demographic_no = -1) AS X 
+
+
+
+
+  ORDER BY id DESC 
+
+

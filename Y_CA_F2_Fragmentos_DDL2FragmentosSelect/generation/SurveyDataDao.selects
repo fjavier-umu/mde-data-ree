@@ -1,0 +1,40 @@
+SELECT MAX(s.processed) FROM SurveyData s WHERE s.surveyId = :sid
+
+
+SELECT COUNT(s.id) FROM SurveyData s 
+
+
+
+ WHERE s.surveyId = :sid 
+
+
+
+
+ AND s.processed IS NULL 
+
+
+
+
+ AND s.status = 'A'
+
+
+
+
+ sd.surveyId = :surveyId AND sd.demographicNo = :demoNo AND sd.surveyDate >= :surveyDate
+
+
+
+
+
+
+SELECT sd.status , COUNT(sd.status) FROM SurveyData sd WHERE sd.surveyId = :surveyId GROUP BY sd.status
+
+
+
+
+
+SELECT sd.answer, COUNT(sd.answer) FROM SurveyData sd WHERE sd.surveyId = :surveyId AND sd.status = 'A' GROUP BY sd.answer
+
+
+
+

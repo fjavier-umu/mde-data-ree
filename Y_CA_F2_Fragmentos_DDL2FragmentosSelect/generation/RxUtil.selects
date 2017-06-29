@@ -1,0 +1,31 @@
+SELECT * FROM drugs WHERE regional_identifier='
+
+
+SELECT * FROM drugs WHERE BN='
+
+
+
+ customName is not null
+
+
+
+SELECT * FROM drugs WHERE archived=1 AND (archived_reason>'' OR archived_reason<'' ) AND ATC='
+
+
+
+ ' AND regional_identifier='
+
+
+
+
+ ' AND demographic_no=
+
+
+
+
+ not last drug 
+
+
+
+
+

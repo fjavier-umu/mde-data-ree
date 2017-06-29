@@ -1,0 +1,318 @@
+SELECT dxres FROM Dxresearch dxres
+
+
+
+
+
+
+ dxres.codingSystem= '
+
+
+
+
+ ' AND dxres.dxresearchCode='
+
+
+
+
+
+
+
+  GROUP BY dxres.demographicNo ORDER BY dxres.updateDate asc
+
+
+
+SELECT dxres FROM Dxresearch dxres GROUP BY dxres.demographicNo ORDER BY dxres.updateDate asc
+
+
+SELECT dxres FROM Dxresearch dxres
+
+
+
+
+
+
+ dxres.codingSystem= '
+
+
+
+
+ ' AND dxres.dxresearchCode='
+
+
+
+
+
+
+
+  ORDER BY dxres.demographicNo asc, dxres.updateDate asc
+
+
+
+SELECT dxres FROM Dxresearch dxres ORDER BY dxres.demographicNo asc, dxres.updateDate asc
+
+
+SELECT dxres FROM Dxresearch dxres WHERE (
+
+
+
+ dxres.codingSystem= '
+
+
+
+
+ ' AND dxres.dxresearchCode='
+
+
+
+
+
+
+
+ ) AND 
+
+
+
+
+ dxres.status= '
+
+
+
+
+ ' ORDER BY dxres.demographicNo asc, dxres.updateDate asc
+
+
+
+SELECT dxres FROM Dxresearch dxres WHERE dxres.status= '
+
+
+
+ ' ORDER BY dxres.demographicNo asc, dxres.updateDate asc
+
+
+
+
+ select d from Dxresearch d where d.demographicNo=?
+
+
+
+
+ select d from Dxresearch d where d.demographicNo=? and d.status='A'
+
+
+
+
+ select d from Dxresearch d where d.demographicNo=? and d.codingSystem=? and d.dxresearchCode=? order by d.updateDate desc
+
+
+
+
+ select d from Dxresearch d where d.status='A' and d.codingSystem=? and d.dxresearchCode=? order by d.updateDate desc
+
+
+
+
+ select d from Dxresearch d where d.demographicNo=? and d.codingSystem=? and d.dxresearchCode=?
+
+
+
+
+ select d from Dxresearch d where d.status='A' and d.demographicNo=? and d.codingSystem=? and d.dxresearchCode=?
+
+
+
+
+ DELETE from Dxresearch dx WHERE dx.association='1'
+
+
+
+
+ FROM Dxresearch d WHERE d.demographicNo = :dn AND d.dxresearchCode = :dxrc and (d.status = 'A' or d.status = 'C') and d.codingSystem = :cs
+
+
+
+
+ FROM Demographic d, Measurement m, Dxresearch dx 
+
+
+
+
+ wHERE m.demographicId = dx.demographicNo 
+
+
+
+
+ AND dx.status != 'D' 
+
+
+
+
+ AND dx.codingSystem = 'icd9' 
+
+
+
+
+ AND (
+
+
+
+
+ OR dx.dxresearchCode = 'V5861' 
+
+
+
+
+ OR dx.dxresearchCode = 'V1251'
+
+
+
+
+ ) AND m.demographicId = d.DemographicNo 
+
+
+
+
+ AND m.type = 'INR' 
+
+
+
+
+ AND m.dateObserved >= :fromDate 
+
+
+
+
+ AND m.dateObserved <= :toDate 
+
+
+
+
+ ORDER BY d.LastName, d.FirstName, m.dateObserved
+
+
+
+SELECT DISTINCT x.demographicNo FROM Dxresearch x, Demographic d 
+
+
+
+ WHERE x.dxresearchCode = :researchCode 
+
+
+
+
+ AND x.demographicNo = d.id 
+
+
+
+
+ AND x.updateDate >= :sdate 
+
+
+
+
+ AND x.updateDate <= :edate 
+
+
+
+
+ AND x.status <> 'D'
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT x.demographicNo FROM Dxresearch x, Billing b, BillingDetail bd 
+
+
+
+ WHERE x.status <> 'D' 
+
+
+
+
+ AND x.dxresearchCode= :researchCode 
+
+
+
+
+ AND x.demographicNo = b.demographicNo 
+
+
+
+
+ AND b.id = bd.billingNo 
+
+
+
+
+ AND bd.diagnosticCode = :diagCode 
+
+
+
+
+ AND b.creator = :creator 
+
+
+
+
+ AND b.billingDate >= :sdate 
+
+
+
+
+ AND b.billingDate <= :edate 
+
+
+
+
+ AND b.status != 'D' 
+
+
+
+
+ AND bd.status != 'D'
+
+
+
+
+
+
+
+
+
+
+
+
+
+ , d.dxresearch_no, d.status from dxresearch d, 
+
+
+
+
+ where d.dxresearch_code=c.
+
+
+
+
+  and d.status<>'D' and d.demographic_no ='
+
+
+
+
+ ' and d.coding_system = '
+
+
+
+
+  order by d.start_date desc, d.update_date desc
+
+
+
+
+ select d from Dxresearch d where d.codingSystem=? and d.dxresearchCode=? and d.status='A'
+
+

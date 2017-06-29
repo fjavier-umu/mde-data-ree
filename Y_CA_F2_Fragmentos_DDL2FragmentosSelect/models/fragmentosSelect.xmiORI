@@ -1,0 +1,10 @@
+<Fragmentos:Fichero xmlns:Fragmentos='http://modelum.es/Fragmentos' nombre='Ejemplo' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://modelum.es/Fragmentos ../metamodels/fragmentos.ecore' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI'>
+  <fragmentos numLinea='14' texto=' AND c.Constructora =  Construc' xsi:type='Fragmentos:Fragmento' posCaracter='172'/>
+  <fragmentos numLinea='56' texto='AND toan.Sede = pat.Sede ORDER BY Anyo' xsi:type='Fragmentos:Fragmento' posCaracter='29'/>
+  <fragmentos numLinea='77' texto='AND estad.Capacidad = torn.Capacidad' sigFragmento='#//@fragmentos.3' xsi:type='Fragmentos:Fragmento' posCaracter='29'/>
+  <fragmentos numLinea='78' texto='GROUP BY Ciudad, Construc' xsi:type='Fragmentos:Fragmento' posCaracter='29'/>
+  <fragmentosSelect numLinea='14' texto='SELECT Estadio AS est, ciudad AS ciu FROM Constructoras c, Estadios WHERE c.Sede_constructora = ' sigFragmento='#//@fragmentos.0' xsi:type='Fragmentos:Fragmento' posCaracter='63'/>
+  <fragmentosSelect numLinea='34' texto='SELECT Fecha_nacimiento_ganador FROM Ganadores, Torneos_anyos WHERE Ganadores.Ganador = Torneos_anyos.Gana AND Torneos_anyos.Anyo = 1999 OR Torneos_anyos.Anyo = ' xsi:type='Fragmentos:Fragmento' posCaracter='25'/>
+  <fragmentosSelect numLinea='55' texto='SELECT pat.* FROM Patrocinadores pat, Torneos_anyos toan WHERE 1999 = toan.Anyo OR toan.Torneo = ' sigFragmento='#//@fragmentos.1' xsi:type='Fragmentos:Fragmento' posCaracter='18'/>
+  <fragmentosSelect numLinea='76' texto='SELECT * FROM Estadios estad, Torneos_anyos torn WHERE torn.Capacidad &gt; 20000  AND estad.Estadio = torn.Estadio AND Ciudad = Lugar' sigFragmento='#//@fragmentos.2' xsi:type='Fragmentos:Fragmento' posCaracter='18'/>
+</Fragmentos:Fichero>

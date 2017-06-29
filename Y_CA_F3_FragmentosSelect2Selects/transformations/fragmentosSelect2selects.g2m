@@ -1,0 +1,85 @@
+rule 'file2Aplicacion'
+	from file
+	to Aplicacion
+	queries
+		fichero : //#file;
+	mappings
+		ficheros = fichero;
+end_rule
+
+rule 'file2Fichero'
+	from file f
+	to Fichero fichero
+	queries
+		-- consultas : //file/statements/#query_specification;
+		consultas :  /f/statements/#query_specification;
+	mappings
+		nombre = f.filename;
+		selects = consultas;
+end_rule
+
+rule 'query_specification2Select'
+	from query_specification qs
+	to Select
+	queries
+		from_part : /qs/table_expression/#from_clause;
+		where_part : /qs/table_expression/#where_clause;
+	mappings
+		parte_from = from_part;
+		parte_where = where_part;
+end_rule
+
+rule 'from_clause2From'
+	from from_clause fc
+	to From
+	queries
+		tables : /fc/#table_reference;
+	mappings
+		tablas = tables;
+end_rule
+
+rule 'table_reference2Table'
+	from table_reference tr
+	to Tabla
+	queries
+		table : /tr/#table_name;
+		correlacion : /tr/correlation_specification/#correlation_name;
+	mappings
+		nombre = table.ID;
+		tabAlias = correlacion.ID;
+end_rule
+
+rule 'where_clause2Where'
+	from where_clause wc
+	to Where
+	queries
+		booleanFactorSinNot : /wc/search_condition//#boolean_factor{!(TOKEN.exists && TOKEN.eq("NOT"))};
+		comparacion : /booleanFactorSinNot/predicate/#comparison_predicate;
+		comparacionCompletaConJoin : /comparacion/#complete_comparison_predicate/comp_op{EQUALS_OPERATOR.exists};
+		comparacionConOp1TipoColumna : /#comparacionCompletaConJoin/row_value_constructor[0]/column_reference;
+		comparacionConOp1YOp2TipoColumna: /#comparacionConOp1TipoColumna/row_value_constructor[1]/column_reference;
+	mappings
+		joins = comparacionConOp1YOp2TipoColumna;
+end_rule
+
+rule 'complete_comparison_predicate2Join'
+	from complete_comparison_predicate ccp
+	to Join
+	queries
+		op1 : /ccp/row_value_constructor[0]/#column_reference;
+		op2 : /ccp/row_value_constructor[1]/#column_reference;
+	mappings
+		operando1 = op1;
+		operando2 = op2;
+end_rule
+
+rule 'column_reference2Operando'
+	from column_reference cr
+	to Operando
+	queries
+		tab : /cr/#table_name;
+		col : /cr/#column_name;
+	mappings
+		tabla = tab.ID;
+		columna = col.ID;
+end_rule

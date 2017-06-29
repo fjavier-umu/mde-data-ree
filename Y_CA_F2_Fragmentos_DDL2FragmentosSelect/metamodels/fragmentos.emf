@@ -1,0 +1,20 @@
+@namespace(uri="http://modelum.es/Fragmentos", prefix="Fragmentos")
+package Fragmentos;
+
+class Aplicacion {
+  val Fichero[*] ficheros;
+}
+
+class Fichero {
+  val Fragmento[*] fragmentos;
+  val Fragmento[*] fragmentosSelect;
+  attr String nombre;
+}
+
+class Fragmento {
+  attr int numLinea;
+  attr int posCaracter;
+  attr String texto;
+  ref Fragmento sigFragmento;
+}
+

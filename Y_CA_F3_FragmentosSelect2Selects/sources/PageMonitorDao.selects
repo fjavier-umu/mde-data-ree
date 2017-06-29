@@ -1,0 +1,14 @@
+SELECT e FROM PageMonitor e WHERE e.pageName=? and e.pageId=? order by e.updateDate desc
+
+
+SELECT e FROM PageMonitor e WHERE e.pageName=? order by e.updateDate desc
+
+
+SELECT e FROM PageMonitor e WHERE e.pageName=? and e.pageId=? order by e.updateDate desc
+
+
+SELECT e FROM PageMonitor e WHERE e.pageName=? and e.pageId!=? and e.providerNo=?
+
+
+SELECT e FROM PageMonitor e WHERE e.pageName=? and e.pageId=? and  e.providerNo=?
+

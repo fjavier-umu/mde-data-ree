@@ -1,0 +1,263 @@
+SELECT n FROM CaseManagementNote n WHERE n.id IN (:ids)
+
+
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn where cmn.uuid = ? and cmn.id = (select max(cmn.id) from cmn where cmn.uuid = ?)
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id = ? and cmn.demographic_no = ? and cmn.observation_date >= ?  and cmn.id in (select max(cmn.id) from cmn where cmn.demographic_no = ? GROUP BY uuid) ORDER BY cmn.observation_date asc
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id in (
+
+
+
+
+ ) and cmn.demographic_no = ?  and cmn.id in (select max(cmn.id) from cmn where cmn.observation_date >= ? GROUP BY uuid) ORDER BY cmn.observation_date asc
+
+
+
+
+ select cmn from CaseManagementNote cmn where cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn2.uuid = cmn.uuid) order by cmn.observation_date
+
+
+
+
+ select count(*) from CaseManagementNote cmm where cmm.demographic_no = ?
+
+
+
+
+ select cmn.id,cmn.observation_date,cmn.providerNo,cmn.program_no,cmn.reporter_caisi_role,cmn.uuid from CaseManagementNote cmn where cmn.demographic_no = ? order by cmn.update_date DESC
+
+
+
+
+ select new map(cmn.id as id,cmn.observation_date as observation_date,cmn.providerNo as providerNo,cmn.program_no as program_no,cmn.reporter_caisi_role as reporter_caisi_role,cmn.uuid as uuid, cmn.update_date as update_date) from CaseManagementNote cmn where cmn.demographic_no = ? order by cmn.update_date DESC
+
+
+
+
+ select new map(cmn.id as id,cmn.observation_date as observation_date,cmn.providerNo as providerNo,cmn.program_no as program_no,cmn.reporter_caisi_role as reporter_caisi_role,cmn.uuid as uuid, cmn.update_date as update_date) from CaseManagementNote cmn where cmn.demographic_no = ? and cmn.signed=? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn2.uuid = cmn.uuid) order by cmn.update_date DESC
+
+
+
+
+ select cmn from CaseManagementNote cmn where cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn2.uuid = cmn.uuid) order by cmn.observation_date desc
+
+
+
+
+ from CaseManagementNote cmn where cmn.demographic_no = ? ORDER BY cmn.update_date DESC
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id in (
+
+
+
+
+ ) and cmn.demographic_no = ? and cmn.archived = 0 and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid) ORDER BY cmn.position, cmn.observation_date desc
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id = ? and cmn.demographic_no = ? and cmn.archived = 0 and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid) ORDER BY cmn.position, cmn.observation_date desc
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id in (
+
+
+
+
+ ) and cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid) order by cmn.observation_date desc 
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id = ? and cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid) order by cmn.observation_date desc
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn where cmn.demographic_no = ? and cmn.issues.issue_id in (
+
+
+
+
+ ) and cmn.id in (select max(cmn.id) from cmn GROUP BY uuid) ORDER BY cmn.observation_date asc
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id in (
+
+
+
+
+ ) and cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid)
+
+
+
+
+ select cmn from CaseManagementNote cmn join cmn.issues i where i.issue_id = ? and cmn.demographic_no = ? and cmn.id = (select max(cmn2.id) from CaseManagementNote cmn2 where cmn.uuid = cmn2.uuid)
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn where cmn.demographic_no = ? and cmn.issues.issue_id in (
+
+
+
+
+ ) and cmn.id in (select max(cmn.id) from cmn GROUP BY uuid) ORDER BY cmn.observation_date asc
+
+
+
+
+ select distinct casemgmt_note.note_id from issue,casemgmt_issue,casemgmt_issue_notes,casemgmt_note where casemgmt_issue.issue_id=issue.issue_id and casemgmt_issue.demographic_no='
+
+
+
+
+ and issue.code in 
+
+
+
+
+  and casemgmt_issue_notes.id=casemgmt_issue.id and casemgmt_issue_notes.note_id=casemgmt_note.note_id
+
+
+
+
+ select distinct casemgmt_note.note_id from issue,casemgmt_issue,casemgmt_issue_notes,casemgmt_note where casemgmt_issue.issue_id=issue.issue_id and casemgmt_issue.demographic_no='
+
+
+
+
+ and issue.code in 
+
+
+
+
+  and casemgmt_issue_notes.id=casemgmt_issue.id and casemgmt_issue_notes.note_id=casemgmt_note.note_id order by casemgmt_note.note_id DESC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ select n.id from CaseManagementNote n
+
+
+
+
+ select * from casemgmt_issue_notes where id=
+
+
+
+
+ select casemgmt_issue.id from casemgmt_issue_notes,casemgmt_issue,issue   where issue.issue_id=casemgmt_issue.issue_id and casemgmt_issue.id=casemgmt_issue_notes.id and demographic_no=
+
+
+
+
+  and issue.code='
+
+
+
+
+ select encounter_type,count(demographic_no), count(distinct demographic_no) from casemgmt_note where reporter_caisi_role=? and observation_date>=? and observation_date<?
+
+
+
+
+  and program_no=?
+
+
+
+
+  group by encounter_type
+
+
+
+
+ select count(distinct demographic_no) from casemgmt_note where reporter_caisi_role=? and observation_date>=? and observation_date<?
+
+
+
+
+  and program_no=?
+
+
+
+
+ select count(distinct uuid) from casemgmt_note where provider_no = ? and observation_date >= ? and observation_date <= ?
+
+
+
+
+ select issue_id from issue where code = '
+
+
+
+
+
+
+
+ issue Code 
+
+
+
+
+  id :
+
+
+
+
+ select count(distinct uuid) from casemgmt_issue c, casemgmt_issue_notes cin, casemgmt_note cn where c.issue_id = ? and c.id = cin.id and cin.note_id = cn.note_id and cn.provider_no = ?  and observation_date >= ? and observation_date <= ?
+
+
+
+
+ Error counting notes for issue :
+
+
+
+
+ select distinct cmn from CaseManagementNote cmn where cmn.id in (select max(cmn.id) from cmn where cmn.demographic_no = ? GROUP BY uuid) and cmn.demographic_no = ? and cmn.note like ? and cmn.archived = 0
+
+
+
+
+ FROM CaseManagementNote x WHERE x.program_no=? and x.observation_date>=? and x.observation_date<=?
+
+
+
+
+ select distinct cmn.uuid from CaseManagementNote cmn where cmn.demographic_no = ?
+
+

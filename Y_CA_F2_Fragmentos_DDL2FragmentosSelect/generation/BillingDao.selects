@@ -1,0 +1,426 @@
+SELECT b FROM  Billing b  where b.billingmasterNo in (:billingNumbers)
+
+
+
+
+
+
+ FROM Billing b, BillingDetail bd where b.demographicNo = :demoNo and bd.billingNo = b.id
+
+
+
+
+  AND ( 
+
+
+
+
+  AND bd.status != :deletedFlag and b.status != :deletedFlag order by b.billingDate desc
+
+
+
+
+
+
+
+  and b.demographicNo = :demoNo
+
+
+
+
+ FROM Billing b WHERE b.status like :status 
+
+
+
+
+
+
+
+
+
+
+  b, Billing bi where bi.id = b.billingNo and b.billingNo = :bn
+
+
+
+
+ FROM Billing b WHERE b.providerOhipNo = :pon
+
+
+
+
+  AND b.status IN (:sl)
+
+
+
+
+  AND b.billingDate >= :bf
+
+
+
+
+  AND b.billingDate <= :bt
+
+
+
+
+ b.status <> 'B' AND b.billingtype IN ('ICBC', 'WCB', 'MSP')
+
+
+
+
+
+
+
+
+
+
+  and b.provider_no = '
+
+
+
+
+  and b.demographic_no = '
+
+
+
+
+  b.provider_no, b.visitdate, b.visittype,bm.billingmaster_no,p.first_name,p.last_name,bm.billing_unit from billing b left join provider p on p.provider_no = b.provider_no, 
+
+
+
+
+  billingmaster bm where b.billing_no= bm.billing_no 
+
+
+
+
+  order by b.billing_date desc
+
+
+
+
+ FROM Billing b, Billingmaster bm 
+
+
+
+
+ WHERE b.id = bm.billingNo 
+
+
+
+
+ AND bm.billingstatus = :st
+
+
+
+
+ FROM Billingmaster bm, Billing b 
+
+
+
+
+ WHERE bm.billingmasterNo = b.id 
+
+
+
+
+ AND b.demographicNo = :dNo 
+
+
+
+
+ AND bm.billingstatus NOT IN ( :statuses ) 
+
+
+
+
+ AND b.billingtype = :bType
+
+
+
+
+ FROM Billingmaster b, Billing b1 
+
+
+
+
+ WHERE b1.id = b.billingNo 
+
+
+
+
+ AND b.billingmasterNo = :no
+
+
+
+
+
+
+
+ FROM Billing b, BillingDetail bd 
+
+
+
+
+ WHERE b.id = :billing 
+
+
+
+
+ AND b.billingDate = :billingDate 
+
+
+
+
+ AND b.providerOhipNo = :ohipNo 
+
+
+
+
+ AND bd.billingNo = b.id 
+
+
+
+
+ AND bd.serviceCode = :serviceCode
+
+
+
+
+
+
+SELECT DISTINCT b.id FROM Billing b, BillingDetail bd 
+
+
+
+ WHERE b.id = bd.billingNo 
+
+
+
+
+ AND bd.diagnosticCode = :diagCode 
+
+
+
+
+ AND b.creator = :creator 
+
+
+
+
+ AND b.billingDate >= :sdate 
+
+
+
+
+ AND b.billingDate <= :edate 
+
+
+
+
+ AND b.status != 'D' 
+
+
+
+
+ AND bd.status!='D'
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT b.visitType, COUNT(b) FROM Billing b 
+
+
+
+ WHERE b.status <> 'D' 
+
+
+
+
+ AND b.appointmentNo <> '0' 
+
+
+
+
+ AND b.creator = :providerNo 
+
+
+
+
+ AND b.billingDate >= :dateBegin 
+
+
+
+
+ AND b.billingDate <= :dateEnd 
+
+
+
+
+ GROUP BY b.visitType
+
+
+
+
+
+
+SELECT b.visitType, COUNT(b) FROM Billing b 
+
+
+
+ WHERE b.status <> 'D' 
+
+
+
+
+ AND b.appointmentNo <> '0' 
+
+
+
+
+ AND b.apptProviderNo = :providerNo 
+
+
+
+
+ AND b.billingDate >= :dateBegin 
+
+
+
+
+ AND b.billingDate <= :dateEnd 
+
+
+
+
+ GROUP BY b.visitType
+
+
+
+
+
+
+
+ select x from Billing x where x.demographicNo=? and x.appointmentNo = ? and x.status <> ? order by x.updateDate desc, x.updateTime desc
+
+
+
+
+ select x from Billing x where x.demographicNo=? order by x.updateDate desc, x.updateTime desc
+
+
+
+
+ select distinct d.LastName, d.FirstName, p.LastName, p.FirstName, b.id, b.billingDate, b.billingTime, b.status, b.appointmentNo, b.hin
+
+
+
+
+ where p.ProviderNo=a.providerNo and d.DemographicNo= b.demographicNo and b.appointmentNo=a.id and b.status <> 'D' and b.id=?
+
+
+
+
+
+
+
+ bs.providerOhipNo = :hin and (bs.status = 'O' or bs.status = 'W') and bs.billingtype != 'Pri'
+
+
+
+
+
+
+
+ select b from Billing b where b.providerNo=? and b.billingDate >=? and b.billingDate<=? and b.status<>'D' and b.status<>'S' and b.status<>'B' and b.demographicNo <> 0 order by b.billingDate desc, b.billingTime desc
+
+
+
+
+ where bd.billingNo=b.id and b.status<>'D' and bd.serviceCode in (:serviceCodes) and b.providerNo like :providerNo 
+
+
+
+
+
+
+
+ where bd.billingNo=b.id and b.status<>'D' and( bd.serviceCode='G590A' or bd.serviceCode='G591A') and b.creator like :providerNo 
+
+
+
+
+
+
+
+ select b from Billing b where b.providerNo=:providerNo and b.billingDate >=:startDate and b.billingDate<=:endDate and (b.status='B') and b.demographicNo <> 0 order by b.billingDate desc, b.billingTime desc
+
+
+
+
+
+
+
+ FROM Billing b 
+
+
+
+
+ WHERE b.demographicNo = :demoNo 
+
+
+
+
+ AND b.status <> 'D' 
+
+
+
+
+ ORDER BY b.billingDate DESC, b.id DESC
+
+
+
+SELECT b FROM Billing b, BillingDetail bd 
+
+
+
+ WHERE bd.billingNo = b.id 
+
+
+
+
+ AND bd.status <> 'D' 
+
+
+
+
+ AND b.status <> 'D' 
+
+
+
+
+ AND bd.serviceCode IN (:serviceCodes) 
+
+
+
+
+ AND b.billingDate <= :date 
+
+
+
+
+ AND b.demographicNo = :demoNo
+
+
+
+
+

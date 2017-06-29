@@ -1,0 +1,29 @@
+<ERR:Errores xsi:schemaLocation='http://modelum.es/DDL ../metamodels/DDL.ecore http://modelum.es/Error ../metamodels/errores.ecore' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:DDL='http://modelum.es/DDL' xmi:version='2.0' xmlns:ERR='http://modelum.es/Error' xmlns:xmi='http://www.omg.org/XMI'>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.42' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.241'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.42/@columns.6'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.1' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.72'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.1/@columns.3'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.45' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.204'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.45/@columns.11'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.45' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.204'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.45/@columns.11'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.201' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.45'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.201/@columns.7'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.201' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.204'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.201/@columns.9'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.201' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.204'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.201/@columns.9'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.201' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.72'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.201/@columns.3'/>
+</errores>
+<errores xsi:type='ERR:ForeignError' tableCont='DDL:Table OSCAR_DDLyo.xmi#//@statements.201' tableRef='DDL:Table OSCAR_DDLyo.xmi#//@statements.72'>
+<fkColumns href='file:///Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/Selects_DDL2Errores/models/OSCAR_DDLyo.xmi#//@statements.201/@columns.3'/>
+</errores>
+</ERR:Errores>

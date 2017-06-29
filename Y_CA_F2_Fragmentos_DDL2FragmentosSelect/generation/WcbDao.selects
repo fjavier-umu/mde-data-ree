@@ -1,0 +1,7 @@
+SELECT x FROM Wcb x WHERE x.billingNo=?
+
+
+
+ w.demographicNo = :demoNo
+
+

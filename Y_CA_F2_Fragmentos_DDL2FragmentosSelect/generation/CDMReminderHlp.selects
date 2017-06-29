@@ -1,0 +1,12 @@
+SELECT de.demographic_no,de.provider_no,dxresearch_code FROM dxresearch d, demographic de WHERE de.demographic_no=d.demographic_no 
+
+
+
+  and d.dxresearch_code 
+
+
+
+
+  and status = 'A' and patient_status = 'AC' order by de.demographic_no
+
+

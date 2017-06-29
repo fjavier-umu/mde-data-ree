@@ -1,0 +1,17 @@
+SELECT d from DemographicExt d where d.demographicNo=? order by d.dateCreated
+
+
+SELECT d from DemographicExt d where d.demographicNo=? and d.key = ? order by d.dateCreated DESC
+
+
+SELECT d from DemographicExt d where d.key = ? and d.value=? order by d.dateCreated DESC
+
+
+SELECT d from DemographicExt d where d.demographicNo=? and d.key = ? order by d.dateCreated DESC
+
+
+SELECT d from DemographicExt d where d.demographicNo=? order by d.dateCreated
+
+
+SELECT distinct d.demographicNo from DemographicExt d where d.key=? and d.value=?
+

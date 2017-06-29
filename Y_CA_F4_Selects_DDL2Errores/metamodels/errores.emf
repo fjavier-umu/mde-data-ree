@@ -1,0 +1,22 @@
+@namespace(uri="http://modelum.es/Error", prefix="ERR")
+package errors;
+
+import "platform:/resource/Y_CA_F4_Selects_DDL2Errores/metamodels/DDL.ecore";
+
+class Errores {
+  val Error[*] errores;
+}
+
+abstract class Error {
+  attr int[1] ~id;
+  attr boolean[1] apply;
+}
+
+class ForeignError extends Error {
+  attr int porcent;
+  ref DDL.Table tableCont;
+  ref DDL.Table tableRef;
+  ref DDL.Column[*] fkColumns;
+  ref DDL.Fk fk;
+}
+

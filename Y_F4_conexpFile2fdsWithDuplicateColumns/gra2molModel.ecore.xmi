@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:Transformation xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <rules xsi:type="Core:StandardRule" name="mapScript2Database">
+    <queries variable="database">
+      <filter type="INDIRECT">
+        <element name="mainRule"/>
+        <next>
+          <element name="database" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="table_and_implications">
+      <filter type="INDIRECT">
+        <element name="mainRule"/>
+        <next>
+          <element name="table_and_implications" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="database" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="tables">
+        <value type="QUERY_RESULT" value="table_and_implications"/>
+      </inits>
+    </inits>
+    <from name="file" alias="f">
+      <filter variable="f">
+        <filter>
+          <element name="file" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Database"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapTableAndImplications2Table">
+    <queries variable="table">
+      <filter>
+        <element name="tai"/>
+        <next>
+          <element name="table" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="attributes">
+      <filter>
+        <element name="tai"/>
+        <next type="INDIRECT">
+          <element name="attribute" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="implications">
+      <filter>
+        <element name="tai"/>
+        <next type="INDIRECT">
+          <element name="implication" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasObjects">
+      <filter>
+        <element name="implications" mark="true"/>
+        <next>
+          <element name="number_of_objects"/>
+          <expression xsi:type="Query:FilterExpressionComplex" type="NOT">
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="NUMBER"/>
+              <parameters value="0"/>
+            </expressions>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="hasNullPremise">
+      <filter>
+        <element name="implications" mark="true"/>
+        <next>
+          <element name="premise"/>
+          <expression xsi:type="Query:FilterExpressionComplex">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="TOKEN"/>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="{"/>
+            </expressions>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="table" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columns">
+        <value type="QUERY_RESULT" value="attributes"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitGroup" type="IF">
+          <inits xsi:type="Core:InitUnitElement" element="functionalDependencies">
+            <value type="QUERY_RESULT" value="hasObjects"/>
+          </inits>
+          <expression xsi:type="Query:FilterExpressionComplex" type="NOT">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+              <element name="hasNullPremise"/>
+            </expressions>
+          </expression>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="hasObjects"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="table_and_implications" alias="tai">
+      <filter variable="tai">
+        <filter>
+          <element name="table_and_implications" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Table"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapAttribute2Column">
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="QUERY_ACCESS" value="a" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="attribute" alias="a">
+      <filter variable="a">
+        <filter>
+          <element name="attribute" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Column"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapImplication2FD">
+    <queries variable="det">
+      <filter>
+        <element name="i"/>
+        <next>
+          <element name="premise"/>
+          <next>
+            <element name="attribute" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="dep">
+      <filter>
+        <element name="i"/>
+        <next>
+          <element name="conclusion"/>
+          <next>
+            <element name="attribute" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="determinant">
+        <value type="QUERY_RESULT" value="det"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="dependant">
+        <value type="QUERY_RESULT" value="dep"/>
+      </inits>
+    </inits>
+    <from name="implication" alias="i">
+      <filter variable="i">
+        <filter>
+          <element name="implication" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="FunctionalDependency"/>
+  </rules>
+</Core:Transformation>

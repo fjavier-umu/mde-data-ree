@@ -1,0 +1,340 @@
+SELECT DISTINCT p.labType, x.observationIdentifier, x.observationResultStatus 
+
+
+
+ FROM MdsOBX x, MdsMSH m, PatientLabRouting p 
+
+
+
+
+ WHERE p.demographicNo = :demoNo 
+
+
+
+
+ AND m.id = p.labNo 
+
+
+
+
+ AND x.id = m.id 
+
+
+
+
+ AND p.labType = :labType
+
+
+
+
+
+
+
+ WHERE p.demographicNo = :demoNo 
+
+
+
+
+ AND m.id = p.labNo 
+
+
+
+
+ AND x.id = m.id 
+
+
+
+
+ AND p.labType = :labType
+
+
+
+SELECT DISTINCT p.labType, x.observationIdentifier 
+
+
+
+ FROM PatientLabRouting p, Hl7Msh m, Hl7Pid pi, Hl7Obr r, Hl7Obx x  
+
+
+
+
+ WHERE p.demographicNo = :demoNo 
+
+
+
+
+ AND p.labNo = m.messageId 
+
+
+
+
+ AND pi.messageId = m.messageId 
+
+
+
+
+ AND r.id = pi.id 
+
+
+
+
+ AND r.id = x.obrId 
+
+
+
+
+ AND p.labType = :labType
+
+
+
+
+ r.demographicNo = :demoNo AND r.labType = :labType
+
+
+
+
+ FROM PatientLabRouting p, 
+
+
+
+
+  lpp WHERE 
+
+
+
+
+ AND p.demographicNo = :demoNo 
+
+
+
+
+ AND p.labNo = ltr.labPatientPhysicianInfoId 
+
+
+
+
+ AND ltr.testName = :testName 
+
+
+
+
+ AND ltr.labPatientPhysicianInfoId = lpp.id 
+
+
+
+
+ ORDER BY lpp.collectionDate
+
+
+
+
+ FROM PatientLabRouting p, LabTestResults ltr, LabPatientPhysicianInfo lpp WHERE 
+
+
+
+
+ AND p.demographicNo = :demoNo 
+
+
+
+
+ AND p.labNo = ltr.labPatientPhysicianInfoId 
+
+
+
+
+ AND ltr.labPatientPhysicianInfoId = lpp.id 
+
+
+
+
+ AND ltr.testName <> '' 
+
+
+
+
+ ORDER BY lpp.collectionDate
+
+
+
+
+ FROM MdsOBX x, MdsMSH m, PatientLabRouting p 
+
+
+
+
+ WHERE p.labType = :labType 
+
+
+
+
+ AND p.demographicNo = :demoNo 
+
+
+
+
+ AND x.observationIdentifier like :testName 
+
+
+
+
+ AND x.id = m.id 
+
+
+
+
+ AND m.id = p.labNo 
+
+
+
+
+ ORDER BY m.dateTime
+
+
+
+
+ FROM PatientLabRouting p, Hl7Msh m, Hl7Pid pi, Hl7Obr r, Hl7Obx x, Hl7Orc c 
+
+
+
+
+ WHERE p.labType = :labType 
+
+
+
+
+ AND p.demographicNo = :demoNo 
+
+
+
+
+ AND x.observationIdentifier like :testName 
+
+
+
+
+ AND p.labNo = m.messageId 
+
+
+
+
+ AND pi.messageId = m.messageId 
+
+
+
+
+ AND r.pidId = pi.id 
+
+
+
+
+ AND c.pidId = pi.id 
+
+
+
+
+ AND r.id = x.id 
+
+
+
+
+ ORDER BY r.oberservationDateTime
+
+
+
+
+ FROM PatientLabRouting p, ConsultDocs c 
+
+
+
+
+ WHERE p.id = c.documentNo 
+
+
+
+
+ AND c.requestId = :reqId 
+
+
+
+
+ AND c.docType = :docType 
+
+
+
+
+ AND c.deleted IS NULL
+
+
+
+
+
+
+
+ WHERE p.labNo = msh.id 
+
+
+
+
+ AND p.labNo = zrg.id 
+
+
+
+
+ AND p.labType = :labType 
+
+
+
+
+ AND p.demographicNo = :demographicNo
+
+
+
+
+
+
+
+ FROM PatientLabRouting p , LabPatientPhysicianInfo l 
+
+
+
+
+ WHERE p.labType = :labType 
+
+
+
+
+ AND p.labNo = l.id 
+
+
+
+
+ AND p.demographicNo = :demographicNo
+
+
+
+
+
+
+
+ FROM PatientLabRouting p, MdsMSH m 
+
+
+
+
+ WHERE p.labType = 'MDS' 
+
+
+
+
+ AND p.labNo = m.id 
+
+
+
+
+ AND p.demographicNo = :demographicNo
+
+
+
+
+

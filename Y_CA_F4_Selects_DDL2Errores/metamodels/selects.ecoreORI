@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Selects"
+    nsURI="http://modelum.es/Selects" nsPrefix="Selects">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fichero" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selects" upperBound="-1"
+        eType="#//Select" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Select">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parte_from" lowerBound="1"
+        eType="#//From" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parte_where" lowerBound="1"
+        eType="#//Where" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="From">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tablas" lowerBound="1"
+        upperBound="-1" eType="#//Tabla" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Where">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
+        eType="#//Join" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tabAlias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Join">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operando1" lowerBound="1"
+        eType="#//Operando" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operando2" lowerBound="1"
+        eType="#//Operando" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operando">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columna" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tabla" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

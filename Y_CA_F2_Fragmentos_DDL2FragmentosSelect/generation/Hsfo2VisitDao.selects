@@ -1,0 +1,27 @@
+select x FROM Hsfo2Visit x where x.id in (SELECT max(y.id) FROM Hsfo2Visit y WHERE y.Patient_Id = ? group by y.VisitDate_Id)
+
+
+
+ select x FROM Hsfo2Visit x WHERE x.VisitDate_Id=?1 and x.demographic_no = ?2 order by x.id desc
+
+
+
+
+ select x FROM Hsfo2Visit x where x.Patient_Id=?1 and x.VisitDate_Id>?2 and x.VisitDate_Id<?3 group by x.VisitDate_Id
+
+
+
+
+ select * FROM form_hsfo2_visit x WHERE x.Patient_Id=? order by x.id ASC
+
+
+
+
+ select x FROM Hsfo2Visit x WHERE x.Patient_Id = ? and x.lastBaseLineRecord = 1
+
+
+
+
+ select x from Hsfo2Visit x where x.id=(select max(x.id) from Hsfo2Visit x) 
+
+

@@ -1,0 +1,25 @@
+SELECT x FROM GroupMembers x WHERE x.groupId=?
+
+
+
+ FROM GroupMembers g, Provider p 
+
+
+
+
+ WHERE g.providerNo = p.ProviderNo 
+
+
+
+
+ AND g.groupId = :id 
+
+
+
+
+ ORDER BY p.LastName, p.FirstName
+
+
+
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ConceptualSystem>
+	<Version MajorNumber="1" MinorNumber="0"/>
+	<Contexts>
+		<Context Identifier="0" Type="Binary">
+			<Attributes>
+				<Attribute Identifier="0">
+					<Name>ESTADIO</Name>
+				</Attribute>
+				<Attribute Identifier="1">
+					<Name>CAPACIDAD</Name>
+				</Attribute>
+				<Attribute Identifier="2">
+					<Name>CONSTRUCTORA</Name>
+				</Attribute>
+				<Attribute Identifier="3">
+					<Name>SEDE_CONSTRUCTORA</Name>
+				</Attribute>
+			</Attributes>
+			<Objects>
+				<Object>
+					<Name>('Indiana Memorial Stadium','25000','Concrate Co.','Indiana')('Des Moines Olympic Stadium','45000','Concrate Co.','Indiana')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="2"/>
+						<HasAttribute AttributeIdentifier="3"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','30000','New Buildings Co.','Indiana')('Cleveland Memorial Stadium','30000','Crates and Son','Cleveland')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="1"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','30000','New Buildings Co.','Indiana')('Des Moines Olympic Stadium','45000','Concrate Co.','Indiana')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="3"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','30000','New Buildings Co.','Indiana')('Indiana Memorial Stadium','25000','Concrate Co.','Indiana')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="3"/>
+					</Intent>
+				</Object>
+			</Objects>
+		</Context>
+	</Contexts>
+	<RecalculationPolicy Value="Clear"/>
+	<Lattices/>
+</ConceptualSystem>

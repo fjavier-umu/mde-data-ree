@@ -1,0 +1,220 @@
+SELECT DISTINCT d.demographic_no, d.last_name, d.first_name FROM demographic d LEFT JOIN demographiccust dc USING (demographic_no) left join client_referral cr on (cr.provider_no=d.provider_no AND cr.client_id=d.demographic_no ) WHERE (d.provider_no='%s' OR dc.cust1='%s' OR dc.cust2='%s' OR dc.cust4='%s') AND d.patient_status NOT IN ('FI','MO','DE','IN') AND cr.program_id=%d
+
+
+
+ select demographic_no, last_name, first_name, sex, month_of_birth, date_of_birth, CAST((DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '00-%m-%d'))) as UNSIGNED INTEGER) as age from demographic
+
+
+
+SELECT p.demographic_no, max(appointment_date) appointment_date FROM appointment p where addtime(appointment_date, start_time) < now() GROUP BY p.demographic_no
+
+
+SELECT p.demographic_no, min(appointment_date) appointment_date FROM appointment p where addtime(appointment_date, start_time) > now() GROUP BY p.demographic_no
+
+
+
+ select demographic_no, count(1) as count from appointment where appointment_date > curdate() - 365 group by demographic_no
+
+
+
+
+ select demographic_no, count(1) as count from providerLabRouting left join patientLabRouting using (lab_no) where providerLabRouting.lab_type='HL7' and status='N' and provider_no='%s' group by demographic_no
+
+
+
+
+ select demographic_no, count(1) as count from providerLabRouting left join patientLabRouting using (lab_no) where providerLabRouting.lab_type='DOC' and status='N' and provider_no='%s' group by demographic_no
+
+
+
+
+ select demographic_no, count(1) as count from tickler where status='A' group by demographic_no
+
+
+
+
+ select demographic_no, count(1) as count from msgDemoMap left join messagelisttbl on message = messageID where status='new' group by demographic_no
+
+
+
+SELECT m.demographicNo as demographic_no, dataField FROM measurements m JOIN (SELECT demographicNo as demographic_no, max(dateObserved) max_date FROM measurements WHERE type='%s' GROUP BY demographic_no) m2 ON m.demographicNo = m2.demographic_no AND m.dateObserved = m2.max_date WHERE type='%s'
+
+
+select demographic_no, update_date FROM casemgmt_note AS c WHERE NOT EXISTS (SELECT * FROM casemgmt_note WHERE update_date > c.update_date)
+
+
+select demographic_no, encounter_type from casemgmt_note AS c where NOT EXISTS (SELECT * FROM casemgmt_note WHERE update_date > c.update_date)
+
+
+
+ select cr.client_id as demographic_no, cr.referral_date from client_referral cr where cr.program_id in (select id from program where name = '%s') and not exists (select * from client_referral where cr.program_id=program_id and cr.client_id=client_id and referral_date>cr.referral_date)
+
+
+
+
+ select cr.client_id as demographic_no, cr.referral_date from client_referral cr where cr.program_id in (select id from program where name = '%s') and not exists (select * from client_referral where cr.program_id=program_id and cr.client_id=client_id and referral_date>cr.referral_date)
+
+
+
+
+ select distinct roster_status from demographic where roster_status not in ('', 'RO', 'NR', 'TE', 'FS')
+
+
+
+
+ select last_name, first_name, sex, CAST(month_of_birth AS UNSIGNED INTEGER), CAST(date_of_birth AS UNSIGNED INTEGER), CAST((DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '00-%m-%d'))) as UNSIGNED INTEGER) as age from demographic where demographic_no=?
+
+
+
+
+ select last_name, first_name, sex, month_of_birth, date_of_birth, CAST((DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '00-%m-%d'))) as UNSIGNED INTEGER) as age from demographic where demographic_no=? AND roster_status=?
+
+
+
+
+ select max(appointment_date) from appointment where addtime(appointment_date, start_time) < now() and demographic_no=?
+
+
+
+
+ select min(appointment_date) from appointment where addtime(appointment_date, start_time) > now() and demographic_no=?
+
+
+
+
+ select count(*) from appointment where demographic_no=? and appointment_date > curdate() - 365
+
+
+
+
+ select count(*) from providerLabRouting left join patientLabRouting using (lab_no) where providerLabRouting.lab_type='HL7' and status='N' and provider_no=? and demographic_no=?
+
+
+
+
+ select count(*) from providerLabRouting left join patientLabRouting using (lab_no) where providerLabRouting.lab_type='DOC' and status='N' and provider_no=? and demographic_no=?
+
+
+
+
+ select count(*) from tickler where status='A' and demographic_no=?
+
+
+
+
+ select count(*) from msgDemoMap left join messagelisttbl on message = messageID where demographic_no=? and status='new'
+
+
+
+
+ select dataField from measurements where type=? and demographicNo=? order by dateObserved desc limit 1
+
+
+
+
+ select max(update_date) from casemgmt_note where update_date < now() and demographic_no=?
+
+
+
+SELECT encounter_type FROM casemgmt_note AS c WHERE demographic_no=? AND NOT EXISTS (SELECT * FROM casemgmt_note WHERE update_date > c.update_date)
+
+
+SELECT MAX(referral_date) FROM client_referral WHERE client_id=? AND program_id IN (SELECT id FROM program WHERE name=?)
+
+
+SELECT MAX(referral_date) FROM client_referral WHERE client_id=? AND program_id IN (SELECT id FROM program WHERE name=?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ORDER BY last_name %s, first_name %s LIMIT %d, %d
+
+
+
+
+
+
+
+ , CAST((DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(concat(year_of_birth,month_of_birth,date_of_birth), '00-%m-%d'))) as UNSIGNED INTEGER) as age 
+
+
+
+
+  ORDER BY ISNULL(age) ASC, age %s, last_name %s, first_name %s LIMIT %d, %d
+
+
+
+
+
+
+
+ , sex 
+
+
+
+
+  ORDER BY sex = '' ASC, sex %s, last_name %s, first_name %s LIMIT %d, %d
+
+
+
+SELECT Y.demographic_no, Y.last_name, Y.first_name, X.%s FROM (%s) as Y LEFT JOIN (%s) as X on Y.demographic_no = X.demographic_no ORDER BY ISNULL(X.%s) ASC, CAST(X.%s as DECIMAL(10,4)) %s, Y.last_name %s, Y.first_name %s LIMIT %d, %d
+
+
+SELECT Y.demographic_no, Y.last_name, Y.first_name, X.%s FROM (%s) as Y LEFT JOIN (%s) as X on Y.demographic_no = X.demographic_no ORDER BY ISNULL(X.%s) ASC, X.%s %s, Y.last_name %s, Y.first_name %s LIMIT %d, %d
+
+
+SELECT count(1) AS count FROM (%s) AS X
+

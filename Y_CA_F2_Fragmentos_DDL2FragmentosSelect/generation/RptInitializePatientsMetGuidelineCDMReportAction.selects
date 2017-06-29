@@ -1,0 +1,49 @@
+SELECT dataField FROM measurements WHERE dateEntered = '
+
+
+
+ ' AND demographicNo = '
+
+
+
+
+ ' AND type='
+
+
+
+
+ ' AND measuringInstruction='
+
+
+
+
+ ' AND dataField
+
+
+
+
+
+
+SELECT dataField FROM measurements WHERE dateEntered = '
+
+
+
+ ' AND demographicNo = '
+
+
+
+
+ ' AND type='
+
+
+
+
+ ' AND dataField
+
+
+
+
+
+
+
+

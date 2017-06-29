@@ -1,0 +1,5 @@
+SELECT tLink from TicklerLink tLink WHERE tLink.tableName = ? and tLink.tableId = ? order by tLink.id
+
+
+SELECT tLink from TicklerLink tLink WHERE tLink.ticklerNo = ? order by tLink.id
+

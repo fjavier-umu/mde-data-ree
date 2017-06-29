@@ -1,0 +1,92 @@
+SELECT d FROM Document d
+
+
+SELECT d FROM Document d WHERE d.documentNo = :documentNo
+
+
+SELECT d FROM Document d WHERE d.doctype = :doctype
+
+
+SELECT d FROM Document d WHERE d.docdesc = :docdesc
+
+
+SELECT d FROM Document d WHERE d.docfilename = :docfilename
+
+
+SELECT d FROM Document d WHERE d.doccreator = :doccreator
+
+
+SELECT d FROM Document d WHERE d.contentdatetime = :contentdatetime
+
+
+SELECT d FROM Document d WHERE d.responsible = :responsible
+
+
+SELECT d FROM Document d WHERE d.source = :source
+
+
+SELECT d FROM Document d WHERE d.programId = :programId
+
+
+SELECT d FROM Document d WHERE d.updatedatetime = :updatedatetime
+
+
+SELECT d FROM Document d WHERE d.status = :status
+
+
+SELECT d FROM Document d WHERE d.contenttype = :contenttype
+
+
+SELECT d FROM Document d WHERE d.public1 = :public1
+
+
+SELECT d FROM Document d WHERE d.observationdate = :observationdate
+
+
+SELECT d FROM Document d WHERE d.reviewer = :reviewer
+
+
+SELECT d FROM Document d WHERE d.reviewdatetime = :reviewdatetime
+
+
+SELECT d FROM Document d WHERE d.numberofpages = :numberofpages
+
+
+SELECT d FROM Document d WHERE d.appointmentNo = :appointmentNo and d.doctype='photo'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

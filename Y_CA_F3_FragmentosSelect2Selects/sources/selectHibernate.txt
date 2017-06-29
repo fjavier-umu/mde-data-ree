@@ -1,0 +1,30 @@
+select t.description from lst_field_category t, app_lookuptable where t.id=app_lookuptable.moduleId
+select count(*) from app_lookuptable_fields t1, app_lookuptable where t1.tableId=app_lookuptable.tableId and t1.genericidx=3
+select count(*) from app_lookuptable_fields t2, app_lookuptable where t2.tableId=app_lookuptable.tableId and t2.genericidx=4
+select r.description from secRole r, secUserRole where r.role_Name=secUserRole.role_Name
+select p.last_name from provider p, secUserRole where p.provider_no=secUserRole.provider_no
+select p.first_name from provider p, secUserRole where p.provider_no=secUserRole.provider_no
+select r.role_name from secRole r, casemgmt_note where r.role_no = casemgmt_note.reporter_caisi_role
+select p.name from program p, casemgmt_note where p.id = casemgmt_note.program_no
+select count(cmn.uuid) from casemgmt_note cmn, casemgmt_note where cmn.uuid = casemgmt_note.uuid
+select min(cmn.update_date) from casemgmt_note cmn, casemgmt_note where cmn.uuid = casemgmt_note.uuid
+select lst.description from lst_gender lst, demographic where lst.code=demographic.sex
+select d.merged_to from demographic_merged d, demographic where d.deleted = 0 and d.demographic_no = demographic.demographic_no
+select count(*) from admission a, demographic where a.client_id=demographic.demographic_no and a.admission_status='current' and a.program_id= 
+select p.id from program p where p.type='Bed' 
+select count(*) from health_safety h, demographic where h.demographic_no=demographic.demographic_no
+select p.last_name from provider p, client_referral where p.provider_no = client_referral.provider_no
+select p.first_name from provider p, client_referral where p.provider_no = client_referral.provider_no
+select p.name from program p, client_referral where p.id = client_referral.program_id
+select p.type from program p, client_referral where p.id = client_referral.program_id
+select count(*) from admission a, program where a.program_id = program.id and a.admission_status = 'current'
+select count(*) from program_queue a, program where a.program_id = program.id and a.status = 'active'
+select fac.name from Facility fac, program where fac.id=program.facilityId
+select a.description from lst_service_restriction a, program_client_restriction where a.id=program_client_restriction.comments
+select p.name from program p, program_queue where p.id = program_queue.program_id
+select p.select_vacancy from client_referral p, program_queue where p.referral_id = program_queue.referral_id
+select p.last_name from provider p, program_queue where p.provider_no = program_queue.provider_no
+select p.first_name from provider p, program_queue where p.provider_no = program_queue.provider_no
+select p.last_name from demographic p, program_queue where p.demographic_no = program_queue.client_id
+select p.first_name from demographic p, program_queue where p.demographic_no = program_queue.client_id
+select j.head_client_id from joint_admissions j, program_queue where j.archived = 0 and j.client_id = program_queue.client_id

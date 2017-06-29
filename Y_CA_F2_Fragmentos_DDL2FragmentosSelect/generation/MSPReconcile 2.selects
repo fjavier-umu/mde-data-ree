@@ -1,0 +1,119 @@
+SELECT teleplanS00.t_exp1 FROM teleplanS00, billingmaster 
+
+
+SELECT teleplanS00.t_payment,b.billingtype,b.demographic_name,apptProvider_no,provider_no,payee_no,b.demographic_no,teleplanS00.t_paidamt,t_exp1,t_exp2,t_dataseq,bm.service_date,bm.paymentMethod,teleplanS00.t_ajc1,
+
+
+
+  FROM teleplanS00 left join billingmaster as bm on teleplanS00.t_officeno = bm.billingmaster_no,billing as b
+
+
+
+
+  where b.billing_no = bm.billing_no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ no description for b.adjustmentCode:
+
+
+
+
+
+
+SELECT b.billingtype,bm.billingmaster_no,b.demographic_no,b.demographic_name,bm.service_date,b.apptProvider_no ,b.provider_no,bm.payee_no,
+
+
+
+  FROM billing_history bh left join billingmaster bm on bh.billingmaster_no = bm.billingmaster_no ,billing b
+
+
+
+
+  where bm.billing_no = b.billing_no 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ select ohip_no from provider where provider_no = 
+
+
+
+
+ Provider must have ohip no!
+
+
+
+
+  and b.apptProvider_no = '
+
+
+
+
+  and b.provider_no = '
+
+
+
+
+
+
+
+
+
+SELECT billing_code,provider.first_name,provider.last_name,t_practitionerno,t_s00type,billingmaster.service_date as 't_servicedate',t_payment,
+
+
+
+  and billingmaster.billing_no = billing.billing_no 
+
+
+
+
+  and provider.ohip_no= teleplanS00.t_practitionerno 
+
+
+
+
+  order by provider.first_name,t_servicedate,billing.demographic_name
+
+

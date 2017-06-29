@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="errors"
+    nsURI="http://modelum.es/Error" nsPrefix="ERR">
+  <eClassifiers xsi:type="ecore:EClass" name="Errores">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="errores" upperBound="-1"
+        eType="#//Error" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Error" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apply" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForeignError" eSuperTypes="#//Error">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="porcent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableCont" eType="ecore:EClass DDL.ecore#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableRef" eType="ecore:EClass DDL.ecore#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fkColumns" upperBound="-1"
+        eType="ecore:EClass DDL.ecore#//Column"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fk" eType="ecore:EClass DDL.ecore#//Fk"/>
+  </eClassifiers>
+</ecore:EPackage>

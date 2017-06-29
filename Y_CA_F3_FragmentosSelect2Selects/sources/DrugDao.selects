@@ -1,0 +1,122 @@
+SELECT d, p FROM Drug d, Prescription p WHERE d.demographicId = :demoId AND d.scriptNo = p.id ORDER BY d.position DESC, d.rxDate DESC, d.id ASC
+
+
+SELECT d, p FROM Drug d, Prescription p WHERE d.scriptNo = p.id AND d.scriptNo = :scriptNo ORDER BY d.position DESC, d.rxDate DESC, d.id ASC
+
+
+SELECT MAX(d.position) FROM 
+
+
+
+  d WHERE d.demographicId = :id
+
+
+
+
+
+
+
+
+
+
+  d WHERE (d.archived = 0 OR d.archived IS NULL) AND 
+
+
+
+
+ d.providerNo = :providerNo AND d.demographicId = :demographicNo AND d.rxDate = :rxDate AND d.endDate = :endDate AND d.writtenDate = :writtenDate AND d.brandName = :brandName AND 
+
+
+
+
+ d.gcnSeqNo = :gcnSeqNo AND d.customName = :customName AND d.takeMin = :takemin AND d.takeMax = :takemax AND d.freqCode = :freqCode AND d.duration = :duration AND d.durUnit = :durunit AND d.quantity = :quantity AND d.unitName = :unitName AND d.repeat = :repeat AND 
+
+
+
+
+ d.lastRefillDate = :lastRefillDate AND d.noSubs = :nosubs AND d.prn = :prn AND d.special = :special AND d.outsideProviderName = :outsideProviderName AND d.outsideProviderOhip = :outsideProviderOhip AND d.customInstructions = :customInstructions AND d.longTerm = :longTerm AND 
+
+
+
+
+ d.customNote = :customNote AND d.pastMed = :pastMed AND d.patientCompliance = :patientCompliance AND d.special_instruction = :specialInstruction AND d.comment = :comment AND d.startDateUnknown = :startDateUnknown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ select special ,special_instruction from drugs where 
+
+
+
+
+ ' order by drugid desc
+
+
+
+
+ d.regionalIdentifier = :ri and d.brandName = :bn and d.demographicId = :dn and d.providerNo = :pn order by drugid desc
+
+
+
+
+ d.brandName = :bn AND d.demographicId = :dn AND d.providerNo = :pn order by d.id desc
+
+
+
+
+ d.customName = :cn AND d.demographicId = :dn AND d.providerNo = :pn order by d.id desc
+
+
+
+SELECT max(d.id) from Drug d where d.archived = 0 AND d.archivedReason='' AND d.brandName = :bn AND d.genericName = :gn  AND d.demographicId = :dn
+
+
+
+ d.archived = 1 AND d.archivedReason != '' AND d.regionalIdentifier = :rid AND d.demographicId = :dn AND d.atc = :atc ORDER BY d.id DESC
+
+
+
+SELECT DISTINCT d.special_instruction from Drug d where d.special_instruction IS NOT NULL
+

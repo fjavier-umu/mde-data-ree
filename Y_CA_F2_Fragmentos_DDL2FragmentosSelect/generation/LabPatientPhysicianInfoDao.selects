@@ -1,0 +1,27 @@
+SELECT DISTINCT lpp.id, lpp.serviceDate, lpp2.serviceDate 
+
+
+
+ FROM LabPatientPhysicianInfo lpp, LabPatientPhysicianInfo lpp2, LabReportInformation tr 
+
+
+
+
+ WHERE lpp.accessionNum = lpp2.accessionNum 
+
+
+
+
+ AND lpp2.id = :labId 
+
+
+
+
+ AND tr.id = lpp.labReportInfoId 
+
+
+
+
+ ORDER BY tr.printDate, tr.printTime
+
+

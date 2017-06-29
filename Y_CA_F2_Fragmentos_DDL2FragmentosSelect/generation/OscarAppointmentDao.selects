@@ -1,0 +1,407 @@
+SELECT a FROM Appointment a WHERE a.demographicNo = 
+
+
+
+  ORDER BY a.id
+
+
+
+SELECT a FROM Appointment a WHERE a.appointmentDate >=? and a.appointmentDate < ?
+
+
+SELECT a FROM Appointment a WHERE a.appointmentDate >=? and a.appointmentDate < ? and providerNo = ?
+
+
+SELECT a FROM Appointment a WHERE a.providerNo=? and a.appointmentDate = ? and a.status != 'N' and a.status != 'C' order by a.startTime
+
+
+SELECT a FROM Appointment a WHERE a.providerNo=?1 and a.appointmentDate = ?2 and a.status NOT IN ( ?3 )
+
+
+SELECT a FROM Appointment a WHERE a.providerNo=?1 and a.appointmentDate = ?2 and a.status != ?3
+
+
+SELECT a FROM Appointment a WHERE a.providerNo=? and a.appointmentDate = ? and a.status=?
+
+
+SELECT a FROM Appointment a WHERE a.appointmentDate = ? and a.status=?
+
+
+SELECT a FROM Appointment a 
+
+
+
+ WHERE a.appointmentDate = ? and a.providerNo=? and a.startTime=?
+
+
+
+
+ and a.endTime=? and a.name=? and a.notes=? and a.reason=? and a.createDateTime=?
+
+
+
+
+ and a.creator=? and a.demographicNo=?
+
+
+
+SELECT a FROM Appointment a WHERE a.demographicNo = ?1 ORDER BY a.appointmentDate desc
+
+
+SELECT a FROM Appointment a
+
+
+
+ FROM Appointment appt WHERE appt.demographicNo = :demographicNo AND appt.status NOT LIKE '%C%' 
+
+
+
+
+  AND appt.appointmentDate >= CURRENT_DATE ORDER BY appt.appointmentDate
+
+
+
+
+
+
+
+ FROM Appointment appt WHERE appt.demographicNo = :demographicNo AND appt.status NOT LIKE '%C%' 
+
+
+
+
+ AND (appt.appointmentDate > CURRENT_DATE OR (appt.appointmentDate = CURRENT_DATE AND appt.startTime >= CURRENT_TIME)) ORDER BY appt.appointmentDate
+
+
+
+
+
+
+SELECT a FROM Appointment a WHERE a.demographicNo = ? AND a.appointmentDate=DATE(NOW())
+
+
+
+ Couldn't find appointment for demographic 
+
+
+
+SELECT a FROM Appointment a WHERE a.appointmentDate=? and a.providerNo=? and a.startTime=? and a.endTime=? and a.name=? and a.notes=? and a.reason=? and a.createDateTime like ? and a.creator = ? and a.demographicNo=?
+
+
+
+ a.providerNo = :pNo and a.appointmentDate= :aDate
+
+
+
+
+ FROM Appointment a, Demographic d 
+
+
+
+
+ WHERE a.demographicNo = d.DemographicNo 
+
+
+
+
+ AND d.Hin <> '' 
+
+
+
+
+ AND a.appointmentDate >= :sDate 
+
+
+
+
+ AND a.appointmentDate <= :eDate 
+
+
+
+
+ AND (
+
+
+
+
+ OR d.Province='ON' 
+
+
+
+
+ ) GROUP BY d.DemographicNo 
+
+
+
+
+ ORDER BY d.LastName
+
+
+
+
+ FROM Demographic d, Appointment a, Provider p 
+
+
+
+
+ WHERE a.demographicNo = d.DemographicNo 
+
+
+
+
+ AND a.providerNo = p.ProviderNo 
+
+
+
+
+ and a.providerNo = :pNo 
+
+
+
+
+ AND a.appointmentDate >= :from 
+
+
+
+
+ AND a.appointmentDate <= :to 
+
+
+
+
+ ORDER BY a.appointmentDate
+
+
+
+
+ select a from Appointment a where a.providerNo=? and a.appointmentDate >=? and a.appointmentDate<=? and (a.status='P' or a.status='H' or a.status='PV' or a.status='PS') and a.demographicNo <> 0 order by a.appointmentDate desc, a.startTime desc
+
+
+
+
+ a.providerNo = :provider_no and a.appointmentDate = :date order by a.startTime asc
+
+
+
+
+
+
+
+
+
+SELECT a FROM Appointment a WHERE a.appointmentDate >=? and a.appointmentDate <= ? and a.providerNo = ? order by a.appointmentDate,a.startTime,a.endTime
+
+
+
+ select a from Appointment a where a.appointmentDate = ? and a.providerNo = ? and a.status <>'C' and ((a.startTime >= ? and a.startTime<= ?) or (a.endTime>= ? and a.endTime<= ?) or (a.startTime <= ? and a.endTime>= ?) ) and program_id=?
+
+
+
+
+ FROM Appointment a, Provider p 
+
+
+
+
+ WHERE a.providerNo = p.ProviderNo and 
+
+
+
+
+ a.demographicNo = ? and 
+
+
+
+
+ a.appointmentDate >= ? and 
+
+
+
+
+ a.appointmentDate < ?  
+
+
+
+
+ order by a.appointmentDate desc, a.startTime desc
+
+
+
+
+ FROM Appointment a, Provider p 
+
+
+
+
+ WHERE a.providerNo = p.ProviderNo and 
+
+
+
+
+ a.demographicNo = ? and 
+
+
+
+
+ a.appointmentDate < ? and 
+
+
+
+
+ a.appointmentDate > ?  
+
+
+
+
+ order by a.appointmentDate desc, a.startTime desc
+
+
+
+
+ select a from Appointment a where a.providerNo=? and a.appointmentDate=? and a.startTime=? and 
+
+
+
+
+ a.endTime=? and a.createDateTime=? and a.creator=? and a.demographicNo=? order by a.id desc
+
+
+
+
+ where app.providerNo = prov.id and 
+
+
+
+
+ app.providerNo=? and 
+
+
+
+
+ app.appointmentDate=? and 
+
+
+
+
+ app.startTime=? and 
+
+
+
+
+ app.endTime=? and 
+
+
+
+
+ app.creator=? and 
+
+
+
+
+ app.demographicNo=? 
+
+
+
+
+ order by app.id desc
+
+
+
+
+ from Appointment app, Provider prov where app.id = prov.id and app.demographicNo = ?
+
+
+
+
+ from Appointment a where a.appointmentDate=? and ((a.startTime <= ? and a.endTime >= ?) or (a.startTime > ? and a.startTime < ?) ) order by a.providerNo, a.startTime
+
+
+
+
+ select a  from Appointment a, MyGroup m 
+
+
+
+
+ where m.id.providerNo = a.providerNo 
+
+
+
+
+ and a.status <> 'C' 
+
+
+
+
+ and a.demographicNo = ? 
+
+
+
+
+ and a.appointmentDate = ?
+
+
+
+
+ a.appointmentDate < :appointmentDate ORDER BY a.appointmentDate DESC
+
+
+
+
+
+
+
+ FROM Appointment a, Provider p WHERE a.providerNo = p.ProviderNo AND a.id = :apptNo
+
+
+
+
+ appt.providerNo = :providerNo AND appt.appointmentDate = :appointmentDate AND appt.programId = :programId ORDER BY appt.startTime, appt.status DESC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ from demographic d,
+
+
+
+
+ appointment a left outer join drugs 
+
+
+
+
+ on drugs.demographic_no = a.demographic_no and drugs.rx_date = a.appointment_date and a.appointment_date >= :from and a.appointment_date <= :to and a.demographic_no in (:demoIds) 
+
+
+
+
+  left join provider pDrug on pDrug.provider_no = drugs.provider_no, billing_on_cheader1 bc, billing_on_item bi, provider pAppt, provider pFam where a.appointment_date >= :from and a.appointment_date <= :to and a.demographic_no = d.demographic_no
+
+
+
+
+  and a.provider_no = pAppt.provider_no and d.provider_no = pFam.provider_no and bc.appointment_no = a.appointment_no and bi.ch1_id = bc.id and a.demographic_no in (:demoIds) order by a.demographic_no, a.appointment_date
+
+

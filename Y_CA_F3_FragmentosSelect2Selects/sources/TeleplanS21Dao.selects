@@ -1,0 +1,5 @@
+SELECT t from TeleplanS21 t WHERE t.fileName=? AND t.payment=? AND t.payeeNo=? ORDER BY t.payment
+
+
+SELECT t from TeleplanS21 t WHERE t.status <> ? ORDER BY t.payment desc
+

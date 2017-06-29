@@ -1,0 +1,21 @@
+<%
+  values = ""
+  determinants = fd.determinant
+  for i in 0..determinants.length-1
+    values += determinants[i].name
+    if (i+1 <= determinants.length-1)
+      values += ","
+    end
+  end
+  values += " => "
+
+  dependants = fd.dependant
+  for i in 0..dependants.length-1
+    values += dependants[i].name
+    if (i+1 <= dependants.length-1)
+      values += ","
+    end
+  end
+  values += " "
+
+-%><%= table.name %> : <%= values %> 

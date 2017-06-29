@@ -1,0 +1,195 @@
+grammar DDL;
+
+options
+{
+	backtrack=true;
+}  
+
+data_definition 
+	: 	(data_definition_statement)*
+	;
+	
+data_definition_statement
+	: 	database
+	|	table
+	|	alter_table
+	;
+
+table
+	:	'CREATE' (LOG_CONJ 'REPLACE')? 'TABLE' ID '(' (column)* (',')? (chec (',')?)* (pk)? (',')? (ck (',')?)* (fk (',')?)* ')' ('LOGGING')? ('NOCOMPRESS')? ('NOCACHE')? ('NOPARALLEL')? ('MONITORING')?';' 
+	;
+
+column
+	:	ID data_type ('CONSTRAINT')? (name_constraint)? ('NULL' | 'NOT NULL')? (defecto)? (',')?
+	;
+
+defecto 
+	:	'DEFAULT' ('NULL' | 'NOT NULL' | NUMBER | CVALUE)
+	;
+
+alter_table
+	: 	'ALTER TABLE' table_references alter_table_specification (',' alter_table_specification)* ';'
+	;
+	
+alter_table_specification
+	:	'ADD CONSTRAINT' ID 'FOREIGN KEY' '(' (column_list)* ')' 'REFERENCES' (schema_references)? ('\.')? table_references '(' (references_column_list)* ')' ('ON')? ('DELETE' | 'UPDATE')? ('CASCADE')? ('DISABLE')? ('RESTRICT')? ('NO ACTION')? ('SET NULL')?
+	;
+
+chec
+	:	'CONSTRAINT' ID 'CHECK' '(' (log_expresion)+ ')'
+	;
+	
+fk
+	:	'CONSTRAINT' ID 'FOREIGN KEY' '(' (column_list)* ')' 'REFERENCES' (schema_references)? ('\.')? table_references '(' (references_column_list)* ')' ('ON')? ('DELETE' | 'UPDATE')? ('CASCADE')? ('DISABLE')? ('RESTRICT')? ('NO ACTION')? ('SET NULL')?
+	;
+
+pk
+	:	'CONSTRAINT' ID 'PRIMARY KEY' '(' (column_list)* ')'
+	;
+	
+ck
+	:	'CONSTRAINT' ID 'UNIQUE' '(' (column_list)* ')'
+	;
+
+column_chec
+	:	ID
+	;
+
+schema_references
+	:	ID
+	;
+
+table_references
+	:	ID
+	;
+
+name_constraint
+	:	ID
+	;
+
+references_column_list
+	:	ID (',')?
+	;
+
+value_list
+	:	CVALUE (',')?
+	;
+
+column_list
+	:	ID (',')?
+	;
+
+database
+	:	'CREATE' ('DATABASE' | 'SCHEMA') ('IF NOT EXISTS')? ID (specification)? ';'
+	;
+
+specification
+	:	('DEFAULT')? 'CHARACTER' 'SET' (COMPARATOR)? ID
+  	|	('DEFAULT')? 'COLLATE' (COMPARATOR)? ID
+  	;
+
+log_expresion
+	: 	column_chec (COMPARATOR (NUMBER | CVALUE) LOG_CONJ? | 'IN' '(' (value_list)* ')')
+	;
+
+data_type
+	:	character_string_type
+	|	national_character_string_type
+	|	bit_string_type
+	|	numeric_type
+	|	datetime_type
+	|	interval_type
+	;
+
+character_string_type
+	:	'CHARACTER' ('(' NUMBER ')')?
+	|	'CHAR' ('(' NUMBER ')')?
+	|	'CHARACTER VARYING' '(' NUMBER ')'
+	|	'CHAR VARYING' '(' NUMBER ')'
+	|	'VARCHAR' '(' NUMBER ')'
+	|	'VARCHAR2' '(' NUMBER ')'
+	|	'TEXT' 
+	;
+	
+national_character_string_type
+	:	'NATIONAL CHARACTER' ('(' NUMBER ')')?
+	|	'NATIONAL CHAR' ('(' NUMBER ')')?
+	|	'NCHAR' ('(' NUMBER ')')?
+	|	'NATIONAL CHARACTER VARYING' '(' NUMBER ')'
+	|	'NATIONAL CHAR VARYING' '(' NUMBER ')'
+	|	'NCHAR VARYING' '(' NUMBER ')'
+	;
+	
+bit_string_type
+	:	'BIT' ('(' NUMBER ')')?
+	|	'BIT VARYING' '(' NUMBER ')'
+	;
+
+numeric_type
+	:	exact_numeric_type
+	|	approximate_numeric_type
+	;
+	
+exact_numeric_type
+	:	'NUMERIC' ('(' NUMBER (',' NUMBER)? ')')?
+	|	'NUMBER' ('(' NUMBER (',' NUMBER)? ')')?
+	|	'DECIMAL' ('(' NUMBER (',' NUMBER)? ')')?
+	|	'DEC' ('(' NUMBER (',' NUMBER)? ')')?
+	|	'INTEGER'
+	|	'INT'
+	|	'SMALLINT'
+	|	'TINYINT' '(' NUMBER ')'
+	;
+	
+approximate_numeric_type
+	:	'FLOAT' ('(' NUMBER ')')?
+	|	'REAL'
+	|	'DOUBLE PRECISION'
+	;
+	
+datetime_type
+	:	'DATE'
+	|	'TIME' ('(' NUMBER ')')? ('WITH TIME ZONE')?
+	|	'TIMESTAMP' ('(' NUMBER ')')? ('WITH TIME ZONE')?
+	;
+	
+interval_type
+	:	'INTERVAL' interval_qualifier
+	;
+	
+interval_qualifier
+	:	start_field 'TO' end_field
+	|	single_datetime_field
+	;
+
+start_field
+	:	NON_SECOND_DATETIME_FIELD ('(' NUMBER ')')?
+	;
+	
+end_field
+	:	NON_SECOND_DATETIME_FIELD | 'SECOND' ('(' NUMBER ')')?
+	;
+
+single_datetime_field
+	:	NON_SECOND_DATETIME_FIELD ('(' NUMBER ')')?
+	|	'SECOND' ('(' NUMBER (',' NUMBER)? ')')?
+	;
+	
+NON_SECOND_DATETIME_FIELD
+	:	'YEAR' | 'MONTH' | 'DAY' | 'HOUR' | 'MINUTE'
+	;
+
+
+SQUOTE					: '\u0027';
+CVALUE					: SQUOTE ( options {greedy=false;} : . )* SQUOTE;
+NUMBER					: ('0'..'9' | '.')*;
+COMPARATOR				:  '<>' | '>=' | '<=' | '=' | '>' | '<';
+LOG_CONJ				: 'OR' | 'AND';
+ID 						: ('a'..'z' | 'A'..'Z') ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | '-' )*;
+WS 						: (' ' | '\t' | '\n' | '\r')+ {$channel=HIDDEN;};
+ML_COMMENT:
+	'/*' (options {greedy=false;} : .)* '*/' (';')? { $channel=HIDDEN;}
+	;
+	
+OL_COMMENT: '--' ( options {greedy=false;} : . )* '\n'+ { $channel=HIDDEN;}
+	;

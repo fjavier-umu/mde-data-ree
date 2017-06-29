@@ -1,0 +1,34 @@
+SELECT note_id FROM casemgmt_note where uuid is null
+
+
+
+
+
+
+ UPDATE casemgmt_note set uuid = '
+
+
+
+
+ ' WHERE note_id = 
+
+
+
+SELECT update_date, note_id FROM casemgmt_note where observation_date = '0000-00-00 00:00:00'
+
+
+
+ UPDATE casemgmt_note set observation_date = '
+
+
+
+
+
+
+
+ ' WHERE note_id = 
+
+
+
+
+

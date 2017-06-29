@@ -1,0 +1,505 @@
+--------------------------------------------------------------------------------------
+-- Gra2MoL transformation definition for extracting DDL models from DDL Scripts
+--------------------------------------------------------------------------------------
+
+rule 'mapDDLDefinition'
+	from data_definition dd
+	to DDLDefinition
+	queries
+		dataDefinitionStatements : //#data_definition_statement;
+	mappings
+		statements = dataDefinitionStatements;
+end_rule
+
+rule 'mapDatabase'
+	from data_definition_statement/database dds
+	to Database
+	queries
+		database : /dds/#database;
+	mappings
+		name = database.ID;
+end_rule
+
+rule 'mapTable'
+	from data_definition_statement/table dds
+	to Table
+	queries
+		tab : /dds/#table;
+		cols : /tab/#column;
+		primaryKeys : /tab/#pk;
+		candidateKeys : /tab/#ck;
+		foreignKeys : /tab/#fk;
+		alterTables : ///#alter_table/table_references{ID.eq(tab.ID)};
+		alterTableSpecifications : /alterTables/#alter_table_specification;
+		checs : /tab/#chec;
+	mappings
+		name = tab.ID;
+		columns = cols;
+		pks = primaryKeys;
+		cks = candidateKeys;
+		fks = foreignKeys;
+		checks = checs;
+		if (alterTables.hasResults) then
+			fks = alterTableSpecifications;
+		end_if
+end_rule
+
+rule 'mapColumn'
+	from column c
+	to Column
+	queries
+		type : /c/#data_type;
+		isNotNull : /#c{TOKEN[0].exists && TOKEN[0].eq("NOT NULL")};
+	mappings
+		name = c.ID;
+		type = type;
+		if (isNotNull.hasResults) then
+			columnNull = "false";
+		else
+			columnNull = "true";
+		end_if
+end_rule
+
+rule 'mapPk'
+	from pk pk
+	to Pk
+	queries
+		columns : /pk/#column_list;
+	mappings
+		name = pk.ID;
+		columnName = columns.ID;
+end_rule
+
+rule 'mapCk'
+	from ck ck
+	to Ck
+	queries
+		columns : /ck/#column_list;
+	mappings
+		name = ck.ID;
+		columnName = columns.ID;
+end_rule
+
+rule 'mapFk'
+	from fk fk
+	to Fk
+	queries
+		columns : /fk/#column_list;
+		reference : /fk/#table_references;
+		referencedTable : //#data_definition_statement/table{ID.eq(reference.ID)};
+		referencedColumns : /fk/#references_column_list;
+	mappings
+		name = fk.ID;
+		columnName = columns.ID;
+		references = referencedTable;
+		columnReference = referencedColumns.ID;
+end_rule
+
+rule 'mapFk2'
+	from alter_table_specification ats
+	to Fk
+	queries
+		columns : /ats/#column_list;
+		reference : /ats/#table_references;
+		referencedTable : //#data_definition_statement/table{ID.eq(reference.ID)};
+		referencedColumns : /ats/#references_column_list;
+	mappings
+		name = ats.ID;
+		columnName = columns.ID;
+		references = referencedTable;
+		columnReference = referencedColumns.ID;
+end_rule
+
+rule 'mapCheck'
+	from chec c
+	to Check
+	queries
+		logicalExpr : /c/#log_expresion;
+	mappings
+		name = c.ID;
+		valuesCheck = logicalExpr;
+end_rule
+
+rule 'mapValuesCheck'
+	from log_expresion le
+	to ValuesCheck
+	queries
+		column : /le/#column_chec;
+		value_list : /le/#value_list;
+		number : /#le{NUMBER.exists};
+	mappings		
+		columnName = column.ID;
+		logConjuntion = le.LOG_CONJ;
+		if (value_list.hasResults) then
+			comparator = "=";
+			value = removeQuotes value_list.CVALUE;
+		else
+			comparator = le.COMPARATOR;
+			if (number.hasResults) then
+				value = le.NUMBER;
+			else
+				value = removeQuotes le.CVALUE;
+			end_if
+		end_if		
+end_rule
+
+-----------------------------------------------------------
+-------------------------- Types --------------------------
+-----------------------------------------------------------
+
+
+------------------ Character String Types -----------------
+
+rule 'mapCharacter'
+	from data_type/character_string_type{TOKEN[0].eq("CHARACTER")} dt
+	to Character
+	queries
+		hasLength : /dt/#character_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapChar'
+	from data_type/character_string_type{TOKEN[0].eq("CHAR")} dt
+	to Char
+	queries
+		hasLength : /dt/#character_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapCharacterVarying'
+	from data_type/character_string_type{TOKEN[0].eq("CHARACTER VARYING")} dt
+	to CharacterVarying
+	queries
+		cst : /dt/#character_string_type;
+	mappings
+		length = cst.NUMBER;
+end_rule
+
+rule 'mapVarchar'
+	from data_type/character_string_type{TOKEN[0].eq("VARCHAR")} dt
+	to Varchar
+	queries
+		cst : /dt/#character_string_type;
+	mappings
+		length = cst.NUMBER;
+end_rule
+
+rule 'mapVarchar2'
+	from data_type/character_string_type{TOKEN[0].eq("VARCHAR2")} dt
+	to Varchar
+	queries
+		cst : /dt/#character_string_type;
+	mappings
+		length = cst.NUMBER;
+end_rule
+
+rule 'mapText'
+	from data_type/character_string_type{TOKEN[0].eq("TEXT")} dt
+	to Varchar
+	queries
+		cst : /dt/#character_string_type;
+	mappings
+		length = 
+end_rule
+
+
+
+------------- National Character String Types -------------
+
+rule 'mapNationalCharacter'
+	from data_type/national_character_string_type{TOKEN[0].eq("NATIONAL CHARACTER")} dt
+	to NationalCharacter
+	queries
+		hasLength : /dt/#national_character_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapNationalChar'
+	from data_type/national_character_string_type{TOKEN[0].eq("NATIONAL CHAR")} dt
+	to NationalChar
+	queries
+		hasLength : /dt/#national_character_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapNChar'
+	from data_type/national_character_string_type{TOKEN[0].eq("NCHAR")} dt
+	to NChar
+	queries
+		hasLength : /dt/#national_character_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapNationalCharacterVarying'
+	from data_type/national_character_string_type{TOKEN[0].eq("NATIONAL CHARACTER VARYING")} dt
+	to NationalCharacterVarying
+	queries
+		ncst : /dt/#national_character_string_type;
+	mappings
+		length = ncst.NUMBER;
+end_rule
+
+rule 'mapNationalCharVarying'
+	from data_type/national_character_string_type{TOKEN[0].eq("NATIONAL CHAR VARYING")} dt
+	to NationalCharVarying
+	queries
+		ncst : /dt/#national_character_string_type;
+	mappings
+		length = ncst.NUMBER;
+end_rule
+
+rule 'mapNCharVarying'
+	from data_type/national_character_string_type{TOKEN[0].eq("NCHAR VARYING")} dt
+	to NCharVarying
+	queries
+		ncst : /dt/#national_character_string_type;
+	mappings
+		length = ncst.NUMBER;
+end_rule
+
+
+--------------------- Bit String Types --------------------
+
+rule 'mapBit'
+	from data_type/bit_string_type{TOKEN[0].eq("BIT")} dt
+	to Bit
+	queries
+		hasLength : /dt/#bit_string_type{NUMBER.exists};
+	mappings
+		if (hasLength.hasResults) then
+			length = hasLength.NUMBER;
+		end_if
+end_rule
+
+rule 'mapBitVarying'
+	from data_type/bit_string_type{TOKEN[0].eq("BIT VARYING")} dt
+	to BitVarying
+	queries
+		bst : /dt/#bit_string_type;
+	mappings
+		length = bst.NUMBER;
+end_rule
+
+
+---------------------- Numeric Types ----------------------
+
+rule 'mapNumber'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("NUMBER")} dt
+	to Numeric
+	queries
+		hasPrecision : /dt/numeric_type/#exact_numeric_type{NUMBER[0].exists};
+		hasScale : /dt/numeric_type/#exact_numeric_type{NUMBER[1].exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER[0];
+		end_if
+		if (hasScale.hasResults) then
+			scale = hasScale.NUMBER[1];
+		end_if
+end_rule
+
+rule 'mapNumeric'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("NUMERIC")} dt
+	to Numeric
+	queries
+		hasPrecision : /dt/numeric_type/#exact_numeric_type{NUMBER[0].exists};
+		hasScale : /dt/numeric_type/#exact_numeric_type{NUMBER[1].exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER[0];
+		end_if
+		if (hasScale.hasResults) then
+			scale = hasScale.NUMBER[1];
+		end_if
+end_rule
+
+rule 'mapDecimal'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("DECIMAL")} dt
+	to Decimal
+	queries
+		hasPrecision : /dt/numeric_type/#exact_numeric_type{NUMBER[0].exists};
+		hasScale : /dt/numeric_type/#exact_numeric_type{NUMBER[1].exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER[0];
+		end_if
+		if (hasScale.hasResults) then
+			scale = hasScale.NUMBER[1];
+		end_if
+end_rule
+
+rule 'mapDec'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("DEC")} dt
+	to Dec
+	queries
+		hasPrecision : /dt/numeric_type/#exact_numeric_type{NUMBER[0].exists};
+		hasScale : /dt/numeric_type/#exact_numeric_type{NUMBER[1].exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER[0];
+		end_if
+		if (hasScale.hasResults) then
+			scale = hasScale.NUMBER[1];
+		end_if
+end_rule
+
+rule 'mapInteger'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("INTEGER")} dt
+	to Integer
+	queries
+	mappings
+end_rule
+
+rule 'mapInt'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("INT")} dt
+	to Int
+	queries
+	mappings
+end_rule
+
+rule 'mapSmallInt'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("SMALLINT")} dt
+	to Small
+	queries
+	mappings
+end_rule
+
+rule 'mapTinyint'
+	from data_type/numeric_type/exact_numeric_type{TOKEN[0].eq("TINYINT")} dt
+	to Small
+	queries
+		hasPrecision : /dt/numeric_type/#exact_numeric_type{NUMBER.exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER;
+		end_if
+end_rule
+
+
+rule 'mapFloat'
+	from data_type/numeric_type/approximate_numeric_type{TOKEN[0].eq("FLOAT")} dt
+	to Float
+	queries
+		hasPrecision : /dt/numeric_type/#approximate_numeric_type{NUMBER.exists};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER;
+		end_if
+end_rule
+
+rule 'mapReal'
+	from data_type/numeric_type/approximate_numeric_type{TOKEN[0].eq("REAL")} dt
+	to Real
+	queries
+	mappings
+end_rule
+
+rule 'mapDoublePrecision'
+	from data_type/numeric_type/approximate_numeric_type{TOKEN[0].eq("DOUBLE PRECISION")} dt
+	to DoublePrecision
+	queries
+	mappings
+end_rule
+
+
+--------------------- Datetime Types ----------------------
+
+rule 'mapDate'
+	from data_type/datetime_type{TOKEN[0].eq("DATE")} dt
+	to Date
+	queries
+	mappings
+end_rule
+
+rule 'mapTime'
+	from data_type/datetime_type{TOKEN[0].eq("TIME")} dt
+	to Time
+	queries
+		hasPrecision : /dt/#datetime_type{NUMBER.exists};
+		withTimeZone : /dt/#datetime_type{(TOKEN[1].exists && TOKEN[1].eq("WITH TIME ZONE")) || (TOKEN[3].exists && TOKEN[3].eq("WITH TIME ZONE"))};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER;
+		end_if
+		if (withTimeZone.hasResults) then
+			withTimeZone = "true";
+		else
+			withTimeZone = "false";
+		end_if
+end_rule
+
+rule 'mapTimeStamp'
+	from data_type/datetime_type{TOKEN[0].eq("TIMESTAMP")} dt
+	to TimeStamp
+	queries
+		hasPrecision : /dt/#datetime_type{NUMBER.exists};
+		withTimeZone : /dt/#datetime_type{(TOKEN[1].exists && TOKEN[1].eq("WITH TIME ZONE")) || (TOKEN[3].exists && TOKEN[3].eq("WITH TIME ZONE"))};
+	mappings
+		if (hasPrecision.hasResults) then
+			precision = hasPrecision.NUMBER;
+		end_if
+		if (withTimeZone.hasResults) then
+			withTimeZone = "true";
+		else
+			withTimeZone = "false";
+		end_if
+end_rule
+
+
+--------------------- Interval Types ----------------------
+rule 'mapInterval'
+	from data_type/interval_type{TOKEN[0].eq("INTERVAL")} dt
+	to Interval
+	queries
+		hasSingleField : /dt/interval_type/interval_qualifier/#single_datetime_field;
+		hasNonSecondDatetimeField : /#hasSingleField{NON_SECOND_DATETIME_FIELD.exists};
+		hasSinglePrecision1 : /#hasSingleField{NUMBER[0].exists};
+		hasSinglePrecision2 : /#hasSingleField{NUMBER[1].exists};
+		startField : /dt/interval_type/interval_qualifier/#start_field;
+		endField : /dt/interval_type/interval_qualifier/#end_field;
+		hasPrecision1:  /#startField{NUMBER.exists};
+		endFieldHasNonSecondDatetimeField : /#endField{NON_SECOND_DATETIME_FIELD.exists};
+		hasPrecision2 : /#endField{NUMBER.exists};
+	mappings
+		if (hasSingleField.hasResults) then
+			if (hasNonSecondDatetimeField.hasResults) then
+				field1 = hasSingleField.NON_SECOND_DATETIME_FIELD;
+			else
+				field1 = hasSingleField.TOKEN[0];
+			end_if
+			if (hasSinglePrecision1.hasResults) then
+				precision1 = hasSingleField.NUMBER[0];
+				if (hasSinglePrecision2.hasResults) then
+					precision2 = hasSingleField.NUMBER[1];
+				end_if
+			end_if
+		else
+			field1 = startField.NON_SECOND_DATETIME_FIELD;
+			if (hasPrecision1.hasResults) then
+				precision1 = startField.NUMBER;
+			end_if			
+			if (endFieldHasNonSecondDatetimeField.hasResults) then
+				field2 = endField.NON_SECOND_DATETIME_FIELD;
+			else
+				field2 = endField.TOKEN[0];
+				if (hasPrecision2.hasResults) then
+					precision2 = endField.NUMBER;
+				end_if	
+			end_if			
+		end_if
+end_rule

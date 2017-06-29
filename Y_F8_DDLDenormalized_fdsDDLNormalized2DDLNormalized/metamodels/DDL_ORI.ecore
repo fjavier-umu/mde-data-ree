@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="DDL"
+    nsURI="http://modelum.es/DDL" nsPrefix="DDL">
+  <eClassifiers xsi:type="ecore:EClass" name="DDLDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Database" eSuperTypes="#//Statement #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//Statement #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+        eType="#//Column" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pks" eType="#//Pk" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cks" upperBound="-1" eType="#//Ck"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fks" upperBound="-1" eType="#//Fk"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="checks" upperBound="-1"
+        eType="#//Check" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnNull" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pk" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ck" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fk" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnReference" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Check" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valuesCheck" upperBound="-1"
+        eType="#//ValuesCheck" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValuesCheck">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logConjuntion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterStringType" abstract="true"
+      eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Character" eSuperTypes="#//CharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//CharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterVarying" eSuperTypes="#//CharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CharVarying" eSuperTypes="#//CharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Varchar" eSuperTypes="#//CharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationalCharacterStringType" abstract="true"
+      eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NationalCharacter" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationalChar" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NChar" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationalCharacterVarying" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationalCharVarying" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NCharVarying" eSuperTypes="#//NationalCharacterStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BitStringType" abstract="true" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bit" eSuperTypes="#//BitStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BitVarying" eSuperTypes="#//BitStringType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericType" abstract="true" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExactNumericType" abstract="true" eSuperTypes="#//NumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Numeric" eSuperTypes="#//ExactNumericType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//ExactNumericType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dec" eSuperTypes="#//ExactNumericType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="#//ExactNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//ExactNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Small" eSuperTypes="#//ExactNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ApproximateNumericType" abstract="true"
+      eSuperTypes="#//NumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//ApproximateNumericType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Real" eSuperTypes="#//ApproximateNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoublePrecision" eSuperTypes="#//ApproximateNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DatetimeType" abstract="true" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//DatetimeType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//DatetimeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="withTimeZone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeStamp" eSuperTypes="#//DatetimeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="withTimeZone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interval" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

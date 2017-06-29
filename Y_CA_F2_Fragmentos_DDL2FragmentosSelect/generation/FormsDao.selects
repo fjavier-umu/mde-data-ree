@@ -1,0 +1,38 @@
+SELECT ID, formCreated, patientName FROM formLabReq07
+
+
+SELECT formCreated FROM formLabReq07 WHERE ID = :linkReqId
+
+
+
+ select demographic_no, c_EDD, c_surname,c_givenName, pg1_ageAtEDD, pg1_dateOfBirth, pg1_langPref, c_phn, pg1_gravida, pg1_term, c_phone, c_phyMid, ar2_doula, ar2_doulaNo, provider_no from formBCAR where c_EDD >= ? and c_EDD <= ? order by c_EDD desc, ID desc
+
+
+
+
+ select demographic_no, c_EDD, c_surname,c_givenName, pg1_ageAtEDD, pg1_dateOfBirth, pg1_langPref, c_phn, pg1_gravida, pg1_term, c_phone, ar2_doula, ar2_doulaNo, provider_no from formBCAR2007 where c_EDD >= ? and c_EDD <= ? order by c_EDD desc, ID desc
+
+
+
+
+ select max(ID) from formONAR where c_finalEDB >= ? and c_finalEDB <= ? group by demographic_no
+
+
+
+
+ select max(ID) from formONAREnhanced where c_finalEDB >= ? and c_finalEDB <= ? group by demographic_no
+
+
+
+
+ ,c_firstname) as c_pName, pg1_age, c_gravida, c_term, pg1_homePhone, provider_no from formONAR where c_finalEDB >= ? and c_finalEDB <= ? order by c_finalEDB desc
+
+
+
+
+ ,c_firstName) as c_pName, pg1_age, c_gravida, c_term, pg1_homePhone, provider_no from formONAREnhanced where c_finalEDB >= ? and c_finalEDB <= ? order by c_finalEDB desc
+
+
+
+SELECT d.id FROM demographic d
+

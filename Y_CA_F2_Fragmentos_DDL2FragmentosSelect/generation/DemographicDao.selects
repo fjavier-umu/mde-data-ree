@@ -1,0 +1,568 @@
+SELECT COUNT(*) FROM Demographic d WHERE d.PatientStatus = 'AC'
+
+
+
+ FROM Demographic d WHERE d.PatientStatus = 'AC'
+
+
+
+
+ FROM Demographic d WHERE d.DemographicNo = ?
+
+
+
+
+ select distinct d.demographic_no,d.first_name,d.last_name,(select count(*) from admission a where client_id=d.demographic_no and admission_status='current' and program_id=
+
+
+
+
+ ') as is_active from admission a,demographic d where a.client_id=d.demographic_no and (d.patient_status='AC' or d.patient_status='' or d.patient_status=null) and program_id=
+
+
+
+
+  and (d.anonymous is null or d.anonymous != 'one-time-anonymous') ORDER BY d.last_name,d.first_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+ select distinct(admission.client_id) from admission,program,Facility where admission.program_id=program.id and program.facilityId=?
+
+
+
+
+
+
+
+
+
+
+
+
+
+  and first_name 
+
+
+
+
+  ?  and patient_status = 'AC'
+
+
+
+
+
+
+
+
+
+
+
+
+
+  and first_name 
+
+
+
+
+  and first_name like :firstName 
+
+
+
+
+
+
+
+
+
+
+  and first_name like :firstName 
+
+
+
+
+
+
+
+
+
+
+  and first_name like :firstName 
+
+
+
+
+
+
+
+
+
+
+  and first_name like :firstName 
+
+
+
+
+
+
+
+
+
+
+ From Demographic d where d.YearOfBirth like :yearOfBirth AND d.MonthOfBirth like :monthOfBirth AND d.DateOfBirth like :dateOfBirth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ From Demographic d where d.YearOfBirth like :yearOfBirth AND d.MonthOfBirth like :monthOfBirth AND d.DateOfBirth like :dateOfBirth and d.PatientStatus not in (:statuses)
+
+
+
+
+
+
+
+
+
+
+ From Demographic d where d.YearOfBirth like :yearOfBirth AND d.MonthOfBirth like :monthOfBirth AND d.DateOfBirth like :dateOfBirth and d.PatientStatus in (:statuses)
+
+
+
+
+
+
+
+
+
+
+ From Demographic d where d.YearOfBirth like :yearOfBirth AND d.MonthOfBirth like :monthOfBirth AND d.DateOfBirth like :dateOfBirth and d.HeadRecord is not null 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT demographic_no FROM log WHERE dateTime >= ? and action != 'read'
+
+
+SELECT DISTINCT contentId FROM log WHERE dateTime >= ? AND content='eChart' GROUP BY contentId
+
+
+SELECT DISTINCT d.RosterStatus FROM Demographic d where d.RosterStatus != '' and d.RosterStatus != 'RO' and d.RosterStatus != 'NR' and d.RosterStatus != 'TE' and d.RosterStatus != 'FS'
+
+
+SELECT DISTINCT d.RosterStatus FROM Demographic d where d.RosterStatus is not null order by d.RosterStatus
+
+
+SELECT DISTINCT d.PatientStatus FROM Demographic d where d.PatientStatus is not null order by d.PatientStatus
+
+
+SELECT DISTINCT d.PatientStatus FROM Demographic d where d.PatientStatus is not null and d.PatientStatus <> '' and d.PatientStatus <> 'AC' and d.PatientStatus <> 'IN' and d.PatientStatus <> 'DE' and d.PatientStatus <> 'MO' and d.PatientStatus <> 'FI' order by d.PatientStatus
+
+
+SELECT DISTINCT d.ProviderNo FROM Demographic d order by d.ProviderNo
+
+
+
+ getClientByDemographicNo: id=
+
+
+
+
+ No one should be calling this method, this is a good way to run out of memory and crash a server... this is too large of a result set, it should be pagenated.
+
+
+
+
+ The entire demographic table is too big to allow a full select.
+
+
+
+
+  FROM Demographic
+
+
+
+
+  demographic_no in (select decode(dm.merged_to,null,i.client_id,dm.merged_to) from intake i,demographic_merged dm where i.client_id=dm.demographic_no(+) and i.program_id in (
+
+
+
+
+  demographic_no in (select decode(dm.merged_to,null,a.client_id,dm.merged_to) from admission a,demographic_merged dm where a.client_id=dm.demographic_no(+)and a.primaryWorker='
+
+
+
+
+ provider not staff in any program, ie. can't see ANYONE.
+
+
+
+
+
+
+
+
+
+
+ saveClient: id=
+
+
+
+
+ select * from demographic
+
+
+
+
+ ,admission,program where demographic.demographic_no=admission.client_id
+
+
+
+
+  and demographic.demographic_no=casemgmt_note.demographic_no
+
+
+
+
+  and admission.program_id=program.id
+
+
+
+
+  and demographic.patient_status=?
+
+
+
+
+  and casemgmt_note.provider_no=?
+
+
+
+
+  and admission.program_id=?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  FROM Demographic d where d.ChartNo=?
+
+
+
+
+  FROM Demographic d where d.Hin=? and d.HcType=?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ FROM Demographic WHERE 
+
+
+
+
+  FROM Demographic d where d.Hin=?
+
+
+
+
+ FROM Demographic 
+
+
+
+
+  WHERE LastName like ? and FirstName like ?
+
+
+
+
+  AND YearOfBirth = ?
+
+
+
+
+  AND MonthOfBirth = ?
+
+
+
+
+  AND DateOfBirth = ?
+
+
+
+
+ FROM Demographic 
+
+
+
+
+  WHERE LastName = ? and FirstName = ?
+
+
+
+
+  AND YearOfBirth = ?
+
+
+
+
+  AND MonthOfBirth = ?
+
+
+
+
+  AND DateOfBirth = ?
+
+
+
+
+
+
+
+ FROM Demographic d WHERE d.
+
+
+
+
+  LIKE :fieldValue
+
+
+
+
+ FROM Demographic d
+
+
+
+
+  ORDER BY d.
+
+
+
+
+ FROM Demographic d 
+
+
+
+
+ WHERE d.LastName like ?
+
+
+
+
+ AND d.FirstName like ? 
+
+
+
+
+ AND d.YearOfBirth = ? 
+
+
+
+
+ AND d.MonthOfBirth = ? 
+
+
+
+
+ AND d.DateOfBirth = ? 
+
+
+
+
+ AND d.Sex like ? 
+
+
+
+
+ AND d.PatientStatus = ?
+
+
+
+
+ FROM Demographic d 
+
+
+
+
+ WHERE d.Hin = ? 
+
+
+
+
+ AND d.LastName like ?
+
+
+
+
+ AND d.FirstName like ? 
+
+
+
+
+ AND d.YearOfBirth = ? 
+
+
+
+
+ AND d.MonthOfBirth = ? 
+
+
+
+
+ AND d.DateOfBirth = ? 
+
+
+
+
+ AND d.Sex like ? 
+
+
+
+
+ AND d.PatientStatus = ?
+
+
+
+
+ (RIGHT(CURRENT_DATE,5)<RIGHT(DATE_FORMAT(CONCAT((year_of_birth), '-', (month_of_birth),'-',(date_of_birth)),'%Y-%m-%d'),5)) as age 
+
+
+
+
+ from demographic  where (YEAR(CURRENT_DATE)-YEAR(DATE_FORMAT(CONCAT((year_of_birth),'-', (month_of_birth),'-',(date_of_birth)),'%Y-%m-%d')))-
+
+
+
+
+ and (patient_status = 'AC' or patient_status = 'UHIP') 
+
+
+
+
+ and (roster_status='RO' or roster_status='NR' or roster_status='FS' or roster_status='RF' or roster_status='PL')
+
+
+
+
+  and provider_no = '
+
+
+
+
+  order by last_name 
+
+
+
+SELECT d.DemographicNo,d.YearOfBirth,d.MonthOfBirth,d.DateOfBirth FROM Demographic d WHERE d.PatientStatus = 'AC'
+

@@ -1,0 +1,2 @@
+SELECT serviceCode,conditionCode FROM billing_service_code_conditions
+

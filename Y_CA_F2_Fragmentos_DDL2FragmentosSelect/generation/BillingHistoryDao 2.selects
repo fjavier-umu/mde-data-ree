@@ -1,0 +1,2 @@
+SELECT SUM(bh.amountReceived) FROM BillingHistory bh where bh.billingMasterNo = :bmn
+

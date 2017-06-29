@@ -1,0 +1,5 @@
+SELECT x FROM JointAdmission x WHERE x.archived=0 and x.headClientId=?
+
+
+SELECT x FROM JointAdmission x WHERE x.archived=0 and x.clientId=?
+

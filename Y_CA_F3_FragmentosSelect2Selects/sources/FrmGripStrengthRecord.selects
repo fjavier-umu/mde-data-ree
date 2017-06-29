@@ -1,0 +1,75 @@
+SELECT demographic_no FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+SELECT studyID FROM rehabStudy2004 WHERE demographic_no='
+
+
+
+
+
+
+
+
+
+
+
+SELECT studyID FROM rehabStudy2004 WHERE demographic_no='
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formGripStrength WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+  name = 
+
+
+
+
+  type = 
+
+
+
+
+
+
+
+
+
+SELECT * FROM formGripStrength WHERE demographic_no=
+
+
+
+  AND ID=0
+
+
+
+SELECT * FROM formGripStrength WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+

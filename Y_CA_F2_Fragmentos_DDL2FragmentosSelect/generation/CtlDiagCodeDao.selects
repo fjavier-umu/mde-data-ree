@@ -1,0 +1,7 @@
+SELECT d.diagnostic_code, d.description FROM diagnosticcode d, 
+
+
+
+ ctl_diagcode c WHERE d.diagnostic_code=c.diagnostic_code and d.region = ? and c.servicetype = ?
+
+

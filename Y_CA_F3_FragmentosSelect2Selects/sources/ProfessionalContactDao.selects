@@ -1,0 +1,2 @@
+SELECT c from ProfessionalContact c where 
+

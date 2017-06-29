@@ -1,0 +1,105 @@
+<DDL:DDLDefinition xmlns:DDL='http://modelum.es/DDL' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://modelum.es/DDL ../metamodels/DDL.ecore' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI'>
+  <statements name='TORNEOS' xsi:type='DDL:Database'/>
+  <statements name='GANADORES_DE_TORNEOS_2_1' xsi:type='DDL:Table'>
+    <columns name='ARBITRO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='FECHA_NAC_ARBITRO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Date'/>
+    </columns>
+    <pks name='GANADORES_DE_TORNEOS_2_1_PK' xsi:type='DDL:Pk'>
+      <columnName>ARBITRO</columnName>
+    </pks>
+  </statements>
+  <statements name='GANADORES_DE_TORNEOS_2_2' xsi:type='DDL:Table'>
+    <columns name='TORNEO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <columns name='ANYO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='4'/>
+    </columns>
+    <columns name='GANADOR' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='ARBITRO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='ESTADIO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='PATROCINADOR' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <pks name='GANADORES_DE_TORNEOS_PK' xsi:type='DDL:Pk'>
+      <columnName>TORNEO</columnName>
+      <columnName>ANYO</columnName>
+    </pks>
+    <fks name='ESTADIO_FK' references='#//@statements.5' xsi:type='DDL:Fk'>
+      <columnName>ESTADIO</columnName>
+      <columnReference>ESTADIO</columnReference>
+    </fks>
+    <fks name='PATROCINADOR_FK' references='#//@statements.6' xsi:type='DDL:Fk'>
+      <columnName>PATROCINADOR</columnName>
+      <columnReference>PATROCINADOR</columnReference>
+    </fks>
+    <fks name='GANADORES_DE_TORNEOS_2_FK_1' references='#//@statements.3' xsi:type='DDL:Fk'>
+      <columnName>GANADOR</columnName>
+      <columnReference>GANADOR</columnReference>
+    </fks>
+    <fks name='GANADORES_DE_TORNEOS_2_2_FK_1' references='#//@statements.1' xsi:type='DDL:Fk'>
+      <columnName>ARBITRO</columnName>
+      <columnReference>ARBITRO</columnReference>
+    </fks>
+  </statements>
+  <statements name='GANADORES_DE_TORNEOS_1' xsi:type='DDL:Table'>
+    <columns name='GANADOR' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='FECHA_NAC_GANADOR' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Date'/>
+    </columns>
+    <pks name='GANADORES_DE_TORNEOS_1_PK' xsi:type='DDL:Pk'>
+      <columnName>GANADOR</columnName>
+    </pks>
+  </statements>
+  <statements name='ESTADIOS_1' xsi:type='DDL:Table'>
+    <columns name='CONSTRUCTORA' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <columns name='SEDE_CONSTRUCTORA' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <pks name='ESTADIOS_1_PK' xsi:type='DDL:Pk'>
+      <columnName>CONSTRUCTORA</columnName>
+    </pks>
+  </statements>
+  <statements name='ESTADIOS_2' xsi:type='DDL:Table'>
+    <columns name='ESTADIO' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='30'/>
+    </columns>
+    <columns name='CAPACIDAD' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Int'/>
+    </columns>
+    <columns name='CONSTRUCTORA' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <pks name='ESTADIOS_PK' xsi:type='DDL:Pk'>
+      <columnName>ESTADIO</columnName>
+    </pks>
+    <fks name='ESTADIOS_2_FK_1' references='#//@statements.4' xsi:type='DDL:Fk'>
+      <columnName>CONSTRUCTORA</columnName>
+      <columnReference>CONSTRUCTORA</columnReference>
+    </fks>
+  </statements>
+  <statements name='PATROCINADORES' xsi:type='DDL:Table'>
+    <columns name='PATROCINADOR' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <columns name='SEDE' xsi:type='DDL:Column'>
+      <type xsi:type='DDL:Varchar' length='20'/>
+    </columns>
+    <pks name='PATROCINADOR_PK' xsi:type='DDL:Pk'>
+      <columnName>PATROCINADOR</columnName>
+    </pks>
+  </statements>
+</DDL:DDLDefinition>

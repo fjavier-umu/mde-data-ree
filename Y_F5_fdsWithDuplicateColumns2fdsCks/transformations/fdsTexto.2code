@@ -1,0 +1,11 @@
+main do
+  compose_file('dependencies.txt') do
+    FDS::Database.all_objects.each do |database|
+      database.tables.each do |table|
+        table.functionalDependencies.each do |fd| 
+          apply_template 'templates/fdsTexto.rtemplate', :fd => fd, :table => table
+        end
+      end
+    end
+  end
+end

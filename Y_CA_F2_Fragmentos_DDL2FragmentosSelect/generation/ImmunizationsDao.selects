@@ -1,0 +1,2 @@
+SELECT i FROM Immunizations i WHERE i.demographicNo=?1 AND i.archived=0
+

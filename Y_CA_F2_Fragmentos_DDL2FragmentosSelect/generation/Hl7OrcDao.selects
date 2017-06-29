@@ -1,0 +1,32 @@
+SELECT orc.fillerOrderNumber, MAX(obr.resultsReportStatusChange) 
+
+
+
+ FROM Hl7Orc orc, Hl7Pid pid, Hl7Obr obr 
+
+
+
+
+ WHERE obr.pidId = pid.id 
+
+
+
+
+ AND orc.pidId = pid.id 
+
+
+
+
+ AND pid.messageId = :messageId 
+
+
+
+
+ GROUP BY pid.messageId
+
+
+
+
+ FROM Hl7Orc orc, Hl7Pid pid WHERE orc.pidId = pid.id AND pid.messageId = :messageId
+
+

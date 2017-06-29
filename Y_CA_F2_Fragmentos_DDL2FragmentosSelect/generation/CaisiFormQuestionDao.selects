@@ -1,0 +1,2 @@
+SELECT x FROM CaisiFormQuestion x where x.formId = ?1
+

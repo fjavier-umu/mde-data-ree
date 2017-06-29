@@ -1,0 +1,33 @@
+SELECT COUNT(*) FROM SecObjPrivilege p WHERE p.id.objectName = :objName
+
+
+
+ FROM SecObjPrivilege p, SecUserRole r 
+
+
+
+
+ WHERE p.id.roleUserGroup = r.RoleName 
+
+
+
+
+ AND p.id.objectName = :formName 
+
+
+
+
+ AND p.privilege = :privilege 
+
+
+
+
+ AND r.ProviderNo = :providerNo
+
+
+
+
+
+
+
+

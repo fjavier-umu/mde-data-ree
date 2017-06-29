@@ -1,0 +1,10 @@
+<ERR:Errores xmlns:DDL='http://modelum.es/DDL' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://modelum.es/DDL ../metamodels/DDL.ecore http://modelum.es/Error ../metamodels/errores.ecore' xmlns:ERR='http://modelum.es/Error' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI'>
+  <errores xsi:type='ERR:ForeignError' tableCont='DDL:Table DDL.xmi#//@statements.5' tableRef='DDL:Table DDL.xmi#//@statements.3'>
+    <fkColumns href='file://C:/Users/Yoshi/Desktop/TFM/eclipse/workspace/Selects_DDL2Errores/models/DDL.xmi#//@statements.5/@columns.2'/>
+  </errores>
+  <errores xsi:type='ERR:ForeignError' tableCont='DDL:Table DDL.xmi#//@statements.5' tableRef='DDL:Table DDL.xmi#//@statements.2'>
+    <fkColumns href='file://C:/Users/Yoshi/Desktop/TFM/eclipse/workspace/Selects_DDL2Errores/models/DDL.xmi#//@statements.5/@columns.3'/>
+    <fkColumns href='file://C:/Users/Yoshi/Desktop/TFM/eclipse/workspace/Selects_DDL2Errores/models/DDL.xmi#//@statements.5/@columns.4'/>
+    <fkColumns href='file://C:/Users/Yoshi/Desktop/TFM/eclipse/workspace/Selects_DDL2Errores/models/DDL.xmi#//@statements.5/@columns.5'/>
+  </errores>
+</ERR:Errores>

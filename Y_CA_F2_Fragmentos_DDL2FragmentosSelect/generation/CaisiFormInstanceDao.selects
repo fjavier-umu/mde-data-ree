@@ -1,0 +1,31 @@
+SELECT f FROM CaisiFormInstance f where f.formId = ? order by f.clientId, f.dateCreated
+
+
+SELECT f FROM CaisiFormInstance f where f.formId = ? and f.clientId = ? order by f.dateCreated DESC
+
+
+SELECT f FROM CaisiFormInstance f where f.formId = ? and f.clientId = ? order by f.dateCreated DESC
+
+
+
+ (select s.formId from CaisiForm s where s.facilityId =?) order by f.dateCreated DESC
+
+
+
+SELECT f FROM CaisiFormInstance f where f.clientId = ? order by f.dateCreated DESC
+
+
+
+ select count(d.value) from CaisiFormInstance i, CaisiFormData d where d.value=? and i.formId=? and i.dateCreated>=? and i.dateCreated<=? and i.id=d.instanceId and d.pageNumber=? and d.sectionId=? and d.questionId= ?
+
+
+
+
+ select distinct d from CaisiFormInstance i, CaisiFormData d where i.formId=? and i.dateCreated>=? and i.dateCreated<=? and i.id=d.instanceId and d.pageNumber=? and d.sectionId=? and d.questionId= ? group by d.key, d.value
+
+
+
+
+ elect distinct d from CaisiFormInstance i, CaisiFormData d where i.formId=? and i.dateCreated>=? and i.dateCreated<=? and i.id=d.instanceId and d.pageNumber=? and d.sectionId=? and d.questionId= ? group by d.value
+
+

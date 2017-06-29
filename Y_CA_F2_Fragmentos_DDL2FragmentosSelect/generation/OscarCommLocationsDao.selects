@@ -1,0 +1,32 @@
+SELECT x FROM OscarCommLocations x WHERE x.current1=?
+
+
+
+
+
+
+
+
+
+ select ocl.locationDesc, mess.thesubject from messagetbl mess, oscarcommlocations ocl where mess.sentByLocation = ocl.locationId and mess.messageid = '
+
+
+
+
+
+
+
+
+
+SELECT m.thesubject, m.theime, m.thedate, m.attachment, m.themessage, m.sentBy, ocl.locationDesc  
+
+
+
+ FROM messagetbl m, oscarcommlocations ocl where m.sentByLocation = ocl.locationId and 
+
+
+
+
+  messageid = '
+
+

@@ -1,0 +1,5 @@
+SELECT tTextSuggest from TicklerTextSuggest tTextSuggest WHERE tTextSuggest.active = ? order by tTextSuggest.suggestedText
+
+
+SELECT tTextSuggest from TicklerTextSuggest tTextSuggest WHERE tTextSuggest.active = ? order by tTextSuggest.suggestedText
+

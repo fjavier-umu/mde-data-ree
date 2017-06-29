@@ -1,0 +1,2487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CST:Node xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:CST="http://gts.inf.um.es/modernization/cst" kind="CST">
+  <children xsi:type="CST:Node" kind="file">
+    <children xsi:type="CST:Leaf" kind="path" value="/Users/fjavier/Copy/workspace/Y_F1_CodeAnalysisFindingDefects/FragmentosSelect2Selects/sources/selectHibernate.txt"/>
+    <children xsi:type="CST:Leaf" kind="filename" value="/selectHibernate.txt"/>
+    <children xsi:type="CST:Node" kind="statements">
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="1"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="description" pos="9" line="1"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="1"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="21" line="1"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lst_field_category"
+                    pos="26" line="1"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="t" pos="45" line="1"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="46" line="1"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lookuptable" pos="48"
+                    line="1"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="60" line="1"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="t" pos="66"
+                                  line="1"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="67" line="1"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="68"
+                                  line="1"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="70" line="1"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="app_lookuptable"
+                                  pos="71" line="1"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="86" line="1"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="moduleId"
+                                  pos="87" line="1"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="2"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="2"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="2"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="app_lookuptable_fields"
+                    pos="21" line="2"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="t1" pos="44" line="2"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="46" line="2"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lookuptable" pos="48"
+                    line="2"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="60" line="2"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="t1" pos="66"
+                                  line="2"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="68" line="2"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="tableId"
+                                  pos="69" line="2"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="76" line="2"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="app_lookuptable"
+                                  pos="77" line="2"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="92" line="2"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="tableId"
+                                  pos="93" line="2"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="101" line="2"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="t1" pos="105"
+                                  line="2"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="107" line="2"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="genericidx"
+                                  pos="108" line="2"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="118" line="2"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Leaf" kind="UNSIGNED_INTEGER" value="3"
+                              pos="119" line="2"/>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="3"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="3"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="3"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="app_lookuptable_fields"
+                    pos="21" line="3"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="t2" pos="44" line="3"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="46" line="3"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lookuptable" pos="48"
+                    line="3"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="60" line="3"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="t2" pos="66"
+                                  line="3"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="68" line="3"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="tableId"
+                                  pos="69" line="3"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="76" line="3"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="app_lookuptable"
+                                  pos="77" line="3"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="92" line="3"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="tableId"
+                                  pos="93" line="3"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="101" line="3"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="t2" pos="105"
+                                  line="3"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="107" line="3"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="genericidx"
+                                  pos="108" line="3"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="118" line="3"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Leaf" kind="UNSIGNED_INTEGER" value="4"
+                              pos="119" line="3"/>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="4"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="description" pos="9" line="4"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="4"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="21" line="4"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="secRole" pos="26" line="4"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="r" pos="34" line="4"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="35" line="4"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="secUserRole" pos="37"
+                    line="4"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="49" line="4"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="r" pos="55"
+                                  line="4"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="56" line="4"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="role_Name"
+                                  pos="57" line="4"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="66" line="4"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="secUserRole"
+                                  pos="67" line="4"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="78" line="4"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="role_Name"
+                                  pos="79" line="4"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="5"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="last_name" pos="9" line="5"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="5"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="5"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="24"
+                    line="5"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="33" line="5"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="34" line="5"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="secUserRole" pos="36"
+                    line="5"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="48" line="5"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="54"
+                                  line="5"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="55" line="5"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="56" line="5"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="67" line="5"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="secUserRole"
+                                  pos="68" line="5"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="79" line="5"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="80" line="5"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="6"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="first_name" pos="9" line="6"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="6"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="20" line="6"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="25"
+                    line="6"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="34" line="6"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="35" line="6"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="secUserRole" pos="37"
+                    line="6"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="49" line="6"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="55"
+                                  line="6"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="56" line="6"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="57" line="6"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="68" line="6"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="secUserRole"
+                                  pos="69" line="6"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="80" line="6"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="81" line="6"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="7"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="role_name" pos="9" line="7"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="7"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="7"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="secRole" pos="24" line="7"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="r" pos="32" line="7"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="33" line="7"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="35"
+                    line="7"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="49" line="7"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="r" pos="55"
+                                  line="7"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="56" line="7"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="role_no"
+                                  pos="57" line="7"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="65" line="7"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note"
+                                  pos="67" line="7"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="80" line="7"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="reporter_caisi_role"
+                                  pos="81" line="7"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="8"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="name" pos="9" line="8"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="8"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="14" line="8"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="19" line="8"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="27" line="8"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="28" line="8"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="30"
+                    line="8"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="44" line="8"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="50"
+                                  line="8"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="51" line="8"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="52"
+                                  line="8"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="55" line="8"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note"
+                                  pos="57" line="8"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="70" line="8"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_no"
+                                  pos="71" line="8"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="9"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="uuid)" pos="17" line="9"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="16" line="9"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="23" line="9"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="28"
+                    line="9"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="cmn" pos="42" line="9"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="45" line="9"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="47"
+                    line="9"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="61" line="9"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="cmn"
+                                  pos="67" line="9"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="70" line="9"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="uuid"
+                                  pos="71" line="9"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="76" line="9"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note"
+                                  pos="78" line="9"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="91" line="9"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="uuid"
+                                  pos="92" line="9"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="10"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="update_date)" pos="15"
+            line="10"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="14" line="10"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="28" line="10"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="33"
+                    line="10"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="cmn" pos="47" line="10"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="50" line="10"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note" pos="52"
+                    line="10"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="66" line="10"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="cmn"
+                                  pos="72" line="10"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="75" line="10"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="uuid"
+                                  pos="76" line="10"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="81" line="10"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="casemgmt_note"
+                                  pos="83" line="10"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="96" line="10"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="uuid"
+                                  pos="97" line="10"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="11"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="description" pos="11" line="11"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="10" line="11"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="23" line="11"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lst_gender" pos="28"
+                    line="11"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="lst" pos="39" line="11"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="42" line="11"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="44"
+                    line="11"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="56" line="11"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="lst"
+                                  pos="62" line="11"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="65" line="11"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="code"
+                                  pos="66" line="11"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="70" line="11"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic"
+                                  pos="71" line="11"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="82" line="11"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="sex"
+                                  pos="83" line="11"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="12"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="merged_to" pos="9" line="12"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="12"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="12"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic_merged"
+                    pos="24" line="12"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="d" pos="43" line="12"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="44" line="12"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="46"
+                    line="12"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="58" line="12"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="d" pos="64"
+                                  line="12"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="65" line="12"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="deleted"
+                                  pos="66" line="12"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="74" line="12"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Leaf" kind="UNSIGNED_INTEGER" value="0"
+                              pos="76" line="12"/>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="78" line="12"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="d" pos="82"
+                                  line="12"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="83" line="12"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="84" line="12"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="99" line="12"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic"
+                                  pos="101" line="12"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="112" line="12"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="113" line="12"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="13"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="13"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="13"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="admission" pos="21"
+                    line="13"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="a" pos="31" line="13"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="32" line="13"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="34"
+                    line="13"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="46" line="13"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="52"
+                                  line="13"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="53" line="13"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_id"
+                                  pos="54" line="13"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="63" line="13"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic"
+                                  pos="64" line="13"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="75" line="13"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="76" line="13"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="124" line="13"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="95"
+                                  line="13"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="96" line="13"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="admission_status"
+                                  pos="97" line="13"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="113" line="13"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="expression">
+                            <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="'current'"
+                                pos="114" line="13"/>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="124" line="13"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="incomplete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="128"
+                                  line="13"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="129" line="13"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="130" line="13"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="140" line="13"/>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="14"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="id" pos="9" line="14"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="14"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="12" line="14"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="17" line="14"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="25" line="14"/>
+                </children>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="27" line="14"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="33"
+                                  line="14"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="34" line="14"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="type"
+                                  pos="35" line="14"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="39" line="14"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="expression">
+                            <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="'Bed'"
+                                pos="40" line="14"/>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="15"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="15"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="15"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="health_safety" pos="21"
+                    line="15"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="h" pos="35" line="15"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="36" line="15"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="38"
+                    line="15"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="50" line="15"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="h" pos="56"
+                                  line="15"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="57" line="15"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="58" line="15"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="72" line="15"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic"
+                                  pos="73" line="15"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="84" line="15"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="85" line="15"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="16"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="last_name" pos="9" line="16"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="16"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="16"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="24"
+                    line="16"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="33" line="16"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="34" line="16"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="client_referral" pos="36"
+                    line="16"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="52" line="16"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="58"
+                                  line="16"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="59" line="16"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="60" line="16"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="72" line="16"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_referral"
+                                  pos="74" line="16"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="89" line="16"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="90" line="16"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="17"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="first_name" pos="9" line="17"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="17"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="20" line="17"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="25"
+                    line="17"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="34" line="17"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="35" line="17"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="client_referral" pos="37"
+                    line="17"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="53" line="17"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="59"
+                                  line="17"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="60" line="17"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="61" line="17"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="73" line="17"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_referral"
+                                  pos="75" line="17"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="90" line="17"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="91" line="17"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="18"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="name" pos="9" line="18"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="18"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="14" line="18"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="19" line="18"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="27" line="18"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="28" line="18"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="client_referral" pos="30"
+                    line="18"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="46" line="18"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="52"
+                                  line="18"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="53" line="18"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="54"
+                                  line="18"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="57" line="18"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_referral"
+                                  pos="59" line="18"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="74" line="18"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="75" line="18"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="19"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="type" pos="9" line="19"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="19"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="14" line="19"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="19" line="19"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="27" line="19"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="28" line="19"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="client_referral" pos="30"
+                    line="19"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="46" line="19"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="52"
+                                  line="19"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="53" line="19"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="54"
+                                  line="19"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="57" line="19"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_referral"
+                                  pos="59" line="19"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="74" line="19"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="75" line="19"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="20"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="20"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="20"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="admission" pos="21"
+                    line="20"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="a" pos="31" line="20"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="32" line="20"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="34" line="20"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="42" line="20"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="48"
+                                  line="20"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="49" line="20"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="50" line="20"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="61" line="20"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program"
+                                  pos="63" line="20"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="70" line="20"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="71"
+                                  line="20"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="74" line="20"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="78"
+                                  line="20"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="79" line="20"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="admission_status"
+                                  pos="80" line="20"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="97" line="20"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="expression">
+                            <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="'current'"
+                                pos="99" line="20"/>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="21"/>
+        <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="count(*)" pos="7"
+            line="21"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="21"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="21"
+                    line="21"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="a" pos="35" line="21"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="36" line="21"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="38" line="21"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="46" line="21"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="52"
+                                  line="21"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="53" line="21"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="54" line="21"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="65" line="21"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program"
+                                  pos="67" line="21"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="74" line="21"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="75"
+                                  line="21"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="78" line="21"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="82"
+                                  line="21"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="83" line="21"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="status"
+                                  pos="84" line="21"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="91" line="21"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="expression">
+                            <children xsi:type="CST:Leaf" kind="IDEXPRESSION" value="'active'"
+                                pos="93" line="21"/>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="22"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="name" pos="11" line="22"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="10" line="22"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="16" line="22"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="Facility" pos="21"
+                    line="22"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="fac" pos="30" line="22"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="33" line="22"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="35" line="22"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="43" line="22"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="fac"
+                                  pos="49" line="22"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="52" line="22"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="53"
+                                  line="22"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="55" line="22"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program"
+                                  pos="56" line="22"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="63" line="22"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="facilityId"
+                                  pos="64" line="22"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="23"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="description" pos="9" line="23"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="23"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="21" line="23"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="lst_service_restriction"
+                    pos="26" line="23"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="a" pos="50" line="23"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="51" line="23"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_client_restriction"
+                    pos="53" line="23"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="80" line="23"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="a" pos="86"
+                                  line="23"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="87" line="23"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="88"
+                                  line="23"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="90" line="23"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_client_restriction"
+                                  pos="91" line="23"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="117" line="23"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="comments"
+                                  pos="118" line="23"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="24"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="name" pos="9" line="24"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="24"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="14" line="24"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program" pos="19" line="24"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="27" line="24"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="28" line="24"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="30"
+                    line="24"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="44" line="24"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="50"
+                                  line="24"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="51" line="24"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="id" pos="52"
+                                  line="24"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="55" line="24"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="57" line="24"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="70" line="24"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_id"
+                                  pos="71" line="24"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="25"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="select_vacancy" pos="9" line="25"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="25"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="24" line="25"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="client_referral" pos="29"
+                    line="25"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="45" line="25"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="46" line="25"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="48"
+                    line="25"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="62" line="25"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="68"
+                                  line="25"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="69" line="25"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="referral_id"
+                                  pos="70" line="25"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="82" line="25"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="84" line="25"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="97" line="25"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="referral_id"
+                                  pos="98" line="25"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="26"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="last_name" pos="9" line="26"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="26"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="26"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="24"
+                    line="26"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="33" line="26"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="34" line="26"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="36"
+                    line="26"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="50" line="26"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="56"
+                                  line="26"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="57" line="26"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="58" line="26"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="70" line="26"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="72" line="26"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="85" line="26"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="86" line="26"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="27"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="first_name" pos="9" line="27"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="27"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="20" line="27"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="provider" pos="25"
+                    line="27"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="34" line="27"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="35" line="27"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="37"
+                    line="27"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="51" line="27"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="57"
+                                  line="27"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="58" line="27"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="59" line="27"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="71" line="27"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="73" line="27"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="86" line="27"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="provider_no"
+                                  pos="87" line="27"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="28"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="last_name" pos="9" line="28"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="28"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="19" line="28"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="24"
+                    line="28"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="36" line="28"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="37" line="28"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="39"
+                    line="28"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="53" line="28"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="59"
+                                  line="28"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="60" line="28"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="61" line="28"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="76" line="28"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="78" line="28"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="91" line="28"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_id"
+                                  pos="92" line="28"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="29"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="first_name" pos="9" line="29"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="29"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="20" line="29"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="demographic" pos="25"
+                    line="29"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="p" pos="37" line="29"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="38" line="29"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="40"
+                    line="29"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="54" line="29"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="p" pos="60"
+                                  line="29"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="61" line="29"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="demographic_no"
+                                  pos="62" line="29"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="77" line="29"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="79" line="29"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="92" line="29"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_id"
+                                  pos="93" line="29"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="CST:Node" kind="query_specification">
+        <children xsi:type="CST:Leaf" kind="TOKEN" value="select" line="30"/>
+        <children xsi:type="CST:Leaf" kind="ID" value="head_client_id" pos="9" line="30"/>
+        <children xsi:type="CST:Leaf" kind="PERIOD" value="." pos="8" line="30"/>
+        <children xsi:type="CST:Node" kind="table_expression">
+          <children xsi:type="CST:Node" kind="from_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="from" pos="24" line="30"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="joint_admissions" pos="29"
+                    line="30"/>
+              </children>
+              <children xsi:type="CST:Node" kind="correlation_specification">
+                <children xsi:type="CST:Node" kind="correlation_name">
+                  <children xsi:type="CST:Leaf" kind="ID" value="j" pos="46" line="30"/>
+                </children>
+              </children>
+            </children>
+            <children xsi:type="CST:Leaf" kind="COMMA" value="," pos="47" line="30"/>
+            <children xsi:type="CST:Node" kind="table_reference">
+              <children xsi:type="CST:Node" kind="table_name">
+                <children xsi:type="CST:Leaf" kind="ID" value="program_queue" pos="49"
+                    line="30"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="CST:Node" kind="where_clause">
+            <children xsi:type="CST:Leaf" kind="TOKEN" value="where" pos="63" line="30"/>
+            <children xsi:type="CST:Node" kind="search_condition">
+              <children xsi:type="CST:Node" kind="boolean_term">
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="j" pos="69"
+                                  line="30"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="70" line="30"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="archived"
+                                  pos="71" line="30"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="80" line="30"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Leaf" kind="UNSIGNED_INTEGER" value="0"
+                              pos="82" line="30"/>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="CST:Leaf" kind="TOKEN" value="and" pos="84" line="30"/>
+                <children xsi:type="CST:Node" kind="boolean_factor">
+                  <children xsi:type="CST:Node" kind="predicate">
+                    <children xsi:type="CST:Node" kind="comparison_predicate">
+                      <children xsi:type="CST:Node" kind="complete_comparison_predicate">
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="j" pos="88"
+                                  line="30"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="89" line="30"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_id"
+                                  pos="90" line="30"/>
+                            </children>
+                          </children>
+                        </children>
+                        <children xsi:type="CST:Node" kind="comp_op">
+                          <children xsi:type="CST:Leaf" kind="EQUALS_OPERATOR" value="="
+                              pos="100" line="30"/>
+                        </children>
+                        <children xsi:type="CST:Node" kind="row_value_constructor">
+                          <children xsi:type="CST:Node" kind="column_reference">
+                            <children xsi:type="CST:Node" kind="table_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="program_queue"
+                                  pos="102" line="30"/>
+                            </children>
+                            <children xsi:type="CST:Leaf" kind="PERIOD" value="."
+                                pos="115" line="30"/>
+                            <children xsi:type="CST:Node" kind="column_name">
+                              <children xsi:type="CST:Leaf" kind="ID" value="client_id"
+                                  pos="116" line="30"/>
+                            </children>
+                          </children>
+                        </children>
+                      </children>
+                    </children>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+    </children>
+  </children>
+</CST:Node>

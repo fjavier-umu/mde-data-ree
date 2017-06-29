@@ -1,0 +1,10 @@
+SELECT x FROM 
+
+
+
+ select x from MeasurementGroupStyle x where x.groupName=?
+
+
+
+
+

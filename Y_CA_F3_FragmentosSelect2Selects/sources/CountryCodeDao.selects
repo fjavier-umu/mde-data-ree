@@ -1,0 +1,11 @@
+SELECT cc from CountryCode cc
+
+
+SELECT cc from CountryCode cc where cc.clocale = ?
+
+
+SELECT cc from CountryCode  cc where cc.countryId = ?
+
+
+SELECT cc from CountryCode cc where cc.countryId = ? and cc.clocale=?
+

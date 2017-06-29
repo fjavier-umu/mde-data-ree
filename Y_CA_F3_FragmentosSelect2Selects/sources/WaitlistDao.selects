@@ -1,0 +1,291 @@
+SELECT client_id, first_name, last_name, DATEDIFF(CURDATE(), e.form_date) days_in_waitlist, 
+
+
+
+  FROM vacancy_client_match m, demographic  d, eform_data e WHERE vacancy_id = ?1  
+
+
+
+
+ and d.demographic_no = m.client_id and m.form_id = e.fdid
+
+
+
+SELECT client_id, first_name, last_name, DATEDIFF(CURDATE(), e.form_date) days_in_waitlist, 
+
+
+
+  FROM vacancy_client_match m, demographic  d, eform_data e WHERE vacancy_id = ?1  
+
+
+
+
+ and d.demographic_no = m.client_id and m.form_id = e.fdid and m.match_percent>=?2
+
+
+
+SELECT fdid, demographic_no, form_date FROM eform_data ef WHERE 1=1\n
+
+
+
+  AND ef.fdid IN (select fdid from eform_values where var_name=?1 and var_value=?2)\n
+
+
+
+
+  AND ef.fdid IN (select fdid from eform_values where var_name=?1 and (var_value BETWEEN ?2 and ?3))\n
+
+
+
+
+  AND ef.fdid IN (select fdid from eform_values where var_name=?1 and (
+
+
+
+
+
+
+
+ (CONCAT(',',var_value,',') LIKE CONCAT('%,',?
+
+
+
+SELECT v.id, t.NAME, v.dateCreated FROM vacancy v JOIN vacancy_template t ON 
+
+
+
+ v.templateId=t.TEMPLATE_ID WHERE t.WL_PROGRAM_ID=?1 and v.status=?2
+
+
+
+
+
+
+SELECT v.id, t.NAME as tname, v.dateCreated, p.name as pname, v.vacancyName, v.wlProgramId FROM vacancy v JOIN vacancy_template t ON 
+
+
+
+ v.templateId=t.TEMPLATE_ID  JOIN program p ON v.wlProgramId=p.id WHERE  v.status=?1 order by v.id asc
+
+
+
+
+
+
+SELECT v.id, t.NAME as tname, v.dateCreated, p.name as pname, v.vacancyName, v.wlProgramId  FROM vacancy v JOIN vacancy_template t ON
+
+
+
+  v.templateId=t.TEMPLATE_ID JOIN program p ON v.wlProgramId=p.id WHERE t.WL_PROGRAM_ID=?1 and v.status=?2
+
+
+
+
+
+
+SELECT v.vacancyName, t.NAME, 
+
+
+
+ v.dateCreated, p.name, v.vacancyName  FROM vacancy v JOIN vacancy_template t ON v.templateId=t.TEMPLATE_ID JOIN program p ON v.wlProgramId=p.id  WHERE v.id=?1
+
+
+
+SELECT 
+
+
+(SELECT COUNT(*) FROM vacancy_client_match WHERE vacancy_id=?1 and status='REJECTED') 
+
+
+(SELECT COUNT(*) FROM vacancy_client_match WHERE vacancy_id=?2 and status='ACCEPTED') as accepted, 
+
+
+(SELECT COUNT(*) FROM vacancy_client_match WHERE vacancy_id=?3 and status='PENDING') as pending
+
+
+SELECT t.PROGRAM_ID FROM vacancy v JOIN vacancy_template t ON 
+
+
+
+ v.templateId=t.TEMPLATE_ID WHERE v.id=?1
+
+
+
+SELECT wlProgramId FROM vacancy where id=?1
+
+
+SELECT p.id , COUNT(*) vacncyCnt,v.vacancyName,v.dateCreated,v.id FROM vacancy v JOIN program p ON 
+
+
+
+ v.wlProgramId=p.id where v.status=?1 GROUP by v.wlProgramId
+
+
+
+
+
+
+SELECT p.id, v.vacancyName, v.dateCreated, v.id as vacancyId, vt.name FROM vacancy v, program p, vacancy_template vt where 
+
+
+
+ v.wlProgramId=p.id and v.templateId=vt.TEMPLATE_ID and v.status=?1 order by v.vacancyName
+
+
+
+
+
+
+SELECT DISTINCT demographic_no, fdid, var_name, var_value 
+
+
+
+ FROM eform_values LEFT JOIN client_referral cr ON cr.client_id=demographic_no, 
+
+
+
+(SELECT demographic_no AS dmb,MAX(fdid) AS ffdid FROM eform_values GROUP BY demographic_no) xyz 
+
+
+
+ WHERE cr.referral_id IS NULL AND 
+
+
+
+
+ demographic_no= xyz.dmb AND fdid=xyz.ffdid
+
+
+
+SELECT DISTINCT ef.demographic_no, ef.fdid, ef.var_name, ef.var_value 
+
+
+
+ FROM eform_values ef LEFT JOIN client_referral cr ON cr.client_id=ef.demographic_no
+
+
+
+
+  where cr.program_id=?1 and ef.var_name in ('age-years','gender','current-housing','preferred-language','location-preferences','referrer-contact-province','contact-province','Age category','prepared-live-toronto','bed_community_program_id','has-mental-illness-primary','current-legal-involvements')
+
+
+
+
+  and LENGTH(ef.var_value)>0 and not exists (select * from eform_values where demographic_no=ef.demographic_no and var_name=ef.var_name and fdid>ef.fdid)
+
+
+
+SELECT DISTINCT ef.demographic_no, ef.fdid, ef.var_name, ef.var_value 
+
+
+
+ FROM eform_values ef WHERE ef.demographic_no= ?1 and 
+
+
+
+
+  ef.var_name in ('age-years','gender','current-housing','preferred-language','location-preferences','referrer-contact-province','contact-province','Age category','prepared-live-toronto','bed_community_program_id','has-mental-illness-primary','current-legal-involvements')
+
+
+
+
+ and LENGTH(ef.var_value)>0 AND not exists (select * from eform_values where ef.demographic_no=demographic_no and var_name=ef.var_name and fdid>ef.fdid)
+
+
+
+
+
+
+
+
+
+
+ age category
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Serious and Persistent Mental Illness Diagnosis
+
+
+
+
+ Serious and Persistent Mental Illness Diagnosis
+
+
+
+
+ No Formal Diagnosis
+
+
+
+
+
+
+
+ Serious and Persistent Mental Illness Diagnosis
+
+
+
+
+ Formal Diagnosis
+
+
+
+
+ Serious and Persistent Mental Illness Diagnosis
+
+
+
+
+
+
+SELECT v.id, v.wlProgramId, ct.field_name,ct.field_type,
+
+
+
+ FROM criteria c JOIN criteria_type ct ON c.CRITERIA_TYPE_ID=ct.CRITERIA_TYPE_ID 
+
+
+
+
+ JOIN vacancy v ON v.id=c.VACANCY_ID WHERE v.id=?1
+
+
+
+SELECT v.id, v.wlProgramId, ct.field_name,ct.field_type,
+
+
+
+ FROM criteria c JOIN criteria_type ct ON c.CRITERIA_TYPE_ID=ct.CRITERIA_TYPE_ID 
+
+
+
+
+ JOIN vacancy v ON v.id=c.VACANCY_ID WHERE v.id=?1 and v.wlProgramId=?2
+
+

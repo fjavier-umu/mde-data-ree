@@ -1,0 +1,85 @@
+SELECT DISTINCT loinc_code, name FROM measurementMap WHERE loinc_code=ident_code and name like '
+
+
+
+ ' ORDER BY name
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT * FROM measurementMap WHERE name LIKE '
+
+
+
+ ' ORDER BY name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT h.type, me1.val AS identifier, me2.val AS name 
+
+
+
+ FROM measurementsExt me1 
+
+
+
+
+ JOIN measurementsExt me2 ON me1.measurement_id = me2.measurement_id AND me2.keyval='name' 
+
+
+
+
+ JOIN measurementsExt me3 ON me1.measurement_id = me3.measurement_id AND me3.keyval='lab_no' 
+
+
+
+
+ JOIN hl7TextMessage h ON me3.val = h.lab_id 
+
+
+
+
+ WHERE me1.keyval='identifier' AND h.type LIKE '
+
+
+
+AND me1.val NOT IN (SELECT ident_code FROM measurementMap) ORDER BY h.type
+
+
+
+
+
+
+
+
+
+
+
+
+

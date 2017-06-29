@@ -1,0 +1,50 @@
+SELECT demographic_no, CONCAT(last_name, ', ', first_name) AS pName FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formAlpha WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+
+
+SELECT * FROM formAlpha WHERE demographic_no=
+
+
+
+  AND ID=0
+
+
+
+SELECT * FROM formAlpha WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+

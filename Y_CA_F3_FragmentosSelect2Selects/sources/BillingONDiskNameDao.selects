@@ -1,0 +1,11 @@
+SELECT b FROM BillingONDiskName b WHERE b.groupNo=? order by b.createDateTime DESC
+
+
+SELECT b FROM BillingONDiskName b WHERE  b.createDateTime<? and groupno=? order by createdatetime DESC
+
+
+SELECT b FROM BillingONDiskName b WHERE b.createDateTime >= :sd AND b.createDateTime <= :ed AND b.status IN (:status) ORDER BY b.createDateTime DESC
+
+
+
+

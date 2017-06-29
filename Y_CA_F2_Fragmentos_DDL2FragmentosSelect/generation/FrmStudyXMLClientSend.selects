@@ -1,0 +1,18 @@
+SELECT studydata_no, content from studydata where timestamp > '
+
+
+
+ ' and timestamp < '
+
+
+
+
+ ' and status='ready' order by studydata_no
+
+
+
+
+
+
+
+

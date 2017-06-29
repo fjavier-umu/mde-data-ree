@@ -1,0 +1,2 @@
+SELECT fd FROM FlowSheetDrug fd WHERE fd.flowsheet=? and fd.archived=0 and fd.demographicNo=?
+

@@ -1,0 +1,24 @@
+<fds:Database name='TORNEOS' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://modelum.es/fds ../metamodels/fds.ecore' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI' xmlns:fds='http://modelum.es/fds'>
+  <tables name='ESTADIOS' xsi:type='fds:Table'>
+    <columns name='CAPACIDAD' xsi:type='fds:Column'/>
+    <columns name='SEDE_CONSTRUCTORA' xsi:type='fds:Column'/>
+    <columns name='ESTADIO' xsi:type='fds:Column'/>
+    <columns name='CONSTRUCTORA' xsi:type='fds:Column'/>
+    <functionalDependencies determinant='#//@tables.0/@columns.3' xsi:type='fds:FunctionalDependency' dependant='#//@tables.0/@columns.1'/>
+  </tables>
+  <tables name='GANADORES_DE_TORNEOS' xsi:type='fds:Table'>
+    <columns name='ARBITRO' xsi:type='fds:Column'/>
+    <columns name='FECHA_NAC_ARBITRO' xsi:type='fds:Column'/>
+    <columns name='GANADOR' xsi:type='fds:Column'/>
+    <columns name='FECHA_NAC_GANADOR' xsi:type='fds:Column'/>
+    <columns name='ESTADIO' xsi:type='fds:Column'/>
+    <columns name='ANYO' xsi:type='fds:Column'/>
+    <columns name='TORNEO' xsi:type='fds:Column'/>
+    <columns name='PATROCINADOR' xsi:type='fds:Column'/>
+    <functionalDependencies determinant='#//@tables.1/@columns.0' xsi:type='fds:FunctionalDependency' dependant='#//@tables.1/@columns.1'/>
+    <functionalDependencies determinant='#//@tables.1/@columns.2' xsi:type='fds:FunctionalDependency' dependant='#//@tables.1/@columns.3'/>
+  </tables>
+  <tables name='PATROCINADORES' xsi:type='fds:Table'>
+    <columns name='SEDE' xsi:type='fds:Column'/>
+  </tables>
+</fds:Database>

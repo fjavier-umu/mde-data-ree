@@ -1,0 +1,16 @@
+SELECT * FROM demographic WHERE demographic_no=${demographic}
+
+
+
+
+
+SELECT * FROM demographic WHERE demographic_no=${demographic}
+
+
+
+ ${first_name}'s hin is: ${hin}
+
+
+
+
+

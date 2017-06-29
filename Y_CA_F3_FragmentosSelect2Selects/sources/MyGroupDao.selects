@@ -1,0 +1,31 @@
+SELECT g.id.providerNo FROM MyGroup g WHERE g.id.myGroupNo=?
+
+
+SELECT distinct g.id.myGroupNo FROM MyGroup g
+
+
+SELECT g FROM MyGroup g where g.id.myGroupNo = ?
+
+
+SELECT g FROM MyGroup g WHERE g.id.providerNo = ?
+
+
+SELECT distinct g.defaultBillingForm FROM MyGroup g WHERE g.id.myGroupNo = ?
+
+
+
+ More than one Default biling form for this group. Should only be one
+
+
+
+SELECT p  FROM MyGroup g, Provider p WHERE g.id.myGroupNo=? and p.ProviderNo = g.id.providerNo order by p.LastName
+
+
+SELECT g FROM MyGroup g WHERE g.id.myGroupNo like ? group by g.id.myGroupNo order by g.id.myGroupNo
+
+
+SELECT g FROM MyGroup g group by g.id.myGroupNo order by g.id.myGroupNo
+
+
+SELECT g FROM MyGroup g where g.lastName like ? and g.firstName like ? order by g.lastName, g.firstName, g.id.myGroupNo
+

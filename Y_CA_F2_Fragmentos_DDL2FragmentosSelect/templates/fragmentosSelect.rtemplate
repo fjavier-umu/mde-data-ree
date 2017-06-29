@@ -1,0 +1,8 @@
+<%= fs.texto -%>
+<% fragmentoActual=fs.sigFragmento -%>
+<% while fragmentoActual != nil do -%>
+<%   if ( (fragmentoActual.texto.strip.include? " ") || (fragmentoActual.texto.include? "=") ) -%>
+ <%= fragmentoActual.texto -%>
+<% end -%>
+<% fragmentoActual=fragmentoActual.sigFragmento -%>
+<% end -%>

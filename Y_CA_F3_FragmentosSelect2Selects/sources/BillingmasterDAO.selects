@@ -1,0 +1,65 @@
+ SELECT b.demographic_no, b.billingmaster_no, d.first_name, d.last_name, d.address, d.city, d.province, d.postal,
+
+
+
+  FROM billingmaster b LEFT JOIN teleplanC12  t ON t.t_officefolioclaimno=b.billingmaster_no, demographic d , wcb w 
+
+
+
+
+ WHERE b.demographic_no=d.demographic_no AND b.billing_no=w.billing_no AND b.billingmaster_no=?
+
+
+
+
+ select b from Billing b, Billingmaster bm where b.id= bm.billingNo and bm.billingmasterNo=?
+
+
+
+
+ FROM Billingmaster bm 
+
+
+
+
+ WHERE bm.demographicNo = :demoNo 
+
+
+
+
+ AND bm.billingCode = :billingCode 
+
+
+
+
+ AND bm.billingstatus NOT IN (:statuses)
+
+
+
+
+ FROM Billingmaster bm 
+
+
+
+
+ WHERE bm.demographicNo = :demoNo 
+
+
+
+
+ AND bm.billingCode = :billingCode 
+
+
+
+
+ AND YEAR(bm.serviceDate) = YEAR(:date) 
+
+
+
+
+ AND bm.billingstatus != 'D'
+
+
+
+
+

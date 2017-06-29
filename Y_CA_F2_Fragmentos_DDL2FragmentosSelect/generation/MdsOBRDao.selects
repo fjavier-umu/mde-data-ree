@@ -1,0 +1,28 @@
+SELECT DISTINCT mdsOBX.associatedOBR, mdsOBR.observationDateTime 
+
+
+
+ FROM MdsOBX mdsOBX, MdsOBR mdsOBR
+
+
+
+
+ mdsOBX.id = mdsOBR.id
+
+
+
+
+ mdsOBX.associatedOBR = mdsOBR.ObrId
+
+
+
+
+ mdsOBX.id = :id
+
+
+
+
+
+
+
+

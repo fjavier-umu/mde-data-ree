@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ConceptualSystem>
+	<Version MajorNumber="1" MinorNumber="0"/>
+	<Contexts>
+		<Context Identifier="0" Type="Binary">
+			<Attributes>
+				<Attribute Identifier="0">
+					<Name>ESTADIO</Name>
+				</Attribute>
+				<Attribute Identifier="1">
+					<Name>FECHA_NAC_ARBITRO</Name>
+				</Attribute>
+				<Attribute Identifier="2">
+					<Name>TORNEO</Name>
+				</Attribute>
+				<Attribute Identifier="3">
+					<Name>ARBITRO</Name>
+				</Attribute>
+				<Attribute Identifier="4">
+					<Name>GANADOR</Name>
+				</Attribute>
+				<Attribute Identifier="5">
+					<Name>PATROCINADOR</Name>
+				</Attribute>
+				<Attribute Identifier="6">
+					<Name>FECHA_NAC_GANADOR</Name>
+				</Attribute>
+				<Attribute Identifier="7">
+					<Name>ANYO</Name>
+				</Attribute>
+			</Attributes>
+			<Objects>
+				<Object>
+					<Name>('Indiana Memorial Stadium','1955-12-30','Indiana Invitational','Will Shephard','Al Johnson','1975-07-21','Sony','1998')('Cleveland Memorial Stadium','1959-06-01','Cleveland Open','Rick Bryan','Bob Alberts','1968-09-28','Panasonic','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="7"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Des Moines Olympic Stadium','1959-06-01','Des Moines Masters','Rick Bryan','Al Johnson','1975-07-21','LG','1999')('Cleveland Memorial Stadium','1959-06-01','Cleveland Open','Rick Bryan','Bob Alberts','1968-09-28','Panasonic','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="1"/>
+						<HasAttribute AttributeIdentifier="3"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Des Moines Olympic Stadium','1959-06-01','Des Moines Masters','Rick Bryan','Al Johnson','1975-07-21','LG','1999')('Indiana Memorial Stadium','1955-12-30','Indiana Invitational','Will Shephard','Al Johnson','1975-07-21','Sony','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="4"/>
+						<HasAttribute AttributeIdentifier="6"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1960-10-13','Indiana Invitational','Thomas Straw','Chip Masters','1977-05-14','Philips','1999')('Indiana Memorial Stadium','1955-12-30','Indiana Invitational','Will Shephard','Al Johnson','1975-07-21','Sony','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="2"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1960-10-13','Indiana Invitational','Thomas Straw','Chip Masters','1977-05-14','Philips','1999')('Des Moines Olympic Stadium','1959-06-01','Des Moines Masters','Rick Bryan','Al Johnson','1975-07-21','LG','1999')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="7"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1959-06-01','Indiana Invitational','Albert Bryan','Ben Johnson','1975-07-21','Samsung','2000')('Cleveland Memorial Stadium','1959-06-01','Cleveland Open','Rick Bryan','Bob Alberts','1968-09-28','Panasonic','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="1"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1959-06-01','Indiana Invitational','Albert Bryan','Ben Johnson','1975-07-21','Samsung','2000')('Indiana Memorial Stadium','1955-12-30','Indiana Invitational','Will Shephard','Al Johnson','1975-07-21','Sony','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="2"/>
+						<HasAttribute AttributeIdentifier="6"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1959-06-01','Indiana Invitational','Albert Bryan','Ben Johnson','1975-07-21','Samsung','2000')('Des Moines Olympic Stadium','1959-06-01','Des Moines Masters','Rick Bryan','Al Johnson','1975-07-21','LG','1999')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="1"/>
+						<HasAttribute AttributeIdentifier="6"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Indiana Royal Stadium','1959-06-01','Indiana Invitational','Albert Bryan','Ben Johnson','1975-07-21','Samsung','2000')('Indiana Royal Stadium','1960-10-13','Indiana Invitational','Thomas Straw','Chip Masters','1977-05-14','Philips','1999')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="0"/>
+						<HasAttribute AttributeIdentifier="2"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Cleveland Memorial Stadium','1958-04-01','Worldcup','Terry Smith','John Irving','1980-03-11','Sony','2000')('Cleveland Memorial Stadium','1959-06-01','Cleveland Open','Rick Bryan','Bob Alberts','1968-09-28','Panasonic','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="0"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Cleveland Memorial Stadium','1958-04-01','Worldcup','Terry Smith','John Irving','1980-03-11','Sony','2000')('Indiana Memorial Stadium','1955-12-30','Indiana Invitational','Will Shephard','Al Johnson','1975-07-21','Sony','1998')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="5"/>
+					</Intent>
+				</Object>
+				<Object>
+					<Name>('Cleveland Memorial Stadium','1958-04-01','Worldcup','Terry Smith','John Irving','1980-03-11','Sony','2000')('Indiana Royal Stadium','1959-06-01','Indiana Invitational','Albert Bryan','Ben Johnson','1975-07-21','Samsung','2000')</Name>
+					<Intent>
+						<HasAttribute AttributeIdentifier="7"/>
+					</Intent>
+				</Object>
+			</Objects>
+		</Context>
+	</Contexts>
+	<RecalculationPolicy Value="Clear"/>
+	<Lattices/>
+</ConceptualSystem>

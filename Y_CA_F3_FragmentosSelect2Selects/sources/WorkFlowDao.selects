@@ -1,0 +1,8 @@
+SELECT w FROM WorkFlow w WHERE w.workflowType=?
+
+
+SELECT w FROM WorkFlow w WHERE w.workflowType=? AND w.currentState <> ?
+
+
+SELECT w FROM WorkFlow w WHERE w.workflowType=? AND w.demographicNo=? AND w.currentState <> ?
+

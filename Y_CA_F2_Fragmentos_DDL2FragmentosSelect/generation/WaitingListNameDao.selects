@@ -1,0 +1,17 @@
+SELECT COUNT(*) FROM WaitingListName n WHERE n.isHistory = 'N'
+
+
+
+ select x from WaitingListName x where x.name = ? AND x.groupNo = ? and x.isHistory='N'
+
+
+
+
+ select x from WaitingListName x where x.groupNo IN (:groupNo) and x.isHistory='N' order by x.name ASC
+
+
+
+
+ select x from WaitingListName x where x.groupNo = ? and x.isHistory='N' order by x.name
+
+

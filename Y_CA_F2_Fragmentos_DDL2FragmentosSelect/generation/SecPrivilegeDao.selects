@@ -1,0 +1,2 @@
+SELECT s FROM SecPrivilege s order by s.id
+

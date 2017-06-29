@@ -1,0 +1,28 @@
+SELECT name FROM program_provider pp inner join `caisi_role` c on pp.role_id=c.role_id
+
+
+SELECT role_name FROM secuserrole
+
+
+SELECT role_name FROM secUserRole
+
+
+
+  WHERE 1=0
+
+
+
+
+ Using caisi_role and program_provider tables
+
+
+
+
+  WHERE 1=0
+
+
+
+
+  WHERE 1=0
+
+

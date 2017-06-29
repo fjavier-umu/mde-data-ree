@@ -1,0 +1,30 @@
+SELECT * FROM provider_role_program
+
+
+
+
+
+
+
+
+SELECT count(*) as num FROM program where program_id =
+
+
+SELECT count(*) as num FROM provider where provider_no =
+
+
+SELECT * FROM caisi_role where name = '
+
+
+
+
+
+
+ no Nurse role defined
+
+
+
+
+ insert into program_provider (program_id,provider_no,role_id,team_id) values (
+
+

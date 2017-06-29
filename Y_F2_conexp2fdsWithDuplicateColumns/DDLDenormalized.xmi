@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DDL:DDLDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DDL="http://modelum.es/DDL">
+  <statements xsi:type="DDL:Database" name="TORNEOS"/>
+  <statements xsi:type="DDL:Table" name="ESTADIOS">
+    <columns name="ESTADIO">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="CAPACIDAD">
+      <type xsi:type="DDL:Int"/>
+    </columns>
+    <columns name="CONSTRUCTORA">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="SEDE_CONSTRUCTORA">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="ESTADIOS_PK">
+      <columnName>ESTADIO</columnName>
+    </pks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="PATROCINADORES">
+    <columns name="PATROCINADOR">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="SEDE">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="PATROCINADOR_PK">
+      <columnName>PATROCINADOR</columnName>
+    </pks>
+  </statements>
+  <statements xsi:type="DDL:Table" name="GANADORES_DE_TORNEOS">
+    <columns name="TORNEO">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <columns name="ANYO">
+      <type xsi:type="DDL:Varchar" length="4"/>
+    </columns>
+    <columns name="GANADOR">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="FECHA_NAC_GANADOR">
+      <type xsi:type="DDL:Date"/>
+    </columns>
+    <columns name="ARBITRO">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="FECHA_NAC_ARBITRO">
+      <type xsi:type="DDL:Date"/>
+    </columns>
+    <columns name="ESTADIO">
+      <type xsi:type="DDL:Varchar" length="30"/>
+    </columns>
+    <columns name="PATROCINADOR">
+      <type xsi:type="DDL:Varchar" length="20"/>
+    </columns>
+    <pks name="GANADORES_DE_TORNEOS_PK">
+      <columnName>TORNEO</columnName>
+      <columnName>ANYO</columnName>
+    </pks>
+    <fks name="ESTADIO_FK" references="//@statements.1">
+      <columnName>ESTADIO</columnName>
+      <columnReference>ESTADIO</columnReference>
+    </fks>
+    <fks name="PATROCINADOR_FK" references="//@statements.2">
+      <columnName>PATROCINADOR</columnName>
+      <columnReference>PATROCINADOR</columnReference>
+    </fks>
+  </statements>
+</DDL:DDLDefinition>

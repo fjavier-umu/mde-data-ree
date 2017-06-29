@@ -1,0 +1,2 @@
+SELECT c from Contact c where 
+

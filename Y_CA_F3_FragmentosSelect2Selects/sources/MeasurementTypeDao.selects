@@ -1,0 +1,2 @@
+SELECT DISTINCT m.typeDisplayName FROM MeasurementType m order by m.typeDisplayName
+

@@ -1,0 +1,18 @@
+SELECT MAX(e.id) FROM EChart e WHERE e.demographicNo = :demoNo
+
+
+
+
+
+
+ e.demographicNo = :dNo ORDER BY e.id DESC
+
+
+
+
+
+
+
+ e.demographicNo = :demoNo and e.subject = :subj ORDER BY e.timestamp
+
+

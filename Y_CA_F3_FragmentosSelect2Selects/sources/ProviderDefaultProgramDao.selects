@@ -1,0 +1,10 @@
+SELECT pdp FROM ProviderDefaultProgram pdp WHERE pdp.providerNo=?
+
+
+FROM Program p WHERE p.id IN (SELECT pdp.programId FROM ProviderDefaultProgram pdp WHERE pdp.providerNo = :pr)
+
+
+
+ from Program p where p.id in (select distinct pg.id from Program pg ,ProgramProvider pp where pp.ProgramId=pg.id and pg.facilityId=?)
+
+

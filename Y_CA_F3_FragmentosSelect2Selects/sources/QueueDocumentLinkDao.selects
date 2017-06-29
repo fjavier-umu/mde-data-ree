@@ -1,0 +1,14 @@
+SELECT q from QueueDocumentLink q
+
+
+SELECT q from QueueDocumentLink q where q.status=?
+
+
+SELECT q from QueueDocumentLink q where q.docId=?
+
+
+SELECT q from QueueDocumentLink q where queueId=?
+
+
+SELECT q from QueueDocumentLink q where q.docId=? and q.queueId=?
+

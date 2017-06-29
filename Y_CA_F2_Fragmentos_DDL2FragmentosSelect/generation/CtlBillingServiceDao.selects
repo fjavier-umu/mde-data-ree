@@ -1,0 +1,96 @@
+SELECT x FROM 
+
+
+SELECT DISTINCT b.serviceType, b.serviceTypeName FROM CtlBillingService b WHERE b.status = :serviceStatus
+
+
+
+ select b from CtlBillingService b where b.status='A' and b.serviceType like ?
+
+
+
+
+ select b from CtlBillingService b where b.status='A' and b.serviceGroup = ? and b.serviceType like ?
+
+
+
+SELECT bs.serviceTypeName, bs.serviceType FROM 
+
+
+
+  bs GROUP BY bs.serviceType, bs.serviceTypeName
+
+
+
+
+
+
+
+  bs WHERE bs.serviceGroup = :serviceGroup
+
+
+
+
+  AND bs.serviceType = :serviceType
+
+
+
+SELECT DISTINCT s.serviceTypeName, s.serviceType from CtlBillingService s 
+
+
+
+ WHERE s.status='A' 
+
+
+
+
+ AND s.serviceCode = :serviceCode
+
+
+
+SELECT DISTINCT s.serviceType, s.serviceTypeName FROM CtlBillingService s 
+
+
+
+ WHERE s.status != 'D' 
+
+
+
+
+ AND s.serviceType IS NOT NULL 
+
+
+
+
+ AND LENGTH(TRIM(s.serviceType)) > 0
+
+
+
+SELECT DISTINCT s.serviceTypeName, s.serviceType 
+
+
+
+ FROM CtlBillingService s 
+
+
+
+
+ WHERE s.status = :status
+
+
+
+
+
+
+SELECT DISTINCT bs.serviceCode FROM CtlBillingService bs 
+
+
+
+ WHERE bs.status <> 'D' 
+
+
+
+
+ AND bs.serviceType = :serviceType
+
+

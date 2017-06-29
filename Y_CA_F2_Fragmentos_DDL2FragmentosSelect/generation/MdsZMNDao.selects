@@ -1,0 +1,13 @@
+SELECT zmn.resultCode FROM MdsZMN zmn WHERE zmn.id = :id 
+
+
+
+ AND zmn.reportGroup = :reportSequence 
+
+
+
+
+
+
+
+

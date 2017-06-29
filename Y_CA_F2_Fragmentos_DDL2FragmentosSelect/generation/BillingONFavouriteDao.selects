@@ -1,0 +1,8 @@
+SELECT b FROM BillingONFavourite b WHERE b.name = ?
+
+
+SELECT b FROM BillingONFavourite b WHERE b.name = ? AND b.providerNo = ?
+
+
+SELECT b FROM BillingONFavourite b WHERE b.deleted=0
+

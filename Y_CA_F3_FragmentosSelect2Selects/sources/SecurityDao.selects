@@ -1,0 +1,27 @@
+SELECT s FROM Security s ORDER BY 
+
+
+
+ select x from Security x where x.providerNo=?
+
+
+
+
+ select x from Security x where x.providerNo like ?
+
+
+
+
+ FROM Security s, Provider p WHERE p.providerNo = s.providerNo ORDER BY p.lastName
+
+
+
+
+ select * from security s inner join providersite p on s.provider_no = p.provider_no 
+
+
+
+
+ where p.site_id in(select site_id from providersite where provider_no=?)
+
+

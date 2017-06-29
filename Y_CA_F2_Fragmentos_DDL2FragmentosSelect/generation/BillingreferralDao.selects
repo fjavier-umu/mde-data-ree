@@ -1,0 +1,32 @@
+SELECT br From Billingreferral br ORDER BY  br.lastName, br.firstName
+
+
+SELECT br From Billingreferral br WHERE br.referralNo=?
+
+
+SELECT br From Billingreferral br WHERE br.lastName like ? and br.firstName like ? order by br.lastName
+
+
+SELECT br From Billingreferral br WHERE br.lastName like ? order by br.lastName
+
+
+SELECT br From Billingreferral br WHERE br.specialty like ? order by br.lastName
+
+
+SELECT b FROM Billingreferral b WHERE b.referralNo LIKE ? or b.referralNo LIKE ? or b.referralNo LIKE ?
+
+
+
+  or (b.lastName LIKE ? and b.firstName LIKE ?)
+
+
+
+
+  or (b.lastName LIKE ? and b.firstName LIKE ?)
+
+
+
+
+  or (b.lastName LIKE ? and b.firstName LIKE ?)
+
+

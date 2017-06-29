@@ -1,0 +1,41 @@
+SELECT c FROM ConsultationRequest c where c.demographicId = ? and c.status = ?
+
+
+
+ cr.referralDate <= :cutoff AND cr.status = '1' and cr.providerNo = :providerNo
+
+
+
+
+
+
+SELECT DISTINCT d.LastName, c.demographicId FROM ConsultationRequest c, Demographic d 
+
+
+
+ WHERE c.referralDate >= :timeLimit 
+
+
+
+
+ AND c.demographicId = d.DemographicNo
+
+
+
+
+  AND d.ProviderNo = :providerNo 
+
+
+
+
+  ORDER BY d.LastName
+
+
+
+
+
+
+
+ cr.referralDate <= :cutoff AND cr.demographicId = :demoId
+
+

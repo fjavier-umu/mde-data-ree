@@ -1,0 +1,14 @@
+SELECT x FROM CaisiForm x  where x.status = 1 order by x.description ASC 
+
+
+SELECT x FROM CaisiForm x
+
+
+SELECT x FROM CaisiForm x where x.formId = ?1 and x.clientId = ?2
+
+
+SELECT x FROM CaisiForm x where x.clientId = ?1
+
+
+SELECT x FROM CaisiForm x where x.status=1 and (x.facilityId is null or x.facilityId = ?1)
+

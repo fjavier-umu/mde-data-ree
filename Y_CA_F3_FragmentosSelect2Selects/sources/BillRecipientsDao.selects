@@ -1,0 +1,2 @@
+SELECT b FROM BillRecipients b WHERE b.billingNo=?
+

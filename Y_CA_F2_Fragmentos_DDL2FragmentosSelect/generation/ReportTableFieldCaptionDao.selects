@@ -1,0 +1,2 @@
+SELECT x FROM ReportTableFieldCaption x WHERE x.tableName=? AND x.name=?
+

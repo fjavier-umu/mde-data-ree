@@ -1,0 +1,5 @@
+SELECT b FROM BillCenter b
+
+
+SELECT b FROM BillCenter b WHERE b.billCenterDesc like ?
+

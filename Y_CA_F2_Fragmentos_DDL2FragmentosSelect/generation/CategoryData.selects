@@ -1,0 +1,237 @@
+ SELECT HIGH_PRIORITY COUNT(1) as count 
+
+
+
+  FROM patientLabRouting plr2, providerLabRouting plr  
+
+
+
+
+  WHERE plr.lab_no = plr2.lab_no 
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+    AND plr.lab_type = 'HL7' 
+
+
+
+
+    AND plr.status like '%
+
+
+
+
+    AND plr2.lab_type = 'HL7'
+
+
+
+
+    AND plr2.demographic_no = '0' 
+
+
+
+ SELECT HIGH_PRIORITY COUNT(1) as count 
+
+
+
+  FROM patientLabRouting cd, demographic d, providerLabRouting plr, hl7TextInfo info 
+
+
+
+
+  WHERE d.last_name like '%
+
+
+
+
+ AND plr.provider_no = '
+
+
+
+SELECT HIGH_PRIORITY COUNT(1) as count 
+
+
+
+  FROM providerLabRouting plr, hl7TextInfo info 
+
+
+
+
+  WHERE plr.status like '%
+
+
+
+
+  AND plr.provider_no = '
+
+
+
+
+  AND plr.lab_type = 'HL7'  
+
+
+
+
+  AND info.lab_no = plr.lab_no
+
+
+
+
+  AND result_status 
+
+
+
+ SELECT HIGH_PRIORITY COUNT(1) as count 
+
+
+
+  FROM hl7TextInfo info 
+
+
+
+
+  WHERE result_status 
+
+
+
+ SELECT HIGH_PRIORITY COUNT(1) as count 
+
+
+
+  FROM ctl_document cd, providerLabRouting plr 
+
+
+
+
+  WHERE plr.lab_type = 'DOC' AND plr.status like '%
+
+
+
+
+  AND plr.provider_no ='
+
+
+
+
+ AND plr.lab_no = cd.document_no
+
+
+
+
+
+
+ SELECT HIGH_PRIORITY d.demographic_no, last_name, first_name, COUNT(1) as count 
+
+
+
+  FROM patientLabRouting cd,  demographic d, providerLabRouting plr 
+
+
+
+
+  WHERE   d.last_name like '%
+
+
+
+
+ AND plr.provider_no = '
+
+
+
+
+  GROUP BY demographic_no 
+
+
+
+
+
+
+
+
+
+
+
+
+ SELECT HIGH_PRIORITY d.demographic_no, last_name, first_name, COUNT(1) as count 
+
+
+
+  FROM patientLabRouting cd,  demographic d, providerLabRouting plr 
+
+
+
+
+  WHERE   d.demographic_no = 
+
+
+
+
+ AND plr.provider_no = '
+
+
+
+
+  GROUP BY demographic_no 
+
+
+
+ SELECT HIGH_PRIORITY demographic_no, last_name, first_name, COUNT(1) as count 
+
+
+
+  FROM ctl_document cd, demographic d, providerLabRouting plr 
+
+
+
+
+  WHERE   d.last_name like '%
+
+
+
+
+ AND plr.provider_no = '
+
+
+
+
+  GROUP BY demographic_no 
+
+
+
+
+
+
+
+
+
+
+
+
+ SELECT HIGH_PRIORITY demographic_no, last_name, first_name, COUNT(1) as count 
+
+
+
+  FROM ctl_document cd, demographic d, providerLabRouting plr 
+
+
+
+
+  WHERE   d.demographic_no = 
+
+
+
+
+ AND plr.provider_no = '
+
+
+
+
+  GROUP BY demographic_no 
+
+

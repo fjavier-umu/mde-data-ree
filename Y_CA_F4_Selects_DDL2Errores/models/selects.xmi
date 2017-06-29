@@ -1,0 +1,4330 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Selects:Aplicacion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Selects="http://modelum.es/Selects">
+  <ficheros nombre="/BedProgramDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Program" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="program"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillCenterDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillCenter" tabAlias="b"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="BillCenter" tabAlias="b"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillRecipientsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillRecipients" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="billingNo" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingBCDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ctl_billingservice" tabAlias="c"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingCreateBillingAction 2.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="billing_service_code_conditions"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingHistoryDAO.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="billing" tabAlias="b"/>
+        <tablas nombre="billingmaster" tabAlias="bm"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="billing_no" tabla="b"/>
+          <operando2 columna="billing_no" tabla="bm"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingHistoryDao 2.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingHistory" tabAlias="bh"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="billingMasterNo" tabla="bh"/>
+          <operando2 columna=":bmn"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingONDiskNameDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingONDiskName" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="groupNo" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingONFavouriteDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingONFavourite" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingONFavourite" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="providerNo" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingONFavourite" tabAlias="b"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingONHeaderDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingONHeader" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="diskId" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="providerRegNum" tabla="b"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingPaymentTypeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingPercLimitDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingPercLimit" tabAlias="b2"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="service_code" tabla="b2"/>
+          <operando2 columna=":serviceCode"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingServiceDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="BillingService" tabAlias="b"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="serviceCode" tabla="b"/>
+          <operando2 columna=":serviceCode"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingStatusTypesDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="bst"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/BillingreferralDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Billingreferral" tabAlias="br"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CDMReminderHlp.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="dxresearch" tabAlias="d"/>
+        <tablas nombre="demographic" tabAlias="de"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographic_no" tabla="de"/>
+          <operando2 columna="demographic_no" tabla="d"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaisiFormDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaisiForm" tabAlias="x"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaisiFormDataDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaisiFormData" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="instanceId" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CaisiFormData" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="instanceId" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="pageNumber" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="sectionId" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="questionId" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaisiFormInstanceDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaisiFormInstance" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="formId" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaisiFormQuestionDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaisiFormQuestion" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="formId" tabla="x"/>
+          <operando2 columna="?1"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaseManagementNoteDAO.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaseManagementNote" tabAlias="n"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CaseManagementNote" tabAlias="cmn"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="uuid" tabla="cmn"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaseManagementTmpSaveDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CaseManagementTmpSave" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="programId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CaseManagementTmpSave" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="programId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CaseManagementTmpSave" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="programId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="updateDate" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CaseloadDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic" tabAlias="d"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CategoryData.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="patientLabRouting" tabAlias="plr2"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="lab_no" tabla="plr"/>
+          <operando2 columna="lab_no" tabla="plr2"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="patientLabRouting" tabAlias="cd"/>
+        <tablas nombre="demographic" tabAlias="d"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+        <tablas nombre="hl7TextInfo" tabAlias="info"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+        <tablas nombre="hl7TextInfo" tabAlias="info"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="lab_no" tabla="info"/>
+          <operando2 columna="lab_no" tabla="plr"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="hl7TextInfo" tabAlias="info"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ctl_document" tabAlias="cd"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="lab_no" tabla="plr"/>
+          <operando2 columna="document_no" tabla="cd"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="patientLabRouting" tabAlias="cd"/>
+        <tablas nombre="demographic" tabAlias="d"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="patientLabRouting" tabAlias="cd"/>
+        <tablas nombre="demographic" tabAlias="d"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ctl_document" tabAlias="cd"/>
+        <tablas nombre="demographic" tabAlias="d"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ctl_document" tabAlias="cd"/>
+        <tablas nombre="demographic" tabAlias="d"/>
+        <tablas nombre="providerLabRouting" tabAlias="plr"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ClinicDAO.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ClinicLocationDao.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ConsultationRequestDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ConsultationRequest" tabAlias="c"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicId" tabla="c"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="status" tabla="c"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ContactDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Contact" tabAlias="c"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CountryCodeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="CountryCode" tabAlias="cc"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CountryCode" tabAlias="cc"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="clocale" tabla="cc"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CountryCode" tabAlias="cc"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="countryId" tabla="cc"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="CountryCode" tabAlias="cc"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="countryId" tabla="cc"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="clocale" tabla="cc"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CtlDiagCodeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="diagnosticcode" tabAlias="d"/>
+        <tablas nombre="ctl_diagcode" tabAlias="c"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="diagnostic_code" tabla="d"/>
+          <operando2 columna="diagnostic_code" tabla="c"/>
+        </joins>
+        <joins>
+          <operando1 columna="region" tabla="d"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="servicetype" tabla="c"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/CtlDocTypeDao.selects">
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/CtlFrequencyDao.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/DemographicExtDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="DemographicExt" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="d"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Document.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="documentNo" tabla="d"/>
+          <operando2 columna=":documentNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="doctype" tabla="d"/>
+          <operando2 columna=":doctype"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="docdesc" tabla="d"/>
+          <operando2 columna=":docdesc"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="docfilename" tabla="d"/>
+          <operando2 columna=":docfilename"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="doccreator" tabla="d"/>
+          <operando2 columna=":doccreator"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="contentdatetime" tabla="d"/>
+          <operando2 columna=":contentdatetime"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="responsible" tabla="d"/>
+          <operando2 columna=":responsible"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="source" tabla="d"/>
+          <operando2 columna=":source"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="programId" tabla="d"/>
+          <operando2 columna=":programId"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="updatedatetime" tabla="d"/>
+          <operando2 columna=":updatedatetime"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="status" tabla="d"/>
+          <operando2 columna=":status"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="contenttype" tabla="d"/>
+          <operando2 columna=":contenttype"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="public1" tabla="d"/>
+          <operando2 columna=":public1"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="observationdate" tabla="d"/>
+          <operando2 columna=":observationdate"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="reviewer" tabla="d"/>
+          <operando2 columna=":reviewer"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="reviewdatetime" tabla="d"/>
+          <operando2 columna=":reviewdatetime"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="numberofpages" tabla="d"/>
+          <operando2 columna=":numberofpages"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Document" tabAlias="d"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="appointmentNo" tabla="d"/>
+          <operando2 columna=":appointmentNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/DxDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="DxAssociation" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="codeType" tabla="x"/>
+          <operando2 columna="?1"/>
+        </joins>
+        <joins>
+          <operando1 columna="code" tabla="x"/>
+          <operando2 columna="?2"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="description"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EChartDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="EChart" tabAlias="e"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="e"/>
+          <operando2 columna=":demoNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctARRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctAlphaRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctAnnualRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnual"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctFormData.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic_no"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctLabReqRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EctMMSERecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMMSE"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMMSE"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EctMentalHealthRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EctPalliativeCareRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPalliativeCare"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPalliativeCare"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EctPatientData.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="eChart"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctPeriMenopausalRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPeriMenopausal"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPeriMenopausal"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EctRourkeRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EctType2DiabetesRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/EncounterFormDao.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EncounterTemplateDao.selects">
+    <selects>
+      <parte_from>
+        <tablas/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/EpisodeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Episode" tabAlias="e"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="e"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FlowSheetCustomizationDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="FlowSheetCustomization" tabAlias="fd"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="flowsheet" tabla="fd"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="fd"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FlowSheetDrugDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="FlowSheetDrug" tabAlias="fd"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="flowsheet" tabla="fd"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="fd"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FlowSheetUserCreatedDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="FlowSheetUserCreated" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="archived" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FormsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna=":linkReqId"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2007"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Frm2MinWalkRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="form2MinWalk"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmARBloodWorkTest.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAREnhancedBloodWorkTest.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmARRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAdfRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdf"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdf"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdf"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAdfV2Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdfV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdfV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAdfV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAlphaRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAlpha"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAnnualRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnual"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnual"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnual"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmAnnualV2Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnualV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnualV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formAnnualV2"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCAR2007Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2007"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2007"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2007"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCAR2012Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2012"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2012"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR2012"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCARRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCBirthSumMo2008Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCBrithSumMoRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCBirthSumMo"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCClientChartChecklistRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCClientChartChecklist"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCClientChartChecklist"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCClientChartChecklist"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCHPRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCHP"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCHP"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCHP"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCINRRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCINR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCINR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCINR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="patientLabRouting"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCINR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCINR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCNewBorn2008Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn2008"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmBCNewBornRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formBCNewBorn"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmCESDRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formCESD"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmCaregiverRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formCaregiver"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmConsultantRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formConsult"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formConsult"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formConsult"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmCostQuestionnaireRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formCostQuestionnaire"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmCounselingRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formCounseling"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formCounseling"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmCounsellorAssessmentRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formcounsellorassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formcounsellorassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formcounsellorassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmData.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic_no"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmDischargeSummaryRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="program"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="admission"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="casemgmt_issue"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="issue"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="drugs"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formDischargeSummary"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formDischargeSummary"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formDischargeSummary"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmFallsRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formFalls"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmFormAction.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="form"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmGripStrengthRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGripStrength"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmGrowth0_36Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowth0_36"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowth0_36"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowth0_36"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmGrowthChartRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowthChart"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowthChart"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formGrowthChart"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmHomeFallsRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formHomeFalls"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmImmunAllergyRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formImmunAllergy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formImmunAllergy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formImmunAllergy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmIntakeHxRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formIntakeHx"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formIntakeHx"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmIntakeInfoRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formIntakeInfo"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmInternetAccessRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formInternetAccess"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmInvoiceRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formInvoice"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formInvoice"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formInvoice"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmLabReq07Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq07"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmLabReq10Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq10"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq10"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq10"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq10"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmLabReqRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLabReq"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="provider_no"/>
+          <operando2 columna="specialty"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmLateLifeFDIDisabilityRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLateLifeFDIDisability"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmLateLifeFDIFunctionRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formLateLifeFDIFunction"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmMMSERecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMMSE"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMMSE"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMMSE"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmMentalHealthForm14Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm14"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm14"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm14"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmMentalHealthForm1Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm1"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm1"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm1"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmMentalHealthForm42Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm42"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm42"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealthForm42"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmMentalHealthRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formMentalHealth"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmONAREnhancedRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmONARRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmOvulationRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formovulation"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formovulation"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formovulation"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmPalliativeCareRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPalliativeCare"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPalliativeCare"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPalliativeCare"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmPeriMenopausalRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPeriMenopausal"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPeriMenopausal"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPeriMenopausal"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmPolicyRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formNoShowPolicy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formNoShowPolicy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formNoShowPolicy"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmPositionHazardRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formPositionHazard"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPositionHazard"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formPositionHazard"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmReceptionAssessmentRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formreceptionassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formreceptionassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formreceptionassessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmRecordHelp.selects">
+    <selects/>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/FrmRhImmuneGlobulinRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographic_no"/>
+          <operando2 columna="last"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmRourke2006Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke2006"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke2006"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke2006"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmRourke2009Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke2009"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke2009"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmRourkeRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formRourke"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSF36CaregiverRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSF36Caregiver"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSF36Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSF36"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSatisfactionScaleRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSatisfactionScale"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSelfAdministeredRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSelfAdministered"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSelfAssessmentRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formSelfAssessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSelfAssessment"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSelfEfficacyRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSelfEfficacy"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSelfManagementRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formSelfManagement"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmSetupFormAction.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="form"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmStudyPING_DiabetesRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmStudyXMLClientSend.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="studydata"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmStudydiabete2Record.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/FrmStudydiabetes2subjectRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/FrmTreatmentPrefRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="rehabStudy2004"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formTreatmentPref"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ID"/>
+          <operando2 columna="name"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmType2DiabeteRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formType2Diabetes"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/FrmchfRecord.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formchf"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formchf"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/GroupMembersDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="GroupMembers" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="groupId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/HL7Handler.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="hl7TextInfo"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/HRMXMLHandler 2.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="hl7TextInfo"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/HSFODAO.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="hsfo_patient"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="Patient_Id"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="hsfo_patient"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="hsfo_patient"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="form_hsfo_visit"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Hl7MshDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Hl7Msh" tabAlias="msh"/>
+        <tablas nombre="Hl7Pid" tabAlias="pid"/>
+        <tablas nombre="Hl7Orc" tabAlias="orc"/>
+        <tablas nombre="Hl7Obr" tabAlias="obr"/>
+        <tablas nombre="ProviderLabRoutingModel" tabAlias="providerLabRouting"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="labNo" tabla="providerLabRouting"/>
+          <operando2 columna="messageId" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="messageId" tabla="pid"/>
+          <operando2 columna="messageId" tabla="msh"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="pid"/>
+          <operando2 columna="pidId" tabla="orc"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="pid"/>
+          <operando2 columna="pidId" tabla="obr"/>
+        </joins>
+        <joins>
+          <operando1 columna="labType" tabla="providerLabRouting"/>
+          <operando2 columna=":labType"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Hl7Msh" tabAlias="msh"/>
+        <tablas nombre="Hl7Pid" tabAlias="pid"/>
+        <tablas nombre="Hl7Orc" tabAlias="orc"/>
+        <tablas nombre="Hl7Obr" tabAlias="obr"/>
+        <tablas nombre="PatientLabRouting" tabAlias="patientLabRouting"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="labNo" tabla="patientLabRouting"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="pid"/>
+          <operando2 columna="pidId" tabla="orc"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="pid"/>
+          <operando2 columna="pidId" tabla="obr"/>
+        </joins>
+        <joins>
+          <operando1 columna="messageId" tabla="msh"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="labType" tabla="patientLabRouting"/>
+          <operando2 columna=":labType"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="patientLabRouting"/>
+          <operando2 columna=":demographicNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Hl7ObrDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Hl7Pid" tabAlias="pid"/>
+        <tablas nombre="Hl7Obr" tabAlias="obr"/>
+        <tablas nombre="Hl7Obx" tabAlias="obx"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="pidId" tabla="obr"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="obrId" tabla="obx"/>
+          <operando2 columna="id" tabla="obr"/>
+        </joins>
+        <joins>
+          <operando1 columna="messageId" tabla="pid"/>
+          <operando2 columna=":messageId"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Hl7OrcDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Hl7Orc" tabAlias="orc"/>
+        <tablas nombre="Hl7Pid" tabAlias="pid"/>
+        <tablas nombre="Hl7Obr" tabAlias="obr"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="pidId" tabla="obr"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="pidId" tabla="orc"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="messageId" tabla="pid"/>
+          <operando2 columna=":messageId"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Hl7PidDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Hl7Pid" tabAlias="pid"/>
+        <tablas nombre="Hl7Obr" tabAlias="obr"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="pidId" tabla="obr"/>
+          <operando2 columna="id" tabla="pid"/>
+        </joins>
+        <joins>
+          <operando1 columna="messageId" tabla="pid"/>
+          <operando2 columna=":messageId"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/Hsfo2VisitDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Hsfo2Visit" tabAlias="x"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Hsfo2Visit" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="VisitDate_Id" tabla="x"/>
+          <operando2 columna="?1"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographic_no" tabla="x"/>
+          <operando2 columna="?2"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ImmunizationsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Immunizations" tabAlias="i"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="i"/>
+          <operando2 columna="?1"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/JDBCUtil.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic_no"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/JointAdmissionDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="JointAdmission" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="headClientId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="JointAdmission" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="clientId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/LabPatientPhysicianInfoDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="LabPatientPhysicianInfo" tabAlias="lpp"/>
+        <tablas nombre="LabPatientPhysicianInfo" tabAlias="lpp2"/>
+        <tablas nombre="LabReportInformation" tabAlias="tr"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="accessionNum" tabla="lpp"/>
+          <operando2 columna="accessionNum" tabla="lpp2"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="lpp2"/>
+          <operando2 columna=":labId"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="tr"/>
+          <operando2 columna="labReportInfoId" tabla="lpp"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/LabTestResultsDao.selects">
+    <selects>
+      <parte_where>
+        <joins>
+          <operando1 columna="labType" tabla="p"/>
+          <operando2 columna=":labType"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="p"/>
+          <operando2 columna=":demoNo"/>
+        </joins>
+        <joins>
+          <operando1 columna="labNo" tabla="p"/>
+          <operando2 columna="labPatientPhysicianInfoId" tabla="ltr"/>
+        </joins>
+        <joins>
+          <operando1 columna="labPatientPhysicianInfoId" tabla="ltr"/>
+          <operando2 columna="id" tabla="lpp"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MdsOBRDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MdsOBX" tabAlias="mdsOBX"/>
+        <tablas nombre="MdsOBR" tabAlias="mdsOBR"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MdsZMNDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MdsZMN" tabAlias="zmn"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="id" tabla="zmn"/>
+          <operando2 columna=":id"/>
+        </joins>
+        <joins>
+          <operando1 columna="reportGroup" tabla="zmn"/>
+          <operando2 columna=":reportSequence"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MdsZRGDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MdsZRG" tabAlias="zrg"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="id" tabla="zrg"/>
+          <operando2 columna=":id"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MeasurementDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Measurement" tabAlias="m"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicId" tabla="m"/>
+          <operando2 columna=":demographicNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MeasurementGroupDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MeasurementGroup" tabAlias="mg"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="mg"/>
+          <operando2 columna=":groupName"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MeasurementGroupStyleDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="x"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MeasurementMapConfig.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="measurementMap"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="loinc_code"/>
+          <operando2 columna="ident_code"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MeasurementTypeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MeasurementType" tabAlias="m"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MigrateStaffAssignments.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="provider_role_program"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="program"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="provider"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="caisi_role"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/MsgGenerate.selects">
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/MyGroupDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="MyGroup" tabAlias="g"/>
+        <tablas nombre="Provider" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ProviderNo" tabla="p"/>
+          <operando2 columna="id" tabla="g"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/OscarCommLocationsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="OscarCommLocations" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="current1" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="messagetbl" tabAlias="mess"/>
+        <tablas nombre="oscarcommlocations" tabAlias="ocl"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="sentByLocation" tabla="mess"/>
+          <operando2 columna="locationId" tabla="ocl"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="messagetbl" tabAlias="m"/>
+        <tablas nombre="oscarcommlocations" tabAlias="ocl"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="sentByLocation" tabla="m"/>
+          <operando2 columna="locationId" tabla="ocl"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/PHRVerificationDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="PHRVerification" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="archived"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="PHRVerification" tabAlias="f"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="f"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="archived"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/PatientLabRoutingDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="MdsOBX" tabAlias="x"/>
+        <tablas nombre="MdsMSH" tabAlias="m"/>
+        <tablas nombre="PatientLabRouting" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="p"/>
+          <operando2 columna=":demoNo"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="m"/>
+          <operando2 columna="labNo" tabla="p"/>
+        </joins>
+        <joins>
+          <operando1 columna="id" tabla="x"/>
+          <operando2 columna="id" tabla="m"/>
+        </joins>
+        <joins>
+          <operando1 columna="labType" tabla="p"/>
+          <operando2 columna=":labType"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/PharmacyInfoDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="PharmacyInfo" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="id2" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/PregnancyFormsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAREnhanced"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="formONAR"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProfessionalContactDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProfessionalContact" tabAlias="c"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProfessionalSpecialistDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProfessionalSpecialist" tabAlias="c"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProviderDataDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProviderData" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="ohipNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ProviderData" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="id" tabla="x"/>
+          <operando2 columna="?1"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProviderDefaultProgramDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProviderDefaultProgram" tabAlias="pdp"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="pdp"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProviderFacilityDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProviderFacility" tabAlias="x"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ProviderSiteDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ProviderSite" tabAlias="ss"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/QueueDocumentLinkDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="QueueDocumentLink" tabAlias="q"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="QueueDocumentLink" tabAlias="q"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="status" tabla="q"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="QueueDocumentLink" tabAlias="q"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="docId" tabla="q"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="QueueDocumentLink" tabAlias="q"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="queueId"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="QueueDocumentLink" tabAlias="q"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="docId" tabla="q"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="queueId" tabla="q"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/QuickListUserDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="QuickListUser" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="quickListName" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ReportAgeSexDao.selects">
+    <selects>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ReportAgeSex" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="roster" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ReportAgeSex" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ReportTableFieldCaptionDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ReportTableFieldCaption" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="tableName" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="name" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/RptDemographicReportAction.selects">
+    <selects/>
+  </ficheros>
+  <ficheros nombre="/RptInitializePatientsMetGuidelineCDMReportAction.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="measurements"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/RptRehabStudyAction.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="demographic_no"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/RxUtil.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="drugs"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="drugs"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ScheduleTemplateDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ScheduleTemplate" tabAlias="e"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="summary" tabla="e"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ScratchPadDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ScratchPad" tabAlias="s"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="s"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/SecObjPrivilegeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="SecObjPrivilege" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="privilege" tabla="p"/>
+          <operando2 columna=":privilege"/>
+        </joins>
+        <joins>
+          <operando1 columna="ProviderNo" tabla="r"/>
+          <operando2 columna=":providerNo"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/SecObjectNameDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="SecObjectName" tabAlias="s"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/SecPrivilegeDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="SecPrivilege" tabAlias="s"/>
+      </parte_from>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/SecurityDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Security" tabAlias="s"/>
+      </parte_from>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Security" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="Security" tabAlias="x"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ServiceAccessTokenDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ServiceAccessToken" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="tokenId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ServiceClientDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ServiceClient" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="ServiceClient" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="key" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/ServiceRequestTokenDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="ServiceRequestToken" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="tokenId" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/SurveyDataDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="SurveyData" tabAlias="s"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="surveyId" tabla="s"/>
+          <operando2 columna=":sid"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="SurveyData" tabAlias="s"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="surveyId" tabla="s"/>
+          <operando2 columna=":sid"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/TeleplanS21Dao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="TeleplanS21" tabAlias="t"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="fileName" tabla="t"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="payment" tabla="t"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="payeeNo" tabla="t"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/TicklerDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Tickler" tabAlias="t"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="demographicNo" tabla="t"/>
+          <operando2 columna="?1"/>
+        </joins>
+        <joins>
+          <operando1 columna="status" tabla="t"/>
+          <operando2 columna="?2"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/TicklerLinkDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="TicklerLink" tabAlias="tLink"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="tableName" tabla="tLink"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="tableId" tabla="tLink"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/TicklerTextSuggestDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="TicklerTextSuggest" tabAlias="tTextSuggest"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="active" tabla="tTextSuggest"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/UserDSMessagePrefsDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="UserDSMessagePrefs" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceType" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="UserDSMessagePrefs" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceType" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceType" tabla="p"/>
+          <operando2 columna=":resourceType"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceId" tabla="p"/>
+          <operando2 columna=":resourceId"/>
+        </joins>
+        <joins>
+          <operando1 columna="archived" tabla="p"/>
+          <operando2 columna=":archived"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="UserDSMessagePrefs" tabAlias="p"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="providerNo" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceType" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="resourceId" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="archived" tabla="p"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/WaitingListNameDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="WaitingListName" tabAlias="n"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="WaitingListName" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="name" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="groupNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="WaitingListName" tabAlias="x"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/WcbDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="Wcb" tabAlias="x"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="billingNo" tabla="x"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/WorkFlowDao.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="WorkFlow" tabAlias="w"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="workflowType" tabla="w"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="WorkFlow" tabAlias="w"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="workflowType" tabla="w"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="WorkFlow" tabAlias="w"/>
+      </parte_from>
+      <parte_where>
+        <joins>
+          <operando1 columna="workflowType" tabla="w"/>
+          <operando2 columna="?"/>
+        </joins>
+        <joins>
+          <operando1 columna="demographicNo" tabla="w"/>
+          <operando2 columna="?"/>
+        </joins>
+      </parte_where>
+    </selects>
+  </ficheros>
+  <ficheros nombre="/dbUpdate.selects">
+    <selects>
+      <parte_from>
+        <tablas nombre="casemgmt_note"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+    <selects>
+      <parte_from>
+        <tablas nombre="casemgmt_note"/>
+      </parte_from>
+      <parte_where/>
+    </selects>
+  </ficheros>
+</Selects:Aplicacion>

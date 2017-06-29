@@ -1,0 +1,2 @@
+SELECT b FROM BillingONHeader b where b.diskId = ? AND b.providerRegNum=?
+

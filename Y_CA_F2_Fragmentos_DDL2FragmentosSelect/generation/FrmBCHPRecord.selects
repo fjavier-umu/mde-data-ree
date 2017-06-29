@@ -1,0 +1,80 @@
+SELECT demographic_no, last_name, first_name, phone, phone2, hin,provider_no FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formBCHP WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+SELECT last_name, first_name, address, city, province, postal, phone,phone2, hin FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formBCHP WHERE demographic_no=
+
+
+
+  AND ID=0
+
+
+
+SELECT * FROM formBCHP WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+

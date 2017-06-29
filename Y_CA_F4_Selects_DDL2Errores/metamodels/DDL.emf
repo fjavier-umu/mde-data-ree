@@ -1,0 +1,184 @@
+@namespace(uri="http://modelum.es/DDL", prefix="DDL")
+package DDL;
+
+class DDLDefinition {
+  val Statement[*] statements;
+}
+
+abstract class Statement {
+}
+
+abstract class NamedElement {
+  attr String name;
+}
+
+class Database extends Statement, NamedElement {
+}
+
+class Table extends Statement, NamedElement {
+  val Column[*] columns;
+  val Pk pks;
+  val Ck[*] cks;
+  val Fk[*] fks;
+  val Check[*] checks;
+}
+
+class Column extends NamedElement {
+  val Type[1] type;
+  attr boolean columnNull;
+}
+
+class Pk extends NamedElement {
+  attr String[*] columnName;
+}
+
+class Ck extends NamedElement {
+  attr String[*] columnName;
+}
+
+class Fk extends NamedElement {
+  attr String[*] columnName;
+  ref Table references;
+  attr String[*] columnReference;
+}
+
+class Check extends NamedElement {
+  val ValuesCheck[*] valuesCheck;
+}
+
+class ValuesCheck {
+  attr String[*] value;
+  attr String comparator;
+  attr String columnName = "";
+  attr String logConjuntion;
+}
+
+abstract class Type {
+}
+
+abstract class CharacterStringType extends Type {
+  attr int length;
+}
+
+class Character extends CharacterStringType {
+}
+
+class Char extends CharacterStringType {
+}
+
+class CharacterVarying extends CharacterStringType {
+}
+
+class CharVarying extends CharacterStringType {
+}
+
+class Varchar extends CharacterStringType {
+}
+
+abstract class NationalCharacterStringType extends Type {
+  attr int length;
+}
+
+class NationalCharacter extends NationalCharacterStringType {
+}
+
+class NationalChar extends NationalCharacterStringType {
+}
+
+class NChar extends NationalCharacterStringType {
+}
+
+class NationalCharacterVarying extends NationalCharacterStringType {
+}
+
+class NationalCharVarying extends NationalCharacterStringType {
+}
+
+class NCharVarying extends NationalCharacterStringType {
+}
+
+abstract class BitStringType extends Type {
+  attr int length;
+}
+
+class Bit extends BitStringType {
+}
+
+class BitVarying extends BitStringType {
+}
+
+abstract class NumericType extends Type {
+}
+
+abstract class ExactNumericType extends NumericType {
+}
+
+class Numeric extends ExactNumericType {
+  attr int precision;
+  attr int scale;
+}
+
+class Decimal extends ExactNumericType {
+  attr int precision;
+  attr int scale;
+}
+
+class Dec extends ExactNumericType {
+  attr int precision;
+  attr int scale;
+}
+
+class Integer extends ExactNumericType {
+}
+
+class Int extends ExactNumericType {
+}
+
+class Small extends ExactNumericType {
+}
+
+abstract class ApproximateNumericType extends NumericType {
+}
+
+class Float extends ApproximateNumericType {
+  attr int precision;
+}
+
+class Real extends ApproximateNumericType {
+}
+
+class DoublePrecision extends ApproximateNumericType {
+}
+
+abstract class DatetimeType extends Type {
+}
+
+class Date extends DatetimeType {
+}
+
+class Time extends DatetimeType {
+  attr int precision;
+  attr boolean withTimeZone;
+}
+
+class TimeStamp extends DatetimeType {
+  attr int precision;
+  attr boolean withTimeZone;
+}
+
+class Interval extends Type {
+  attr String field1 = "";
+  attr String field2 = "";
+  attr int precision1;
+  attr int precision2;
+}
+
+class Clob extends CharacterStringType {
+}
+
+class Blob extends Type {
+}
+
+class Bfile extends Type {
+}
+

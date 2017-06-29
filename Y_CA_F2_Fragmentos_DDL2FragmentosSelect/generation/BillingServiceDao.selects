@@ -1,0 +1,322 @@
+SELECT b FROM BillingService b where b.serviceCode=:serviceCode
+
+
+ AND b.billingserviceNo = (SELECT MAX(b2.billingserviceNo) from BillingService b2
+
+
+
+ select bs  from BillingService bs where bs.serviceCode like (:code) and sliFlag = TRUE
+
+
+
+
+
+
+
+ select bs  from BillingService bs where bs.serviceCode like (:code) and region = (:region) order by bs.billingserviceDate
+
+
+
+
+
+
+
+
+
+
+ select bs  from BillingService bs where bs.serviceCode = ? order by bs.billingserviceDate desc
+
+
+
+
+ select bs  from BillingService bs where bs.serviceCode = ? and bs.billingserviceDate = ? order by bs.billingserviceDate desc
+
+
+
+
+ select bs  from BillingService bs where bs.serviceCode IN (:codes)
+
+
+
+
+ select bs from BillingService bs where bs.serviceCode LIKE :serviceCode
+
+
+
+
+ select bs  from BillingService bs where bs.region = (:region) and bs.serviceCode like (:code) and bs.billingserviceDate = (select max(b2.billingserviceDate) from BillingService b2 where b2.serviceCode = bs.serviceCode and b2.billingserviceDate <= (:billDate))  order by bs.serviceCode 
+
+
+
+
+ , code + 
+
+
+
+
+ select bs  from BillingService bs where bs.description <> '' AND bs.description <> '----' AND bs.region = (:region) and bs.serviceCode like (:code) and bs.billingserviceDate = (select max(b2.billingserviceDate) from BillingService b2 where b2.serviceCode = bs.serviceCode and b2.billingserviceDate <= (:billDate))  order by bs.billingserviceDate desc
+
+
+
+
+
+
+
+
+
+
+ select bs from BillingService bs where bs.region = (:region) and (bs.serviceCode like (:searchString) or bs.description like (:searchString)) and bs.billingserviceDate = (select max(b2.billingserviceDate) from BillingService b2 where b2.serviceCode = bs.serviceCode and b2.billingserviceDate <= (:billDate))
+
+
+
+
+
+
+
+ select * from billingservice where service_code like '
+
+
+
+
+ ' or description like '%
+
+
+
+
+ select bs from BillingService bs where bs.region = (:region) and bs.serviceCode like (:searchStr) and bs.billingserviceDate = (select max(b2.billingserviceDate) from BillingService b2 where b2.serviceCode = bs.serviceCode and b2.billingserviceDate <= (:billDate))
+
+
+
+
+
+
+
+ select bs from BillingService bs where bs.region is null and bs.serviceCode = :searchStr and bs.billingserviceDate = (select max(b2.billingserviceDate) from BillingService b2 where b2.serviceCode = bs.serviceCode and b2.billingserviceDate <= (:billDate))
+
+
+
+
+ select max(bs.billingserviceDate) from BillingService bs where bs.billingserviceDate <= ? and bs.serviceCode = ?
+
+
+
+
+ select bs from BillingService bs where bs.serviceCode = ? and bs.billingserviceDate = ?
+
+
+
+
+ select bs from BillingService bs where bs.serviceCode = ? and bs.billingserviceDate = ?
+
+
+
+
+ select bs from BillingService bs where bs.displayStyle = ?
+
+
+
+SELECT b FROM BillingService b, CtlBillingService c
+
+
+
+  WHERE b.serviceCode= c.serviceCode and b.region= :region and c.serviceGroup= :serviceGroup 
+
+
+
+
+  AND c.serviceType = :serviceType order by c.serviceOrder
+
+
+
+
+
+
+
+
+
+
+ bs.serviceCode like :sc or bs.description like :ds
+
+
+
+
+
+
+
+ select * from billingservice b where b.service_code like :serviceCode and b.billingservice_date = 
+
+
+
+
+ (select max(b2.billingservice_date) from billingservice b2 where b2.service_code = b.service_code and b2.billingservice_date <= now())
+
+
+
+
+ FROM BillingService bs ORDER BY TRIM(bs.description)
+
+
+
+
+ FROM BillingService bs, Wcb w, Billing b 
+
+
+
+
+ WHERE w.billingNo = b.id 
+
+
+
+
+ AND w.billingNo = :bNo 
+
+
+
+
+ AND w.status = 'O' 
+
+
+
+
+ AND b.status IN ('O', 'W') 
+
+
+
+
+ AND bs.serviceCode = w.feeItem
+
+
+
+
+ FROM BillingService b 
+
+
+
+
+ WHERE b.serviceCode = :code 
+
+
+
+
+ AND b.billingserviceDate = 
+
+
+
+SELECT MAX(b2.billingserviceDate) FROM BillingService b2 
+
+
+
+ WHERE b2.serviceCode = :code 
+
+
+
+
+ AND b2.billingserviceDate <= :date
+
+
+
+
+
+
+
+
+
+
+ select b from BillingService b where (b.serviceCode like ? or b.serviceCode like ? or b.serviceCode like ? or b.description like ? or b.description like ? or b.description like ?) and b.id = (select max(b2.id) from BillingService b2 where b2.serviceCode = b.serviceCode)
+
+
+
+
+ FROM BillingService bs WHERE bs.serviceCode = :serviceCode 
+
+
+
+
+ AND bs.billingserviceDate = (
+
+
+
+SELECT MAX(bss.billingserviceDate) FROM BillingService bss 
+
+
+
+ WHERE bss.billingserviceDate <= :date 
+
+
+
+
+ AND bss.serviceCode = :serviceCode
+
+
+
+
+
+
+
+ FROM BillingService b, CtlBillingService c 
+
+
+
+
+ WHERE c.serviceCode = b.serviceCode 
+
+
+
+
+ AND c.status='A' 
+
+
+
+
+ AND c.serviceType = :serviceType 
+
+
+
+
+ AND c.serviceGroup = :serviceGroup 
+
+
+
+
+ AND b.billingserviceDate in (
+
+
+
+SELECT MAX(b2.billingserviceDate) FROM BillingService b2 
+
+
+
+ WHERE b2.billingserviceDate <= :billReferenceDate 
+
+
+
+
+ AND b2.serviceCode = b.serviceCode 
+
+
+
+
+ AND b.billingserviceNo = (
+
+
+
+SELECT MAX(b3.billingserviceNo) FROM BillingService b3 
+
+
+
+ WHERE b3.billingserviceDate = b.billingserviceDate 
+
+
+
+
+ AND b3.serviceCode = b.serviceCode
+
+
+
+
+ ) ORDER BY c.serviceOrder
+
+
+
+SELECT DISTINCT(bs.serviceCode) FROM BillingService bs WHERE bs.serviceCode = :serviceCode AND bs.terminationDate > :terminationDate
+

@@ -1,0 +1,18 @@
+SELECT * FROM formSelfAssessment WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+
+
+SELECT * FROM formSelfAssessment WHERE demographic_no=
+
+
+
+  AND ID=0
+
+

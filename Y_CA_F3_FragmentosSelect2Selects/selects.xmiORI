@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Selects:Fichero xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Selects="http://modelum.es/Selects" nombre="C:\Users\Yoshi\Desktop\TFM\eclipse\workspace\FragmentosSelect2Selects\sources\Ejemplo.selects">
+  <selects>
+    <parte_from>
+      <tablas nombre="Constructoras" tabAlias="c"/>
+      <tablas nombre="Estadios"/>
+    </parte_from>
+    <parte_where>
+      <joins>
+        <operando1 columna="Constructora" tabla="c"/>
+        <operando2 columna="Construc"/>
+      </joins>
+    </parte_where>
+  </selects>
+  <selects>
+    <parte_from>
+      <tablas nombre="Ganadores"/>
+      <tablas nombre="Torneos_anyos"/>
+    </parte_from>
+    <parte_where>
+      <joins>
+        <operando1 columna="Ganador" tabla="Ganadores"/>
+        <operando2 columna="Gana" tabla="Torneos_anyos"/>
+      </joins>
+    </parte_where>
+  </selects>
+  <selects>
+    <parte_from>
+      <tablas nombre="Patrocinadores" tabAlias="pat"/>
+      <tablas nombre="Torneos_anyos" tabAlias="toan"/>
+    </parte_from>
+    <parte_where>
+      <joins>
+        <operando1 columna="Sede" tabla="toan"/>
+        <operando2 columna="Sede" tabla="pat"/>
+      </joins>
+    </parte_where>
+  </selects>
+  <selects>
+    <parte_from>
+      <tablas nombre="Estadios" tabAlias="estad"/>
+      <tablas nombre="Torneos_anyos" tabAlias="torn"/>
+    </parte_from>
+    <parte_where>
+      <joins>
+        <operando1 columna="Estadio" tabla="estad"/>
+        <operando2 columna="Estadio" tabla="torn"/>
+      </joins>
+      <joins>
+        <operando1 columna="Ciudad"/>
+        <operando2 columna="Lugar"/>
+      </joins>
+      <joins>
+        <operando1 columna="Capacidad" tabla="estad"/>
+        <operando2 columna="Capacidad" tabla="torn"/>
+      </joins>
+    </parte_where>
+  </selects>
+</Selects:Fichero>

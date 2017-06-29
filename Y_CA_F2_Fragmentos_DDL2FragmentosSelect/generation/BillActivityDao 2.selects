@@ -1,0 +1,5 @@
+SELECT b FROM BillActivity b WHERE b.monthCode=? AND b.groupNo=? AND b.updateDateTime > ? AND b.status != 'D' ORDER BY b.batchCount
+
+
+SELECT b FROM BillActivity b WHERE b.updateDateTime >= ? AND  b.updateDateTime <= ? AND b.status != 'D' ORDER BY b.id DESC
+

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Fragmentos:Fichero
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:Fragmentos="http://modelum.es/Fragmentos"
+    nombre="C:\Users\Yoshi\Desktop\TFM\eclipse\workspace\Java2Fragmentos\sources\Ejemplo.java">
+  <fragmentos
+      numLinea="7"
+      posCaracter="21"
+      texto="com.mysql.jdbc.Driver"/>
+  <fragmentos
+      numLinea="9"
+      posCaracter="57"
+      texto="jdbc:mysql://localhost/ejemplo?user=root&amp;password="/>
+  <fragmentos
+      numLinea="13"
+      posCaracter="23"
+      texto="MadriSELECTd"/>
+  <fragmentos
+      numLinea="14"
+      posCaracter="63"
+      texto="SELECT Estadio AS est, ciudad AS ciu FROM Constructoras c, Estadios WHERE c.Sede_constructora = "/>
+  <fragmentos
+      numLinea="14"
+      posCaracter="172"
+      texto=" AND c.Constructora =  Construc"/>
+  <fragmentos
+      numLinea="22"
+      posCaracter="54"
+      texto="\t"/>
+  <fragmentos
+      numLinea="23"
+      posCaracter="25"
+      texto="\n"/>
+  <fragmentos
+      numLinea="27"
+      posCaracter="63"
+      texto="\t"/>
+  <fragmentos
+      numLinea="28"
+      posCaracter="27"
+      texto="\n"/>
+  <fragmentos
+      numLinea="33"
+      posCaracter="21"
+      texto="2000"/>
+  <fragmentos
+      numLinea="34"
+      posCaracter="25"
+      texto="SELECT Fecha_nacimiento_ganador FROM Ganadores, Torneos_anyos WHERE Ganadores.Ganador = Torneos_anyos.Gana AND Torneos_anyos.Anyo = 1999 OR Torneos_anyos.Anyo = "/>
+  <fragmentos
+      numLinea="43"
+      posCaracter="54"
+      texto="\t"/>
+  <fragmentos
+      numLinea="44"
+      posCaracter="25"
+      texto="\n"/>
+  <fragmentos
+      numLinea="48"
+      posCaracter="64"
+      texto="\t"/>
+  <fragmentos
+      numLinea="49"
+      posCaracter="27"
+      texto="\n"/>
+  <fragmentos
+      numLinea="54"
+      posCaracter="23"
+      texto="Open1000"/>
+  <fragmentos
+      numLinea="55"
+      posCaracter="18"
+      texto="SELECT pat.* FROM Patrocinadores pat, Torneos_anyos toan WHERE 1999 = toan.Anyo OR toan.Torneo = "/>
+  <fragmentos
+      numLinea="56"
+      posCaracter="29"
+      texto="AND toan.Sede = pat.Sede ORDER BY Anyo"/>
+  <fragmentos
+      numLinea="65"
+      posCaracter="54"
+      texto="\t"/>
+  <fragmentos
+      numLinea="66"
+      posCaracter="25"
+      texto="\n"/>
+  <fragmentos
+      numLinea="70"
+      posCaracter="64"
+      texto="\t"/>
+  <fragmentos
+      numLinea="71"
+      posCaracter="27"
+      texto="\n"/>
+  <fragmentos
+      numLinea="76"
+      posCaracter="18"
+      texto="SELECT * FROM Estadios estad, Torneos_anyos torn WHERE torn.Capacidad > 20000  AND estad.Estadio = torn.Estadio AND Ciudad = Lugar"/>
+  <fragmentos
+      numLinea="77"
+      posCaracter="29"
+      texto="AND estad.Capacidad = torn.Capacidad"/>
+  <fragmentos
+      numLinea="78"
+      posCaracter="29"
+      texto="GROUP BY Ciudad, Construc"/>
+  <fragmentos
+      numLinea="87"
+      posCaracter="54"
+      texto="\t"/>
+  <fragmentos
+      numLinea="88"
+      posCaracter="25"
+      texto="\n"/>
+  <fragmentos
+      numLinea="92"
+      posCaracter="64"
+      texto="\t"/>
+  <fragmentos
+      numLinea="93"
+      posCaracter="27"
+      texto="\n"/>
+</Fragmentos:Fichero>

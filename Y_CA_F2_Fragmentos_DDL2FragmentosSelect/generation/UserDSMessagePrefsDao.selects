@@ -1,0 +1,19 @@
+SELECT p FROM UserDSMessagePrefs p WHERE p.providerNo=? and p.resourceType=? and p.archived=true
+
+
+SELECT p FROM UserDSMessagePrefs p WHERE p.providerNo=? and p.resourceType=? and p.archived=true
+
+
+
+ p.providerNo = :providerNo AND p.resourceType = :resourceType and p.resourceId = :resourceId and p.archived = :archived
+
+
+
+
+
+
+
+
+
+SELECT p FROM UserDSMessagePrefs p WHERE p.providerNo=? and p.resourceType=? and p.resourceId=? and p.archived = ? order by p.id DESC
+

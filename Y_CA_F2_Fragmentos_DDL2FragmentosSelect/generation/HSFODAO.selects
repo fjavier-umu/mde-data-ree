@@ -1,0 +1,62 @@
+SELECT RxDx FROM hsfo_patient WHERE Patient_Id=?
+
+
+SELECT * FROM hsfo_patient WHERE Patient_Id='
+
+
+SELECT FName FROM hsfo_patient WHERE Patient_Id='
+
+
+
+
+
+SELECT * FROM form_hsfo_visit where ID in (SELECT max(ID) FROM form_hsfo_visit WHERE Patient_Id = ? group by VisitDate_Id)
+
+
+SELECT MAX(FormEdited) as Max FROM form_hsfo_Visit WHERE VisitDate_Id='
+
+
+
+ ' and demographic_no = '
+
+
+
+SELECT ID FROM form_hsfo_Visit WHERE VisitDate_Id='
+
+
+
+ ' and demographic_no = '
+
+
+
+
+
+
+SELECT DISTINCT * FROM form_hsfo_Visit WHERE ID='
+
+
+
+
+
+SELECT ID FROM form_hsfo_visit WHERE VisitDate_Id= ? and demographic_no = ?
+
+
+
+ ID retrieved: 
+
+
+
+SELECT DISTINCT * FROM form_hsfo_visit WHERE  ID = 
+
+
+
+
+
+SELECT Distinct Patient_Id FROM hsfo_patient
+
+
+SELECT * FROM form_hsfo_visit where ID in (SELECT max(ID) FROM form_hsfo_visit WHERE Patient_Id='
+
+
+
+

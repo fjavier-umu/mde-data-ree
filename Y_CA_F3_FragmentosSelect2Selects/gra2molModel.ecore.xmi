@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:Transformation xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <rules xsi:type="Core:StandardRule" name="file2Aplicacion">
+    <queries variable="fichero">
+      <filter type="INDIRECT">
+        <element name="file" mark="true"/>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="ficheros">
+        <value type="QUERY_RESULT" value="fichero"/>
+      </inits>
+    </inits>
+    <from name="file">
+      <filter>
+        <filter>
+          <element name="file" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Aplicacion"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="file2Fichero">
+    <queries variable="consultas">
+      <filter>
+        <element name="f"/>
+        <next>
+          <element name="statements"/>
+          <next>
+            <element name="query_specification" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="nombre">
+        <value type="QUERY_ACCESS" value="f" extension="filename"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="selects">
+        <value type="QUERY_RESULT" value="consultas"/>
+      </inits>
+    </inits>
+    <from name="file" alias="f">
+      <filter variable="f">
+        <filter>
+          <element name="file" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Fichero" alias="fichero"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="query_specification2Select">
+    <queries variable="from_part">
+      <filter>
+        <element name="qs"/>
+        <next>
+          <element name="table_expression"/>
+          <next>
+            <element name="from_clause" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="where_part">
+      <filter>
+        <element name="qs"/>
+        <next>
+          <element name="table_expression"/>
+          <next>
+            <element name="where_clause" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="parte_from">
+        <value type="QUERY_RESULT" value="from_part"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="parte_where">
+        <value type="QUERY_RESULT" value="where_part"/>
+      </inits>
+    </inits>
+    <from name="query_specification" alias="qs">
+      <filter variable="qs">
+        <filter>
+          <element name="query_specification" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Select"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="from_clause2From">
+    <queries variable="tables">
+      <filter>
+        <element name="fc"/>
+        <next>
+          <element name="table_reference" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tablas">
+        <value type="QUERY_RESULT" value="tables"/>
+      </inits>
+    </inits>
+    <from name="from_clause" alias="fc">
+      <filter variable="fc">
+        <filter>
+          <element name="from_clause" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="From"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="table_reference2Table">
+    <queries variable="table">
+      <filter>
+        <element name="tr"/>
+        <next>
+          <element name="table_name" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="correlacion">
+      <filter>
+        <element name="tr"/>
+        <next>
+          <element name="correlation_specification"/>
+          <next>
+            <element name="correlation_name" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="nombre">
+        <value type="QUERY_ACCESS" value="table" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="tabAlias">
+        <value type="QUERY_ACCESS" value="correlacion" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="table_reference" alias="tr">
+      <filter variable="tr">
+        <filter>
+          <element name="table_reference" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Tabla"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="where_clause2Where">
+    <queries variable="booleanFactorSinNot">
+      <filter>
+        <element name="wc"/>
+        <next>
+          <element name="search_condition"/>
+          <next type="INDIRECT">
+            <element name="boolean_factor" mark="true"/>
+            <expression xsi:type="Query:FilterExpressionComplex" type="NOT">
+              <expressions xsi:type="Query:FilterExpressionComplex">
+                <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+                  <element name="TOKEN"/>
+                </expressions>
+                <expressions xsi:type="Query:FilterExpressionUnit">
+                  <element name="TOKEN"/>
+                  <parameters value="NOT"/>
+                </expressions>
+              </expressions>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="comparacion">
+      <filter>
+        <element name="booleanFactorSinNot"/>
+        <next>
+          <element name="predicate"/>
+          <next>
+            <element name="comparison_predicate" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="comparacionCompletaConJoin">
+      <filter>
+        <element name="comparacion"/>
+        <next>
+          <element name="complete_comparison_predicate" mark="true"/>
+          <next>
+            <element name="comp_op"/>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="EQUALS_OPERATOR"/>
+            </expression>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="comparacionConOp1TipoColumna">
+      <filter>
+        <element name="comparacionCompletaConJoin" mark="true"/>
+        <next operation="POSITION">
+          <element name="row_value_constructor"/>
+          <next>
+            <element name="column_reference"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="comparacionConOp1YOp2TipoColumna">
+      <filter>
+        <element name="comparacionConOp1TipoColumna" mark="true"/>
+        <next operation="POSITION" position="1">
+          <element name="row_value_constructor"/>
+          <next>
+            <element name="column_reference"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="joins">
+        <value type="QUERY_RESULT" value="comparacionConOp1YOp2TipoColumna"/>
+      </inits>
+    </inits>
+    <from name="where_clause" alias="wc">
+      <filter variable="wc">
+        <filter>
+          <element name="where_clause" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Where"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="complete_comparison_predicate2Join">
+    <queries variable="op1">
+      <filter>
+        <element name="ccp"/>
+        <next operation="POSITION">
+          <element name="row_value_constructor"/>
+          <next>
+            <element name="column_reference" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="op2">
+      <filter>
+        <element name="ccp"/>
+        <next operation="POSITION" position="1">
+          <element name="row_value_constructor"/>
+          <next>
+            <element name="column_reference" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="operando1">
+        <value type="QUERY_RESULT" value="op1"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="operando2">
+        <value type="QUERY_RESULT" value="op2"/>
+      </inits>
+    </inits>
+    <from name="complete_comparison_predicate" alias="ccp">
+      <filter variable="ccp">
+        <filter>
+          <element name="complete_comparison_predicate" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Join"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="column_reference2Operando">
+    <queries variable="tab">
+      <filter>
+        <element name="cr"/>
+        <next>
+          <element name="table_name" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="col">
+      <filter>
+        <element name="cr"/>
+        <next>
+          <element name="column_name" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tabla">
+        <value type="QUERY_ACCESS" value="tab" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columna">
+        <value type="QUERY_ACCESS" value="col" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="column_reference" alias="cr">
+      <filter variable="cr">
+        <filter>
+          <element name="column_reference" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="Operando"/>
+  </rules>
+</Core:Transformation>

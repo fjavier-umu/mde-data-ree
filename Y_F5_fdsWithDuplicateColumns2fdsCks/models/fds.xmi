@@ -1,0 +1,2538 @@
+<fds:Database xmlns:fds='http://modelum.es/fds' xsi:schemaLocation='http://modelum.es/fds ../metamodels/fds.ecore' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xmi='http://www.omg.org/XMI' name='OSCAR' xmi:version='2.0'>
+<tables xsi:type='fds:Table' name='ACCESS_TYPE'>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='ACCESS_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='ADMISSION'>
+<columns xsi:type='fds:Column' name='CLIENTSTATUS_ID'/>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='TEMPORARY_ADMISSION_FLAG'/>
+<columns xsi:type='fds:Column' name='RADIODISCHARGEREASON'/>
+<columns xsi:type='fds:Column' name='ADMISSION_FROM_TRANSFER'/>
+<columns xsi:type='fds:Column' name='DISCHARGE_FROM_TRANSFER'/>
+<columns xsi:type='fds:Column' name='ADMISSION_STATUS'/>
+<columns xsi:type='fds:Column' name='TEAM_ID'/>
+<columns xsi:type='fds:Column' name='AUTOMATIC_DISCHARGE'/>
+<columns xsi:type='fds:Column' name='TEMP_ADMIT_DISCHARGE'/>
+<columns xsi:type='fds:Column' name='CLIENT_ID'/>
+<columns xsi:type='fds:Column' name='DISCHARGE_NOTES'/>
+<columns xsi:type='fds:Column' name='DISCHARGE_DATE'/>
+<columns xsi:type='fds:Column' name='ADMISSION_DATE'/>
+<columns xsi:type='fds:Column' name='AM_ID'/>
+<columns xsi:type='fds:Column' name='TEMP_ADMISSION'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ADMISSION_NOTES'/>
+</tables>
+<tables xsi:type='fds:Table' name='ALLERGIES'>
+<columns xsi:type='fds:Column' name='AGCCS'/>
+<columns xsi:type='fds:Column' name='HICL_SEQNO'/>
+<columns xsi:type='fds:Column' name='AGCSP'/>
+<columns xsi:type='fds:Column' name='HIC_SEQNO'/>
+<columns xsi:type='fds:Column' name='POSITION'/>
+<columns xsi:type='fds:Column' name='REACTION'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='ONSET_OF_REACTION'/>
+<columns xsi:type='fds:Column' name='SEVERITY_OF_REACTION'/>
+<columns xsi:type='fds:Column' name='DRUGREF_ID'/>
+<columns xsi:type='fds:Column' name='TYPECODE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='ENTRY_DATE'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='AGE_OF_ONSET'/>
+<columns xsi:type='fds:Column' name='LIFE_STAGE'/>
+<columns xsi:type='fds:Column' name='ALLERGYID'/>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='START_DATE'/>
+<columns xsi:type='fds:Column' name='REGIONAL_IDENTIFIER'/>
+</tables>
+<tables xsi:type='fds:Table' name='APP_LOOKUPTABLE'>
+<columns xsi:type='fds:Column' name='ISTREE'/>
+<columns xsi:type='fds:Column' name='READONLY'/>
+<columns xsi:type='fds:Column' name='TREECODE_LENGTH'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='MODULEID'/>
+<columns xsi:type='fds:Column' name='TABLEID'/>
+<columns xsi:type='fds:Column' name='ACTIVEYN'/>
+</tables>
+<tables xsi:type='fds:Table' name='APP_LOOKUPTABLE_FIELDS'>
+<columns xsi:type='fds:Column' name='FIELDLENGTH'/>
+<columns xsi:type='fds:Column' name='TABLEID'/>
+<columns xsi:type='fds:Column' name='GENERICIDX'/>
+<columns xsi:type='fds:Column' name='UNIQUEYN'/>
+<columns xsi:type='fds:Column' name='EDITYN'/>
+<columns xsi:type='fds:Column' name='AUTOYN'/>
+<columns xsi:type='fds:Column' name='FIELDINDEX'/>
+<columns xsi:type='fds:Column' name='FIELDNAME'/>
+<columns xsi:type='fds:Column' name='FIELDSQL'/>
+<columns xsi:type='fds:Column' name='FIELDTYPE'/>
+<columns xsi:type='fds:Column' name='FIELDDESC'/>
+<columns xsi:type='fds:Column' name='LOOKUPTABLE'/>
+</tables>
+<tables xsi:type='fds:Table' name='APP_MODULE'>
+<columns xsi:type='fds:Column' name='ISACTIVE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='MODULE_ID'/>
+<columns xsi:type='fds:Column' name='DISPLAYORDER'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+</tables>
+<tables xsi:type='fds:Table' name='APPOINTMENT'>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='REASON'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_DATE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='END_TIME'/>
+<columns xsi:type='fds:Column' name='URGENCY'/>
+<columns xsi:type='fds:Column' name='BILLING'/>
+<columns xsi:type='fds:Column' name='REMARKS'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_NO'/>
+<columns xsi:type='fds:Column' name='BOOKINGSOURCE'/>
+<columns xsi:type='fds:Column' name='NOTES'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='CREATORSECURITYID'/>
+<columns xsi:type='fds:Column' name='IMPORTED_STATUS'/>
+<columns xsi:type='fds:Column' name='UPDATEDATETIME'/>
+<columns xsi:type='fds:Column' name='START_TIME'/>
+<columns xsi:type='fds:Column' name='CREATEDATETIME'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='STYLE'/>
+<columns xsi:type='fds:Column' name='LOCATION'/>
+<columns xsi:type='fds:Column' name='REASONCODE'/>
+<columns xsi:type='fds:Column' name='RESOURCES'/>
+</tables>
+<tables xsi:type='fds:Table' name='APPOINTMENT_STATUS'>
+<columns xsi:type='fds:Column' name='ACTIVE'/>
+<columns xsi:type='fds:Column' name='ICON'/>
+<columns xsi:type='fds:Column' name='EDITABLE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='COLOR'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+</tables>
+<tables xsi:type='fds:Table' name='APPOINTMENTARCHIVE'>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_DATE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='START_TIME'/>
+<columns xsi:type='fds:Column' name='REASON'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='END_TIME'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_NO'/>
+<columns xsi:type='fds:Column' name='CREATEDATETIME'/>
+<columns xsi:type='fds:Column' name='URGENCY'/>
+<columns xsi:type='fds:Column' name='BILLING'/>
+<columns xsi:type='fds:Column' name='REMARKS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='BOOKINGSOURCE'/>
+<columns xsi:type='fds:Column' name='NOTES'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='CREATORSECURITYID'/>
+<columns xsi:type='fds:Column' name='IMPORTED_STATUS'/>
+<columns xsi:type='fds:Column' name='UPDATEDATETIME'/>
+<columns xsi:type='fds:Column' name='STYLE'/>
+<columns xsi:type='fds:Column' name='LOCATION'/>
+<columns xsi:type='fds:Column' name='RESOURCES'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILL_RECIPIENTS'>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='POSTAL'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='UPDATETIME'/>
+<columns xsi:type='fds:Column' name='BILLINGNO'/>
+<columns xsi:type='fds:Column' name='CREATIONTIME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.9/@columns.2' determinant='#//@tables.9/@columns.0 #//@tables.9/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.9/@columns.1' determinant='#//@tables.9/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.9/@columns.1' determinant='#//@tables.9/@columns.0 #//@tables.9/@columns.2 #//@tables.9/@columns.4' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLACTIVITY'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='UPDATEDATETIME'/>
+<columns xsi:type='fds:Column' name='BATCHCOUNT'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='MONTHCODE'/>
+<columns xsi:type='fds:Column' name='HTMLCONTEXT'/>
+<columns xsi:type='fds:Column' name='CLAIMRECORD'/>
+<columns xsi:type='fds:Column' name='GROUPNO'/>
+<columns xsi:type='fds:Column' name='PROVIDEROHIPNO'/>
+<columns xsi:type='fds:Column' name='OHIPFILENAME'/>
+<columns xsi:type='fds:Column' name='HTMLFILENAME'/>
+<columns xsi:type='fds:Column' name='TOTAL'/>
+<columns xsi:type='fds:Column' name='OHIPCONTEXT'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='SENTDATE'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING'>
+<columns xsi:type='fds:Column' name='CLINIC_NO'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_NO'/>
+<columns xsi:type='fds:Column' name='VISITTYPE'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='BILLINGTYPE'/>
+<columns xsi:type='fds:Column' name='TOTAL'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='DOB'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='HIN'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NAME'/>
+<columns xsi:type='fds:Column' name='BILLING_DATE'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='APPTPROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_OHIP_NO'/>
+<columns xsi:type='fds:Column' name='BILLING_TIME'/>
+<columns xsi:type='fds:Column' name='CLINIC_REF_CODE'/>
+<columns xsi:type='fds:Column' name='ORGANIZATION_SPEC_CODE'/>
+<columns xsi:type='fds:Column' name='CONTENT'/>
+<columns xsi:type='fds:Column' name='ASSTPROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='BILLING_NO'/>
+<columns xsi:type='fds:Column' name='UPDATE_TIME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_RMA_NO'/>
+<columns xsi:type='fds:Column' name='VISITDATE'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_HISTORY'>
+<columns xsi:type='fds:Column' name='PAYEE_PRACTITIONER_NO'/>
+<columns xsi:type='fds:Column' name='PAYMENT_TYPE_ID'/>
+<columns xsi:type='fds:Column' name='CREATION_DATE'/>
+<columns xsi:type='fds:Column' name='BILLINGSTATUS'/>
+<columns xsi:type='fds:Column' name='BILLINGMASTER_NO'/>
+<columns xsi:type='fds:Column' name='PRACTITIONER_NO'/>
+<columns xsi:type='fds:Column' name='AMOUNT_RECEIVED'/>
+<columns xsi:type='fds:Column' name='BILLINGTYPE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='SEQNUM'/>
+<columns xsi:type='fds:Column' name='AMOUNT'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_MSP_SERVICECODE_TIMES'>
+<columns xsi:type='fds:Column' name='TIMERANGE'/>
+<columns xsi:type='fds:Column' name='BILLINGSERVICE_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_ON_3RDPARTYADDRESS'>
+<columns xsi:type='fds:Column' name='POSTCODE'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='ATTENTION'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='COMPANY_NAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='TELEPHONE'/>
+<columns xsi:type='fds:Column' name='FAX'/>
+<functionalDependencies dependant='#//@tables.14/@columns.1 #//@tables.14/@columns.2' determinant='#//@tables.14/@columns.0' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_PREFERENCES'>
+<columns xsi:type='fds:Column' name='DEFAULTPAYEENO'/>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='REFERRAL'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_PRIVATE_TRANSACTIONS'>
+<columns xsi:type='fds:Column' name='BILLINGMASTER_NO'/>
+<columns xsi:type='fds:Column' name='PAYMENT_TYPE_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='AMOUNT_RECEIVED'/>
+<columns xsi:type='fds:Column' name='CREATION_DATE'/>
+<functionalDependencies dependant='#//@tables.16/@columns.1' determinant='#//@tables.16/@columns.0' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLING_TRAYFEES'>
+<columns xsi:type='fds:Column' name='BILLINGSERVICETRAYNO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='BILLINGSERVICENO'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLINGMASTER'>
+<columns xsi:type='fds:Column' name='AFTER_HOUR'/>
+<columns xsi:type='fds:Column' name='NEW_PROGRAM'/>
+<columns xsi:type='fds:Column' name='ICBC_CLAIM_NO'/>
+<columns xsi:type='fds:Column' name='CLARIFICATION_CODE'/>
+<columns xsi:type='fds:Column' name='PAYMENT_MODE'/>
+<columns xsi:type='fds:Column' name='MVA_CLAIM_CODE'/>
+<columns xsi:type='fds:Column' name='ORIGINAL_CLAIM'/>
+<columns xsi:type='fds:Column' name='CLAIMCODE'/>
+<columns xsi:type='fds:Column' name='PAYMENTMETHOD'/>
+<columns xsi:type='fds:Column' name='SUBMISSION_CODE'/>
+<columns xsi:type='fds:Column' name='CORRESPONDENCE_CODE'/>
+<columns xsi:type='fds:Column' name='OIN_SEX_CODE'/>
+<columns xsi:type='fds:Column' name='NAME_VERIFY'/>
+<columns xsi:type='fds:Column' name='SERVICE_LOCATION'/>
+<columns xsi:type='fds:Column' name='DATACENTER'/>
+<columns xsi:type='fds:Column' name='ANATOMICAL_AREA'/>
+<columns xsi:type='fds:Column' name='SERVICE_DATE'/>
+<columns xsi:type='fds:Column' name='PRACTITIONER_NO'/>
+<columns xsi:type='fds:Column' name='OIN_ADDRESS2'/>
+<columns xsi:type='fds:Column' name='DEPENDENT_NUM'/>
+<columns xsi:type='fds:Column' name='PAYEE_NO'/>
+<columns xsi:type='fds:Column' name='OIN_BIRTHDATE'/>
+<columns xsi:type='fds:Column' name='OIN_FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='OIN_INSURER_CODE'/>
+<columns xsi:type='fds:Column' name='OIN_POSTALCODE'/>
+<columns xsi:type='fds:Column' name='OIN_ADDRESS'/>
+<columns xsi:type='fds:Column' name='OIN_SURNAME'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_NO'/>
+<columns xsi:type='fds:Column' name='OIN_REGISTRATION_NO'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='BILLINGSTATUS'/>
+<columns xsi:type='fds:Column' name='BILL_AMOUNT'/>
+<columns xsi:type='fds:Column' name='BILLING_UNIT'/>
+<columns xsi:type='fds:Column' name='DX_CODE1'/>
+<columns xsi:type='fds:Column' name='BIRTH_DATE'/>
+<columns xsi:type='fds:Column' name='REFERRAL_FLAG1'/>
+<columns xsi:type='fds:Column' name='REFERRAL_FLAG2'/>
+<columns xsi:type='fds:Column' name='BILLING_CODE'/>
+<columns xsi:type='fds:Column' name='PHN'/>
+<columns xsi:type='fds:Column' name='OIN_ADDRESS3'/>
+<columns xsi:type='fds:Column' name='BILLINGMASTER_NO'/>
+<columns xsi:type='fds:Column' name='FILLER_CLAIM'/>
+<columns xsi:type='fds:Column' name='SERVICE_START_TIME'/>
+<columns xsi:type='fds:Column' name='OIN_SECOND_NAME'/>
+<columns xsi:type='fds:Column' name='SERVICE_TO_DAY'/>
+<columns xsi:type='fds:Column' name='DX_CODE3'/>
+<columns xsi:type='fds:Column' name='DX_CODE2'/>
+<columns xsi:type='fds:Column' name='WCB_ID'/>
+<columns xsi:type='fds:Column' name='SERVICE_END_TIME'/>
+<columns xsi:type='fds:Column' name='FACILITY_NO'/>
+<columns xsi:type='fds:Column' name='REFERRAL_NO1'/>
+<columns xsi:type='fds:Column' name='REFERRAL_NO2'/>
+<columns xsi:type='fds:Column' name='FACILITY_SUB_NO'/>
+<columns xsi:type='fds:Column' name='TIME_CALL'/>
+<columns xsi:type='fds:Column' name='BILLING_NO'/>
+<columns xsi:type='fds:Column' name='EXTENDED_SUBMISSION_CODE'/>
+<columns xsi:type='fds:Column' name='OIN_ADDRESS4'/>
+<columns xsi:type='fds:Column' name='DX_EXPANSION'/>
+<columns xsi:type='fds:Column' name='OFFICE_NUMBER'/>
+<columns xsi:type='fds:Column' name='CREATEDATE'/>
+<columns xsi:type='fds:Column' name='CLAIM_COMMENT'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLINGNOTE'>
+<columns xsi:type='fds:Column' name='NOTE_TYPE'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='BILLINGMASTER_NO'/>
+<columns xsi:type='fds:Column' name='CREATEDATE'/>
+<columns xsi:type='fds:Column' name='BILLINGNOTE_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLINGREFERRAL'>
+<columns xsi:type='fds:Column' name='ADDRESS2'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='ADDRESS1'/>
+<columns xsi:type='fds:Column' name='POSTAL'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='SPECIALTY'/>
+<columns xsi:type='fds:Column' name='FAX'/>
+<columns xsi:type='fds:Column' name='COUNTRY'/>
+<columns xsi:type='fds:Column' name='BILLINGREFERRAL_NO'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='REFERRAL_NO'/>
+<functionalDependencies dependant='#//@tables.20/@columns.1' determinant='#//@tables.20/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.3 #//@tables.20/@columns.4 #//@tables.20/@columns.1 #//@tables.20/@columns.5 #//@tables.20/@columns.6' determinant='#//@tables.20/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.1 #//@tables.20/@columns.5 #//@tables.20/@columns.6' determinant='#//@tables.20/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.1' determinant='#//@tables.20/@columns.3 #//@tables.20/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.1 #//@tables.20/@columns.6' determinant='#//@tables.20/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.1' determinant='#//@tables.20/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.5' determinant='#//@tables.20/@columns.0 #//@tables.20/@columns.1 #//@tables.20/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.20/@columns.2' determinant='#//@tables.20/@columns.3 #//@tables.20/@columns.4 #//@tables.20/@columns.1 #//@tables.20/@columns.5 #//@tables.20/@columns.6' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='BILLINGSERVICE'>
+<columns xsi:type='fds:Column' name='SLIFLAG'/>
+<columns xsi:type='fds:Column' name='ANAESTHESIA'/>
+<columns xsi:type='fds:Column' name='BILLINGSERVICE_DATE'/>
+<columns xsi:type='fds:Column' name='TERMINATION_DATE'/>
+<columns xsi:type='fds:Column' name='GSTFLAG'/>
+<columns xsi:type='fds:Column' name='REGION'/>
+<columns xsi:type='fds:Column' name='DISPLAYSTYLE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='SERVICE_COMPOSITECODE'/>
+<columns xsi:type='fds:Column' name='SPECIALTY'/>
+<columns xsi:type='fds:Column' name='VALUE'/>
+<columns xsi:type='fds:Column' name='BILLINGSERVICE_NO'/>
+<columns xsi:type='fds:Column' name='SERVICE_CODE'/>
+<columns xsi:type='fds:Column' name='PERCENTAGE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CAISI_ROLE'>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='USERDEFINED'/>
+<columns xsi:type='fds:Column' name='ROLE_ID'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='OSCAR_NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_CPP'>
+<columns xsi:type='fds:Column' name='MEDICALHISTORY'/>
+<columns xsi:type='fds:Column' name='PRIMARYPHYSICIAN'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='OTHERSUPPORTSYSTEMS'/>
+<columns xsi:type='fds:Column' name='REMINDERS'/>
+<columns xsi:type='fds:Column' name='FAMILYHISTORY'/>
+<columns xsi:type='fds:Column' name='OTHERFILENUMBER'/>
+<columns xsi:type='fds:Column' name='ONGOINGCONCERNS'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='SOCIALHISTORY'/>
+<columns xsi:type='fds:Column' name='PRIMARYCOUNSELLOR'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PASTMEDICATIONS'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_ISSUE'>
+<columns xsi:type='fds:Column' name='MAJOR'/>
+<columns xsi:type='fds:Column' name='RESOLVED'/>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='ACUTE'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='CERTAIN'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ISSUE_ID'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_NOTE'>
+<columns xsi:type='fds:Column' name='SIGNED'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='SIGNING_PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='REPORTER_CAISI_ROLE'/>
+<columns xsi:type='fds:Column' name='PROGRAM_NO'/>
+<columns xsi:type='fds:Column' name='INCLUDE_ISSUE_INNOTE'/>
+<columns xsi:type='fds:Column' name='APPOINTMENTNO'/>
+<columns xsi:type='fds:Column' name='REPORTER_PROGRAM_TEAM'/>
+<columns xsi:type='fds:Column' name='LOCKED'/>
+<columns xsi:type='fds:Column' name='ENCOUNTER_TYPE'/>
+<columns xsi:type='fds:Column' name='BILLING_CODE'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='UUID'/>
+<columns xsi:type='fds:Column' name='MINUTEOFENCTRANSPORTATIONTIME'/>
+<columns xsi:type='fds:Column' name='PASSWORD'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_DATE'/>
+<columns xsi:type='fds:Column' name='POSITION'/>
+<columns xsi:type='fds:Column' name='HISTORY'/>
+<columns xsi:type='fds:Column' name='NOTE_ID'/>
+<columns xsi:type='fds:Column' name='HOUROFENCTRANSPORTATIONTIME'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='HOUROFENCOUNTERTIME'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='MINUTEOFENCOUNTERTIME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_NOTE_EXT'>
+<columns xsi:type='fds:Column' name='VALUE'/>
+<columns xsi:type='fds:Column' name='KEY_VAL'/>
+<columns xsi:type='fds:Column' name='DATE_VALUE'/>
+<columns xsi:type='fds:Column' name='NOTE_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.26/@columns.1' determinant='#//@tables.26/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.26/@columns.2' determinant='#//@tables.26/@columns.1 #//@tables.26/@columns.3' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_NOTE_LINK'>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='NOTE_ID'/>
+<columns xsi:type='fds:Column' name='TABLE_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='OTHER_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CASEMGMT_TMPSAVE'>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='NOTE_ID'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CDSFORMOPTION'>
+<columns xsi:type='fds:Column' name='CDSFORMVERSION'/>
+<columns xsi:type='fds:Column' name='CDSDATACATEGORY'/>
+<columns xsi:type='fds:Column' name='CDSDATACATEGORYNAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CLINIC_LOCATION'>
+<columns xsi:type='fds:Column' name='CLINIC_NO'/>
+<columns xsi:type='fds:Column' name='CLINIC_LOCATION_NAME'/>
+<columns xsi:type='fds:Column' name='CLINIC_LOCATION_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CLINIC_NBR'>
+<columns xsi:type='fds:Column' name='NBR_STATUS'/>
+<columns xsi:type='fds:Column' name='NBR_STRING'/>
+<columns xsi:type='fds:Column' name='NBR_ID'/>
+<columns xsi:type='fds:Column' name='NBR_VALUE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CONFIG_IMMUNIZATION'>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='CREATEDATE'/>
+<columns xsi:type='fds:Column' name='SETID'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='SETXMLDOC'/>
+<columns xsi:type='fds:Column' name='SETNAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='CONSULTATIONREQUESTEXT'>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='VALUE'/>
+<columns xsi:type='fds:Column' name='REQUESTID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='DATECREATED'/>
+</tables>
+<tables xsi:type='fds:Table' name='CONSULTATIONREQUESTS'>
+<columns xsi:type='fds:Column' name='CURRENTMEDS'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='PATIENTWILLBOOK'/>
+<columns xsi:type='fds:Column' name='APPOINTMENTDATE'/>
+<columns xsi:type='fds:Column' name='APPOINTMENTTIME'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHICNO'/>
+<columns xsi:type='fds:Column' name='SPECID'/>
+<columns xsi:type='fds:Column' name='SERVICEID'/>
+<columns xsi:type='fds:Column' name='REFERALDATE'/>
+<columns xsi:type='fds:Column' name='SENDTO'/>
+<columns xsi:type='fds:Column' name='ALLERGIES'/>
+<columns xsi:type='fds:Column' name='CONCURRENTPROBLEMS'/>
+<columns xsi:type='fds:Column' name='URGENCY'/>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='LETTERHEADADDRESS'/>
+<columns xsi:type='fds:Column' name='REQUESTID'/>
+<columns xsi:type='fds:Column' name='LETTERHEADFAX'/>
+<columns xsi:type='fds:Column' name='STATUSTEXT'/>
+<columns xsi:type='fds:Column' name='FOLLOWUPDATE'/>
+<columns xsi:type='fds:Column' name='SITE_NAME'/>
+<columns xsi:type='fds:Column' name='SIGNATURE_IMG'/>
+<columns xsi:type='fds:Column' name='REASON'/>
+<columns xsi:type='fds:Column' name='CLINICALINFO'/>
+<columns xsi:type='fds:Column' name='LETTERHEADNAME'/>
+<columns xsi:type='fds:Column' name='LETTERHEADPHONE'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4' determinant='#//@tables.34/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1' determinant='#//@tables.34/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.7' determinant='#//@tables.34/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.9' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.3 #//@tables.34/@columns.4' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.4' determinant='#//@tables.34/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.2' determinant='#//@tables.34/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.2' determinant='#//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.3' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.3' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.10 #//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.11' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.11' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4' determinant='#//@tables.34/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.9' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4' determinant='#//@tables.34/@columns.8 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.3' determinant='#//@tables.34/@columns.6 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.4 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1' determinant='#//@tables.34/@columns.12 #//@tables.34/@columns.7 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.9' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.9' determinant='#//@tables.34/@columns.8 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.9' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.10 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.9' determinant='#//@tables.34/@columns.2 #//@tables.34/@columns.4 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.1 #//@tables.34/@columns.9' determinant='#//@tables.34/@columns.7 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.11' determinant='#//@tables.34/@columns.6 #//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.7 #//@tables.34/@columns.9 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.8 #//@tables.34/@columns.11' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.6 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.7 #//@tables.34/@columns.9 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.8 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.12 #//@tables.34/@columns.11 #//@tables.34/@columns.22 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.21' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.12 #//@tables.34/@columns.21 #//@tables.34/@columns.22 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.6 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.8 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.6 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.5 #//@tables.34/@columns.8 #//@tables.34/@columns.11 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.6 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.12 #//@tables.34/@columns.21 #//@tables.34/@columns.11 #//@tables.34/@columns.9 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.22' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.10 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.8 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.11 #//@tables.34/@columns.13' determinant='#//@tables.34/@columns.0 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.7 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.13' determinant='#//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.13' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.8 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.7 #//@tables.34/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.34/@columns.0 #//@tables.34/@columns.6 #//@tables.34/@columns.8' determinant='#//@tables.34/@columns.5 #//@tables.34/@columns.1 #//@tables.34/@columns.2 #//@tables.34/@columns.3 #//@tables.34/@columns.4 #//@tables.34/@columns.11 #//@tables.34/@columns.7 #//@tables.34/@columns.9 #//@tables.34/@columns.13' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='CONSULTATIONSERVICES'>
+<columns xsi:type='fds:Column' name='SERVICEID'/>
+<columns xsi:type='fds:Column' name='SERVICEDESC'/>
+<columns xsi:type='fds:Column' name='ACTIVE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CONSULTDOCS'>
+<columns xsi:type='fds:Column' name='DOCUMENT_NO'/>
+<columns xsi:type='fds:Column' name='DOCTYPE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='REQUESTID'/>
+<columns xsi:type='fds:Column' name='ATTACH_DATE'/>
+<columns xsi:type='fds:Column' name='DELETED'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.36/@columns.1 #//@tables.36/@columns.2' determinant='#//@tables.36/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.36/@columns.2 #//@tables.36/@columns.4' determinant='#//@tables.36/@columns.3' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='COUNTRY_CODES'>
+<columns xsi:type='fds:Column' name='C_LOCALE'/>
+<columns xsi:type='fds:Column' name='COUNTRY_NAME'/>
+<columns xsi:type='fds:Column' name='COUNTRY_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CR_POLICY'>
+<columns xsi:type='fds:Column' name='USAGE_TIMES_BEFORE_REVERIFY'/>
+<columns xsi:type='fds:Column' name='PRIORITY'/>
+<columns xsi:type='fds:Column' name='CERTS_CURRENT'/>
+<columns xsi:type='fds:Column' name='REMOTE_ACCESS'/>
+<columns xsi:type='fds:Column' name='STATIC_IP'/>
+<columns xsi:type='fds:Column' name='CERTS_MAX'/>
+<columns xsi:type='fds:Column' name='EXPIRE_COOKIE'/>
+<columns xsi:type='fds:Column' name='MAX_TIME_BETWEEN_USAGE'/>
+<columns xsi:type='fds:Column' name='ADMINISTRATE_QUESTIONS'/>
+<columns xsi:type='fds:Column' name='ADMINISTRATE_POLICIES'/>
+<columns xsi:type='fds:Column' name='GENERATE_SUPER_CERTS'/>
+<columns xsi:type='fds:Column' name='REMOVE_BANS'/>
+<columns xsi:type='fds:Column' name='IP_FILTER'/>
+<columns xsi:type='fds:Column' name='USER_ID'/>
+<columns xsi:type='fds:Column' name='IP'/>
+<columns xsi:type='fds:Column' name='ROLE_ID'/>
+<columns xsi:type='fds:Column' name='DEFAULT_ANSWER'/>
+<columns xsi:type='fds:Column' name='POLICY_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CRITERIA_TYPE'>
+<columns xsi:type='fds:Column' name='CAN_BE_ADHOC'/>
+<columns xsi:type='fds:Column' name='ACTIVE'/>
+<columns xsi:type='fds:Column' name='FIELD_NAME'/>
+<columns xsi:type='fds:Column' name='FIELD_TYPE'/>
+<columns xsi:type='fds:Column' name='CRITERIA_TYPE_ID'/>
+<columns xsi:type='fds:Column' name='WL_PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='DEFAULT_VALUE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CRITERIA_TYPE_OPTION'>
+<columns xsi:type='fds:Column' name='OPTION_VALUE'/>
+<columns xsi:type='fds:Column' name='OPTION_LABEL'/>
+<columns xsi:type='fds:Column' name='RANGE_START_VALUE'/>
+<columns xsi:type='fds:Column' name='CRITERIA_TYPE_ID'/>
+<columns xsi:type='fds:Column' name='RANGE_END_VALUE'/>
+<columns xsi:type='fds:Column' name='DISPLAY_ORDER_NUMBER'/>
+<columns xsi:type='fds:Column' name='OPTION_ID'/>
+<functionalDependencies dependant='#//@tables.40/@columns.1' determinant='#//@tables.40/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.40/@columns.3' determinant='#//@tables.40/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.40/@columns.3' determinant='#//@tables.40/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.40/@columns.0' determinant='#//@tables.40/@columns.1' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_BILLINGSERVICE'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='SERVICETYPE'/>
+<columns xsi:type='fds:Column' name='SERVICETYPE_NAME'/>
+<columns xsi:type='fds:Column' name='SERVICE_GROUP_NAME'/>
+<columns xsi:type='fds:Column' name='SERVICE_GROUP'/>
+<columns xsi:type='fds:Column' name='SERVICE_ORDER'/>
+<columns xsi:type='fds:Column' name='SERVICE_CODE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_BILLINGSERVICE_AGE_RULES'>
+<columns xsi:type='fds:Column' name='MINAGE'/>
+<columns xsi:type='fds:Column' name='SERVICE_CODE'/>
+<columns xsi:type='fds:Column' name='MAXAGE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_DIAGCODE'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='DIAGNOSTIC_CODE'/>
+<columns xsi:type='fds:Column' name='SERVICETYPE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_DOC_CLASS'>
+<columns xsi:type='fds:Column' name='REPORTCLASS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='SUBCLASS'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_DOCTYPE'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='DOCTYPE'/>
+<columns xsi:type='fds:Column' name='MODULE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_DOCUMENT'>
+<columns xsi:type='fds:Column' name='MODULE'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='DOCUMENT_NO'/>
+<columns xsi:type='fds:Column' name='MODULE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_FREQUENCY'>
+<columns xsi:type='fds:Column' name='FREQID'/>
+<columns xsi:type='fds:Column' name='DAILYMIN'/>
+<columns xsi:type='fds:Column' name='DAILYMAX'/>
+<columns xsi:type='fds:Column' name='FREQCODE'/>
+</tables>
+<tables xsi:type='fds:Table' name='CTL_SERVICECODES_DXCODES'>
+<columns xsi:type='fds:Column' name='DXCODE'/>
+<columns xsi:type='fds:Column' name='SERVICE_CODE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEFAULT_ROLE_ACCESS'>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ACCESS_ID'/>
+<columns xsi:type='fds:Column' name='ROLE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHIC'>
+<columns xsi:type='fds:Column' name='FAMILY_DOCTOR'/>
+<columns xsi:type='fds:Column' name='OFFICIAL_LANG'/>
+<columns xsi:type='fds:Column' name='NEWSLETTER'/>
+<columns xsi:type='fds:Column' name='END_DATE'/>
+<columns xsi:type='fds:Column' name='DATE_JOINED'/>
+<columns xsi:type='fds:Column' name='HC_TYPE'/>
+<columns xsi:type='fds:Column' name='EFF_DATE'/>
+<columns xsi:type='fds:Column' name='COUNTRY_OF_ORIGIN'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='ROSTER_STATUS'/>
+<columns xsi:type='fds:Column' name='PHONE2'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='PATIENT_STATUS'/>
+<columns xsi:type='fds:Column' name='YEAR_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='POSTAL'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='ROSTER_DATE'/>
+<columns xsi:type='fds:Column' name='HC_RENEW_DATE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='MONTH_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='DATE_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='PCN_INDICATOR'/>
+<columns xsi:type='fds:Column' name='CHILDREN'/>
+<columns xsi:type='fds:Column' name='SPOKEN_LANG'/>
+<columns xsi:type='fds:Column' name='PREVIOUSADDRESS'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='CITIZENSHIP'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<columns xsi:type='fds:Column' name='CHART_NO'/>
+<columns xsi:type='fds:Column' name='HIN'/>
+<columns xsi:type='fds:Column' name='SIN'/>
+<columns xsi:type='fds:Column' name='ROSTER_TERMINATION_DATE'/>
+<columns xsi:type='fds:Column' name='PATIENT_STATUS_DATE'/>
+<columns xsi:type='fds:Column' name='ALIAS'/>
+<columns xsi:type='fds:Column' name='SOURCEOFINCOME'/>
+<columns xsi:type='fds:Column' name='ROSTER_TERMINATION_REASON'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='MYOSCARUSERNAME'/>
+<columns xsi:type='fds:Column' name='VER'/>
+<columns xsi:type='fds:Column' name='ANONYMOUS'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICARCHIVE'>
+<columns xsi:type='fds:Column' name='FAMILY_DOCTOR'/>
+<columns xsi:type='fds:Column' name='HC_TYPE'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='MONTH_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='POSTAL'/>
+<columns xsi:type='fds:Column' name='NEWSLETTER'/>
+<columns xsi:type='fds:Column' name='OFFICIAL_LANG'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='COUNTRY_OF_ORIGIN'/>
+<columns xsi:type='fds:Column' name='HC_RENEW_DATE'/>
+<columns xsi:type='fds:Column' name='END_DATE'/>
+<columns xsi:type='fds:Column' name='ROSTER_DATE'/>
+<columns xsi:type='fds:Column' name='EFF_DATE'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='PATIENT_STATUS_DATE'/>
+<columns xsi:type='fds:Column' name='HIN'/>
+<columns xsi:type='fds:Column' name='YEAR_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='DATE_JOINED'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='DATE_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='CHART_NO'/>
+<columns xsi:type='fds:Column' name='PATIENT_STATUS'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='PHONE2'/>
+<columns xsi:type='fds:Column' name='ROSTER_STATUS'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='VER'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='PCN_INDICATOR'/>
+<columns xsi:type='fds:Column' name='CHILDREN'/>
+<columns xsi:type='fds:Column' name='SPOKEN_LANG'/>
+<columns xsi:type='fds:Column' name='PREVIOUSADDRESS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='CITIZENSHIP'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<columns xsi:type='fds:Column' name='SIN'/>
+<columns xsi:type='fds:Column' name='ROSTER_TERMINATION_DATE'/>
+<columns xsi:type='fds:Column' name='ALIAS'/>
+<columns xsi:type='fds:Column' name='SOURCEOFINCOME'/>
+<columns xsi:type='fds:Column' name='ROSTER_TERMINATION_REASON'/>
+<columns xsi:type='fds:Column' name='MYOSCARUSERNAME'/>
+<columns xsi:type='fds:Column' name='ANONYMOUS'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICCUST'>
+<columns xsi:type='fds:Column' name='CUST2'/>
+<columns xsi:type='fds:Column' name='CUST4'/>
+<columns xsi:type='fds:Column' name='CUST3'/>
+<columns xsi:type='fds:Column' name='CONTENT'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CUST1'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICEXT'>
+<columns xsi:type='fds:Column' name='HIDDEN'/>
+<columns xsi:type='fds:Column' name='DATE_TIME'/>
+<columns xsi:type='fds:Column' name='KEY_VAL'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='VALUE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICPHARMACY'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ADDDATE'/>
+<columns xsi:type='fds:Column' name='PHARMACYID'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICQUERYFAVOURITES'>
+<columns xsi:type='fds:Column' name='SELECTS'/>
+<columns xsi:type='fds:Column' name='AGE'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='STARTYEAR'/>
+<columns xsi:type='fds:Column' name='ROSTERSTATUS'/>
+<columns xsi:type='fds:Column' name='PATIENTSTATUS'/>
+<columns xsi:type='fds:Column' name='QUERYNAME'/>
+<columns xsi:type='fds:Column' name='ENDYEAR'/>
+<columns xsi:type='fds:Column' name='LASTNAME'/>
+<columns xsi:type='fds:Column' name='DEMOIDS'/>
+<columns xsi:type='fds:Column' name='FAVID'/>
+<columns xsi:type='fds:Column' name='FIRSTNAME'/>
+<functionalDependencies dependant='#//@tables.55/@columns.4' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.1 #//@tables.55/@columns.2 #//@tables.55/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.7' determinant='#//@tables.55/@columns.2 #//@tables.55/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1 #//@tables.55/@columns.4' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.7 #//@tables.55/@columns.2 #//@tables.55/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1 #//@tables.55/@columns.7' determinant='#//@tables.55/@columns.3 #//@tables.55/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1 #//@tables.55/@columns.4' determinant='#//@tables.55/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.4' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.1 #//@tables.55/@columns.2 #//@tables.55/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.4' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.2 #//@tables.55/@columns.3 #//@tables.55/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.4' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.2 #//@tables.55/@columns.5 #//@tables.55/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.5' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.6 #//@tables.55/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.3 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.7 #//@tables.55/@columns.3 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.2 #//@tables.55/@columns.3 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.1' determinant='#//@tables.55/@columns.7 #//@tables.55/@columns.2 #//@tables.55/@columns.6 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.2' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.1 #//@tables.55/@columns.7 #//@tables.55/@columns.5 #//@tables.55/@columns.6 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.2' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.7 #//@tables.55/@columns.3 #//@tables.55/@columns.5 #//@tables.55/@columns.6 #//@tables.55/@columns.9 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.9' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.5 #//@tables.55/@columns.8 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.0' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.5 #//@tables.55/@columns.6 #//@tables.55/@columns.8 #//@tables.55/@columns.9 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.2' determinant='#//@tables.55/@columns.1 #//@tables.55/@columns.7 #//@tables.55/@columns.6 #//@tables.55/@columns.8 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.9' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.1 #//@tables.55/@columns.8 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.55/@columns.5' determinant='#//@tables.55/@columns.0 #//@tables.55/@columns.1 #//@tables.55/@columns.7 #//@tables.55/@columns.2 #//@tables.55/@columns.3 #//@tables.55/@columns.6 #//@tables.55/@columns.4' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='DEMOGRAPHICSETS'>
+<columns xsi:type='fds:Column' name='ARCHIVE'/>
+<columns xsi:type='fds:Column' name='SET_NAME'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ELIGIBILITY'/>
+</tables>
+<tables xsi:type='fds:Table' name='DIAGNOSTICCODE'>
+<columns xsi:type='fds:Column' name='REGION'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='DIAGNOSTICCODE_NO'/>
+<columns xsi:type='fds:Column' name='DIAGNOSTIC_CODE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+</tables>
+<tables xsi:type='fds:Table' name='DOCUMENT'>
+<columns xsi:type='fds:Column' name='NUMBER_OF_PAGES'/>
+<columns xsi:type='fds:Column' name='APPOINTMENT_NO'/>
+<columns xsi:type='fds:Column' name='SOURCE'/>
+<columns xsi:type='fds:Column' name='DOCXML'/>
+<columns xsi:type='fds:Column' name='CONTENTTYPE'/>
+<columns xsi:type='fds:Column' name='REVIEWDATETIME'/>
+<columns xsi:type='fds:Column' name='REVIEWER'/>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='PUBLIC1'/>
+<columns xsi:type='fds:Column' name='DOCCLASS'/>
+<columns xsi:type='fds:Column' name='UPDATEDATETIME'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='DOCSUBCLASS'/>
+<columns xsi:type='fds:Column' name='RESPONSIBLE'/>
+<columns xsi:type='fds:Column' name='CONTENTDATETIME'/>
+<columns xsi:type='fds:Column' name='DOCFILENAME'/>
+<columns xsi:type='fds:Column' name='DOCUMENT_NO'/>
+<columns xsi:type='fds:Column' name='DOCTYPE'/>
+<columns xsi:type='fds:Column' name='SOURCEFACILITY'/>
+<columns xsi:type='fds:Column' name='OBSERVATIONDATE'/>
+<columns xsi:type='fds:Column' name='DOCDESC'/>
+<columns xsi:type='fds:Column' name='DOCCREATOR'/>
+</tables>
+<tables xsi:type='fds:Table' name='DSGUIDELINEPROVIDERMAP'>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='GUIDELINE_UUID'/>
+<columns xsi:type='fds:Column' name='MAPID'/>
+</tables>
+<tables xsi:type='fds:Table' name='DSGUIDELINES'>
+<columns xsi:type='fds:Column' name='SOURCE'/>
+<columns xsi:type='fds:Column' name='ENGINE'/>
+<columns xsi:type='fds:Column' name='UUID'/>
+<columns xsi:type='fds:Column' name='AUTHOR'/>
+<columns xsi:type='fds:Column' name='DATEDECOMISSIONED'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='DATESTART'/>
+<columns xsi:type='fds:Column' name='VERSION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='XML'/>
+</tables>
+<tables xsi:type='fds:Table' name='DXRESEARCH'>
+<columns xsi:type='fds:Column' name='ASSOCIATION'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CODING_SYSTEM'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<columns xsi:type='fds:Column' name='START_DATE'/>
+<columns xsi:type='fds:Column' name='DXRESEARCH_CODE'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='DXRESEARCH_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='EFORM_GROUPS'>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='FID'/>
+<columns xsi:type='fds:Column' name='GROUP_NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='ENCOUNTERFORM'>
+<columns xsi:type='fds:Column' name='HIDDEN'/>
+<columns xsi:type='fds:Column' name='FORM_TABLE'/>
+<columns xsi:type='fds:Column' name='FORM_VALUE'/>
+<columns xsi:type='fds:Column' name='FORM_NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='ENCOUNTERTEMPLATE'>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='ENCOUNTERTEMPLATE_NAME'/>
+<columns xsi:type='fds:Column' name='ENCOUNTERTEMPLATE_VALUE'/>
+<columns xsi:type='fds:Column' name='CREATEDATETIME'/>
+</tables>
+<tables xsi:type='fds:Table' name='ENCOUNTERWINDOW'>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ROWTHREESIZE'/>
+<columns xsi:type='fds:Column' name='PRESBOXSIZE'/>
+<columns xsi:type='fds:Column' name='ROWONESIZE'/>
+<columns xsi:type='fds:Column' name='ROWTWOSIZE'/>
+</tables>
+<tables xsi:type='fds:Table' name='FAVORITES'>
+<columns xsi:type='fds:Column' name='CUSTOM_INSTRUCTIONS'/>
+<columns xsi:type='fds:Column' name='NOSUBS'/>
+<columns xsi:type='fds:Column' name='ROUTE'/>
+<columns xsi:type='fds:Column' name='METHOD'/>
+<columns xsi:type='fds:Column' name='REGIONAL_IDENTIFIER'/>
+<columns xsi:type='fds:Column' name='BN'/>
+<columns xsi:type='fds:Column' name='PRN'/>
+<columns xsi:type='fds:Column' name='GN'/>
+<columns xsi:type='fds:Column' name='CUSTOMNAME'/>
+<columns xsi:type='fds:Column' name='QUANTITY'/>
+<columns xsi:type='fds:Column' name='UNIT'/>
+<columns xsi:type='fds:Column' name='FAVORITENAME'/>
+<columns xsi:type='fds:Column' name='DURATION'/>
+<columns xsi:type='fds:Column' name='DURUNIT'/>
+<columns xsi:type='fds:Column' name='ATC'/>
+<columns xsi:type='fds:Column' name='GCN_SEQNO'/>
+<columns xsi:type='fds:Column' name='REPEAT'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='FREQCODE'/>
+<columns xsi:type='fds:Column' name='TAKEMAX'/>
+<columns xsi:type='fds:Column' name='TAKEMIN'/>
+<columns xsi:type='fds:Column' name='FAVORITEID'/>
+<columns xsi:type='fds:Column' name='UNITNAME'/>
+<columns xsi:type='fds:Column' name='DRUG_FORM'/>
+<columns xsi:type='fds:Column' name='DOSAGE'/>
+<columns xsi:type='fds:Column' name='SPECIAL'/>
+</tables>
+<tables xsi:type='fds:Table' name='FAVORITESPRIVILEGE'>
+<columns xsi:type='fds:Column' name='WRITEABLE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='OPENTOPUBLIC'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='FILEUPLOADCHECK'>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='DATE_TIME'/>
+<columns xsi:type='fds:Column' name='MD5SUM'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='FLOWSHEET_CUSTOMIZATION'>
+<columns xsi:type='fds:Column' name='FLOWSHEET'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ACTION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='MEASUREMENT'/>
+<columns xsi:type='fds:Column' name='ARCHIVED_DATE'/>
+<columns xsi:type='fds:Column' name='PAYLOAD'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CREATE_DATE'/>
+</tables>
+<tables xsi:type='fds:Table' name='FLOWSHEET_DX'>
+<columns xsi:type='fds:Column' name='DX_CODE_TYPE'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='CREATE_DATE'/>
+<columns xsi:type='fds:Column' name='DX_CODE'/>
+<columns xsi:type='fds:Column' name='ARCHIVED_DATE'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='FLOWSHEET'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='FORMGROWTH0_36'>
+<columns xsi:type='fds:Column' name='DATE_2'/>
+<columns xsi:type='fds:Column' name='DATE_1'/>
+<columns xsi:type='fds:Column' name='WEIGHT_2'/>
+<columns xsi:type='fds:Column' name='WEIGHT_1'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='PATIENTNAME'/>
+<columns xsi:type='fds:Column' name='FORMCREATED'/>
+<columns xsi:type='fds:Column' name='AGE_2'/>
+<columns xsi:type='fds:Column' name='AGE_1'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_1'/>
+<columns xsi:type='fds:Column' name='LENGTH_1'/>
+<columns xsi:type='fds:Column' name='FATHERSTATURE'/>
+<columns xsi:type='fds:Column' name='LENGTH_20'/>
+<columns xsi:type='fds:Column' name='GESTATIONALAGE'/>
+<columns xsi:type='fds:Column' name='DATE_4'/>
+<columns xsi:type='fds:Column' name='DATE_3'/>
+<columns xsi:type='fds:Column' name='LENGTH_19'/>
+<columns xsi:type='fds:Column' name='LENGTH_18'/>
+<columns xsi:type='fds:Column' name='DATE_8'/>
+<columns xsi:type='fds:Column' name='DATE_7'/>
+<columns xsi:type='fds:Column' name='DATE_6'/>
+<columns xsi:type='fds:Column' name='DATE_5'/>
+<columns xsi:type='fds:Column' name='DATE_9'/>
+<columns xsi:type='fds:Column' name='AGE_9'/>
+<columns xsi:type='fds:Column' name='AGE_8'/>
+<columns xsi:type='fds:Column' name='AGE_3'/>
+<columns xsi:type='fds:Column' name='LENGTH_10'/>
+<columns xsi:type='fds:Column' name='LENGTH_11'/>
+<columns xsi:type='fds:Column' name='LENGTH_12'/>
+<columns xsi:type='fds:Column' name='LENGTH_13'/>
+<columns xsi:type='fds:Column' name='AGE_7'/>
+<columns xsi:type='fds:Column' name='LENGTH_14'/>
+<columns xsi:type='fds:Column' name='LENGTH_15'/>
+<columns xsi:type='fds:Column' name='AGE_6'/>
+<columns xsi:type='fds:Column' name='LENGTH_16'/>
+<columns xsi:type='fds:Column' name='AGE_5'/>
+<columns xsi:type='fds:Column' name='LENGTH_17'/>
+<columns xsi:type='fds:Column' name='AGE_4'/>
+<columns xsi:type='fds:Column' name='EDC'/>
+<columns xsi:type='fds:Column' name='COMMENT_19'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_8'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_10'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_9'/>
+<columns xsi:type='fds:Column' name='COMMENT_16'/>
+<columns xsi:type='fds:Column' name='WEIGHT_4'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_12'/>
+<columns xsi:type='fds:Column' name='COMMENT_15'/>
+<columns xsi:type='fds:Column' name='WEIGHT_3'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_11'/>
+<columns xsi:type='fds:Column' name='COMMENT_18'/>
+<columns xsi:type='fds:Column' name='WEIGHT_6'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_14'/>
+<columns xsi:type='fds:Column' name='COMMENT_17'/>
+<columns xsi:type='fds:Column' name='WEIGHT_5'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_13'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_16'/>
+<columns xsi:type='fds:Column' name='COMMENT_12'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_15'/>
+<columns xsi:type='fds:Column' name='COMMENT_11'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_18'/>
+<columns xsi:type='fds:Column' name='COMMENT_14'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_17'/>
+<columns xsi:type='fds:Column' name='COMMENT_13'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_19'/>
+<columns xsi:type='fds:Column' name='COMMENT_20'/>
+<columns xsi:type='fds:Column' name='WEIGHT_7'/>
+<columns xsi:type='fds:Column' name='WEIGHT_8'/>
+<columns xsi:type='fds:Column' name='LENGTH_9'/>
+<columns xsi:type='fds:Column' name='WEIGHT_9'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_7'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_6'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_5'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_4'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_3'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_2'/>
+<columns xsi:type='fds:Column' name='AGE_20'/>
+<columns xsi:type='fds:Column' name='LENGTH_7'/>
+<columns xsi:type='fds:Column' name='LENGTH_8'/>
+<columns xsi:type='fds:Column' name='LENGTH_5'/>
+<columns xsi:type='fds:Column' name='LENGTH_6'/>
+<columns xsi:type='fds:Column' name='LENGTH_3'/>
+<columns xsi:type='fds:Column' name='LENGTH_4'/>
+<columns xsi:type='fds:Column' name='LENGTH_2'/>
+<columns xsi:type='fds:Column' name='COMMENT_10'/>
+<columns xsi:type='fds:Column' name='AGE_19'/>
+<columns xsi:type='fds:Column' name='AGE_17'/>
+<columns xsi:type='fds:Column' name='AGE_18'/>
+<columns xsi:type='fds:Column' name='AGE_15'/>
+<columns xsi:type='fds:Column' name='AGE_16'/>
+<columns xsi:type='fds:Column' name='AGE_13'/>
+<columns xsi:type='fds:Column' name='AGE_14'/>
+<columns xsi:type='fds:Column' name='AGE_11'/>
+<columns xsi:type='fds:Column' name='AGE_12'/>
+<columns xsi:type='fds:Column' name='DATE_18'/>
+<columns xsi:type='fds:Column' name='DATE_19'/>
+<columns xsi:type='fds:Column' name='DATE_12'/>
+<columns xsi:type='fds:Column' name='DATE_13'/>
+<columns xsi:type='fds:Column' name='DATE_10'/>
+<columns xsi:type='fds:Column' name='DATE_11'/>
+<columns xsi:type='fds:Column' name='DATE_16'/>
+<columns xsi:type='fds:Column' name='DATE_17'/>
+<columns xsi:type='fds:Column' name='DATE_14'/>
+<columns xsi:type='fds:Column' name='AGE_10'/>
+<columns xsi:type='fds:Column' name='DATE_15'/>
+<columns xsi:type='fds:Column' name='WEIGHT_20'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='COMMENT_6'/>
+<columns xsi:type='fds:Column' name='COMMENT_7'/>
+<columns xsi:type='fds:Column' name='COMMENT_4'/>
+<columns xsi:type='fds:Column' name='MOTHERSTATURE'/>
+<columns xsi:type='fds:Column' name='COMMENT_5'/>
+<columns xsi:type='fds:Column' name='COMMENT_2'/>
+<columns xsi:type='fds:Column' name='COMMENT_3'/>
+<columns xsi:type='fds:Column' name='RECORDNO'/>
+<columns xsi:type='fds:Column' name='COMMENT_1'/>
+<columns xsi:type='fds:Column' name='HEADCIRC_20'/>
+<columns xsi:type='fds:Column' name='COMMENT_8'/>
+<columns xsi:type='fds:Column' name='COMMENT_9'/>
+<columns xsi:type='fds:Column' name='WEIGHT_19'/>
+<columns xsi:type='fds:Column' name='WEIGHT_18'/>
+<columns xsi:type='fds:Column' name='WEIGHT_17'/>
+<columns xsi:type='fds:Column' name='WEIGHT_16'/>
+<columns xsi:type='fds:Column' name='WEIGHT_15'/>
+<columns xsi:type='fds:Column' name='WEIGHT_14'/>
+<columns xsi:type='fds:Column' name='DATE_20'/>
+<columns xsi:type='fds:Column' name='WEIGHT_13'/>
+<columns xsi:type='fds:Column' name='WEIGHT_12'/>
+<columns xsi:type='fds:Column' name='WEIGHT_11'/>
+<columns xsi:type='fds:Column' name='WEIGHT_10'/>
+<columns xsi:type='fds:Column' name='FORMEDITED'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.2 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.5 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.5' determinant='#//@tables.71/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.0 #//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.5 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.11 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.9 #//@tables.71/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.9 #//@tables.71/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.10 #//@tables.71/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.11 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.10 #//@tables.71/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.11 #//@tables.71/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.7' determinant='#//@tables.71/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6' determinant='#//@tables.71/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.11' determinant='#//@tables.71/@columns.1 #//@tables.71/@columns.3 #//@tables.71/@columns.10 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.71/@columns.11' determinant='#//@tables.71/@columns.1 #//@tables.71/@columns.9 #//@tables.71/@columns.3 #//@tables.71/@columns.4 #//@tables.71/@columns.6 #//@tables.71/@columns.7' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='FORMMMSE'>
+<columns xsi:type='fds:Column' name='I_DEMENTIA'/>
+<columns xsi:type='fds:Column' name='LC_STUPOR'/>
+<columns xsi:type='fds:Column' name='LC_DROWSY'/>
+<columns xsi:type='fds:Column' name='LC_COMA'/>
+<columns xsi:type='fds:Column' name='L_NAME'/>
+<columns xsi:type='fds:Column' name='L_READ'/>
+<columns xsi:type='fds:Column' name='L_FOLLOW'/>
+<columns xsi:type='fds:Column' name='O_PLACE'/>
+<columns xsi:type='fds:Column' name='AGE'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='L_REPEAT'/>
+<columns xsi:type='fds:Column' name='A_SERIAL'/>
+<columns xsi:type='fds:Column' name='LC_ALERT'/>
+<columns xsi:type='fds:Column' name='I_DEPRESSION'/>
+<columns xsi:type='fds:Column' name='I_NORMAL'/>
+<columns xsi:type='fds:Column' name='O_DATE'/>
+<columns xsi:type='fds:Column' name='L_COPY'/>
+<columns xsi:type='fds:Column' name='R_OBJECTS'/>
+<columns xsi:type='fds:Column' name='DIAGNOSIS'/>
+<columns xsi:type='fds:Column' name='PNAME'/>
+<columns xsi:type='fds:Column' name='TOTAL'/>
+<columns xsi:type='fds:Column' name='L_WRITE'/>
+<columns xsi:type='fds:Column' name='FORMDATE'/>
+<columns xsi:type='fds:Column' name='FORMEDITED'/>
+<columns xsi:type='fds:Column' name='FORMCREATED'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='MEDS'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='RE_NAME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='FORMPALLIATIVECARE'>
+<columns xsi:type='fds:Column' name='PNAME'/>
+<columns xsi:type='fds:Column' name='SIGNATURE1'/>
+<columns xsi:type='fds:Column' name='PSYCHDEPRESSION1'/>
+<columns xsi:type='fds:Column' name='RESPCAREGIVER1'/>
+<columns xsi:type='fds:Column' name='PSYCHFATIGUE1'/>
+<columns xsi:type='fds:Column' name='PAIN1'/>
+<columns xsi:type='fds:Column' name='RESPFEVER1'/>
+<columns xsi:type='fds:Column' name='GIBOWELS1'/>
+<columns xsi:type='fds:Column' name='RESPCOUGH1'/>
+<columns xsi:type='fds:Column' name='FORMCREATED'/>
+<columns xsi:type='fds:Column' name='PSYCHSOMNOLENCE1'/>
+<columns xsi:type='fds:Column' name='OTHER1'/>
+<columns xsi:type='fds:Column' name='RESPDYSPNEA1'/>
+<columns xsi:type='fds:Column' name='GINAUSEA1'/>
+<columns xsi:type='fds:Column' name='DATE1'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='DIAGNOSIS'/>
+<columns xsi:type='fds:Column' name='DATE4'/>
+<columns xsi:type='fds:Column' name='PSYCHDEPRESSION2'/>
+<columns xsi:type='fds:Column' name='SIGNATURE2'/>
+<columns xsi:type='fds:Column' name='PSYCHDEPRESSION4'/>
+<columns xsi:type='fds:Column' name='SIGNATURE3'/>
+<columns xsi:type='fds:Column' name='RESPCAREGIVER4'/>
+<columns xsi:type='fds:Column' name='PSYCHFATIGUE4'/>
+<columns xsi:type='fds:Column' name='PSYCHDEPRESSION3'/>
+<columns xsi:type='fds:Column' name='SIGNATURE4'/>
+<columns xsi:type='fds:Column' name='RESPCAREGIVER3'/>
+<columns xsi:type='fds:Column' name='GIHICCUPS1'/>
+<columns xsi:type='fds:Column' name='RESPCAREGIVER2'/>
+<columns xsi:type='fds:Column' name='GIHICCUPS2'/>
+<columns xsi:type='fds:Column' name='GIHICCUPS3'/>
+<columns xsi:type='fds:Column' name='RESPFEVER4'/>
+<columns xsi:type='fds:Column' name='GIHICCUPS4'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='SKINULCERS4'/>
+<columns xsi:type='fds:Column' name='SKINULCERS3'/>
+<columns xsi:type='fds:Column' name='PSYCHFATIGUE3'/>
+<columns xsi:type='fds:Column' name='SKINULCERS2'/>
+<columns xsi:type='fds:Column' name='PSYCHFATIGUE2'/>
+<columns xsi:type='fds:Column' name='SKINULCERS1'/>
+<columns xsi:type='fds:Column' name='PAIN4'/>
+<columns xsi:type='fds:Column' name='PAIN3'/>
+<columns xsi:type='fds:Column' name='PAIN2'/>
+<columns xsi:type='fds:Column' name='RESPFEVER2'/>
+<columns xsi:type='fds:Column' name='RESPFEVER3'/>
+<columns xsi:type='fds:Column' name='GIBOWELS4'/>
+<columns xsi:type='fds:Column' name='GIBOWELS3'/>
+<columns xsi:type='fds:Column' name='GIBOWELS2'/>
+<columns xsi:type='fds:Column' name='GIDYSPHAGIA2'/>
+<columns xsi:type='fds:Column' name='GIDYSPHAGIA3'/>
+<columns xsi:type='fds:Column' name='GIDYSPHAGIA4'/>
+<columns xsi:type='fds:Column' name='RESPCOUGH2'/>
+<columns xsi:type='fds:Column' name='RESPCOUGH3'/>
+<columns xsi:type='fds:Column' name='RESPCOUGH4'/>
+<columns xsi:type='fds:Column' name='GIDYSPHAGIA1'/>
+<columns xsi:type='fds:Column' name='PSYCHANXIETY4'/>
+<columns xsi:type='fds:Column' name='PSYCHANXIETY3'/>
+<columns xsi:type='fds:Column' name='PSYCHANXIETY2'/>
+<columns xsi:type='fds:Column' name='PSYCHANXIETY1'/>
+<columns xsi:type='fds:Column' name='FORMEDITED'/>
+<columns xsi:type='fds:Column' name='OTHER4'/>
+<columns xsi:type='fds:Column' name='PSYCHSOMNOLENCE2'/>
+<columns xsi:type='fds:Column' name='PSYCHSOMNOLENCE3'/>
+<columns xsi:type='fds:Column' name='OTHER2'/>
+<columns xsi:type='fds:Column' name='PSYCHSOMNOLENCE4'/>
+<columns xsi:type='fds:Column' name='OTHER3'/>
+<columns xsi:type='fds:Column' name='PSYCHAGITATION1'/>
+<columns xsi:type='fds:Column' name='PSYCHAGITATION2'/>
+<columns xsi:type='fds:Column' name='RESPDYSPNEA2'/>
+<columns xsi:type='fds:Column' name='PSYCHAGITATION3'/>
+<columns xsi:type='fds:Column' name='RESPDYSPNEA3'/>
+<columns xsi:type='fds:Column' name='PSYCHANOREXIA1'/>
+<columns xsi:type='fds:Column' name='PSYCHAGITATION4'/>
+<columns xsi:type='fds:Column' name='RESPDYSPNEA4'/>
+<columns xsi:type='fds:Column' name='PSYCHANOREXIA2'/>
+<columns xsi:type='fds:Column' name='GIMOUTH2'/>
+<columns xsi:type='fds:Column' name='PSYCHANOREXIA3'/>
+<columns xsi:type='fds:Column' name='GIMOUTH1'/>
+<columns xsi:type='fds:Column' name='PSYCHANOREXIA4'/>
+<columns xsi:type='fds:Column' name='GIMOUTH4'/>
+<columns xsi:type='fds:Column' name='GIMOUTH3'/>
+<columns xsi:type='fds:Column' name='GINAUSEA4'/>
+<columns xsi:type='fds:Column' name='SKINPRURITIS1'/>
+<columns xsi:type='fds:Column' name='GINAUSEA3'/>
+<columns xsi:type='fds:Column' name='GU1'/>
+<columns xsi:type='fds:Column' name='SKINPRURITIS2'/>
+<columns xsi:type='fds:Column' name='SKINPRURITIS3'/>
+<columns xsi:type='fds:Column' name='SKINPRURITIS4'/>
+<columns xsi:type='fds:Column' name='GU4'/>
+<columns xsi:type='fds:Column' name='GINAUSEA2'/>
+<columns xsi:type='fds:Column' name='GU2'/>
+<columns xsi:type='fds:Column' name='GU3'/>
+<columns xsi:type='fds:Column' name='DATE2'/>
+<columns xsi:type='fds:Column' name='DATE3'/>
+</tables>
+<tables xsi:type='fds:Table' name='FORMTYPE2DIABETES'>
+<columns xsi:type='fds:Column' name='PNAME'/>
+<columns xsi:type='fds:Column' name='ACEINHIBITOR'/>
+<columns xsi:type='fds:Column' name='RESOURCE2'/>
+<columns xsi:type='fds:Column' name='RESOURCE1'/>
+<columns xsi:type='fds:Column' name='ASA'/>
+<columns xsi:type='fds:Column' name='METFORMIN'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='BP1'/>
+<columns xsi:type='fds:Column' name='WEIGHT1'/>
+<columns xsi:type='fds:Column' name='FORMCREATED'/>
+<columns xsi:type='fds:Column' name='GLYBURIDE'/>
+<columns xsi:type='fds:Column' name='OTHEROHA'/>
+<columns xsi:type='fds:Column' name='BIRTHDATE'/>
+<columns xsi:type='fds:Column' name='INSULIN'/>
+<columns xsi:type='fds:Column' name='DATE1'/>
+<columns xsi:type='fds:Column' name='CONSULTANT'/>
+<columns xsi:type='fds:Column' name='CDN5'/>
+<columns xsi:type='fds:Column' name='DATEDX'/>
+<columns xsi:type='fds:Column' name='CDN2'/>
+<columns xsi:type='fds:Column' name='CDN1'/>
+<columns xsi:type='fds:Column' name='CDN4'/>
+<columns xsi:type='fds:Column' name='CDN3'/>
+<columns xsi:type='fds:Column' name='INITIALS3'/>
+<columns xsi:type='fds:Column' name='INITIALS4'/>
+<columns xsi:type='fds:Column' name='INITIALS5'/>
+<columns xsi:type='fds:Column' name='INITIALS1'/>
+<columns xsi:type='fds:Column' name='INITIALS2'/>
+<columns xsi:type='fds:Column' name='OTHERBOX7'/>
+<columns xsi:type='fds:Column' name='OTHERBOX8'/>
+<columns xsi:type='fds:Column' name='OPHTHALMOLOGIST'/>
+<columns xsi:type='fds:Column' name='DIET5'/>
+<columns xsi:type='fds:Column' name='DIET4'/>
+<columns xsi:type='fds:Column' name='OTHERPLAN4'/>
+<columns xsi:type='fds:Column' name='OTHERPLAN3'/>
+<columns xsi:type='fds:Column' name='OTHERPLAN2'/>
+<columns xsi:type='fds:Column' name='OTHERPLAN1'/>
+<columns xsi:type='fds:Column' name='GLUCOSEA3'/>
+<columns xsi:type='fds:Column' name='DIET1'/>
+<columns xsi:type='fds:Column' name='GLUCOSEA4'/>
+<columns xsi:type='fds:Column' name='DIET2'/>
+<columns xsi:type='fds:Column' name='GLUCOSEA5'/>
+<columns xsi:type='fds:Column' name='OTHERPLAN5'/>
+<columns xsi:type='fds:Column' name='DIET3'/>
+<columns xsi:type='fds:Column' name='ALCOHOL1'/>
+<columns xsi:type='fds:Column' name='HEIGHT'/>
+<columns xsi:type='fds:Column' name='RENAL1'/>
+<columns xsi:type='fds:Column' name='ALCOHOL5'/>
+<columns xsi:type='fds:Column' name='RENAL4'/>
+<columns xsi:type='fds:Column' name='ALCOHOL4'/>
+<columns xsi:type='fds:Column' name='RENAL5'/>
+<columns xsi:type='fds:Column' name='ALCOHOL3'/>
+<columns xsi:type='fds:Column' name='RENAL2'/>
+<columns xsi:type='fds:Column' name='ALCOHOL2'/>
+<columns xsi:type='fds:Column' name='RENAL3'/>
+<columns xsi:type='fds:Column' name='GLUCOSEB1'/>
+<columns xsi:type='fds:Column' name='GLUCOSEB3'/>
+<columns xsi:type='fds:Column' name='GLUCOSEB2'/>
+<columns xsi:type='fds:Column' name='FEET1'/>
+<columns xsi:type='fds:Column' name='FEET2'/>
+<columns xsi:type='fds:Column' name='FEET3'/>
+<columns xsi:type='fds:Column' name='FEET4'/>
+<columns xsi:type='fds:Column' name='FEET5'/>
+<columns xsi:type='fds:Column' name='GLUCOSEA2'/>
+<columns xsi:type='fds:Column' name='GLUCOSEA1'/>
+<columns xsi:type='fds:Column' name='EDUCATOR'/>
+<columns xsi:type='fds:Column' name='GLUCOSEC5'/>
+<columns xsi:type='fds:Column' name='LIPIDSA4'/>
+<columns xsi:type='fds:Column' name='EXERCISE1'/>
+<columns xsi:type='fds:Column' name='LIPIDSA5'/>
+<columns xsi:type='fds:Column' name='EXERCISE2'/>
+<columns xsi:type='fds:Column' name='EXERCISE3'/>
+<columns xsi:type='fds:Column' name='EXERCISE4'/>
+<columns xsi:type='fds:Column' name='EXERCISE5'/>
+<columns xsi:type='fds:Column' name='URINERATIO4'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='URINERATIO5'/>
+<columns xsi:type='fds:Column' name='URINECLEARANCE5'/>
+<columns xsi:type='fds:Column' name='LIFESTYLE5'/>
+<columns xsi:type='fds:Column' name='URINECLEARANCE2'/>
+<columns xsi:type='fds:Column' name='URINERATIO1'/>
+<columns xsi:type='fds:Column' name='URINECLEARANCE1'/>
+<columns xsi:type='fds:Column' name='LIPIDSA1'/>
+<columns xsi:type='fds:Column' name='URINERATIO2'/>
+<columns xsi:type='fds:Column' name='URINECLEARANCE4'/>
+<columns xsi:type='fds:Column' name='LIPIDSA2'/>
+<columns xsi:type='fds:Column' name='URINERATIO3'/>
+<columns xsi:type='fds:Column' name='URINECLEARANCE3'/>
+<columns xsi:type='fds:Column' name='LIPIDSA3'/>
+<columns xsi:type='fds:Column' name='GLUCOSEB5'/>
+<columns xsi:type='fds:Column' name='GLUCOSEB4'/>
+<columns xsi:type='fds:Column' name='BP2'/>
+<columns xsi:type='fds:Column' name='BP3'/>
+<columns xsi:type='fds:Column' name='BP4'/>
+<columns xsi:type='fds:Column' name='BP5'/>
+<columns xsi:type='fds:Column' name='WEIGHT5'/>
+<columns xsi:type='fds:Column' name='WEIGHT4'/>
+<columns xsi:type='fds:Column' name='LIPIDSB5'/>
+<columns xsi:type='fds:Column' name='GLUCOSEC3'/>
+<columns xsi:type='fds:Column' name='GLUCOSEC4'/>
+<columns xsi:type='fds:Column' name='NUTRITIONIST'/>
+<columns xsi:type='fds:Column' name='GLUCOSEC1'/>
+<columns xsi:type='fds:Column' name='WEIGHT3'/>
+<columns xsi:type='fds:Column' name='GLUCOSEC2'/>
+<columns xsi:type='fds:Column' name='WEIGHT2'/>
+<columns xsi:type='fds:Column' name='LIPIDSB3'/>
+<columns xsi:type='fds:Column' name='LIPIDSB4'/>
+<columns xsi:type='fds:Column' name='LIPIDSB1'/>
+<columns xsi:type='fds:Column' name='LIPIDSB2'/>
+<columns xsi:type='fds:Column' name='SEXUALFUNCTION1'/>
+<columns xsi:type='fds:Column' name='EYES5'/>
+<columns xsi:type='fds:Column' name='EYES4'/>
+<columns xsi:type='fds:Column' name='EYES3'/>
+<columns xsi:type='fds:Column' name='EYES2'/>
+<columns xsi:type='fds:Column' name='MEDS5'/>
+<columns xsi:type='fds:Column' name='MEDS4'/>
+<columns xsi:type='fds:Column' name='MEDS3'/>
+<columns xsi:type='fds:Column' name='MEDS2'/>
+<columns xsi:type='fds:Column' name='EYES1'/>
+<columns xsi:type='fds:Column' name='MEDS1'/>
+<columns xsi:type='fds:Column' name='FORMEDITED'/>
+<columns xsi:type='fds:Column' name='LIPIDSC2'/>
+<columns xsi:type='fds:Column' name='LIPIDSC3'/>
+<columns xsi:type='fds:Column' name='LIPIDSC4'/>
+<columns xsi:type='fds:Column' name='LIPIDSC5'/>
+<columns xsi:type='fds:Column' name='LIPIDSC1'/>
+<columns xsi:type='fds:Column' name='LIFESTYLE2'/>
+<columns xsi:type='fds:Column' name='LIFESTYLE1'/>
+<columns xsi:type='fds:Column' name='LIFESTYLE4'/>
+<columns xsi:type='fds:Column' name='LIFESTYLE3'/>
+<columns xsi:type='fds:Column' name='DATE2'/>
+<columns xsi:type='fds:Column' name='DATE3'/>
+<columns xsi:type='fds:Column' name='DATE4'/>
+<columns xsi:type='fds:Column' name='DATE5'/>
+<columns xsi:type='fds:Column' name='SEXUALFUNCTION3'/>
+<columns xsi:type='fds:Column' name='SEXUALFUNCTION2'/>
+<columns xsi:type='fds:Column' name='SEXUALFUNCTION5'/>
+<columns xsi:type='fds:Column' name='SEXUALFUNCTION4'/>
+</tables>
+<tables xsi:type='fds:Table' name='GROUPMEMBERS_TBL'>
+<columns xsi:type='fds:Column' name='GROUPID'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='GROUPS_TBL'>
+<columns xsi:type='fds:Column' name='PARENTID'/>
+<columns xsi:type='fds:Column' name='GROUPDESC'/>
+<columns xsi:type='fds:Column' name='GROUPID'/>
+</tables>
+<tables xsi:type='fds:Table' name='HASH_AUDIT'>
+<columns xsi:type='fds:Column' name='ALGORITHM'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='PKID'/>
+<columns xsi:type='fds:Column' name='SIGNATURE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7_MSH'>
+<columns xsi:type='fds:Column' name='ACCEPT_ACKNOWLEDGMENT_TYPE'/>
+<columns xsi:type='fds:Column' name='APPLICATION_ACKNOWLEDGE_TYPE'/>
+<columns xsi:type='fds:Column' name='VERSION_ID'/>
+<columns xsi:type='fds:Column' name='SENDING_APPLICATION'/>
+<columns xsi:type='fds:Column' name='PROCESSING_ID'/>
+<columns xsi:type='fds:Column' name='RECEIVING_FACILITY'/>
+<columns xsi:type='fds:Column' name='RECEIVING_APPLICATION'/>
+<columns xsi:type='fds:Column' name='ENCODING_CHARACTERS'/>
+<columns xsi:type='fds:Column' name='MESSAGE_TYPE'/>
+<columns xsi:type='fds:Column' name='SEPERATOR'/>
+<columns xsi:type='fds:Column' name='MESSAGE_CONTROL_ID'/>
+<columns xsi:type='fds:Column' name='SEQUENCE_NUMBER'/>
+<columns xsi:type='fds:Column' name='COUNTRY_CODE'/>
+<columns xsi:type='fds:Column' name='PRINCIPAL_LANGUAGE_OF_MESSAGE'/>
+<columns xsi:type='fds:Column' name='SENDING_FACILITY'/>
+<columns xsi:type='fds:Column' name='MESSAGE_ID'/>
+<columns xsi:type='fds:Column' name='CONTINUATION_POINTER'/>
+<columns xsi:type='fds:Column' name='CHARACTER_SET'/>
+<columns xsi:type='fds:Column' name='MSH_ID'/>
+<columns xsi:type='fds:Column' name='DATE_TIME_OF_MESSAGE'/>
+<columns xsi:type='fds:Column' name='SECURITY'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7_OBX'>
+<columns xsi:type='fds:Column' name='OBSERVATION_RESULT_STATUS'/>
+<columns xsi:type='fds:Column' name='REFERENCE_RANGE'/>
+<columns xsi:type='fds:Column' name='VALUE_TYPE'/>
+<columns xsi:type='fds:Column' name='SET_ID'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_IDENTIFIER'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='UNITS'/>
+<columns xsi:type='fds:Column' name='ABNORMAL_FLAGS'/>
+<columns xsi:type='fds:Column' name='OBR_ID'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_DATE_TIME'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_SUB_ID'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_RESULTS'/>
+<columns xsi:type='fds:Column' name='OBX_ID'/>
+<columns xsi:type='fds:Column' name='RESPONSIBLE_OBSERVER'/>
+<columns xsi:type='fds:Column' name='USER_DEFINED_ACCESS_CHECKS'/>
+<columns xsi:type='fds:Column' name='OBSERVATION_METHOD'/>
+<columns xsi:type='fds:Column' name='PROBABILITY'/>
+<columns xsi:type='fds:Column' name='NATURE_OF_ABNORMAL_TEST'/>
+<columns xsi:type='fds:Column' name='PRODUCER_ID'/>
+<columns xsi:type='fds:Column' name='DATE_LAST_NORMAL_VALUE'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7_ORC'>
+<columns xsi:type='fds:Column' name='ORDER_CONTROL'/>
+<columns xsi:type='fds:Column' name='PID_ID'/>
+<columns xsi:type='fds:Column' name='ORDERING_PROVIDER'/>
+<columns xsi:type='fds:Column' name='VERIFIED_BY'/>
+<columns xsi:type='fds:Column' name='PARENT'/>
+<columns xsi:type='fds:Column' name='ORDER_STATUS'/>
+<columns xsi:type='fds:Column' name='ORDER_EFFECTIVE_DATE_TIME'/>
+<columns xsi:type='fds:Column' name='ORC_ID'/>
+<columns xsi:type='fds:Column' name='ENTERING_DEVICE'/>
+<columns xsi:type='fds:Column' name='ENTERER_LOCATION'/>
+<columns xsi:type='fds:Column' name='ENTERING_ORGANIZATION'/>
+<columns xsi:type='fds:Column' name='QUANTITY_TIMING'/>
+<columns xsi:type='fds:Column' name='RESPONSE_FLAG'/>
+<columns xsi:type='fds:Column' name='PLACER_ORDER_NUMBER2'/>
+<columns xsi:type='fds:Column' name='ACTION_BY'/>
+<columns xsi:type='fds:Column' name='PLACER_ORDER_NUMBER1'/>
+<columns xsi:type='fds:Column' name='DATE_TIME_OF_TRANSACTION'/>
+<columns xsi:type='fds:Column' name='ENTERED_BY'/>
+<columns xsi:type='fds:Column' name='CALLBACK_PHONE_NUMBER'/>
+<columns xsi:type='fds:Column' name='FILLER_ORDER_NUMBER'/>
+<columns xsi:type='fds:Column' name='ORDER_CONTROL_CODE_REASON'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7_PID'>
+<columns xsi:type='fds:Column' name='PATIENT_ADDRESS'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='EXTERNAL_ID'/>
+<columns xsi:type='fds:Column' name='HOME_NUMBER'/>
+<columns xsi:type='fds:Column' name='PATIENT_NAME'/>
+<columns xsi:type='fds:Column' name='DATE_OF_BIRTH'/>
+<columns xsi:type='fds:Column' name='ALTERNATE_ID'/>
+<columns xsi:type='fds:Column' name='BIRTH_PLACE'/>
+<columns xsi:type='fds:Column' name='BIRTH_ORDER'/>
+<columns xsi:type='fds:Column' name='MARITAL_STATUS'/>
+<columns xsi:type='fds:Column' name='PATIENT_DEATH_DATE_TIME'/>
+<columns xsi:type='fds:Column' name='SSN_NUMBER'/>
+<columns xsi:type='fds:Column' name='MULTIPLE_BIRTH_INDICATOR'/>
+<columns xsi:type='fds:Column' name='NATIONALITY'/>
+<columns xsi:type='fds:Column' name='VETERAN_MILITARY_STATUS'/>
+<columns xsi:type='fds:Column' name='MOTHER_IDENTIFIER'/>
+<columns xsi:type='fds:Column' name='INTERNAL_ID'/>
+<columns xsi:type='fds:Column' name='CITIZENSHIP'/>
+<columns xsi:type='fds:Column' name='SET_ID'/>
+<columns xsi:type='fds:Column' name='PATIENT_ALIAS'/>
+<columns xsi:type='fds:Column' name='ETHNIC_GROUP'/>
+<columns xsi:type='fds:Column' name='LANGUAGE'/>
+<columns xsi:type='fds:Column' name='COUNTRY_CODE'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='DRIVER_LICENSE'/>
+<columns xsi:type='fds:Column' name='WORK_NUMBER'/>
+<columns xsi:type='fds:Column' name='PID_ID'/>
+<columns xsi:type='fds:Column' name='MESSAGE_ID'/>
+<columns xsi:type='fds:Column' name='PATIENT_ACCOUNT_NUMBER'/>
+<columns xsi:type='fds:Column' name='RELIGION'/>
+<columns xsi:type='fds:Column' name='PATIENT_DEATH_INDICATOR'/>
+<columns xsi:type='fds:Column' name='RACE'/>
+<columns xsi:type='fds:Column' name='MOTHER_MAIDEN_NAME'/>
+<functionalDependencies dependant='#//@tables.81/@columns.1 #//@tables.81/@columns.2 #//@tables.81/@columns.3 #//@tables.81/@columns.4 #//@tables.81/@columns.5' determinant='#//@tables.81/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.81/@columns.0 #//@tables.81/@columns.1 #//@tables.81/@columns.3 #//@tables.81/@columns.4 #//@tables.81/@columns.5' determinant='#//@tables.81/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.81/@columns.0 #//@tables.81/@columns.1 #//@tables.81/@columns.2 #//@tables.81/@columns.4 #//@tables.81/@columns.5' determinant='#//@tables.81/@columns.6 #//@tables.81/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.81/@columns.0 #//@tables.81/@columns.2 #//@tables.81/@columns.4 #//@tables.81/@columns.5' determinant='#//@tables.81/@columns.1 #//@tables.81/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.81/@columns.0 #//@tables.81/@columns.1 #//@tables.81/@columns.2 #//@tables.81/@columns.3 #//@tables.81/@columns.5' determinant='#//@tables.81/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.81/@columns.0 #//@tables.81/@columns.1 #//@tables.81/@columns.2 #//@tables.81/@columns.3 #//@tables.81/@columns.4' determinant='#//@tables.81/@columns.5' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7TEXTINFO'>
+<columns xsi:type='fds:Column' name='HEALTH_NO'/>
+<columns xsi:type='fds:Column' name='REQUESTING_CLIENT'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='OBR_DATE'/>
+<columns xsi:type='fds:Column' name='DISCIPLINE'/>
+<columns xsi:type='fds:Column' name='REPORT_STATUS'/>
+<columns xsi:type='fds:Column' name='FINAL_RESULT_COUNT'/>
+<columns xsi:type='fds:Column' name='ACCESSIONNUM'/>
+<columns xsi:type='fds:Column' name='RESULT_STATUS'/>
+<columns xsi:type='fds:Column' name='FILLER_ORDER_NUM'/>
+<columns xsi:type='fds:Column' name='PRIORITY'/>
+<columns xsi:type='fds:Column' name='LABEL'/>
+<columns xsi:type='fds:Column' name='SENDING_FACILITY'/>
+<columns xsi:type='fds:Column' name='LAB_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.82/@columns.1 #//@tables.82/@columns.2 #//@tables.82/@columns.3 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.7 #//@tables.82/@columns.8' determinant='#//@tables.82/@columns.5 #//@tables.82/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.3 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.5 #//@tables.82/@columns.1 #//@tables.82/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.3 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.1 #//@tables.82/@columns.6 #//@tables.82/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.4' determinant='#//@tables.82/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.1' determinant='#//@tables.82/@columns.2 #//@tables.82/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.1 #//@tables.82/@columns.2' determinant='#//@tables.82/@columns.6 #//@tables.82/@columns.3 #//@tables.82/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.2' determinant='#//@tables.82/@columns.1 #//@tables.82/@columns.3 #//@tables.82/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.7' determinant='#//@tables.82/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.6' determinant='#//@tables.82/@columns.5 #//@tables.82/@columns.7 #//@tables.82/@columns.2 #//@tables.82/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.1 #//@tables.82/@columns.6 #//@tables.82/@columns.2' determinant='#//@tables.82/@columns.7 #//@tables.82/@columns.3 #//@tables.82/@columns.4 #//@tables.82/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.4' determinant='#//@tables.82/@columns.5 #//@tables.82/@columns.1 #//@tables.82/@columns.6 #//@tables.82/@columns.7 #//@tables.82/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.1 #//@tables.82/@columns.2 #//@tables.82/@columns.3 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.9' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.7' determinant='#//@tables.82/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.1 #//@tables.82/@columns.3 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.6 #//@tables.82/@columns.7 #//@tables.82/@columns.2 #//@tables.82/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.0 #//@tables.82/@columns.3' determinant='#//@tables.82/@columns.1 #//@tables.82/@columns.7 #//@tables.82/@columns.2 #//@tables.82/@columns.4 #//@tables.82/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.6 #//@tables.82/@columns.4' determinant='#//@tables.82/@columns.5 #//@tables.82/@columns.1 #//@tables.82/@columns.7 #//@tables.82/@columns.8 #//@tables.82/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.82/@columns.1' determinant='#//@tables.82/@columns.7 #//@tables.82/@columns.2 #//@tables.82/@columns.8 #//@tables.82/@columns.10' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='HL7TEXTMESSAGE'>
+<columns xsi:type='fds:Column' name='SERVICENAME'/>
+<columns xsi:type='fds:Column' name='CREATED'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='LAB_ID'/>
+<columns xsi:type='fds:Column' name='MESSAGE'/>
+<columns xsi:type='fds:Column' name='FILEUPLOADCHECK_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='IMMUNIZATIONS'>
+<columns xsi:type='fds:Column' name='SAVE_DATE'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ARCHIVED'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='IMMUNIZATIONS'/>
+<functionalDependencies dependant='#//@tables.84/@columns.2' determinant='#//@tables.84/@columns.0 #//@tables.84/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.84/@columns.2' determinant='#//@tables.84/@columns.1 #//@tables.84/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.84/@columns.0 #//@tables.84/@columns.2' determinant='#//@tables.84/@columns.1 #//@tables.84/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.84/@columns.2' determinant='#//@tables.84/@columns.0 #//@tables.84/@columns.3 #//@tables.84/@columns.5' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='INCOMINGLABRULES'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ARCHIVE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='FRWDPROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='INTAKE_ANSWER_ELEMENT'>
+<columns xsi:type='fds:Column' name='INTAKE_ANSWER_ELEMENT_ID'/>
+<columns xsi:type='fds:Column' name='ELEMENT'/>
+<columns xsi:type='fds:Column' name='DFLT'/>
+<columns xsi:type='fds:Column' name='LABEL'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_TEMPLATE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_ANSWER_VALIDATION_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='INTAKE_NODE'>
+<columns xsi:type='fds:Column' name='FORM_VERSION'/>
+<columns xsi:type='fds:Column' name='REPEATING'/>
+<columns xsi:type='fds:Column' name='POS'/>
+<columns xsi:type='fds:Column' name='COMMON_LIST'/>
+<columns xsi:type='fds:Column' name='MANDATORY'/>
+<columns xsi:type='fds:Column' name='FORM_TYPE'/>
+<columns xsi:type='fds:Column' name='PARENT_INTAKE_NODE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_TEMPLATE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_ID'/>
+<columns xsi:type='fds:Column' name='QUESTION_ID'/>
+<columns xsi:type='fds:Column' name='VALIDATIONS'/>
+<columns xsi:type='fds:Column' name='PUBLISH_DATE'/>
+<columns xsi:type='fds:Column' name='EQ_TO_ID'/>
+<columns xsi:type='fds:Column' name='PUBLISH_BY'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_LABEL_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='INTAKE_NODE_TEMPLATE'>
+<columns xsi:type='fds:Column' name='REMOTE_INTAKE_NODE_TEMPLATE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_TEMPLATE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_TYPE_ID'/>
+<columns xsi:type='fds:Column' name='INTAKE_NODE_LABEL_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='LOG'>
+<columns xsi:type='fds:Column' name='ACTION'/>
+<columns xsi:type='fds:Column' name='CONTENTID'/>
+<columns xsi:type='fds:Column' name='CONTENT'/>
+<columns xsi:type='fds:Column' name='IP'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='DATETIME'/>
+<columns xsi:type='fds:Column' name='SECURITYID'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='DATA'/>
+</tables>
+<tables xsi:type='fds:Table' name='MEASUREMENTS'>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='APPOINTMENTNO'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHICNO'/>
+<columns xsi:type='fds:Column' name='DATEENTERED'/>
+<columns xsi:type='fds:Column' name='DATAFIELD'/>
+<columns xsi:type='fds:Column' name='DATEOBSERVED'/>
+<columns xsi:type='fds:Column' name='MEASURINGINSTRUCTION'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='COMMENTS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='MEASUREMENTSDELETED'>
+<columns xsi:type='fds:Column' name='ORIGINALID'/>
+<columns xsi:type='fds:Column' name='DATEOBSERVED'/>
+<columns xsi:type='fds:Column' name='DATEDELETED'/>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHICNO'/>
+<columns xsi:type='fds:Column' name='MEASURINGINSTRUCTION'/>
+<columns xsi:type='fds:Column' name='DATAFIELD'/>
+<columns xsi:type='fds:Column' name='DATEENTERED'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='COMMENTS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='MEASUREMENTSEXT'>
+<columns xsi:type='fds:Column' name='VAL'/>
+<columns xsi:type='fds:Column' name='KEYVAL'/>
+<columns xsi:type='fds:Column' name='MEASUREMENT_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.92/@columns.1' determinant='#//@tables.92/@columns.0' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='MESSAGELISTTBL'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='REMOTELOCATION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='MESSAGE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='MESSAGETBL'>
+<columns xsi:type='fds:Column' name='SENTBYLOCATION'/>
+<columns xsi:type='fds:Column' name='ATTACHMENT'/>
+<columns xsi:type='fds:Column' name='THEMESSAGE'/>
+<columns xsi:type='fds:Column' name='THESUBJECT'/>
+<columns xsi:type='fds:Column' name='SENTBYNO'/>
+<columns xsi:type='fds:Column' name='SENTBY'/>
+<columns xsi:type='fds:Column' name='THEDATE'/>
+<columns xsi:type='fds:Column' name='PDFATTACHMENT'/>
+<columns xsi:type='fds:Column' name='SENTTO'/>
+<columns xsi:type='fds:Column' name='ACTIONSTATUS'/>
+<columns xsi:type='fds:Column' name='THEIME'/>
+<columns xsi:type='fds:Column' name='MESSAGEID'/>
+</tables>
+<tables xsi:type='fds:Table' name='MSGDEMOMAP'>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='MYGROUP'>
+<columns xsi:type='fds:Column' name='MYGROUP_NO'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='VIEWORDER'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='DEFAULT_BILLING_FORM'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='OCANCONNEXOPTION'>
+<columns xsi:type='fds:Column' name='LHINCODE'/>
+<columns xsi:type='fds:Column' name='ORGLHIN'/>
+<columns xsi:type='fds:Column' name='ORGNAME'/>
+<columns xsi:type='fds:Column' name='ORGNUMBER'/>
+<columns xsi:type='fds:Column' name='PROGRAMNAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PROGRAMNUMBER'/>
+<functionalDependencies dependant='#//@tables.97/@columns.1' determinant='#//@tables.97/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.97/@columns.0' determinant='#//@tables.97/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.97/@columns.3 #//@tables.97/@columns.4' determinant='#//@tables.97/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.97/@columns.4 #//@tables.97/@columns.2' determinant='#//@tables.97/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.97/@columns.3 #//@tables.97/@columns.2' determinant='#//@tables.97/@columns.4' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='OCANFORMOPTION'>
+<columns xsi:type='fds:Column' name='OCANFORMVERSION'/>
+<columns xsi:type='fds:Column' name='OCANDATACATEGORYNAME'/>
+<columns xsi:type='fds:Column' name='OCANDATACATEGORYVALUE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='OCANDATACATEGORY'/>
+</tables>
+<tables xsi:type='fds:Table' name='PATIENTLABROUTING'>
+<columns xsi:type='fds:Column' name='LAB_TYPE'/>
+<columns xsi:type='fds:Column' name='LAB_NO'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='PHARMACYINFO'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PHONE1'/>
+<columns xsi:type='fds:Column' name='PROVINCE'/>
+<columns xsi:type='fds:Column' name='CITY'/>
+<columns xsi:type='fds:Column' name='FAX'/>
+<columns xsi:type='fds:Column' name='SERVICELOCATIONIDENTIFIER'/>
+<columns xsi:type='fds:Column' name='ADDDATE'/>
+<columns xsi:type='fds:Column' name='PHONE2'/>
+<columns xsi:type='fds:Column' name='POSTALCODE'/>
+<columns xsi:type='fds:Column' name='RECORDID'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<columns xsi:type='fds:Column' name='NOTES'/>
+</tables>
+<tables xsi:type='fds:Table' name='PRESCRIPTION'>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='DATE_PRESCRIBED'/>
+<columns xsi:type='fds:Column' name='DATE_PRINTED'/>
+<columns xsi:type='fds:Column' name='TEXTVIEW'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='DATES_REPRINTED'/>
+<columns xsi:type='fds:Column' name='RX_COMMENTS'/>
+<columns xsi:type='fds:Column' name='SCRIPT_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROFESSIONALSPECIALISTS'>
+<columns xsi:type='fds:Column' name='LNAME'/>
+<columns xsi:type='fds:Column' name='LASTUPDATED'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='SPECTYPE'/>
+<columns xsi:type='fds:Column' name='FNAME'/>
+<columns xsi:type='fds:Column' name='FAX'/>
+<columns xsi:type='fds:Column' name='PROLETTERS'/>
+<columns xsi:type='fds:Column' name='EDATASERVICEKEY'/>
+<columns xsi:type='fds:Column' name='DEPARTMENTID'/>
+<columns xsi:type='fds:Column' name='REFERRALNO'/>
+<columns xsi:type='fds:Column' name='SPECID'/>
+<columns xsi:type='fds:Column' name='ANNOTATION'/>
+<columns xsi:type='fds:Column' name='EDATASERVICENAME'/>
+<columns xsi:type='fds:Column' name='WEBSITE'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='EDATAOSCARKEY'/>
+<columns xsi:type='fds:Column' name='INSTITUTIONID'/>
+<columns xsi:type='fds:Column' name='EDATAURL'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<functionalDependencies dependant='#//@tables.102/@columns.1' determinant='#//@tables.102/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.102/@columns.1' determinant='#//@tables.102/@columns.2 #//@tables.102/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.102/@columns.14 #//@tables.102/@columns.1 #//@tables.102/@columns.3 #//@tables.102/@columns.5' determinant='#//@tables.102/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.102/@columns.5' determinant='#//@tables.102/@columns.2 #//@tables.102/@columns.14' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROGRAM_ACCESS'>
+<columns xsi:type='fds:Column' name='ALL_ROLES'/>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ACCESS_TYPE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROGRAM_PROVIDER'>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='TEAM_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ROLE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROPERTY'>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='VALUE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROVIDER'>
+<columns xsi:type='fds:Column' name='SIGNED_CONFIDENTIALITY'/>
+<columns xsi:type='fds:Column' name='BILLING_NO'/>
+<columns xsi:type='fds:Column' name='COMMENTS'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='PROVIDER_TYPE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='SPECIALTY'/>
+<columns xsi:type='fds:Column' name='TEAM'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='DOB'/>
+<columns xsi:type='fds:Column' name='RMA_NO'/>
+<columns xsi:type='fds:Column' name='JOB_TITLE'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='OHIP_NO'/>
+<columns xsi:type='fds:Column' name='PROVIDER_ACTIVITY'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<columns xsi:type='fds:Column' name='HSO_NO'/>
+<columns xsi:type='fds:Column' name='WORK_PHONE'/>
+<columns xsi:type='fds:Column' name='PRACTITIONERNO'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='INIT'/>
+</tables>
+<tables xsi:type='fds:Table' name='PROVIDERARCHIVE'>
+<columns xsi:type='fds:Column' name='OHIP_NO'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='FIRST_NAME'/>
+<columns xsi:type='fds:Column' name='BILLING_NO'/>
+<columns xsi:type='fds:Column' name='COMMENTS'/>
+<columns xsi:type='fds:Column' name='SIGNED_CONFIDENTIALITY'/>
+<columns xsi:type='fds:Column' name='LAST_NAME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='PROVIDER_TYPE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='TEAM'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='DOB'/>
+<columns xsi:type='fds:Column' name='RMA_NO'/>
+<columns xsi:type='fds:Column' name='JOB_TITLE'/>
+<columns xsi:type='fds:Column' name='PHONE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_ACTIVITY'/>
+<columns xsi:type='fds:Column' name='SPECIALTY'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='EMAIL'/>
+<columns xsi:type='fds:Column' name='HSO_NO'/>
+<columns xsi:type='fds:Column' name='WORK_PHONE'/>
+<columns xsi:type='fds:Column' name='PRACTITIONERNO'/>
+<columns xsi:type='fds:Column' name='ADDRESS'/>
+<columns xsi:type='fds:Column' name='INIT'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.2 #//@tables.107/@columns.3 #//@tables.107/@columns.4 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.2 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.9 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.5 #//@tables.107/@columns.11' determinant='#//@tables.107/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.0 #//@tables.107/@columns.2 #//@tables.107/@columns.3 #//@tables.107/@columns.4 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.9 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.12' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.5' determinant='#//@tables.107/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.3 #//@tables.107/@columns.5' determinant='#//@tables.107/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.0 #//@tables.107/@columns.2 #//@tables.107/@columns.6 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.1 #//@tables.107/@columns.3 #//@tables.107/@columns.4 #//@tables.107/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.5 #//@tables.107/@columns.7' determinant='#//@tables.107/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.10' determinant='#//@tables.107/@columns.5 #//@tables.107/@columns.11' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.1 #//@tables.107/@columns.5 #//@tables.107/@columns.6' determinant='#//@tables.107/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.0 #//@tables.107/@columns.2 #//@tables.107/@columns.4' determinant='#//@tables.107/@columns.1 #//@tables.107/@columns.3 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.107/@columns.12' determinant='#//@tables.107/@columns.1 #//@tables.107/@columns.0 #//@tables.107/@columns.2 #//@tables.107/@columns.3 #//@tables.107/@columns.4 #//@tables.107/@columns.5 #//@tables.107/@columns.6 #//@tables.107/@columns.9 #//@tables.107/@columns.7' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='QUEUE_DOCUMENT_LINK'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='DOCUMENT_ID'/>
+<columns xsi:type='fds:Column' name='QUEUE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='QUICKLIST'>
+<columns xsi:type='fds:Column' name='DXRESEARCHCODE'/>
+<columns xsi:type='fds:Column' name='CODINGSYSTEM'/>
+<columns xsi:type='fds:Column' name='QUICKLISTNAME'/>
+<columns xsi:type='fds:Column' name='CREATEDBYPROVIDER'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.109/@columns.1' determinant='#//@tables.109/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.109/@columns.3' determinant='#//@tables.109/@columns.1 #//@tables.109/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.109/@columns.1 #//@tables.109/@columns.2' determinant='#//@tables.109/@columns.3' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='QUICKLISTUSER'>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='QUICKLISTNAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='LASTUSED'/>
+</tables>
+<tables xsi:type='fds:Table' name='RECYCLEBIN'>
+<columns xsi:type='fds:Column' name='TABLE_CONTENT'/>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='KEYWORD'/>
+<columns xsi:type='fds:Column' name='RECYCLEBIN_NO'/>
+<columns xsi:type='fds:Column' name='UPDATEDATETIME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<functionalDependencies dependant='#//@tables.111/@columns.1 #//@tables.111/@columns.2' determinant='#//@tables.111/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.111/@columns.1' determinant='#//@tables.111/@columns.2' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='RELATIONSHIPS'>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='RELATION'/>
+<columns xsi:type='fds:Column' name='RELATION_DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CREATION_DATE'/>
+<columns xsi:type='fds:Column' name='FACILITY_ID'/>
+<columns xsi:type='fds:Column' name='DELETED'/>
+<columns xsi:type='fds:Column' name='EMERGENCY_CONTACT'/>
+<columns xsi:type='fds:Column' name='NOTES'/>
+<columns xsi:type='fds:Column' name='SUB_DECISION_MAKER'/>
+<functionalDependencies dependant='#//@tables.112/@columns.1' determinant='#//@tables.112/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.7 #//@tables.112/@columns.10' determinant='#//@tables.112/@columns.3 #//@tables.112/@columns.0 #//@tables.112/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.1 #//@tables.112/@columns.10' determinant='#//@tables.112/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.10' determinant='#//@tables.112/@columns.0 #//@tables.112/@columns.1 #//@tables.112/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.10' determinant='#//@tables.112/@columns.0 #//@tables.112/@columns.1 #//@tables.112/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.7' determinant='#//@tables.112/@columns.3 #//@tables.112/@columns.1 #//@tables.112/@columns.4 #//@tables.112/@columns.10' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.112/@columns.3' determinant='#//@tables.112/@columns.0 #//@tables.112/@columns.1 #//@tables.112/@columns.4 #//@tables.112/@columns.7 #//@tables.112/@columns.10' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT'>
+<columns xsi:type='fds:Column' name='REPORTTYPE'/>
+<columns xsi:type='fds:Column' name='ORGAPPLICABLE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='UPDATEDBY'/>
+<columns xsi:type='fds:Column' name='UPDATEDDATE'/>
+<columns xsi:type='fds:Column' name='DATEOPTION'/>
+<columns xsi:type='fds:Column' name='TITLE'/>
+<columns xsi:type='fds:Column' name='REPORTGROUP'/>
+<columns xsi:type='fds:Column' name='DATEPART'/>
+<columns xsi:type='fds:Column' name='REPORTNO'/>
+<columns xsi:type='fds:Column' name='SPTORUN'/>
+<columns xsi:type='fds:Column' name='TABLENAME'/>
+<columns xsi:type='fds:Column' name='NOTES'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_DATE_SP'>
+<columns xsi:type='fds:Column' name='SPTORUN'/>
+<columns xsi:type='fds:Column' name='ASOFDATE'/>
+<columns xsi:type='fds:Column' name='ASOFDATE_S'/>
+<columns xsi:type='fds:Column' name='STARTDATE'/>
+<columns xsi:type='fds:Column' name='STARTDATE_S'/>
+<columns xsi:type='fds:Column' name='ENDDATE_S'/>
+<columns xsi:type='fds:Column' name='ENDDATE'/>
+<columns xsi:type='fds:Column' name='REPORTNO'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_FILTER'>
+<columns xsi:type='fds:Column' name='FIELDTYPE'/>
+<columns xsi:type='fds:Column' name='ISCROSSTABHEADERS'/>
+<columns xsi:type='fds:Column' name='OPERATOR'/>
+<columns xsi:type='fds:Column' name='REPORTNO'/>
+<columns xsi:type='fds:Column' name='FIELDNAME'/>
+<columns xsi:type='fds:Column' name='FIELDSQL'/>
+<columns xsi:type='fds:Column' name='LOOKUP_TABLE'/>
+<columns xsi:type='fds:Column' name='FIELDDESC'/>
+<columns xsi:type='fds:Column' name='FIELDNO'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='LOOKUP_TREE'/>
+<columns xsi:type='fds:Column' name='VALUEFORMAT'/>
+<columns xsi:type='fds:Column' name='LOOKUP_SCRIPT'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_LK_REPORTGROUP'>
+<columns xsi:type='fds:Column' name='ACTIVEYN'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='ORDERBYINDEX'/>
+<columns xsi:type='fds:Column' name='SHORTDESC'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_OPTION'>
+<columns xsi:type='fds:Column' name='ACTIVEYN'/>
+<columns xsi:type='fds:Column' name='RPTFILENO'/>
+<columns xsi:type='fds:Column' name='DATEFIELD'/>
+<columns xsi:type='fds:Column' name='DATEFIELDDESC'/>
+<columns xsi:type='fds:Column' name='RPTFILENAME'/>
+<columns xsi:type='fds:Column' name='REPORTNO'/>
+<columns xsi:type='fds:Column' name='SQLWHERE'/>
+<columns xsi:type='fds:Column' name='SQLORDERBY'/>
+<columns xsi:type='fds:Column' name='DATEFIELDTYPE'/>
+<columns xsi:type='fds:Column' name='DEFAULTYN'/>
+<columns xsi:type='fds:Column' name='LONGDESC'/>
+<columns xsi:type='fds:Column' name='REPORTOPTIONID'/>
+<columns xsi:type='fds:Column' name='OPTIONTITLE'/>
+<columns xsi:type='fds:Column' name='RPTVERSION'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_QGVIEWFIELD'>
+<columns xsi:type='fds:Column' name='GROUPRANK'/>
+<columns xsi:type='fds:Column' name='FIELDLENGTH'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='QGVIEWNO'/>
+<columns xsi:type='fds:Column' name='FIELDNAME'/>
+<columns xsi:type='fds:Column' name='NUMBERMASK'/>
+<columns xsi:type='fds:Column' name='LOOKUPTABLE'/>
+<columns xsi:type='fds:Column' name='SOURCETXT'/>
+<columns xsi:type='fds:Column' name='FIELDNO'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='FIELDTYPECODE'/>
+<functionalDependencies dependant='#//@tables.118/@columns.1' determinant='#//@tables.118/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.118/@columns.0' determinant='#//@tables.118/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.118/@columns.10' determinant='#//@tables.118/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.118/@columns.4 #//@tables.118/@columns.9 #//@tables.118/@columns.10' determinant='#//@tables.118/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.118/@columns.10' determinant='#//@tables.118/@columns.0 #//@tables.118/@columns.1 #//@tables.118/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.118/@columns.7' determinant='#//@tables.118/@columns.4 #//@tables.118/@columns.9 #//@tables.118/@columns.10' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_QGVIEWSUMMARY'>
+<columns xsi:type='fds:Column' name='UPDATEDBY'/>
+<columns xsi:type='fds:Column' name='SECUREYN'/>
+<columns xsi:type='fds:Column' name='REFVIEWS'/>
+<columns xsi:type='fds:Column' name='ACTIVEYN'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='DISTINCTYN'/>
+<columns xsi:type='fds:Column' name='QGVIEWCODE'/>
+<columns xsi:type='fds:Column' name='MASTERTYPE'/>
+<columns xsi:type='fds:Column' name='OBJECT_TYPE'/>
+<columns xsi:type='fds:Column' name='FILTERS'/>
+<columns xsi:type='fds:Column' name='RELATIONS'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='UPDATEDDATE'/>
+<columns xsi:type='fds:Column' name='DBENTITY'/>
+<columns xsi:type='fds:Column' name='GROUPCODE'/>
+<columns xsi:type='fds:Column' name='QGVIEWNO'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_ROLE'>
+<columns xsi:type='fds:Column' name='ACCESS_TYPE'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_TEMPLATE'>
+<columns xsi:type='fds:Column' name='PRIVATEYN'/>
+<columns xsi:type='fds:Column' name='LOGINID'/>
+<columns xsi:type='fds:Column' name='STARTDATE'/>
+<columns xsi:type='fds:Column' name='ENDDATE'/>
+<columns xsi:type='fds:Column' name='ENDPAYPERIOD'/>
+<columns xsi:type='fds:Column' name='REPORTOPTIONID'/>
+<columns xsi:type='fds:Column' name='UPDATEDATE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='TEMPLATENO'/>
+<columns xsi:type='fds:Column' name='STARTPAYPERIOD'/>
+<columns xsi:type='fds:Column' name='REPORTNO'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_TEMPLATE_CRITERIA'>
+<columns xsi:type='fds:Column' name='REQUIRED'/>
+<columns xsi:type='fds:Column' name='OPERATORS'/>
+<columns xsi:type='fds:Column' name='VAL'/>
+<columns xsi:type='fds:Column' name='COUNTER'/>
+<columns xsi:type='fds:Column' name='FIELDNO'/>
+<columns xsi:type='fds:Column' name='OPERATOR'/>
+<columns xsi:type='fds:Column' name='TEMPLATENO'/>
+<columns xsi:type='fds:Column' name='RELATION'/>
+<columns xsi:type='fds:Column' name='VALDESC'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORT_TEMPLATE_ORG'>
+<columns xsi:type='fds:Column' name='ORGCD'/>
+<columns xsi:type='fds:Column' name='TEMPLATENO'/>
+<columns xsi:type='fds:Column' name='COUNTER'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTAGESEX'>
+<columns xsi:type='fds:Column' name='REPORTDATE'/>
+<columns xsi:type='fds:Column' name='AGE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ROSTER'/>
+<columns xsi:type='fds:Column' name='SEX'/>
+<columns xsi:type='fds:Column' name='DATE_JOINED'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTBYEXAMPLESFAVORITE'>
+<columns xsi:type='fds:Column' name='PROVIDERNO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='QUERY'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTCONFIG'>
+<columns xsi:type='fds:Column' name='SAVE'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='CAPTION'/>
+<columns xsi:type='fds:Column' name='REPORT_ID'/>
+<columns xsi:type='fds:Column' name='ORDER_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTITEM'>
+<columns xsi:type='fds:Column' name='REPORT_NAME'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTPROVIDER'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='ACTION'/>
+<columns xsi:type='fds:Column' name='TEAM'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTTABLEFIELDCAPTION'>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='CAPTION'/>
+</tables>
+<tables xsi:type='fds:Table' name='REPORTTEMPLATES'>
+<columns xsi:type='fds:Column' name='ACTIVE'/>
+<columns xsi:type='fds:Column' name='TEMPLATETITLE'/>
+<columns xsi:type='fds:Column' name='TEMPLATEDESCRIPTION'/>
+<columns xsi:type='fds:Column' name='TEMPLATESQL'/>
+<columns xsi:type='fds:Column' name='TEMPLATEXML'/>
+<columns xsi:type='fds:Column' name='TYPE'/>
+<columns xsi:type='fds:Column' name='TEMPLATEID'/>
+</tables>
+<tables xsi:type='fds:Table' name='RSCHEDULE'>
+<columns xsi:type='fds:Column' name='AVAIL_HOUR'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='SDATE'/>
+<columns xsi:type='fds:Column' name='AVAILABLE'/>
+<columns xsi:type='fds:Column' name='EDATE'/>
+<columns xsi:type='fds:Column' name='DAY_OF_WEEK'/>
+<columns xsi:type='fds:Column' name='AVAIL_HOURB'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.131/@columns.1' determinant='#//@tables.131/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.3' determinant='#//@tables.131/@columns.0 #//@tables.131/@columns.2 #//@tables.131/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.6' determinant='#//@tables.131/@columns.4 #//@tables.131/@columns.2 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.4' determinant='#//@tables.131/@columns.6 #//@tables.131/@columns.2 #//@tables.131/@columns.1 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.7' determinant='#//@tables.131/@columns.0 #//@tables.131/@columns.6 #//@tables.131/@columns.1 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.7' determinant='#//@tables.131/@columns.0 #//@tables.131/@columns.2 #//@tables.131/@columns.1 #//@tables.131/@columns.3 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.0 #//@tables.131/@columns.7 #//@tables.131/@columns.2 #//@tables.131/@columns.1 #//@tables.131/@columns.3 #//@tables.131/@columns.5' determinant='#//@tables.131/@columns.8' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.5' determinant='#//@tables.131/@columns.7' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.6 #//@tables.131/@columns.5' determinant='#//@tables.131/@columns.4 #//@tables.131/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.7 #//@tables.131/@columns.4 #//@tables.131/@columns.5' determinant='#//@tables.131/@columns.0 #//@tables.131/@columns.6 #//@tables.131/@columns.1 #//@tables.131/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.6 #//@tables.131/@columns.1 #//@tables.131/@columns.3' determinant='#//@tables.131/@columns.7 #//@tables.131/@columns.4 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.4 #//@tables.131/@columns.1 #//@tables.131/@columns.3' determinant='#//@tables.131/@columns.6 #//@tables.131/@columns.7 #//@tables.131/@columns.2 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.131/@columns.3' determinant='#//@tables.131/@columns.7 #//@tables.131/@columns.2 #//@tables.131/@columns.1 #//@tables.131/@columns.5' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='SCHEDULEDATE'>
+<columns xsi:type='fds:Column' name='HOUR'/>
+<columns xsi:type='fds:Column' name='PRIORITY'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='AVAILABLE'/>
+<columns xsi:type='fds:Column' name='REASON'/>
+<columns xsi:type='fds:Column' name='SDATE'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<functionalDependencies dependant='#//@tables.132/@columns.1 #//@tables.132/@columns.2' determinant='#//@tables.132/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.2' determinant='#//@tables.132/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.1 #//@tables.132/@columns.2' determinant='#//@tables.132/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.3' determinant='#//@tables.132/@columns.1 #//@tables.132/@columns.0 #//@tables.132/@columns.4 #//@tables.132/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.4' determinant='#//@tables.132/@columns.1 #//@tables.132/@columns.0 #//@tables.132/@columns.3 #//@tables.132/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.1' determinant='#//@tables.132/@columns.3 #//@tables.132/@columns.2 #//@tables.132/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.132/@columns.1 #//@tables.132/@columns.0 #//@tables.132/@columns.2 #//@tables.132/@columns.5' determinant='#//@tables.132/@columns.7' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='SCHEDULEHOLIDAY'>
+<columns xsi:type='fds:Column' name='HOLIDAY_NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='SCHEDULETEMPLATECODE'>
+<columns xsi:type='fds:Column' name='BOOKINGLIMIT'/>
+<columns xsi:type='fds:Column' name='CODE'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='CONFIRM'/>
+<columns xsi:type='fds:Column' name='COLOR'/>
+<columns xsi:type='fds:Column' name='DURATION'/>
+</tables>
+<tables xsi:type='fds:Table' name='SCRATCH_PAD'>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='DATE_TIME'/>
+<columns xsi:type='fds:Column' name='SCRATCH_TEXT'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='SECOBJECTNAME'>
+<columns xsi:type='fds:Column' name='ORGAPPLICABLE'/>
+<columns xsi:type='fds:Column' name='OBJECTNAME'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+</tables>
+<tables xsi:type='fds:Table' name='SECOBJPRIVILEGE'>
+<columns xsi:type='fds:Column' name='PRIORITY'/>
+<columns xsi:type='fds:Column' name='ROLEUSERGROUP'/>
+<columns xsi:type='fds:Column' name='PRIVILEGE'/>
+<columns xsi:type='fds:Column' name='OBJECTNAME'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='SECROLE'>
+<columns xsi:type='fds:Column' name='DISPLAYORDER'/>
+<columns xsi:type='fds:Column' name='ISACTIVE'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='DESCRIPTION'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='ROLE_NAME'/>
+<columns xsi:type='fds:Column' name='ROLE_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='SECURITY'>
+<columns xsi:type='fds:Column' name='PIN'/>
+<columns xsi:type='fds:Column' name='B_LOCALLOCKSET'/>
+<columns xsi:type='fds:Column' name='B_REMOTELOCKSET'/>
+<columns xsi:type='fds:Column' name='DATE_EXPIREDATE'/>
+<columns xsi:type='fds:Column' name='B_EXPIRESET'/>
+<columns xsi:type='fds:Column' name='SECURITY_NO'/>
+<columns xsi:type='fds:Column' name='USER_NAME'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='FORCEPASSWORDRESET'/>
+<columns xsi:type='fds:Column' name='PASSWORD'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<functionalDependencies dependant='#//@tables.139/@columns.1 #//@tables.139/@columns.2' determinant='#//@tables.139/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.139/@columns.2' determinant='#//@tables.139/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.139/@columns.4' determinant='#//@tables.139/@columns.1 #//@tables.139/@columns.0 #//@tables.139/@columns.2 #//@tables.139/@columns.3' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='SECUSERROLE'>
+<columns xsi:type='fds:Column' name='ACTIVEYN'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ORGCD'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEUSER'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='LASTUPDATEDATE'/>
+<columns xsi:type='fds:Column' name='ROLE_NAME'/>
+</tables>
+<tables xsi:type='fds:Table' name='SPECIALISTSJAVASCRIPT'>
+<columns xsi:type='fds:Column' name='JAVASCRIPTSTRING'/>
+<columns xsi:type='fds:Column' name='SETID'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLAN_RESPONSE_LOG'>
+<columns xsi:type='fds:Column' name='REAL_FILENAME'/>
+<columns xsi:type='fds:Column' name='RESULT'/>
+<columns xsi:type='fds:Column' name='MSGS'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='TRANSACTION_NO'/>
+<functionalDependencies dependant='#//@tables.142/@columns.1 #//@tables.142/@columns.5' determinant='#//@tables.142/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.142/@columns.1 #//@tables.142/@columns.5' determinant='#//@tables.142/@columns.4' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLAN_SUBMISSION_LINK'>
+<columns xsi:type='fds:Column' name='BILL_ACTIVITY_ID'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='BILLINGMASTER_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANC12'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='T_PRACTITIONER_NO'/>
+<columns xsi:type='fds:Column' name='T_OFFICEFOLIOCLAIMNO'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+<columns xsi:type='fds:Column' name='T_EXP3'/>
+<columns xsi:type='fds:Column' name='T_EXP1'/>
+<columns xsi:type='fds:Column' name='T_EXP2'/>
+<columns xsi:type='fds:Column' name='T_EXP4'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+<columns xsi:type='fds:Column' name='T_EXP7'/>
+<columns xsi:type='fds:Column' name='T_EXP6'/>
+<columns xsi:type='fds:Column' name='T_EXP5'/>
+<columns xsi:type='fds:Column' name='C12_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANS00'>
+<columns xsi:type='fds:Column' name='T_PAYMENT'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='T_AJA6'/>
+<columns xsi:type='fds:Column' name='T_AJA3'/>
+<columns xsi:type='fds:Column' name='T_AJA4'/>
+<columns xsi:type='fds:Column' name='T_AJA1'/>
+<columns xsi:type='fds:Column' name='T_LINECODE'/>
+<columns xsi:type='fds:Column' name='T_AJA2'/>
+<columns xsi:type='fds:Column' name='T_AJA7'/>
+<columns xsi:type='fds:Column' name='T_AJA5'/>
+<columns xsi:type='fds:Column' name='T_PHNDEPNO'/>
+<columns xsi:type='fds:Column' name='T_BILLNOSERVICES'/>
+<columns xsi:type='fds:Column' name='T_PREVIOUSPAIDDATE'/>
+<columns xsi:type='fds:Column' name='T_PAIDNOSERVICES'/>
+<columns xsi:type='fds:Column' name='T_S00TYPE'/>
+<columns xsi:type='fds:Column' name='T_PLANREFNO'/>
+<columns xsi:type='fds:Column' name='T_CLAIMSOURCE'/>
+<columns xsi:type='fds:Column' name='T_TODAY'/>
+<columns xsi:type='fds:Column' name='T_PRACTITIONERNO'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='T_PAIDAMT'/>
+<columns xsi:type='fds:Column' name='T_MSPCTLNO'/>
+<columns xsi:type='fds:Column' name='T_MSPRCDDATE'/>
+<columns xsi:type='fds:Column' name='T_EXP1'/>
+<columns xsi:type='fds:Column' name='T_PAIDFEESCHEDULE'/>
+<columns xsi:type='fds:Column' name='T_SERVICEDATE'/>
+<columns xsi:type='fds:Column' name='T_BILLFEESCHEDULE'/>
+<columns xsi:type='fds:Column' name='T_SURNAME'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+<columns xsi:type='fds:Column' name='T_BILLAMT'/>
+<columns xsi:type='fds:Column' name='T_PAIDCLAFCODE'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+<columns xsi:type='fds:Column' name='T_INITIAL'/>
+<columns xsi:type='fds:Column' name='T_BILLCLAFCODE'/>
+<columns xsi:type='fds:Column' name='T_PHN'/>
+<columns xsi:type='fds:Column' name='T_AJC5'/>
+<columns xsi:type='fds:Column' name='T_AJC6'/>
+<columns xsi:type='fds:Column' name='T_AJC3'/>
+<columns xsi:type='fds:Column' name='T_AJC4'/>
+<columns xsi:type='fds:Column' name='T_ICBCWCB'/>
+<columns xsi:type='fds:Column' name='T_AJC1'/>
+<columns xsi:type='fds:Column' name='T_AJC2'/>
+<columns xsi:type='fds:Column' name='T_EXP7'/>
+<columns xsi:type='fds:Column' name='T_EXP6'/>
+<columns xsi:type='fds:Column' name='S00_ID'/>
+<columns xsi:type='fds:Column' name='T_OFFICENO'/>
+<columns xsi:type='fds:Column' name='T_EXP3'/>
+<columns xsi:type='fds:Column' name='T_EXP2'/>
+<columns xsi:type='fds:Column' name='T_EXP5'/>
+<columns xsi:type='fds:Column' name='T_AJC7'/>
+<columns xsi:type='fds:Column' name='T_EXP4'/>
+<columns xsi:type='fds:Column' name='T_PAIDRATE'/>
+<columns xsi:type='fds:Column' name='T_INSURERCODE'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANS21'>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='T_CHEQUE'/>
+<columns xsi:type='fds:Column' name='T_PAYEENAME'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='T_AMTPAID'/>
+<columns xsi:type='fds:Column' name='T_NEWBALANCE'/>
+<columns xsi:type='fds:Column' name='T_BALANCEFWD'/>
+<columns xsi:type='fds:Column' name='T_AMTBILLED'/>
+<columns xsi:type='fds:Column' name='T_PAYMENT'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='T_MSPCTLNO'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='T_LINECODE'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANS22'>
+<columns xsi:type='fds:Column' name='T_LINECODE'/>
+<columns xsi:type='fds:Column' name='T_S22TYPE'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='T_PAYMENT'/>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='T_AMTBILLED'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='T_AMTPAID'/>
+<columns xsi:type='fds:Column' name='T_PRACTITIONERNO'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+<columns xsi:type='fds:Column' name='T_PRACTITIONERNAME'/>
+<columns xsi:type='fds:Column' name='T_MSPCTLNO'/>
+<columns xsi:type='fds:Column' name='S22_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANS23'>
+<columns xsi:type='fds:Column' name='T_OAMOUNT'/>
+<columns xsi:type='fds:Column' name='T_BALANCEFWD'/>
+<columns xsi:type='fds:Column' name='T_ADJOUTSTANDING'/>
+<columns xsi:type='fds:Column' name='T_RPERCENT'/>
+<columns xsi:type='fds:Column' name='T_OPERCENT'/>
+<columns xsi:type='fds:Column' name='T_GAMOUNT'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+<columns xsi:type='fds:Column' name='T_ADJMADE'/>
+<columns xsi:type='fds:Column' name='T_AJC'/>
+<columns xsi:type='fds:Column' name='T_CALCMETHOD'/>
+<columns xsi:type='fds:Column' name='T_RAMOUNT'/>
+<columns xsi:type='fds:Column' name='T_LINECODE'/>
+<columns xsi:type='fds:Column' name='T_S23TYPE'/>
+<columns xsi:type='fds:Column' name='T_AJM'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='T_MSPCTLNO'/>
+<columns xsi:type='fds:Column' name='T_AJI'/>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='T_PAYMENT'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='S23_ID'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+</tables>
+<tables xsi:type='fds:Table' name='TELEPLANS25'>
+<columns xsi:type='fds:Column' name='FILENAME'/>
+<columns xsi:type='fds:Column' name='T_LINECODE'/>
+<columns xsi:type='fds:Column' name='T_DATASEQ'/>
+<columns xsi:type='fds:Column' name='T_S25TYPE'/>
+<columns xsi:type='fds:Column' name='T_PAYMENT'/>
+<columns xsi:type='fds:Column' name='T_DATACENTER'/>
+<columns xsi:type='fds:Column' name='S21_ID'/>
+<columns xsi:type='fds:Column' name='T_PAYEENO'/>
+<columns xsi:type='fds:Column' name='T_PRACTITIONERNO'/>
+<columns xsi:type='fds:Column' name='T_MESSAGE'/>
+<columns xsi:type='fds:Column' name='T_FILLER'/>
+<columns xsi:type='fds:Column' name='S25_ID'/>
+<columns xsi:type='fds:Column' name='T_MSPCTLNO'/>
+</tables>
+<tables xsi:type='fds:Table' name='TICKLER'>
+<columns xsi:type='fds:Column' name='MESSAGE'/>
+<columns xsi:type='fds:Column' name='PRIORITY'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='TASK_ASSIGNED_TO'/>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='SERVICE_DATE'/>
+<columns xsi:type='fds:Column' name='TICKLER_NO'/>
+<columns xsi:type='fds:Column' name='PROGRAM_ID'/>
+<columns xsi:type='fds:Column' name='UPDATE_DATE'/>
+<functionalDependencies dependant='#//@tables.150/@columns.1' determinant='#//@tables.150/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.3 #//@tables.150/@columns.4' determinant='#//@tables.150/@columns.1 #//@tables.150/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.4' determinant='#//@tables.150/@columns.3' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.3' determinant='#//@tables.150/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.1' determinant='#//@tables.150/@columns.2 #//@tables.150/@columns.3 #//@tables.150/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.5' determinant='#//@tables.150/@columns.0 #//@tables.150/@columns.1 #//@tables.150/@columns.2 #//@tables.150/@columns.3 #//@tables.150/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.1 #//@tables.150/@columns.3 #//@tables.150/@columns.4' determinant='#//@tables.150/@columns.2 #//@tables.150/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.3 #//@tables.150/@columns.4 #//@tables.150/@columns.5' determinant='#//@tables.150/@columns.0 #//@tables.150/@columns.1 #//@tables.150/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.150/@columns.1 #//@tables.150/@columns.3 #//@tables.150/@columns.4' determinant='#//@tables.150/@columns.2 #//@tables.150/@columns.6' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='TICKLER_LINK'>
+<columns xsi:type='fds:Column' name='TABLE_NAME'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='TICKLER_NO'/>
+<columns xsi:type='fds:Column' name='TABLE_ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='TICKLER_TEXT_SUGGEST'>
+<columns xsi:type='fds:Column' name='CREATOR'/>
+<columns xsi:type='fds:Column' name='CREATE_DATE'/>
+<columns xsi:type='fds:Column' name='ACTIVE'/>
+<columns xsi:type='fds:Column' name='SUGGESTED_TEXT'/>
+<columns xsi:type='fds:Column' name='ID'/>
+</tables>
+<tables xsi:type='fds:Table' name='VALIDATIONS'>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='MINVALUE'/>
+<columns xsi:type='fds:Column' name='MAXVALUE'/>
+<columns xsi:type='fds:Column' name='MAXLENGTH'/>
+<columns xsi:type='fds:Column' name='ISDATE'/>
+<columns xsi:type='fds:Column' name='MINLENGTH'/>
+<columns xsi:type='fds:Column' name='ISNUMERIC'/>
+<columns xsi:type='fds:Column' name='REGULAREXP'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='ISTRUE'/>
+<functionalDependencies dependant='#//@tables.153/@columns.2' determinant='#//@tables.153/@columns.0 #//@tables.153/@columns.1' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.5' determinant='#//@tables.153/@columns.3 #//@tables.153/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.3 #//@tables.153/@columns.5' determinant='#//@tables.153/@columns.1 #//@tables.153/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.5' determinant='#//@tables.153/@columns.3 #//@tables.153/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.3 #//@tables.153/@columns.5' determinant='#//@tables.153/@columns.4 #//@tables.153/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.1' determinant='#//@tables.153/@columns.3 #//@tables.153/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.1' determinant='#//@tables.153/@columns.0 #//@tables.153/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.3 #//@tables.153/@columns.1 #//@tables.153/@columns.5' determinant='#//@tables.153/@columns.4 #//@tables.153/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.3' determinant='#//@tables.153/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.4 #//@tables.153/@columns.6' determinant='#//@tables.153/@columns.3 #//@tables.153/@columns.0 #//@tables.153/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.153/@columns.0' determinant='#//@tables.153/@columns.7' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='WAITINGLIST'>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='LISTID'/>
+<columns xsi:type='fds:Column' name='IS_HISTORY'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='NOTE'/>
+<columns xsi:type='fds:Column' name='ONLISTSINCE'/>
+<columns xsi:type='fds:Column' name='POSITION'/>
+<functionalDependencies dependant='#//@tables.154/@columns.1 #//@tables.154/@columns.2' determinant='#//@tables.154/@columns.0' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.2' determinant='#//@tables.154/@columns.4' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.2' determinant='#//@tables.154/@columns.5' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.2' determinant='#//@tables.154/@columns.1 #//@tables.154/@columns.6' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.5' determinant='#//@tables.154/@columns.1 #//@tables.154/@columns.0 #//@tables.154/@columns.4 #//@tables.154/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.1' determinant='#//@tables.154/@columns.4 #//@tables.154/@columns.5 #//@tables.154/@columns.2' xsi:type='fds:FunctionalDependency'/>
+<functionalDependencies dependant='#//@tables.154/@columns.1' determinant='#//@tables.154/@columns.5 #//@tables.154/@columns.6 #//@tables.154/@columns.2' xsi:type='fds:FunctionalDependency'/>
+</tables>
+<tables xsi:type='fds:Table' name='WAITINGLISTNAME'>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='NAME'/>
+<columns xsi:type='fds:Column' name='CREATE_DATE'/>
+<columns xsi:type='fds:Column' name='IS_HISTORY'/>
+<columns xsi:type='fds:Column' name='GROUP_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='WCB'>
+<columns xsi:type='fds:Column' name='STATUS'/>
+<columns xsi:type='fds:Column' name='W_REHAB'/>
+<columns xsi:type='fds:Column' name='W_TOFOLLOW'/>
+<columns xsi:type='fds:Column' name='W_WORKDATE'/>
+<columns xsi:type='fds:Column' name='W_DURATION'/>
+<columns xsi:type='fds:Column' name='W_FNAME'/>
+<columns xsi:type='fds:Column' name='W_GENDER'/>
+<columns xsi:type='fds:Column' name='W_WCBADVISOR'/>
+<columns xsi:type='fds:Column' name='W_CITY'/>
+<columns xsi:type='fds:Column' name='W_ICD9'/>
+<columns xsi:type='fds:Column' name='W_SIDE'/>
+<columns xsi:type='fds:Column' name='W_RPHYSICIAN'/>
+<columns xsi:type='fds:Column' name='W_DOB'/>
+<columns xsi:type='fds:Column' name='W_PRACNO'/>
+<columns xsi:type='fds:Column' name='W_OPCITY'/>
+<columns xsi:type='fds:Column' name='W_CAPABILITY'/>
+<columns xsi:type='fds:Column' name='W_WORK'/>
+<columns xsi:type='fds:Column' name='W_EMPAREA'/>
+<columns xsi:type='fds:Column' name='DEMOGRAPHIC_NO'/>
+<columns xsi:type='fds:Column' name='W_BP'/>
+<columns xsi:type='fds:Column' name='W_LNAME'/>
+<columns xsi:type='fds:Column' name='W_ESTIMATE'/>
+<columns xsi:type='fds:Column' name='W_PHONE'/>
+<columns xsi:type='fds:Column' name='W_AREA'/>
+<columns xsi:type='fds:Column' name='W_FEEITEM'/>
+<columns xsi:type='fds:Column' name='W_FTREATMENT'/>
+<columns xsi:type='fds:Column' name='W_REPORTTYPE'/>
+<columns xsi:type='fds:Column' name='W_EMPNAME'/>
+<columns xsi:type='fds:Column' name='W_REHABTYPE'/>
+<columns xsi:type='fds:Column' name='W_SERVICEDATE'/>
+<columns xsi:type='fds:Column' name='W_EXTRAFEEITEM'/>
+<columns xsi:type='fds:Column' name='W_NOI'/>
+<columns xsi:type='fds:Column' name='W_PAYEENO'/>
+<columns xsi:type='fds:Column' name='W_PROBLEM'/>
+<columns xsi:type='fds:Column' name='W_OPADDRESS'/>
+<columns xsi:type='fds:Column' name='W_ADDRESS'/>
+<columns xsi:type='fds:Column' name='FORMNEEDED'/>
+<columns xsi:type='fds:Column' name='W_DIAGNOSIS'/>
+<columns xsi:type='fds:Column' name='W_EMPPHONE'/>
+<columns xsi:type='fds:Column' name='W_DOI'/>
+<columns xsi:type='fds:Column' name='W_CAPREASON'/>
+<columns xsi:type='fds:Column' name='W_CLINICINFO'/>
+<columns xsi:type='fds:Column' name='BILL_AMOUNT'/>
+<columns xsi:type='fds:Column' name='PROVIDER_NO'/>
+<columns xsi:type='fds:Column' name='FORMCREATED'/>
+<columns xsi:type='fds:Column' name='W_WCBNO'/>
+<columns xsi:type='fds:Column' name='W_SERVICELOCATION'/>
+<columns xsi:type='fds:Column' name='W_POSTAL'/>
+<columns xsi:type='fds:Column' name='BILLING_NO'/>
+<columns xsi:type='fds:Column' name='W_ESTIMATEDATE'/>
+<columns xsi:type='fds:Column' name='W_PHN'/>
+<columns xsi:type='fds:Column' name='ID'/>
+<columns xsi:type='fds:Column' name='W_MNAME'/>
+<columns xsi:type='fds:Column' name='FORMEDITED'/>
+</tables>
+<tables xsi:type='fds:Table' name='WCB_BP_CODE'>
+<columns xsi:type='fds:Column' name='LEVEL1'/>
+<columns xsi:type='fds:Column' name='CODE'/>
+<columns xsi:type='fds:Column' name='USAGENOTE'/>
+<columns xsi:type='fds:Column' name='LEVEL3'/>
+<columns xsi:type='fds:Column' name='LEVEL2'/>
+<columns xsi:type='fds:Column' name='WCB_BP_CODE_NO'/>
+</tables>
+<tables xsi:type='fds:Table' name='WCB_NOI_CODE'>
+<columns xsi:type='fds:Column' name='LEVEL1'/>
+<columns xsi:type='fds:Column' name='USAGENOTE'/>
+<columns xsi:type='fds:Column' name='LEVEL2'/>
+<columns xsi:type='fds:Column' name='CODE'/>
+<columns xsi:type='fds:Column' name='WCB_NOI_CODE_NO'/>
+<columns xsi:type='fds:Column' name='LEVEL3'/>
+</tables>
+</fds:Database>

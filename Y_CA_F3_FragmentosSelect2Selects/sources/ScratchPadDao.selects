@@ -1,0 +1,18 @@
+SELECT s FROM ScratchPad s WHERE s.providerNo = ? order by s.id
+
+
+
+ sp.providerNo = :providerNo order by sp.id DESC
+
+
+
+
+
+
+
+ Select sp.dateTime, sp.id from ScratchPad sp where sp.providerNo = :providerNo order by sp.dateTime DESC
+
+
+
+
+

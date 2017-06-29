@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Y_F7_fdsDDLDenormalized2fdsDDLNormalized</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>gts.rubytl.core.rubytlnature</nature>
+	</natures>
+</projectDescription>

@@ -1,0 +1,24 @@
+SELECT * FROM formCounseling WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formCounseling WHERE demographic_no=
+
+
+
+  AND ID=0
+
+

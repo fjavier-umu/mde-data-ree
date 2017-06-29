@@ -1,0 +1,11 @@
+main do
+  FRAGSEL::Fichero.all_objects.each do |fichero|
+    if fichero.fragmentosSelect.length > 0
+      compose_file(fichero.nombre + '.selects') do
+        fichero.fragmentosSelect.each do |fs|
+          apply_template 'templates/fragmentosSelect.rtemplate', :fs => fs
+        end
+      end
+    end
+  end
+end

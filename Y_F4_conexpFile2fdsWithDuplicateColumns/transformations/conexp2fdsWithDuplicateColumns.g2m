@@ -1,0 +1,48 @@
+rule 'mapScript2Database'
+	from file f
+	to Database
+	queries
+		database : //mainRule/#database;
+		table_and_implications : //mainRule/#table_and_implications;
+	mappings
+		name = database.ID;
+		tables = table_and_implications;
+end_rule
+
+rule 'mapTableAndImplications2Table'
+	from table_and_implications tai
+	to Table
+	queries
+		table : /tai/#table;
+		attributes : /tai//#attribute;
+		implications : /tai//#implication;
+		hasObjects : /#implications/number_of_objects{!NUMBER.eq("0")};
+		hasNullPremise : /#implications/premise{TOKEN[0].exists && TOKEN[0].eq("{")};
+	mappings
+		name = table.ID;
+		columns = attributes;
+		if (hasObjects.hasResults) then
+			if (!hasNullPremise.hasResults) then
+				functionalDependencies = hasObjects;
+			end_if
+		end_if
+end_rule
+
+rule 'mapAttribute2Column'
+	from attribute a
+	to Column
+	queries
+	mappings
+		name = a.ID;
+end_rule
+
+rule 'mapImplication2FD'
+	from implication i
+	to FunctionalDependency
+	queries
+		det : /i/premise/#attribute;
+		dep : /i/conclusion/#attribute;
+	mappings
+		determinant = det;
+		dependant = dep;
+end_rule

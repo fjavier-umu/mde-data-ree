@@ -1,0 +1,123 @@
+SELECT e FROM ScheduleTemplate e WHERE e.summary=? 
+
+
+
+ FROM ScheduleTemplate st, ScheduleDate sd 
+
+
+
+
+ WHERE st.id.name = sd.hour 
+
+
+
+
+ AND sd.date >= :date_from 
+
+
+
+
+ AND sd.date <= :date_to 
+
+
+
+
+ AND sd.providerNo = :provider_no 
+
+
+
+
+ AND sd.status = 'A' 
+
+
+
+
+ AND (
+
+
+
+
+ st.id.providerNo = sd.providerNo 
+
+
+
+
+ OR st.id.providerNo = 'Public' 
+
+
+
+
+ ) ORDER BY sd.date
+
+
+
+
+
+
+
+ FROM ScheduleTemplate st, ScheduleDate sd 
+
+
+
+
+ WHERE st.id.name = sd.hour 
+
+
+
+
+ AND sd.date >= :dateFrom 
+
+
+
+
+ AND sd.providerNo in ( :providerIds ) 
+
+
+
+
+ AND sd.status = 'A' 
+
+
+
+
+ AND (
+
+
+
+
+ st.providerNo = sd.providerNo 
+
+
+
+
+ OR st.providerNo = 'Public' 
+
+
+
+
+ ) ORDER BY sd.date
+
+
+
+SELECT e FROM ScheduleTemplate e WHERE e.id.providerNo=? and e.id.name=? 
+
+
+SELECT e FROM ScheduleTemplate e WHERE e.id.providerNo=? order by e.id.name
+
+
+
+
+
+
+
+
+
+ select timecode from scheduletemplate, (select hour from (select provider_no, hour, status from scheduledate where sdate = :date) as df where status = 'A' and provider_no= :providerNo) as hf where scheduletemplate.name=hf.hour and (scheduletemplate.provider_no= :providerNo or scheduletemplate.provider_no='Public')
+
+
+
+
+
+
+
+

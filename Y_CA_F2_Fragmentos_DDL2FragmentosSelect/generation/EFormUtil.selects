@@ -1,0 +1,231 @@
+SELECT DISTINCT eform_groups.group_name, count(*)-1 AS 'count' FROM eform_groups 
+
+
+
+ LEFT JOIN eform ON eform.fid=eform_groups.fid WHERE eform.status=1 OR eform_groups.fid=0 
+
+
+
+
+ GROUP BY eform_groups.group_name;
+
+
+
+
+
+
+
+
+
+SELECT eform_groups.group_name, count(*)-1 AS 'count' FROM eform_groups 
+
+
+
+ LEFT JOIN eform_data ON eform_data.fid=eform_groups.fid 
+
+
+
+
+ WHERE (eform_data.status=1 AND eform_data.demographic_no=
+
+
+
+
+ ) OR eform_groups.fid=0 
+
+
+
+
+ GROUP BY eform_groups.group_name
+
+
+
+
+
+
+
+
+
+SELECT eform_groups.fid FROM eform_groups, eform WHERE eform_groups.fid=
+
+
+
+  AND eform_groups.fid=eform.fid AND eform.status=1 AND eform_groups.group_name='
+
+
+
+
+
+
+SELECT * FROM eform, eform_groups where eform.status=0 AND eform.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+ ' ORDER BY 
+
+
+
+
+
+
+SELECT * FROM eform, eform_groups where eform.status=1 AND eform.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+ ' ORDER BY 
+
+
+
+SELECT * FROM eform AND eform.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+ ' ORDER BY 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM eform_data, eform_groups WHERE eform_data.status=0 AND eform_data.patient_independent=0 AND eform_data.demographic_no=
+
+
+
+  AND eform_data.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+
+ ' ORDER BY 
+
+
+
+
+
+
+SELECT * FROM eform_data, eform_groups WHERE eform_data.status=1 AND eform_data.patient_independent=0 AND eform_data.demographic_no=
+
+
+
+  AND eform_data.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+
+ ' ORDER BY 
+
+
+
+SELECT * FROM eform_data, eform_groups WHERE eform_data.patient_independent=0 AND eform_data.demographic_no=
+
+
+
+  AND eform_data.fid=eform_groups.fid AND eform_groups.group_name='
+
+
+
+
+ ' ORDER BY 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ EForm Template Error! Cannot find input name {
+
+
+
+
+ } in eform
+
+
+
+
+
+
+
+
+
+
+
+
+
+ EForm Template Error! Cannot find input name {
+
+
+
+
+ } in eform
+
+
+
+
+

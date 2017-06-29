@@ -1,0 +1,623 @@
+SELECT DISTINCT m.dateObserved FROM Measurement m WHERE m.demographicId = :demographicNo AND m.type IN (:types) ORDER BY m.dateObserved DESC
+
+
+
+
+
+SELECT m.dataField, m.dateObserved, e1.val, e3.val 
+
+
+
+ FROM Measurement m, MeasurementsExt e1, MeasurementsExt e2, MeasurementsExt e3, MeasurementMap mm 
+
+
+
+
+ WHERE m.id = e1.measurementId 
+
+
+
+
+ AND e1.keyVal = 'lab_no' 
+
+
+
+
+ AND m.id = e2.measurementId 
+
+
+
+
+ AND e2.keyVal = 'identifier' 
+
+
+
+
+ AND m.id = e3.measurementId 
+
+
+
+
+ AND e3.keyVal = 'abnormal' 
+
+
+
+
+ AND e2.val = mm.identCode 
+
+
+
+
+ AND mm.loincCode = :loincCode 
+
+
+
+
+ AND m.demographicId = :demoNo 
+
+
+
+
+ ORDER BY m.dateObserved DESC
+
+
+
+SELECT m.dataField, m.dateObserved, e1.val, e3.val, e4.val 
+
+
+
+ FROM Measurement m, MeasurementsExt e1, MeasurementsExt e2, MeasurementsExt e3, MeasurementsExt e4, MeasurementMap mm 
+
+
+
+
+ WHERE m.id = e1.measurementId 
+
+
+
+
+ AND e1.keyVal = 'lab_no' 
+
+
+
+
+ AND m.id = e2.measurementId 
+
+
+
+
+ AND e2.keyVal='identifier'
+
+
+
+
+ AND m.id = e4.measurementId 
+
+
+
+
+ AND e4.keyVal='identifier' 
+
+
+
+
+ AND m.id = e3.measurementId 
+
+
+
+
+ AND e3.keyVal='abnormal' 
+
+
+
+
+ AND e2.val = mm.identCode 
+
+
+
+
+ AND mm.loincCode = :loincCode 
+
+
+
+
+ AND m.demographicId = :demoNo 
+
+
+
+
+ ORDER BY m.dateObserved DESC
+
+
+
+SELECT DISTINCT e2.val FROM Measurement m, MeasurementsExt e1, MeasurementsExt e2 
+
+
+
+ WHERE m.id = e1.measurementId 
+
+
+
+
+ AND e1.keyVal = 'identifier' 
+
+
+
+
+ AND m.id = e2.measurementId 
+
+
+
+
+ AND e2.keyVal = 'lab_no' 
+
+
+
+
+ AND e1.val= :identCode 
+
+
+
+
+ AND m.demographicId = :demoNo
+
+
+
+
+ ms.demographicId = :demoNo AND ms.type = :type ORDER BY ms.createDate DESC
+
+
+
+
+
+
+
+ FROM Measurement m, MeasurementType mt 
+
+
+
+
+ WHERE m.demographicId = :demoNo 
+
+
+
+
+ AND m.type = mt.type 
+
+
+
+
+ GROUP BY mt.type 
+
+
+
+
+ ORDER BY m.type ASC
+
+
+
+
+ FROM Measurement m, MeasurementType mt, Provider p 
+
+
+
+
+ WHERE m.providerNo = p.ProviderNo 
+
+
+
+
+ AND m.id = :mrId 
+
+
+
+
+ AND m.type = mt.type
+
+
+
+
+ FROM Measurement m, Provider p, MeasurementType mt 
+
+
+
+
+ WHERE m.providerNo = p.ProviderNo 
+
+
+
+
+ AND m.type = mt.type 
+
+
+
+
+ AND m.type = :type 
+
+
+
+
+ AND m.demographicId = :demoNo
+
+
+
+
+
+
+
+ FROM Measurement m, Provider p, MeasurementType mt 
+
+
+
+
+ WHERE m.demographicId = :demoNo 
+
+
+
+
+ AND m.type = :type 
+
+
+
+
+ AND (
+
+
+
+
+ m.providerNo = p.ProviderNo 
+
+
+
+
+ OR m.providerNo = '0'
+
+
+
+
+ AND m.type = mt.type 
+
+
+
+
+ GROUP BY m.id 
+
+
+
+
+ ORDER BY m.dateObserved DESC, m.createDate DESC
+
+
+
+
+
+
+SELECT m FROM Measurement m, MeasurementsExt e 
+
+
+
+ WHERE m.id = e.measurementId 
+
+
+
+
+ AND e.keyVal = :key 
+
+
+
+
+ AND e.val = :val
+
+
+
+
+
+
+SELECT DISTINCT m.dateObserved FROM Measurement m 
+
+
+
+ WHERE m.demographicId = :demo 
+
+
+
+
+ AND m.type = :type 
+
+
+
+
+ AND m.measuringInstruction = :mInstrc 
+
+
+
+
+ ORDER BY m.dateObserved
+
+
+
+
+
+
+SELECT m.dateObserved FROM Measurement m 
+
+
+
+ WHERE m.demographicId = :demo 
+
+
+
+
+ AND m.type = :type 
+
+
+
+
+ AND m.measuringInstruction = :mInstrc 
+
+
+
+
+ ORDER BY m.dateObserved
+
+
+
+
+
+
+
+ FROM Measurement m WHERE m.demographicId = :demo 
+
+
+
+
+ AND m.type = :type 
+
+
+
+
+ AND m.dateObserved = :date 
+
+
+
+
+ ORDER BY m.createDate DESC
+
+
+
+
+
+
+
+
+
+
+
+
+
+ m.dateObserved >= :from AND m.dateObserved <= :to AND m.type = :type 
+
+
+
+
+ AND m.measuringInstruction = :instruction AND m.demographicId = :demoNo
+
+
+
+
+
+
+SELECT m.demographicId, max(m.createDate)
+
+
+
+
+
+
+ m.dateObserved >= :from AND m.dateObserved <= :to AND m.type = :measurementType AND m.measuringInstruction = :mInstrc group by m.demographicId
+
+
+
+
+ FROM Measurement m 
+
+
+
+
+ WHERE m.createDate = :createDate 
+
+
+
+
+ AND m.demographicId = :demographicNo 
+
+
+
+
+ AND m.type = :measurementType 
+
+
+
+
+ AND m.measuringInstruction = :mInstrc
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT dataField FROM measurements 
+
+
+
+ WHERE dateEntered = :dateEntered 
+
+
+
+
+ AND demographicNo = :demographicNo 
+
+
+
+
+ AND type = :measurementType 
+
+
+
+
+ AND measuringInstruction = :mInstrc 
+
+
+
+
+ AND dataField < :upper 
+
+
+
+
+ AND dataField > :lower
+
+
+
+
+
+
+
+
+
+SELECT m.demographicId, MAX(m.createDate)
+
+
+
+
+
+
+ m.dateObserved >= :from AND m.dateObserved <= :to AND m.type = :measurementType GROUP BY m.demographicId
+
+
+
+
+
+
+
+ m.createDate = :createDate AND m.demographicId = :demoNo AND m.type = :type
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT dataField FROM measurements WHERE dateEntered = :dateEntered 
+
+
+
+ AND demographicNo = :demographicNo 
+
+
+
+
+ AND type = :type 
+
+
+
+
+ AND dataField < :upper 
+
+
+
+
+ AND dataField > :lower
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT m.type, m.measuringInstruction
+
+
+
+
+
+SELECT DISTINCT m.demographicId
+
+
+
+
+
+
+ m.createDate >= :from AND m.createDate <= :to
+
+
+
+
+ select x from Measurement x where x.demographicId = ?1 and x.type = ?2 order by x.dateObserved desc
+
+
+
+
+ select x from Measurement x where x.demographicId = ?1 and x.type = ?2 and x.dateObserved >= ?3 order by x.dateObserved desc
+
+
+
+
+ select x from Measurement x where x.demographicId = :demographicNo and x.type IN (:types) order by x.dateObserved desc
+
+
+
+
+
+
+
+ select x from Measurement x where x.demographicId = :demographicNo and x.type IN (:types) and x.dateObserved >= :after order by x.dateObserved desc
+
+
+
+
+
+
+
+ select x from Measurement x where x.type = ?1 order by x.demographicId, x.dateObserved desc
+
+
+
+
+ select x from Measurement x where x.type in (:type) order by x.demographicId, x.dateObserved desc
+
+
+
+
+
+
+
+ select distinct x.demographicId from Measurement x where x.type in (:types)
+
+
+
+
+ select x from Measurement x where x.demographicId = ?1 and x.type = ?2 and x.dateObserved <= ?3 order by x.dateObserved desc
+
+
+
+
+  x where x.id>=?1 order by x.id
+
+

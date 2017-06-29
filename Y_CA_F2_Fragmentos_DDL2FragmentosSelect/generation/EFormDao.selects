@@ -1,0 +1,75 @@
+SELECT e from EForm e where e.formName = ? and e.current=?
+
+
+SELECT e from EForm e where e.formName like ? and e.current=?
+
+
+
+  where x.current=?1
+
+
+
+
+  x where x.formName='Rich Text Letter' and x.subject='Rich Text Letter Generator'
+
+
+
+
+  x where x.formName='Rich Text Letter' and x.subject='Rich Text Letter Generator'
+
+
+
+
+
+
+
+  ef WHERE ef.current = :current
+
+
+
+
+
+
+
+  ORDER BY ef.formDate DESC, ef.formTime DESC
+
+
+
+
+  ORDER BY ef.formName
+
+
+
+
+  ORDER BY ef.fileName
+
+
+
+
+  ORDER BY ef.subject
+
+
+
+SELECT MAX(ef.id) FROM 
+
+
+
+  ef WHERE ef.formName = :formName AND ef.current = TRUE
+
+
+
+SELECT COUNT(ef) FROM 
+
+
+
+  ef WHERE ef.current = TRUE AND ef.formName = :formName AND ef.id != :id
+
+
+
+
+
+
+
+ select e from EForm e where e.id in (select formId from EFormGroup eg  where eg.groupName =?1)
+
+

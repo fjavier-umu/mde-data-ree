@@ -1,0 +1,31 @@
+SELECT zrg.reportGroupDesc, zrg.reportGroupId, count(zrg.reportGroupID), zrg.reportGroupHeading, zrg.reportSequence 
+
+
+
+ FROM MdsZRG zrg where zrg.id = :id group by zrg.reportGroupDesc, zrg.reportGroupID 
+
+
+
+
+ ORDER BY zrg.reportSequence
+
+
+
+
+
+
+SELECT zrg.reportGroupHeading FROM MdsZRG zrg where zrg.id = :id 
+
+
+
+ AND zrg.reportGroupId = :reportGroupId 
+
+
+
+
+ ORDER BY zrg.reportSequence
+
+
+
+
+

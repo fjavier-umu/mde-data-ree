@@ -1,0 +1,56 @@
+SELECT demographic_no, last_name, first_name FROM demographic WHERE demographic_no = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM formImmunAllergy WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+
+
+
+
+
+SELECT * FROM formImmunAllergy WHERE demographic_no=
+
+
+
+  AND ID=0
+
+
+
+SELECT * FROM formImmunAllergy WHERE demographic_no = 
+
+
+
+  AND ID = 
+
+

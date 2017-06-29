@@ -1,0 +1,5 @@
+SELECT fd FROM FlowSheetCustomization fd WHERE fd.flowsheet=? and fd.archived=0 and ( ( fd.providerNo = ?  and fd.demographicNo = 0) or (fd.providerNo =? and fd.demographicNo = ?  ) )
+
+
+SELECT fd FROM FlowSheetCustomization fd WHERE fd.flowsheet=? and fd.archived=0 and fd.providerNo = ?  and fd.demographicNo = 0
+
