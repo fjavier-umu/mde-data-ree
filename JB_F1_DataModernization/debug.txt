@@ -1,0 +1,512 @@
+Gra2MoL Interpreter version 0.3
+
+Executing...
+Models created.
+Initializing indexRules...
+Initializing mixinRules...
+Initializing packages...
+Initializing hashes...
+
+Executing rules...
+RULE: mapStatements
+RULE: mapStatements... executing!
+  Model Element DDLDefinition created
+  Executing queries...
+    Query df with 1 result nodes - CONTENT : [/Users/fjavier/Copy/workspace/JB_F1_DataModernization/sources/torneosDDL.sql /torneosDDL.sql CREATE DATABASE IF NOT EXISTS TORNEOS ; CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE NUMBER ( 5,3 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) , CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ) ; ]
+    Query stats with 4 result nodes
+  Executing mappings...
+    - QUERY_RESULT: 4 bindings:
+      (1/4) result node: data_definition_statement (kind). Rule... calling mapCreateDatabase rule
+
+      RULE: mapCreateDatabase
+      RULE: mapCreateDatabase... executing!
+        Model Element CreateDatabase created
+        Executing queries...
+          Query cd with 1 result nodes - CONTENT in line 1: [CREATE DATABASE IF NOT EXISTS TORNEOS ; ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: cd - 
+            node: create_database (kind) - leaf: ID (kind) - TORNEOS (value) 
+
+      (2/4) result node: data_definition_statement (kind). Rule... calling mapCreateTable rule
+
+      RULE: mapCreateTable
+      RULE: mapCreateTable... executing!
+        Model Element CreateTable created
+        Executing queries...
+          Query fk with 0 result nodes
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+          Query ck with 0 result nodes
+          Query cc with 4 result nodes
+          Query ct with 1 result nodes - CONTENT in line 3: [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 9: [CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: create_table (kind) - leaf: ID (kind) - ESTADIOS (value) 
+          - QUERY_RESULT: 4 bindings:
+            (1/4) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 5: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 5: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 5: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(30) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/4) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 6: [CAPACIDAD INT NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 6: [CAPACIDAD INT NOT NULL , ]
+                Query n with 0 result nodes
+                Query prec with 0 result nodes
+                Query cc with 1 result nodes - CONTENT in line 6: [CAPACIDAD INT NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - CAPACIDAD (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - INT (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (3/4) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 7: [CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 7: [CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 7: [CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - CONSTRUCTORA (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(20) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (4/4) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 8: [SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 8: [SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 8: [SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - SEDE_CONSTRUCTORA (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(20) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: create_pk (kind). Rule... calling mapCreatePk rule
+
+            RULE: mapCreatePk
+            RULE: mapCreatePk... executing!
+              Model Element CreatePk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 9: [CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ]
+                Query cpk with 1 result nodes - CONTENT in line 9: [ESTADIO ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: create_pk (kind) - leaf: ID (kind) - ESTADIOS_PK (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+
+      (3/4) result node: data_definition_statement (kind). Rule... calling mapCreateTable rule
+
+      RULE: mapCreateTable
+      RULE: mapCreateTable... executing!
+        Model Element CreateTable created
+        Executing queries...
+          Query fk with 0 result nodes
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE NUMBER ( 5,3 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; ]
+          Query ck with 0 result nodes
+          Query cc with 2 result nodes
+          Query ct with 1 result nodes - CONTENT in line 12: [CREATE TABLE PATROCINADORES ( PATROCINADOR VARCHAR ( 20 ) NOT NULL , SEDE NUMBER ( 5,3 ) NOT NULL , CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 16: [CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: create_table (kind) - leaf: ID (kind) - PATROCINADORES (value) 
+          - QUERY_RESULT: 2 bindings:
+            (1/2) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 14: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 14: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 14: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(20) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/2) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 15: [SEDE NUMBER ( 5,3 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 15: [SEDE NUMBER ( 5,3 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 15: [SEDE NUMBER ( 5,3 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - SEDE (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - NUMBER (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - NUMBER(5,3) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: create_pk (kind). Rule... calling mapCreatePk rule
+
+            RULE: mapCreatePk
+            RULE: mapCreatePk... executing!
+              Model Element CreatePk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 16: [CONSTRAINT PATROCINADOR_PK PRIMARY KEY ( PATROCINADOR ) ]
+                Query cpk with 1 result nodes - CONTENT in line 16: [PATROCINADOR ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: create_pk (kind) - leaf: ID (kind) - PATROCINADOR_PK (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+          - QUERY_RESULT: THE VARIABLE DOESNT EXIST
+
+      (4/4) result node: data_definition_statement (kind). Rule... calling mapCreateTable rule
+
+      RULE: mapCreateTable
+      RULE: mapCreateTable... executing!
+        Model Element CreateTable created
+        Executing queries...
+          Query fk with 1 result nodes - CONTENT in line 30: [CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ]
+          Query sta with 1 result nodes - CONTENT : [CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) , CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ) ; ]
+          Query ck with 1 result nodes - CONTENT in line 31: [CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ]
+          Query cc with 8 result nodes
+          Query ct with 1 result nodes - CONTENT in line 19: [CREATE TABLE GANADORES_DE_TORNEOS ( TORNEO VARCHAR ( 20 ) NOT NULL , ANYO VARCHAR ( 4 ) NOT NULL , GANADOR VARCHAR ( 30 ) NOT NULL , FECHA_NAC_GANADOR DATE NOT NULL , ARBITRO VARCHAR ( 30 ) NOT NULL , FECHA_NAC_ARBITRO DATE NOT NULL , ESTADIO VARCHAR ( 30 ) NOT NULL , PATROCINADOR VARCHAR ( 20 ) NOT NULL , CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) , CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) , CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ) ; ]
+          Query pk with 1 result nodes - CONTENT in line 29: [CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) ]
+        Executing mappings...
+          - QUERY_ACCESS: variable: ct - 
+            node: create_table (kind) - leaf: ID (kind) - GANADORES_DE_TORNEOS (value) 
+          - QUERY_RESULT: 8 bindings:
+            (1/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 21: [TORNEO VARCHAR ( 20 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 21: [TORNEO VARCHAR ( 20 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 21: [TORNEO VARCHAR ( 20 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - TORNEO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(20) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (2/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 22: [ANYO VARCHAR ( 4 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 22: [ANYO VARCHAR ( 4 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 22: [ANYO VARCHAR ( 4 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - ANYO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(4) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (3/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 23: [GANADOR VARCHAR ( 30 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 23: [GANADOR VARCHAR ( 30 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 23: [GANADOR VARCHAR ( 30 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - GANADOR (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(30) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (4/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 24: [FECHA_NAC_GANADOR DATE NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 24: [FECHA_NAC_GANADOR DATE NOT NULL , ]
+                Query n with 0 result nodes
+                Query prec with 0 result nodes
+                Query cc with 1 result nodes - CONTENT in line 24: [FECHA_NAC_GANADOR DATE NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - FECHA_NAC_GANADOR (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - DATE (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (5/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 25: [ARBITRO VARCHAR ( 30 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 25: [ARBITRO VARCHAR ( 30 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 25: [ARBITRO VARCHAR ( 30 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - ARBITRO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(30) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (6/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 26: [FECHA_NAC_ARBITRO DATE NOT NULL , ]
+                Query nn with 1 result nodes - CONTENT in line 26: [FECHA_NAC_ARBITRO DATE NOT NULL , ]
+                Query n with 0 result nodes
+                Query prec with 0 result nodes
+                Query cc with 1 result nodes - CONTENT in line 26: [FECHA_NAC_ARBITRO DATE NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - FECHA_NAC_ARBITRO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - DATE (value) 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...true!
+                  - VALUE: columnNull (property) - false (value)
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (7/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 27: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 27: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 27: [ESTADIO VARCHAR ( 30 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(30) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+            (8/8) result node: create_column (kind). Rule... calling mapCreateColumn rule
+
+            RULE: mapCreateColumn
+            RULE: mapCreateColumn... executing!
+              Model Element CreateColumn created
+              Executing queries...
+                Query scale with 0 result nodes
+                Query sta with 1 result nodes - CONTENT in line 28: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query nn with 0 result nodes
+                Query n with 0 result nodes
+                Query prec with 1 result nodes - CONTENT in line 28: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+                Query cc with 1 result nodes - CONTENT in line 28: [PATROCINADOR VARCHAR ( 20 ) NOT NULL , ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                - QUERY_ACCESS: variable: cc - 
+                  node: create_column (kind) - leaf: TYPE (kind) - VARCHAR (value) 
+                  - IF detected...true!
+                  - OPERATION_CONCAT: 
+                  columnType (property) - VARCHAR(20) (value)
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+                  - IF detected...false! it doesn't have ELSE part 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: create_pk (kind). Rule... calling mapCreatePk rule
+
+            RULE: mapCreatePk
+            RULE: mapCreatePk... executing!
+              Model Element CreatePk created
+              Executing queries...
+                Query fcpk with 1 result nodes - CONTENT in line 29: [CONSTRAINT GANADORES_DE_TORNEOS_PK PRIMARY KEY ( TORNEO , ANYO ) ]
+                Query cpk with 2 result nodes
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcpk - 
+                  node: create_pk (kind) - leaf: ID (kind) - GANADORES_DE_TORNEOS_PK (value) 
+                - QUERY_ACCESS: variable: cpk - 
+                  node: column_list (kind) - leaf: ID (kind) - TORNEO (value) 
+                  node: column_list (kind) - leaf: ID (kind) - ANYO (value) 
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: create_fk (kind). Rule... calling mapCreateFk rule
+
+            RULE: mapCreateFk
+            RULE: mapCreateFk... executing!
+              Model Element CreateFk created
+              Executing queries...
+                Query crfk with 1 result nodes - CONTENT in line 30: [ESTADIO ]
+                Query cfk with 1 result nodes - CONTENT in line 30: [ESTADIO ]
+                Query table with 1 result nodes - CONTENT : [CREATE TABLE ESTADIOS ( ESTADIO VARCHAR ( 30 ) NOT NULL , CAPACIDAD INT NOT NULL , CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , SEDE_CONSTRUCTORA VARCHAR ( 20 ) NOT NULL , CONSTRAINT ESTADIOS_PK PRIMARY KEY ( ESTADIO ) ) ; ]
+                Query ctr with 1 result nodes - CONTENT in line 30: [ESTADIOS ]
+                Query fcfk with 1 result nodes - CONTENT in line 30: [CONSTRAINT ESTADIO_FK FOREIGN KEY ( ESTADIO ) REFERENCES ESTADIOS ( ESTADIO ) ]
+              Executing mappings...
+                - QUERY_ACCESS: variable: fcfk - 
+                  node: create_fk (kind) - leaf: ID (kind) - ESTADIO_FK (value) 
+                - QUERY_ACCESS: variable: cfk - 
+                  node: column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_ACCESS: variable: crfk - 
+                  node: references_column_list (kind) - leaf: ID (kind) - ESTADIO (value) 
+                - QUERY_RESULT: 1 bindings:
+                  (1/1) result node: data_definition_statement (kind). Rule... calling mapCreateTable rule
+
+                  RULE: mapCreateTable
+                  RULE: mapCreateTable... cached!!
+
+          - QUERY_RESULT: 1 bindings:
+            (1/1) result node: create_ck (kind). Rule... calling mapCreateCk rule
+
+            RULE: mapCreateCk
+            RULE: mapCreateCk... executing!
+              Model Element CreateCk created
+              Executing queries...
+                Query cck with 1 result nodes - CONTENT in line 31: [CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ]
+                Query colck with 1 result nodes - CONTENT in line 31: [PATROCINADOR ]
+                Query fcck with 1 result nodes - CONTENT in line 31: [CONSTRAINT TEST_CK CHECK ( PATROCINADOR IN ( 'A' , 'B' , 'C' ) ) ]
+                Query vck with 3 result nodes
+              Executing mappings...
+                - QUERY_ACCESS: variable: cck - 
+                  node: create_ck (kind) - leaf: ID (kind) - TEST_CK (value) 
+                - QUERY_ACCESS: variable: colck - 
+                  node: column_ck (kind) - leaf: ID (kind) - PATROCINADOR (value) 
+                - QUERY_ACCESS: variable: vck - 
+                  node: value_list (kind) - leaf: CVALUE (kind) - 'A' (value) 
+                  node: value_list (kind) - leaf: CVALUE (kind) - 'B' (value) 
+                  node: value_list (kind) - leaf: CVALUE (kind) - 'C' (value) 
+
+
+
+
+Saving...

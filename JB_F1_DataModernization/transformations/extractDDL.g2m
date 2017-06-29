@@ -1,0 +1,133 @@
+--------------------------------------------------------------------------------------
+-- Gra2MoL transformation definition for extracting DDL models from DDL Scripts
+--
+-- TODO: 
+--  * Fill in it!! :D
+--------------------------------------------------------------------------------------
+
+rule 'mapStatements'
+	from data_definition df
+	to DDLDefinition
+	queries
+		stats : //#data_definition_statement;
+	mappings
+		statements = stats;
+end_rule
+
+rule 'mapCreateDatabase'
+	from data_definition_statement/create_database cd
+	to CreateDatabase
+	queries
+		cd : /cd/#create_database;
+	mappings
+		databaseName = cd.ID;
+end_rule
+
+rule 'mapCreateCommentTable'
+	from data_definition_statement/create_comment_table fcct
+	to CreateCommentTable
+	queries
+		cct : /fcct/#create_comment_table;
+		com : /fcct/create_comment_table/#comment;
+	mappings
+		tableName = cct.ID;
+		tableComment = cct.CVALUE;		
+end_rule
+
+rule 'mapCreateCommentColumn'
+	from data_definition_statement/create_comment_column fccc
+	to CreateCommentColumn
+	queries
+		ccc : /fccc/#create_comment_column;
+		tr  : /fccc/create_comment_column/#table_references;
+		com : /fccc/create_comment_column/#comment;
+	mappings
+		tableName = tr.ID;
+		columnName = ccc.ID;
+		columnComment = ccc.CVALUE;
+end_rule
+
+rule 'mapCreateTable'
+	from data_definition_statement/create_table sta
+	to CreateTable
+	queries
+		ct : /sta/#create_table;
+		cc : /sta//#create_column;
+		pk : /sta//#create_pk;
+		fk : /sta//#create_fk;
+		ck : /sta//#create_ck;
+	mappings
+		tableName = ct.ID;
+		columns   = cc;
+		columnsPk = pk;		
+		columnsFk = fk;
+		checks    = ck;
+end_rule
+
+
+rule 'mapCreateColumn'
+	from create_column sta
+	to CreateColumn
+	queries
+		cc : /#sta;
+		prec: /#sta{NUMBER[0].exists};
+		scale: /#sta{NUMBER[1].exists};
+		nn : /#sta{(TOKEN[0].exists && TOKEN[0].eq("NOT NULL")) || (TOKEN[3].exists && TOKEN[3].eq("NOT NULL"))};		
+		n  : /#sta{(TOKEN[0].exists && TOKEN[0].eq("NULL")) || (TOKEN[3].exists && TOKEN[3].eq("NULL"))};			
+	mappings
+		columnName = cc.ID;
+		columnType = cc.TYPE;
+		if (prec.hasResults) then
+			columnType = cc.TYPE + "(" + cc.NUMBER[0] + ")" ;
+		end_if
+		if (scale.hasResults) then
+			columnType = cc.TYPE + cc.NUMBER[0] + cc.NUMBER[1];
+		end_if
+		if (nn.hasResults) then
+			columnNull = "false";
+		end_if
+		if (n.hasResults) then
+			columnNull = "true";
+		end_if
+end_rule
+
+rule 'mapCreatePk'
+	from create_pk fcpk
+	to CreatePk
+	queries
+		cpk : /fcpk/#column_list;
+	mappings
+		namePk = fcpk.ID;
+		columnName = cpk.ID;
+end_rule
+
+rule 'mapCreateFk'
+	from create_fk fcfk
+	to CreateFk
+	queries
+		cfk  : /fcfk/#column_list;
+		crfk : /fcfk/#references_column_list;
+		ctr  : /fcfk/#table_references;
+		table : //#data_definition_statement/create_table{ID.eq(ctr.ID)};
+	mappings
+		nameFk = fcfk.ID;
+		columnName = cfk.ID;	
+		columnReference = crfk.ID;
+		references = table;
+end_rule
+
+rule 'mapCreateCk'
+	from create_ck fcck
+	to CreateCk
+	queries
+		cck : /#fcck;
+		vck : /fcck/#value_list;
+		colck : /fcck/#column_ck;
+	mappings
+		nameCk = cck.ID;
+		columnName =colck.ID;
+		valuesCk = vck.CVALUE;	
+end_rule
+
+
+

@@ -1,0 +1,97 @@
+grammar DDL;
+
+options {
+	backtrack=true;
+}  
+
+data_definition 
+	: 	(data_definition_statement)*
+	;
+	
+data_definition_statement
+	: 	create_database
+	|	create_table
+	|	create_comment_table
+	|	create_comment_column
+	;
+		
+create_table
+	:	'CREATE' ('OR REPLACE')? 'TABLE' ID '(' (create_column)* (',')?   (create_pk)? (',')?  (create_fk (',')?)* (create_ck (',')? )*   ')' ('LOGGING')? ('NOCOMPRESS')? ('NOCACHE')? ('NOPARALLEL')? ('MONITORING')?';' 
+	;
+
+create_comment_table
+	:	'COMMENT ON TABLE' ID 'IS' CVALUE ';'
+	;
+
+create_column
+	:	ID TYPE ('(' NUMBER ('BYTE')? ( ',' NUMBER )? ')')? ('CONSTRAINT')? (name_constraint)? ('NULL' | 'NOT NULL')? (defecto)? (',')?
+	;
+
+defecto 
+	:	'DEFAULT' ('NULL' | 'NOT NULL' | NUMBER | CVALUE)
+	;
+
+create_comment_column
+	:	'COMMENT ON COLUMN'  table_references '\.' ID 'IS'  CVALUE ';'
+	;
+
+create_ck
+	:	'CONSTRAINT' ID 'CHECK' '(' column_ck 'IN' '(' (value_list)* ')' ')'
+	;
+	
+create_fk
+	:	'CONSTRAINT' ID 'FOREIGN' 'KEY' '(' (column_list)* ')' 'REFERENCES' (schema_references)? ('\.')? table_references '(' (references_column_list)* ')' ('ON')? ('DELETE' | 'UPDATE')? ('CASCADE')? ('DISABLE')?
+	;
+
+create_pk
+	:	'CONSTRAINT' ID 'PRIMARY KEY' '(' (column_list)* ')'
+	;
+
+column_ck
+	:	ID
+	;
+
+schema_references
+	:	ID
+	;
+
+table_references
+	:	ID
+	;
+
+name_constraint
+	:	ID
+	;
+
+references_column_list
+	:	ID (',')?
+	;
+
+value_list
+	:	CVALUE (',')?
+	;
+
+column_list
+	:	ID (',')?
+	;
+
+create_database
+	:	'CREATE' ('DATABASE' | 'SCHEMA') ('IF NOT EXISTS')? ID (create_specification)? ';'
+	;
+
+create_specification
+	:	('DEFAULT')? 'CHARACTER' 'SET' ('=')? ID
+  	|	('DEFAULT')? 'COLLATE' ('=')? ID
+  	;
+
+CVALUE 					: '\'' ( options {greedy=false;} : .)* '\'';
+NUMBER					: ('0'..'9' | ',')*;
+TYPE					: ('NUMBER' | 'INTEGER' | 'CHAR' | 'VARCHAR' | 'VARCHAR2' | 'TEXT' | 'DATE' | 'LONG' | 'LONG RAW' | 'RAW' | 'NVARCHAR2' | 'ROWID' | 'NCHAR' | 'MLSLABEL' | 'CLOB' | 'NCLOB' | 'BLOB' | 'BFILE' | 'FLOAT' | 'UROWID' | 'BINARY_DOUBLE' | 'BINARY_FLOAT' | 'URITYPE' | 'CHAR VARYING' | 'CHARACTER' | 'CHARACTER VARYING' | 'DECIMAL' | 'DOUBLE PRECISION' | 'INT' | 'NATIONAL CHAR' | 'NATIONAL CHAR VARYING' | 'NATIONAL CHARACTER' | 'NATIONAL CHARACTER VARYING' | 'NCHAR VARYING' | 'NUMERIC' | 'REAL' | 'SMALLINT');
+ID 						: ('a'..'z' | 'A'..'Z') ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | '-' )*;
+WS 						: (' ' | '\t' | '\n' | '\r')+ {$channel=HIDDEN;};
+ML_COMMENT:
+	'/*' (options {greedy=false;} : .)* '*/' (';')? { $channel=HIDDEN;}
+	;
+	
+OL_COMMENT: '--' ( options {greedy=false;} : . )* '\n'+ { $channel=HIDDEN;}
+	;

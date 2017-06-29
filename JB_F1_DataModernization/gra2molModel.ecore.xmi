@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:Transformation xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <rules xsi:type="Core:StandardRule" name="mapStatements">
+    <queries variable="stats">
+      <filter type="INDIRECT">
+        <element name="data_definition_statement" mark="true"/>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="statements">
+        <value type="QUERY_RESULT" value="stats"/>
+      </inits>
+    </inits>
+    <from name="data_definition" alias="df">
+      <filter variable="df">
+        <filter>
+          <element name="data_definition" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="DDLDefinition"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateDatabase">
+    <queries variable="cd">
+      <filter>
+        <element name="cd"/>
+        <next>
+          <element name="create_database" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="databaseName">
+        <value type="QUERY_ACCESS" value="cd" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="cd">
+      <filter variable="cd">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="create_database"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateDatabase"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateCommentTable">
+    <queries variable="cct">
+      <filter>
+        <element name="fcct"/>
+        <next>
+          <element name="create_comment_table" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="com">
+      <filter>
+        <element name="fcct"/>
+        <next>
+          <element name="create_comment_table"/>
+          <next>
+            <element name="comment" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tableName">
+        <value type="QUERY_ACCESS" value="cct" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="tableComment">
+        <value type="QUERY_ACCESS" value="cct" extension="CVALUE"/>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="fcct">
+      <filter variable="fcct">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="create_comment_table"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateCommentTable"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateCommentColumn">
+    <queries variable="ccc">
+      <filter>
+        <element name="fccc"/>
+        <next>
+          <element name="create_comment_column" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="tr">
+      <filter>
+        <element name="fccc"/>
+        <next>
+          <element name="create_comment_column"/>
+          <next>
+            <element name="table_references" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="com">
+      <filter>
+        <element name="fccc"/>
+        <next>
+          <element name="create_comment_column"/>
+          <next>
+            <element name="comment" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tableName">
+        <value type="QUERY_ACCESS" value="tr" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="ccc" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnComment">
+        <value type="QUERY_ACCESS" value="ccc" extension="CVALUE"/>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="fccc">
+      <filter variable="fccc">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="create_comment_column"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateCommentColumn"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateTable">
+    <queries variable="ct">
+      <filter>
+        <element name="sta"/>
+        <next>
+          <element name="create_table" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="cc">
+      <filter>
+        <element name="sta"/>
+        <next type="INDIRECT">
+          <element name="create_column" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="pk">
+      <filter>
+        <element name="sta"/>
+        <next type="INDIRECT">
+          <element name="create_pk" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="fk">
+      <filter>
+        <element name="sta"/>
+        <next type="INDIRECT">
+          <element name="create_fk" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="ck">
+      <filter>
+        <element name="sta"/>
+        <next type="INDIRECT">
+          <element name="create_ck" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="tableName">
+        <value type="QUERY_ACCESS" value="ct" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columns">
+        <value type="QUERY_RESULT" value="cc"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnsPk">
+        <value type="QUERY_RESULT" value="pk"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnsFk">
+        <value type="QUERY_RESULT" value="fk"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="checks">
+        <value type="QUERY_RESULT" value="ck"/>
+      </inits>
+    </inits>
+    <from name="data_definition_statement" alias="sta">
+      <filter variable="sta">
+        <filter>
+          <element name="data_definition_statement" mark="true"/>
+          <next>
+            <element name="create_table"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateTable"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateColumn">
+    <queries variable="cc">
+      <filter>
+        <element name="sta" mark="true"/>
+      </filter>
+    </queries>
+    <queries variable="prec">
+      <filter>
+        <element name="sta" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="scale">
+      <filter>
+        <element name="sta" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+          <element name="NUMBER" position="1"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="nn">
+      <filter>
+        <element name="sta" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionComplex" type="OR">
+          <expressions xsi:type="Query:FilterExpressionComplex">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="TOKEN"/>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NOT NULL"/>
+            </expressions>
+          </expressions>
+          <expressions xsi:type="Query:FilterExpressionComplex">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="TOKEN" position="3"/>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN" position="3"/>
+              <parameters value="NOT NULL"/>
+            </expressions>
+          </expressions>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="n">
+      <filter>
+        <element name="sta" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionComplex" type="OR">
+          <expressions xsi:type="Query:FilterExpressionComplex">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="TOKEN"/>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN"/>
+              <parameters value="NULL"/>
+            </expressions>
+          </expressions>
+          <expressions xsi:type="Query:FilterExpressionComplex">
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="TOKEN" position="3"/>
+            </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit">
+              <element name="TOKEN" position="3"/>
+              <parameters value="NULL"/>
+            </expressions>
+          </expressions>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="cc" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnType">
+        <value type="QUERY_ACCESS" value="cc" extension="TYPE"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="columnType">
+          <value type="OPERATION_CONCAT">
+            <params value="cc" valuePosition="0" extension="TYPE" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+            <params value="("/>
+            <params value="cc" valuePosition="0" extension="NUMBER" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+            <params value=")"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="prec"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="columnType">
+          <value type="OPERATION_CONCAT">
+            <params value="cc" valuePosition="0" extension="TYPE" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+            <params value="cc" valuePosition="0" extension="NUMBER" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+            <params value="cc" valuePosition="0" extension="NUMBER" extensionPosition="1"
+                type="QUERY_ACCESS"/>
+          </value>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="scale"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="columnNull">
+          <value value="false"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="nn"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="columnNull">
+          <value value="true"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+          <element name="n"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="create_column" alias="sta">
+      <filter variable="sta">
+        <filter>
+          <element name="create_column" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateColumn"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreatePk">
+    <queries variable="cpk">
+      <filter>
+        <element name="fcpk"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="namePk">
+        <value type="QUERY_ACCESS" value="fcpk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="cpk" extension="ID"/>
+      </inits>
+    </inits>
+    <from name="create_pk" alias="fcpk">
+      <filter variable="fcpk">
+        <filter>
+          <element name="create_pk" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreatePk"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateFk">
+    <queries variable="cfk">
+      <filter>
+        <element name="fcfk"/>
+        <next>
+          <element name="column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="crfk">
+      <filter>
+        <element name="fcfk"/>
+        <next>
+          <element name="references_column_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="ctr">
+      <filter>
+        <element name="fcfk"/>
+        <next>
+          <element name="table_references" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="table">
+      <filter type="INDIRECT">
+        <element name="data_definition_statement" mark="true"/>
+        <next>
+          <element name="create_table"/>
+          <expression xsi:type="Query:FilterExpressionUnit">
+            <element name="ID"/>
+            <parameters value="ctr" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="nameFk">
+        <value type="QUERY_ACCESS" value="fcfk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="cfk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnReference">
+        <value type="QUERY_ACCESS" value="crfk" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="references">
+        <value type="QUERY_RESULT" value="table"/>
+      </inits>
+    </inits>
+    <from name="create_fk" alias="fcfk">
+      <filter variable="fcfk">
+        <filter>
+          <element name="create_fk" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateFk"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCreateCk">
+    <queries variable="cck">
+      <filter>
+        <element name="fcck" mark="true"/>
+      </filter>
+    </queries>
+    <queries variable="vck">
+      <filter>
+        <element name="fcck"/>
+        <next>
+          <element name="value_list" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="colck">
+      <filter>
+        <element name="fcck"/>
+        <next>
+          <element name="column_ck" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="nameCk">
+        <value type="QUERY_ACCESS" value="cck" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="columnName">
+        <value type="QUERY_ACCESS" value="colck" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="valuesCk">
+        <value type="QUERY_ACCESS" value="vck" extension="CVALUE"/>
+      </inits>
+    </inits>
+    <from name="create_ck" alias="fcck">
+      <filter variable="fcck">
+        <filter>
+          <element name="create_ck" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="CreateCk"/>
+  </rules>
+</Core:Transformation>
