@@ -1,0 +1,502 @@
+--------------------------------------------------------------------------------------
+-- Gra2MoL transformation definition for extracting DDL models from DDL Scripts
+--
+--------------------------------------------------------------------------------------
+
+rule 'mapStatements'
+	from data_definition df
+	to DDLDefinition
+	queries
+		stats : //#data_definition_statement;
+		types : ///#type[0];
+	mappings
+		dataType = types;
+		statements = stats;
+end_rule
+
+rule 'mapDataTypes'
+	from type t
+	to DataType
+	queries
+		tps : //#type;
+	mappings
+		types = tps;
+end_rule
+
+rule 'mapDatabase'
+	from data_definition_statement/database cd
+	to Database
+	queries
+		cd : /cd/#database;
+	mappings
+		databaseName = cd.ID;
+end_rule
+
+rule 'mapCommentTable'
+	from data_definition_statement/comment_table fcct
+	to CommentTable
+	queries
+		cct : /fcct/#comment_table;
+		com : /fcct/comment_table/#comment;
+	mappings
+		tableName = cct.ID;
+		tableComment = cct.CVALUE;		
+end_rule
+
+rule 'mapCommentColumn'
+	from data_definition_statement/comment_column fccc
+	to CommentColumn
+	queries
+		ccc : /fccc/#comment_column;
+		tr  : /fccc/comment_column/#table_references;
+		com : /fccc/comment_column/#comment;
+	mappings
+		tableName = tr.ID;
+		columnName = ccc.ID;
+		columnComment = ccc.CVALUE;
+end_rule
+
+rule 'mapTable'
+	from data_definition_statement/table sta
+	to Table
+	queries
+		ct : /sta/#table;
+		cc : /sta//#column;
+		pk : /sta//#pk;
+		fk : /sta//#fk;
+		ck : /sta//#ck;
+		alter_fk1 : ///#added_constraint_fk/table_references{ID.eq(ct.ID)};
+		alter_fk : /alter_fk1/#fk;
+		-- alter_fk : ///added_constraint_fk/table_references{ID.eq(ct.ID)}/#fk;
+		alter_ck1 : ///#added_constraint_ck/table_references{ID.eq(ct.ID)};
+		alter_ck : /alter_ck1/#ck;
+		-- alter_ck : ///added_constraint_ck/table_references{ID.eq(ct.ID)}/#ck;
+	mappings
+		tableName = ct.ID;
+		columns   = cc;
+		columnsPk = pk;		
+		columnsFk = fk;
+		columnsFk = alter_fk;		
+		checks    = ck;
+		checks    = alter_ck;		
+end_rule
+
+rule 'mapColumn'
+	from column sta
+	to Column
+	queries
+		type : /sta/#type;
+		cc : /#sta;
+		nn : /#sta{(TOKEN[0].exists && TOKEN[0].eq("NOT NULL")) || (TOKEN[2].exists && TOKEN[2].eq("NOT NULL"))};		
+		n  : /#sta{(TOKEN[0].exists && TOKEN[0].eq("NULL")) || (TOKEN[2].exists && TOKEN[2].eq("NULL"))};		
+	mappings
+		columnName = cc.ID;
+		columnType = type;
+		if (nn.hasResults) then
+			columnNull = "false";
+		end_if
+		if (n.hasResults) then
+			columnNull = "true";
+		end_if
+end_rule
+
+rule 'mapPk'
+	from pk fcpk
+	to Pk
+	queries
+		cpk : /fcpk/#column_list;
+	mappings
+		namePk = fcpk.ID;
+		columnName = cpk.ID;
+end_rule
+
+rule 'mapFk'
+	from fk fcfk
+	to Fk
+	queries
+		cfk  : /fcfk/#column_list;
+		crfk : /fcfk/#references_column_list;
+		ctr  : /fcfk/#table_references;
+		table : //#data_definition_statement/table{ID.eq(ctr.ID)};
+		tab : //data_definition_statement/#table/fk{ID.eq(fcfk.ID)};
+		aux : ///#disabled_constraint/table_references{ID.eq(tab.ID)};
+		disabled : /#aux/name_constraint{ID.eq(fcfk.ID)};
+	mappings
+		nameFk = fcfk.ID;
+		columnName = cfk.ID;	
+		columnReference = crfk.ID;
+		references = table;
+		if (disabled.hasResults) then
+			status = "DISABLED";
+		else
+			status = "ENABLED";
+		end_if
+end_rule
+
+rule 'mapCk'
+	from ck fcck
+	to Ck
+	queries
+		cck : /#fcck;
+		leck : /fcck/#log_expresion;
+		table : //data_definition_statement/#table/ck{ID.eq(cck.ID)};
+		aux : ///#disabled_constraint/table_references{ID.eq(table.ID)};
+		disabled : /#aux/name_constraint{ID.eq(cck.ID)};
+	mappings
+		nameCk = cck.ID;
+		valuesCk = leck;
+		
+		if (disabled.hasResults) then
+			status = "DISABLED";
+		else
+			status = "ENABLED";
+		end_if		
+end_rule
+
+rule 'mapValuesCk'
+	from log_expresion le
+	to ValuesCk
+	queries
+		column : /le/#column_ck;
+		value_list : /le/#value_list;
+		number : /#le{NUMBER.exists};
+	mappings
+		if (value_list.hasResults) then
+			comparator = "=";
+			value = removeQuotes value_list.CVALUE;
+		else
+			comparator = le.COMPARATOR;
+			if (number.hasResults) then
+				value = le.NUMBER;
+			else
+				value = removeQuotes le.CVALUE;
+			end_if
+		end_if
+		
+		logConjuntion = le.LOG_CONJ;
+		columnName = column.ID;
+end_rule
+
+-------------------------------------------------------------
+---------------------- MAPPINGS TYPES -----------------------
+-------------------------------------------------------------
+
+-------------------------------------------------------------
+-------------------------- EXACTOS --------------------------
+rule 'mapInteger'
+	from type[unique]{EXACTO.eq("INTEGER")} t
+	to Integer
+	queries
+  	mappings
+  		name = t.EXACTO;
+ end_rule
+
+rule 'mapSmallInteger'
+	from type[unique]{EXACTO.eq("SMALL INTEGER")} t
+	to SmallInteger
+	queries
+	mappings
+  		name = t.EXACTO;
+end_rule
+
+rule 'mapInt'
+	from type[unique]{EXACTO.eq("INT")} t
+	to Int
+	queries
+	mappings
+  		name = t.EXACTO;
+end_rule
+
+rule 'mapSmallInt'
+  	from type[unique]{EXACTO.eq("SMALL INT")} t
+  	to SmallInt
+  	queries
+  	mappings
+  		name = t.EXACTO;
+end_rule
+
+rule 'mapNumeric'
+  	from type[unique]{EXACTO.eq("NUMERIC")} t
+  	to Numeric
+  	queries
+  	mappings
+  		name = t.EXACTO;
+end_rule
+
+rule 'mapNumber'
+  	from type[unique]{EXACTO.eq("NUMBER")} t
+  	to Number
+  	queries
+  	mappings
+  		name = t.EXACTO;
+end_rule
+
+rule 'mapDecimal'
+  	from type[unique]{EXACTO.eq("DECIMAL")} t
+  	to Decimal
+  	queries
+  	mappings
+  		name = t.EXACTO;
+end_rule
+-------------------------------------------------------------
+-------------------------------------------------------------
+------------------------ APROXIMADOS ------------------------
+rule 'mapReal'
+  	from type[unique]{APROXIMADO.eq("REAL")} t
+  	to Real
+  	queries
+  	mappings
+  		name = t.APROXIMADO;
+end_rule
+
+rule 'mapDoublePrecision'
+  	from type[unique]{APROXIMADO.eq("DOUBLE PRECISION")} t
+  	to DoublePrecision
+  	queries
+  	mappings
+  		name = t.APROXIMADO;
+end_rule
+
+rule 'mapFloat'
+  	from type[unique]{APROXIMADO.eq("FLOAT")} t
+  	to Float
+  	queries
+  	mappings
+  		name = t.APROXIMADO;
+end_rule
+
+rule 'mapLong'
+  	from type[unique]{APROXIMADO.eq("LONG")} t
+  	to Long
+  	queries
+  	mappings
+  		name = t.APROXIMADO;
+end_rule
+
+rule 'mapLongRaw'
+  	from type[unique]{APROXIMADO.eq("LONG RAW")} t
+  	to LongRaw
+  	queries
+  	mappings
+  		name = t.APROXIMADO;
+end_rule
+
+-------------------------------------------------------------
+-------------------------------------------------------------
+------------------------ CHARACTERS -------------------------
+rule 'mapCharacter'
+  	from type[unique]{CHARACTERS.eq("CHARACTER")} t
+  	to Character
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapCharacterVarying'
+  	from type[unique]{CHARACTERS.eq("CHARACTER VARYING")} t
+  	to CharacterVarying
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapChar'
+  	from type[unique]{CHARACTERS.eq("CHAR")} t
+  	to Char
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapVarChar'
+	from type[unique]{CHARACTERS.eq("VARCHAR")} t
+	to VarChar
+	queries
+	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapVarChar2'
+  	from type[unique]{CHARACTERS.eq("VARCHAR2")} t
+  	to VarChar2
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNVarChar2'
+  	from type[unique]{CHARACTERS.eq("NVARCHAR2")} t
+  	to NVarChar2
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNChar'
+  	from type[unique]{CHARACTERS.eq("NCHAR")} t
+  	to NChar
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapCharVarying'
+  	from type[unique]{CHARACTERS.eq("CHAR VARYING")} t
+  	to CharVarying
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNationalChar'
+  	from type[unique]{CHARACTERS.eq("NATIONAL CHAR")} t
+  	to NationalChar
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNationalCharVarying'
+  	from type[unique]{CHARACTERS.eq("NATIONAL CHAR VARYING")} t
+  	to NationalCharVarying
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNationalCharacter'
+  	from type[unique]{CHARACTERS.eq("NATIONAL CHARACATER")} t
+  	to NationalCharacter
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNationalCharacterVarying'
+  	from type[unique]{CHARACTERS.eq("NATIONAL CHARACTER VARYING")} t
+  	to NationalCharacterVarying
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNCharVarying'
+  	from type[unique]{CHARACTERS.eq("NCHAR VARYING")} t
+  	to NCharVarying
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapClob'
+  	from type[unique]{CHARACTERS.eq("CLOB")} t
+  	to Clob
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+
+rule 'mapNClob'
+  	from type[unique]{CHARACTERS.eq("NCLOB")} t
+  	to NClob
+  	queries
+  	mappings
+  		name = t.CHARACTERS;
+end_rule
+-------------------------------------------------------------
+-------------------------------------------------------------
+---------------------------- BITS ---------------------------
+rule 'mapBit'
+  	from type[unique]{BITS.eq("BIT")} t
+  	to Bit
+  	queries
+  	mappings
+  		name = t.BITS;
+end_rule
+
+rule 'mapBitVarying'
+  	from type[unique]{BITS.eq("BIT VARYING")} t
+  	to BitVarying
+  	queries
+  	mappings
+  		name = t.BITS;
+end_rule
+-------------------------------------------------------------
+-------------------------------------------------------------
+--------------------------- TIMES ---------------------------
+rule 'mapTime'
+  	from type[unique]{TIMES.eq("TIME")} t
+  	to Time
+  	queries
+  	mappings
+  		name = t.TIMES;
+end_rule
+
+rule 'mapDate'
+  	from type[unique]{TIMES.eq("DATE")} t
+  	to Date
+  	queries
+  	mappings
+  		name = t.TIMES;
+end_rule
+
+rule 'mapTimestamp'
+  	from type[unique]{TIMES.eq("TIMESTAMP")} t
+  	to Timestamp
+  	queries
+  	mappings
+  		name = t.TIMES;
+end_rule
+-------------------------------------------------------------
+-------------------------------------------------------------
+------------------------- INTERVALS -------------------------
+rule 'mapDayTime'
+  	from type[unique]{INTERVALS.eq("DAY-TIME")} t
+  	to DayTime
+  	queries
+  	mappings
+  		name = t.INTERVALS;
+end_rule
+
+rule 'mapYearMonth'
+  	from type[unique]{INTERVALS.eq("YEAR-MONTH")} t
+  	to YearMonth
+  	queries
+  	mappings
+  		name = t.INTERVALS;
+end_rule
+-------------------------------------------------------------
+-------------------------------------------------------------
+------------------------- BINARIES --------------------------
+rule 'mapBinaryDouble'
+  	from type[unique]{BINARIES.eq("BINARY_DOUBLE")} t
+  	to BinaryDouble
+  	queries
+  	mappings
+  		name = t.BINARIES;
+end_rule
+
+rule 'mapBinaryFloat'
+  	from type[unique]{BINARIES.eq("BINARY_FLOAT")} t
+  	to BinaryFloat
+  	queries
+  	mappings
+  		name = t.BINARIES;
+end_rule
+
+rule 'mapBFile'
+  	from type[unique]{BINARIES.eq("BFILE")} t
+  	to BFile
+  	queries
+  	mappings
+  		name = t.BINARIES;
+end_rule
+
+rule 'mapBlob'
+  	from type[unique]{BINARIES.eq("BLOB")} t
+  	to Blob
+  	queries
+  	mappings
+  		name = t.BINARIES;
+end_rule
+-------------------------------------------------------------

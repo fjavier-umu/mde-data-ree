@@ -1,0 +1,38 @@
+CREATE TABLE Cliente
+(
+  Cliente_ID INT NOT NULL,
+  Nombre VARCHAR(255) NOT NULL,
+  Mail VARCHAR(100) NULL,
+  Fecha_Alta TIMESTAMP NOT NULL,
+  Password VARCHAR(100) NOT NULL,
+  Descripcion VARCHAR(255) NOT NULL,  
+  CONSTRAINT Cliente_PK PRIMARY KEY (Cliente_ID)
+);
+
+CREATE TABLE Venta
+(
+  Venta_ID INT NOT NULL,
+  Fecha_Compra TIMESTAMP NOT NULL,
+  Auto_Servicio VARCHAR(2) NULL,
+  Forma_Pago VARCHAR(10) NOT NULL,
+  Cliente_ID INT NOT NULL,
+  CONSTRAINT Auto_Servicio_CK CHECK (Auto_Servicio = 'Si' OR Auto_Servicio = 'No'),
+  CONSTRAINT Forma_Pago_CK CHECK (Forma_Pago = 'Efectivo' OR Forma_Pago = 'Tarjeta'),
+  CONSTRAINT Venta_PK PRIMARY KEY (Venta_ID),
+  CONSTRAINT Cliente_Venta_FK FOREIGN KEY (Cliente_ID) REFERENCES Cliente (Cliente_ID)
+);
+
+CREATE TABLE Linea_Venta
+(
+  Linea_Venta_ID INT NOT NULL,
+  Venta_ID INT NOT NULL,
+  Producto VARCHAR(200) NOT NULL,
+  Cantidad INT NOY NULL,
+  CONSTRAINT Linea_Venta_PK PRIMARY KEY (Linea_Venta_ID,Venta_ID),
+  CONSTRAINT Linea_Venta_FK FOREIGN KEY (Venta_ID) REFERENCES Venta (Venta_ID)
+);
+
+ALTER TABLE CLiente DROP CONSTRAINT Cliente_PK;
+ALTER TABLE Venta DROP CONSTRAINT Auto_Servicio_CK;
+ALTER TABLE Venta DROP CONSTRAINT Forma_Pago_CK;
+ALTER TABLE Linea_Venta DROP CONSTRAINT Linea_Venta_FK;

@@ -1,0 +1,6 @@
+
+-- Automatic Generation Of TABLE COMMENT: <%= comment.tableName %>
+<% 
+tableName = comment.tableName
+commentText = comment.tableComment
+%>COMMENT ON TABLE <%=tableName%> IS <%=commentText%>;

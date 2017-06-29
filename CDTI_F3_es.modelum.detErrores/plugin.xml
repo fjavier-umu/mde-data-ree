@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="Detection Errors"
+            id="es.modelum.detErrores">
+      </category>
+      <wizard
+            name="Detection Errors"
+            icon="icons/sample.gif"
+            category="es.modelum.detErrores"
+            class="es.modelum.deterrores.wizards.DetectionErrorsWizard"
+            id="es.modelum.deterrores.wizards.DetectionErrorsWizard">
+      </wizard>
+   </extension>
+
+</plugin>

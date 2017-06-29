@@ -1,0 +1,7 @@
+
+-- Automatic Generation Of COLUMN COMMENT: <%=comment.tableName%>.<%=comment.columnName%>
+<%
+tableName = comment.tableName
+commentText = comment.columnComment
+columnName = comment.columnName
+%>COMMENT ON COLUMN <%=tableName%>.<%=columnName%> IS <%=commentText%>;

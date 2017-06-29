@@ -1,0 +1,28 @@
+<project name="otg_convocatorias" default="main" basedir=".">
+	<path id="RubyTLEnginePath">
+		<pathelement location="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/lib/rubytlAnt.jar" />
+	</path>
+	<target name="declare">
+		<taskdef name="rubytl.m2m" classname="gts.rubytl.launching.core.ant.M2MTask" loaderRef="rubytl" classpathref="RubyTLEnginePath" />
+		<taskdef name="rubytl.configure" classname="gts.rubytl.launching.core.ant.ConfigureTask" loaderRef="rubytl" classpathref="RubyTLEnginePath" />
+	</target>
+	<target name="configure" depends="declare">
+		<rubytl.configure name="default">
+			<ruby path="/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby" />
+			<rubytl path="/Users/fjavier/UMU/Tesis/eclipse/rubytl" />
+		</rubytl.configure>
+	</target>
+	<target name="DML_DDL_Correct.xmi2JPA.xmi" depends="declare, configure">
+		<rubytl.m2m configuration="default">
+			<source>
+				<model path="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/models/DML_DDL_Correct.xmi" />
+				<namespace name="Correct" metamodel="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/metamodels/DML_DDL.ecore" />
+			</source>
+			<transformation path="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/transformations/ddl2jpa.rb" />
+			<target model="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/models/JPA.xmi" namespace="JPA" metamodel="/Users/fjavier/UMU/Tesis/workspace/DDL2JPAInvokeByAnt/metamodels/JPA.ecore" />
+		</rubytl.m2m>
+	</target>
+
+	<target name="main" depends="declare, configure, DML_DDL_Correct.xmi2JPA.xmi">
+	</target>
+</project>

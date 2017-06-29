@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.modelum.detErrores/src"
+    modelPluginID="es.modelum.detErrores" modelName="DetErrores" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>../../../../../metamodels/Errores.ecore</foreignModel>
+  <genPackages prefix="Errors" disposableProviderFactory="true" ecorePackage="Errores.ecore#/">
+    <genClasses ecoreClass="Errores.ecore#//Errores">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Errores.ecore#//Errores/errores"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//Error">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//Error/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//Error/apply"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//ForeignError">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//ForeignError/porcent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/tableCont"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/tableRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/fkColumns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/fk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//ForeignError/registriesFk"/>
+    </genClasses>
+    <genClasses ecoreClass="Errores.ecore#//CheckError">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Errores.ecore#//CheckError/porcent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//CheckError/ck"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//CheckError/table"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Errores.ecore#//CheckError/registriesCk"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="DML_DDL" disposableProviderFactory="true" ecorePackage="DML_DDL.ecore#/">
+    <genClasses ecoreClass="DML_DDL.ecore#//Statement"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//DataDefinition"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//DataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//DataType/types"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//DDLDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//DDLDefinition/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//DDLDefinition/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Pk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Pk/namePk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Pk/columnName"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Fk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Fk/nameFk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Fk/columnName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Fk/references"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Fk/columnReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Fk/status"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Ck">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Ck/nameCk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Ck/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Ck/valuesCk"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//ValuesCk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//ValuesCk/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//ValuesCk/comparator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//ValuesCk/columnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//ValuesCk/logConjuntion"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Column/columnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Column/commentColumn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Column/columnNull"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Column/columnType"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Database">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Database/databaseName"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Table/tableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Table/commentTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Table/columns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Table/columnsPk"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Table/columnsFk"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Table/checks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Table/registries"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Registry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Registry/registryValues"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Value/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DML_DDL.ecore#//Value/column"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//CommentTable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//CommentTable/tableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//CommentTable/tableComment"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//CommentColumn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//CommentColumn/tableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//CommentColumn/columnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//CommentColumn/columnComment"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Exacto"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Integer"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//SmallInteger"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Int"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//SmallInt"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Number"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Numeric"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Decimal"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Aproximado"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Real"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//DoublePrecision"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Float"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Long"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//LongRaw"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Characters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Characters/n"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Character"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//CharacterVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Char"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//VarChar"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//VarChar2"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NVarChar2"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NChar"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//CharVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NationalChar"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NationalCharVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NationalCharacter"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NationalCharacterVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NCharVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Clob"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//NClob"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Bits">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DML_DDL.ecore#//Bits/n"/>
+    </genClasses>
+    <genClasses ecoreClass="DML_DDL.ecore#//Bit"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//BitVarying"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Times"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Date"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Time"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Timestamp"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Intervals"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//YearMonth"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//DayTime"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Binaries"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//BinaryDouble"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//BinaryFloat"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//BFile"/>
+    <genClasses ecoreClass="DML_DDL.ecore#//Blob"/>
+  </genPackages>
+</genmodel:GenModel>

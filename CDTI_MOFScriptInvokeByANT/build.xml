@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: Francisco Javier Bermúdez Ruiz 
+     Version: 0.1 
+     Description: Ant task to launch MOFScript transformation
+-->
+<project name="MOFScriptInvocation" default="MOFScriptInvocation">
+
+	<property name="binDir" value="bin/" />
+	<property name="srcDir" value="srcGen/" />
+	<property name="metamodelsDir" value="metamodels/" />
+	<property name="modelsDir" value="models/" />
+	<property name="transformationsDir" value="transformations/" />
+	<property name="binDir" value="bin" />
+	<property name="metamodel" value="JPA.ecore" />
+	<property name="metamodelName" value="http://modelum.es/gra2mol/examples/JPA" />
+	<property name="model" value="JPA.xmi" />
+	<property name="transformation" value="MoJPA2CoJPA.m2t" />
+
+	<path id="path.taskdef">
+		<pathelement location="./lib/org.eclipse.emf.common_2.7.0.v20110912-0920.jar" />
+		<pathelement location="./lib/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar" />
+		<pathelement location="./lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar" />
+		<pathelement location="./lib/org.eclipse.mofscript.model.jar" />
+		<pathelement location="./lib/org.eclipse.mofscript.parser.jar" />
+		<pathelement location="./lib/org.eclipse.mofscript.runtime.jar" />
+		<pathelement location="./lib/org.eclipse.mofscript.fileresourcemodel.jar" />
+		<pathelement location="./lib/org.eclipse.uml2.uml_3.2.100.v201108110105.jar" />
+		<pathelement location="./lib/antlr-2.7.7.jar" />
+		<pathelement location="./lib/antlr-3.1.1-runtime.jar" />
+		<pathelement location="./lib/antlr-3.1.1.jar" />
+		<pathelement location="./lib/antlr3-antTask.jar" />
+		<pathelement location="./lib/ant.jar" />
+		<pathelement location="${binDir}." />
+	</path>
+
+	<target name="MOFScriptInvocation">
+		
+		<taskdef name="invokeMOFScript" classname="modernization.data.MOFScriptExecutorTask" classpathref="path.taskdef"/>
+		
+		<invokeMOFScript 
+			compilepath = "${metamodelsDir}"
+			metamodel = "${metamodelsDir}${metamodel}"
+			metamodelname = "${metamodelName}"
+			model = "${modelsDir}${model}"
+			transformation = "${transformationsDir}${transformation}"
+			outputdir = "${srcDir}"/>
+	</target>
+</project>

@@ -1,0 +1,13 @@
+@namespace(uri="http://modelum.es/gra2mol/examples/parametros", prefix="parametros")
+package parametros;
+
+
+class GrupoParametros {
+  val Parametro[*] parametros;
+}
+
+// Entidad
+class Parametro{
+  attr String nombre;
+  attr String valor; 
+}

@@ -1,0 +1,41 @@
+grammar DML;
+
+insertsStatements
+	:	(insertInto)*
+	;
+
+insertInto
+	:	'INSERT INTO' ID ('(')? (column)* (')')? 'VALUES' registry ';' 
+	;
+
+registry
+	:	'(' (value)+ ')'
+	;
+
+value
+	:	(ID | CVALUE | NUMBER) (',')?
+	;
+
+column
+	:	ID (',')?
+	;
+
+NUMBER
+	:	('0'..'9' | '.')*
+	;
+
+ID
+	:	('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '$' | '#' | '-' | '@' | '.')*
+	;
+
+SQUOTE
+	:	'\u0027'
+	;
+
+CVALUE
+	:	SQUOTE ( options {greedy=false;} : . )* SQUOTE
+	;
+
+WS
+	:	( ' ' | '\t' | '\n' | '\r' )+ {$channel=HIDDEN;}
+	;

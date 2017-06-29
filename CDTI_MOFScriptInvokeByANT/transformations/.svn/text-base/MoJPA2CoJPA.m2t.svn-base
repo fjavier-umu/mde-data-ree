@@ -1,0 +1,395 @@
+/**
+ *
+ * Template Transformation Example
+ *
+ */
+texttransformation MoJPA2CoJPA (in ec:"http://modelum.es/gra2mol/examples/JPA") {
+  	  property pkg  : String = "company.data.model";
+  	  property baseDir : String = '/'
+  	  property pkgDir  : String = "company/data/model/";
+  
+	  ec.PersistenceUnit::main () {
+	    file ('persistence.xml')		
+'<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="PracticaJPA" transaction-type="RESOURCE_LOCAL">
+		<non-jta-data-source>MySQL_3306</non-jta-data-source>
+'		
+		    self.entities ->forEach(c:ec.Entity) {
+'		<class>'c.name'</class>
+'
+		    }
+'		<properties>
+			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/jpa"/>
+			<property name="eclipselink.jdbc.user" value="root"/>
+			<property name="eclipselink.jdbc.password" value="root"/>
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+		'
+		    
+		// Recorro todas las anotaciones, aunque no todas van a ser tabla con el nuevo MM de BnB
+	    self.entities ->forEach(a:ec.Entity) {
+			a.anotations ->forEach(n:ec.Anotation) {
+			  	if (n.oclIsKindOf(ec.Table)) {
+					n.defAnotacion(a)
+			  	}
+	    	}    
+	    }
+	    
+	}
+
+	abstract ec.Anotation::defAnotacion();
+   
+  	ec.Table::defAnotacion(e:ec.Entity) {
+		file (pkgDir+self.name.toLower().firstToUpper()+'.java')
+'package ' pkg  ';
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
+' 
+if (e.comment != "") {'//'e.comment.replace("'", "").trim()} 
+'
+@Entity
+@Table(schema="jpa")
+public class ' + self.name.toLower().firstToUpper() + ' implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+'e.Variables()		
+'	
+	public 'self.name.toLower().firstToUpper() '() {
+		super();
+	}
+		
+	public 'self.name.toLower().firstToUpper()'('e.Parametros()') {
+'e.Constructores()
+'	}
+	'e.GetSet()'
+}'
+ 	}
+ 
+// Creamos un fichero con la clase para cada tabla 
+  ec.Entity::Variables() : String {
+    		var isId:boolean = false
+    		var anot:boolean = false	    
+  			var typeAtt:string = ""
+  			var colName:string = ""
+    	    self.properties ->forEach(p:ec.Property) {
+				if (p.comment !="") {
+'	//' p.comment.replace("'", "").trim()
+newline(1)			  
+			  	}    	    
+    	      	isId = false
+    	      	typeAtt = ""
+    	      	colName = ""
+    	    	self.anotations->forEach(epk:ec.EntityPk) {
+    	      		epk.properties->forEach(prPk:ec.Property) {
+    	      		  	if (p.name.trim().equals(prPk.name.trim())) {
+'	@Id'   newline(1) 
+							isId = true	      	
+    	      		  	}
+    	      		}
+    	    	}	
+    	    	p.anotations->forEach(col:ec.Column){  
+    	    	  	colName = col.name.trim().toLower()   	    		 
+'	@Column(name="' col.name '")' newline(1)
+					typeAtt = col.type
+					if (isId) {  
+'	private ' typeAtt ' ' p.name.toLower()  
+					';' newline(1)	  	  
+					}  	    		 
+    	    	}
+    	    	anot = false
+    	    	p.anotations->forEach(o2m:ec.OneToMany) {
+    	    		anot = true  	      		  
+'	@OneToMany(mappedBy="' self.name.toLower() '")
+	private List<' o2m.referencedEntityName.toLower().firstToUpper() '> ' o2m.referencedEntityName.toLower() 's_' o2m.name.toLower()  ';' newline(1) 	      		  	  
+    	    	}
+				p.anotations->forEach(m2o:ec.ManyToOne) {
+    	    		anot = true  	      		  
+'	@ManyToOne
+	@JoinColumn(name="' m2o.referencedPropertyName.trim() '")
+	private ' m2o.referencedEntityName.toLower().firstToUpper() ' ' m2o.referencedEntityName.toLower() '_'  m2o.name.toLower() ';' newline(1)	      		  	  
+    	    	}
+    	    	
+    	    	p.anotations->forEach(o2o:ec.OneToOne) {
+    	    		anot = true
+    	    		if (o2o.type == "one2one") {
+'	@OneToOne' newline(1)
+    	    		}
+    	    		else {
+'	@OneToOne(mappedBy="' self.name.toLower().toLower()'")' newline(1)
+    	    		}  	      		  
+'	@PrimaryKeyJoinColumn
+	private ' o2o.referencedEntityName.toLower().firstToUpper() ' ' o2o.referencedEntityName.toLower() '_'  o2o.name.toLower() ';' newline(1)	      		  	  
+    	    	}
+    	    	
+				if (!anot) {
+				  if (!isId) {
+'	private ' typeAtt ' ' p.name.toLower()  
+					';' newline(1)
+				  }
+				}
+	    	} 
+  }  
+  
+ // Función que  
+  ec.Entity::Parametros() : String {
+    		var isId:boolean = false
+    		var isAnot:boolean = false
+    	    var notFirst:boolean=false
+    	    var typeAtt:string = ""
+    	    var nameAtt:string = ""
+    	    var colName:string = ""
+    	    self.properties ->forEach(p:ec.Property) {
+    	      		isAnot = false
+    	      		isId = false
+    	      		self.anotations->forEach(epk:ec.EntityPk) {
+    	      			epk.properties->forEach(prPk:ec.Property) {
+    	      		  		if (p.name.trim().equals(prPk.name.trim())) { 
+								isId = true	      	
+    	      		  		}
+    	      			}
+    	    		}
+    	      		
+    	      		
+					nameAtt = p.name.toLower()
+					colName = ""
+					p.anotations->forEach(col:ec.Column){    	    		 
+						typeAtt = col.type    	  
+						colName = col.name.trim().toLower()  		 
+    	    		}		
+
+    	      		if (isId) {
+						if (notFirst) {', '}
+						notFirst=true
+    	      		    '' typeAtt ' ' nameAtt	  	  
+					}  
+							
+    	    		p.anotations->forEach(o2m:ec.OneToMany) {
+    	    		  	isAnot = true
+    	    			typeAtt = "List<" + o2m.referencedEntityName.toLower().firstToUpper()+">" 	
+    	    			nameAtt = o2m.referencedEntityName.toLower()+"s_"+o2m.name.toLower() 
+    	    			
+    	    			if (isAnot==true or isId==false) {
+    	    				if (notFirst) {', '}
+							notFirst=true	
+					'' typeAtt ' ' nameAtt
+							isId = true;
+							isAnot = false;
+    	    			}
+    	    			    		  	  
+    	    		}
+					p.anotations->forEach(m2o:ec.ManyToOne) {
+					  	isAnot = true
+    	    			typeAtt = m2o.referencedEntityName.toLower().firstToUpper()
+    	    			nameAtt = m2o.referencedEntityName.toLower()+"_"+m2o.name.toLower()      		  	  
+
+    	    			if (isAnot==true or isId==false) {
+    	    				if (notFirst) {', '}
+							notFirst=true	
+					'' typeAtt ' ' nameAtt
+							isId = true;
+							isAnot = false;
+    	    			}
+
+    	    		}
+    	    	
+    	    		p.anotations->forEach(o2o:ec.OneToOne) {
+    	    		  	isAnot = true
+    	    			typeAtt = o2o.referencedEntityName.toLower().firstToUpper()
+    	    			nameAtt = o2o.referencedEntityName.toLower()+"_"+o2o.name.toLower() 
+
+    	    			if (isAnot==true or isId==false) {
+    	    				if (notFirst) {', '}
+							notFirst=true	
+					'' typeAtt ' ' nameAtt
+							isId = true;
+							isAnot = false;
+    	    			}
+
+    	    		}
+
+	    } 
+  }  	
+
+  ec.Entity::Constructores() : String {
+    		var isId:boolean = false
+    		var isAnot:boolean = false
+    	    var x:boolean=false
+    	    var typeAtt:string = ""
+    	    var nameAtt:string = ""
+    	    var colName:string = ""
+    	    self.properties ->forEach(p:ec.Property) {
+    	      	isAnot = false
+    	      	isId = false
+    	      	self.anotations->forEach(epk:ec.EntityPk) {
+    	      		epk.properties->forEach(prPk:ec.Property) {
+    	      			if (p.name.trim().equals(prPk.name.trim())) { 
+							isId = true	      	
+    	      		  	}
+    	      		}
+    	    	}
+				nameAtt = p.name.toLower()
+				colName = ""
+				p.anotations->forEach(col:ec.Column){    	    		 
+						typeAtt = col.type 
+						colName = col.name.trim().toLower()   	    		 
+    	    	}		
+				
+				if (isId) {
+'		this.'nameAtt' = ' nameAtt';
+'				}
+				
+    	    	p.anotations->forEach(o2m:ec.OneToMany) {
+    	    	  	isAnot = true
+    	    		typeAtt = "List<" + o2m.referencedEntityName.toLower().firstToUpper() + ">" 	
+    	    		nameAtt = o2m.referencedEntityName.toLower() + "s_" + o2m.name.toLower()   
+    	    		
+    	    		if (isAnot==true or isId==false) {		
+'		this.'nameAtt' = ' nameAtt';
+' 
+						isId = true;
+						isAnot = false;
+    	      		}
+    	    		 		  	  
+    	    	}
+				p.anotations->forEach(m2o:ec.ManyToOne) {
+				  	isAnot = true
+    	    		typeAtt = m2o.referencedEntityName.toLower().firstToUpper()
+    	    		nameAtt = m2o.referencedEntityName.toLower() + "_" + m2o.name.toLower()  
+    	    		
+    	    		if (isAnot==true or isId==false) {		
+'		this.'nameAtt' = ' nameAtt';
+' 
+						isId = true;
+						isAnot = false;
+    	      		}
+    	    		    		  	  
+    	    	}
+    	    	
+    	    	p.anotations->forEach(o2o:ec.OneToOne) {
+    	    	  	isAnot = true
+    	    		typeAtt = o2o.referencedEntityName.toLower().firstToUpper()
+    	    		nameAtt = o2o.referencedEntityName.toLower() + "_" + o2o.name.toLower()
+    	    		
+    	    		if (isAnot==true or isId==false) {		
+'		this.'nameAtt' = ' nameAtt';
+' 
+						isId = true;
+						isAnot = false;
+    	      		}
+    	    		
+    	    	}    	      
+    	      
+    	      	
+	    } 
+  }  
+ 	
+  ec.Entity::GetSet() : String {
+    		var isId:boolean = false
+    	    var isAnot:boolean=false
+    	    var typeAtt:string = ""
+    	    var nameAtt:string = ""
+    	    var colName:string = ""
+    	    self.properties ->forEach(p:ec.Property) {
+    	      	isAnot = false
+    	      	isId = false
+    	      	self.anotations->forEach(epk:ec.EntityPk) {
+    	      		epk.properties->forEach(prPk:ec.Property) {
+    	      			if (p.name.trim().equals(prPk.name.trim())) { 
+							isId = true	      	
+    	      		  	}
+    	      		}
+    	    	}
+    	      	nameAtt = p.name.toLower()
+    	      	colName = ""
+				p.anotations->forEach(col:ec.Column){    	    		 
+						typeAtt = col.type 
+						colName = col.name.trim().toLower()   	    		 
+    	    	}		
+    	    	
+    	    	if (isId) {
+    	    		newline(1)
+'	public 'typeAtt' get'nameAtt.firstToUpper()'() {
+		return this.'nameAtt';
+	}
+			
+	public void set'nameAtt.firstToUpper()'('typeAtt' 'nameAtt') {
+		this.'nameAtt' = 'nameAtt';
+	}'
+				}
+    	    	
+    	    	
+				newline(1)
+				
+    	    	p.anotations->forEach(o2m:ec.OneToMany) {
+    	    	  	isAnot = true
+    	    		typeAtt = "List<" + o2m.referencedEntityName.toLower().firstToUpper() + ">" 	
+    	    		nameAtt = o2m.referencedEntityName.toLower() + "s_" + o2m.name.toLower()
+    	    		
+    	    		if (isAnot==true or isId==false) {
+'	public 'typeAtt' get'nameAtt.firstToUpper()'() {
+		return this.'nameAtt';
+	}
+			
+	public void set'nameAtt.firstToUpper()'('typeAtt' 'nameAtt') {
+		this.'nameAtt' = 'nameAtt';
+	}
+
+'
+						isId = true;
+						isAnot = false;
+  					}
+  				     		  	  
+    	    	}
+  				
+				p.anotations->forEach(m2o:ec.ManyToOne) {
+				  	isAnot = true
+    	    		typeAtt = m2o.referencedEntityName.toLower().firstToUpper()
+    	    		nameAtt = m2o.referencedEntityName.toLower() + "_" + m2o.name.toLower()     
+    	    		
+    	    		if (isAnot==true or isId==false) {
+'	public 'typeAtt' get'nameAtt.firstToUpper()'() {
+		return this.'nameAtt';
+	}
+			
+	public void set'nameAtt.firstToUpper()'('typeAtt' 'nameAtt') {
+		this.'nameAtt' = 'nameAtt';
+	}
+
+'
+						isId = true;
+						isAnot = false;
+  					}
+    	    		 		  	  
+    	    	}
+    	    	
+    	    	p.anotations->forEach(o2o:ec.OneToOne) {
+    	    	  	isAnot = true
+    	    		typeAtt = o2o.referencedEntityName.toLower().firstToUpper()
+    	    		nameAtt = o2o.referencedEntityName.toLower() + "_" + o2o.name.toLower()
+    	    		
+    	    		if (isAnot==true or isId==false) {
+'	public 'typeAtt' get'nameAtt.firstToUpper()'() {
+		return this.'nameAtt';
+	}
+			
+	public void set'nameAtt.firstToUpper()'('typeAtt' 'nameAtt') {
+		this.'nameAtt' = 'nameAtt';
+	}
+
+'
+						
+  					}
+    	    		
+    	    	}
+    	    	
+	    	} 
+  }  	 		 
+
+}

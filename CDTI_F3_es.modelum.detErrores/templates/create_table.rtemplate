@@ -1,0 +1,78 @@
+-- Automatic Generation Of TABLE: <%= table.tableName %>
+<%
+tableName = table.tableName
+columns = Array.new
+fk = Array.new
+fkDisabled = Array.new
+ck = Array.new
+ckDisabled = Array.new
+
+table.columns.each do |column|
+  null = "NOT NULL"
+  if (column.columnNull)
+  	null = "NULL"
+  end
+  
+  columns << column.columnName + " " + column.columnType.name + " " + null + ","
+end
+
+table.checks.each do |check|
+  aux = "CONSTRAINT " + check.nameCk + " CHECK ("
+  check.valuesCk.each do |val|
+  	aux += val.columnName
+  	if (val.value.length > 1)
+  	  aux += " IN ("
+  	  for i in 0..val.value.length-1
+  		aux += val.value[i]
+  		if (i+1 <= val.value.length-1)
+  		  aux += ","
+  		end
+  	  end
+  	  aux += ")"
+  	else
+  	  aux += " " + val.comparator + " " + val.value[0]
+  	end
+  	if (val.logConjuntion != nil)
+  	  aux += " " + val.logConjuntion + " "
+  	end
+  end
+  ck << aux + "),"
+end
+
+table.columnsFk.each do |f|
+  fk << "CONSTRAINT " + f.nameFk + " FOREIGN KEY (" + f.columnName.map{|colName| colName}.join(',') + ") REFERENCES " + f.references.tableName + " (" + f.columnReference.map{|colName| colName}.join(',') + "),"
+end
+
+pk = "CONSTRAINT " + table.columnsPk.namePk + " PRIMARY KEY (" + table.columnsPk.columnName.map{|colName| colName}.join(',') + ")"
+
+table.columnsFk.each do |f|
+  if (f.status == "DISABLED")
+    fkDisabled << "ALTER TABLE " + tableName + " DROP CONSTRAINT " + f.nameFk + ";"
+  end
+end
+
+table.checks.each do |c|
+  if (c.status == "DISABLED")
+    ckDisabled << "ALTER TABLE " + tableName + " DROP CONSTRAINT " + c.nameCk + ";"
+  end
+end
+
+-%>
+CREATE TABLE <%= tableName %> (
+<% columns.each do |column| -%>
+  <%= column %>
+<% end -%>
+<% ck.each do |check| -%>
+  <%= check %>
+<% end -%>
+<% fk.each do |f| -%>
+  <%= f %>
+<% end -%>
+  <%= pk %>
+);
+<% fkDisabled.each do |disabled| -%>
+<%= disabled %>
+<% end -%>
+<% ckDisabled.each do |disabled| -%>
+<%= disabled %>
+<% end -%>

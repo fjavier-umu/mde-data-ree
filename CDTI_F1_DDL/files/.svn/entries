@@ -1,0 +1,47 @@
+10
+
+dir
+476
+svn+ssh://modelum.inf.um.es/home/modelum/proyectos/guizmo/trunk/M_F1_DDL/files
+svn+ssh://modelum.inf.um.es/home/modelum/proyectos/guizmo
+
+
+
+2012-01-31T13:20:17.300975Z
+476
+jbermudez
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0537af7c-f525-4fce-a4ab-71bf0a837ac3
+
+
+
+
+
+
+0
+
+bin
+dir
+
+gen
+dir
+
+metamodels
+dir
+
+src
+dir
+

@@ -1,0 +1,94 @@
+10
+
+dir
+474
+svn+ssh://modelum.inf.um.es/home/modelum/proyectos/guizmo/trunk/M_F2_6_DataModernization
+svn+ssh://modelum.inf.um.es/home/modelum/proyectos/guizmo
+
+
+
+2012-01-31T13:19:35.583799Z
+474
+jbermudez
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0537af7c-f525-4fce-a4ab-71bf0a837ac3
+
+
+
+
+
+
+
+immediates
+
+.project
+file
+478
+
+
+
+2012-01-17T16:50:13.000000Z
+707908618ceceb4ccef8ffd5a367d527
+2012-01-31T13:21:58.466095Z
+478
+jbermudez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+265
+
+generation
+dir
+
+helpers
+dir
+
+metamodels
+dir
+
+models
+dir
+
+tasks
+dir
+
+templates
+dir
+
+transformations
+dir
+
+validations
+dir
+

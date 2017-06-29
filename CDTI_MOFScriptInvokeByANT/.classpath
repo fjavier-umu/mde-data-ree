@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="srcGen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.7.0.v20110912-0920.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.mofscript.model.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.mofscript.parser.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.mofscript.runtime.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml_3.2.100.v201108110105.jar"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence_2.0.3.v201010191057.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.mofscript.fileresourcemodel.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-3.1.1-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-3.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/antlr3-antTask.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

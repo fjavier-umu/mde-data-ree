@@ -1,0 +1,87 @@
+@namespace(uri="http://modelum.es/gra2mol/examples/JPA", prefix="JPA")
+package JPA;
+
+// Unidad de persistencia
+class PersistenceUnit {
+  val Entity[*] entities;
+}
+
+// Entidad
+class Entity {
+  attr String name;
+  attr String comment; // Comentarios de tabla
+  val Property[*] properties; // Columnas de la tabla
+  val Anotation[*] anotations; // Anotaciones sobre la entidad
+}
+
+// Propiedad de una determinada entidad
+class Property {
+  attr String name; // Nombre de la columna
+  attr String comment; // Comentarios de columna
+  val Anotation[*] anotations;
+}
+
+// Tipo abstracto anotación
+class Anotation {
+}
+
+//Anotación para indicar la clase correspondiente a la clave primaria
+class EntityPk extends Anotation {
+   attr String name; // Será el nombre de la tabla con el sufijo Pk
+   val Property[*] properties; // Columnas que corresponden con la clave primaria 
+}
+
+// Anotación para asociar una entidad como una tabla
+class Table extends Anotation {
+  attr String name; // Nombre de la tabla, se podría omitir si coinciden...
+}
+
+// Anotación para asociar una propiedad con una columna
+class Column extends Anotation {
+   attr String name; // Nombre de la columna, se podria omitir si coinciden...
+   attr String type;
+   attr boolean nullable;
+   attr Fetch fetch;
+}
+
+// Anotación para indicar relaciones uno a uno
+class OneToOne extends Anotation {
+  attr String name;
+  attr String referencedColumnName;
+  attr boolean updatable; 
+}
+
+// Anotación para indicar relaciones uno a muchos
+class OneToMany extends Anotation {
+  attr Cascade cascade;
+  attr Fetch fetch;
+}
+
+// Anotación para indicar relaciones de muchos a uno
+class ManyToOne extends Anotation {
+   attr Fetch fetch;
+   attr String joinColumn;
+   attr boolean nullable;
+}
+
+// Anotación para indicar relaciones de muchos a muchos
+class ManyToMany extends Anotation {
+   attr String name;
+   attr String joinColumn;
+   attr String inverseJoinColumn;
+}
+
+// Posibles valores de la propiedad cascade
+enum Cascade {
+  PERSIST =0;
+  REMOVE = 1;
+  REFRESH = 2;
+  MERGE = 3;
+  ALL = 4;
+}
+
+// Posibles valores de la propiedad fetch
+enum Fetch {
+   LAZY = 0; // Carga perezosa
+   EAGER = 1;
+}

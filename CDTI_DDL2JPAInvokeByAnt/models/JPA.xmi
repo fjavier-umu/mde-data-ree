@@ -1,0 +1,380 @@
+<JPA:PersistenceUnit xsi:schemaLocation='http://modelum.es/gra2mol/examples/JPA ../metamodels/JPA.ecore' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:JPA='http://modelum.es/gra2mol/examples/JPA' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI'>
+<entities comment='&apos;Terceros&apos;' name='OTG_TERCEROS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno (Secuencia S_TER_CODIGO)&apos;' name='TER_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='PTERCEROS_TERCEROS_FK1' referencedPropertyName='
+ TER_CODIGO 
+' type='one2one' xsi:type='JPA:OneToOne'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='TERCEROS_TERCEROS_FK2' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+<anotations referencedEntityName='OTG_PTERCEROS' name='PTERCEROS_TERCEROS_FK2' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+<anotations referencedEntityName='OTG_TCONVOCATORIAS' name='TCONVOCATOR_TERCEROS_FK2' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;C.I.F.&apos;' name='TER_CIF' xsi:type='JPA:Property'>
+<anotations name='TER_CIF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='TER_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='TER_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Acronimo&apos;' name='TER_ALIAS' xsi:type='JPA:Property'>
+<anotations name='TER_ALIAS' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo C.N.A.E (FK - OTG_CNAES)&apos;' name='TER_CNA_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_CNA_CODIGO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Domicilio&apos;' name='TER_DOMICILIO' xsi:type='JPA:Property'>
+<anotations name='TER_DOMICILIO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo Postal&apos;' name='TER_CP' xsi:type='JPA:Property'>
+<anotations name='TER_CP' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la poblacion (FK - PUEBLOS)&apos;' name='TER_PUE_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_PUE_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Poblacion (extrajeros)&apos;' name='TER_POBLACIONEXT' xsi:type='JPA:Property'>
+<anotations name='TER_POBLACIONEXT' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la provincia (FK - PROVINCIAS)&apos;' name='TER_PRO_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_PRO_CODIGO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Provincia (Extranjeros)&apos;' name='TER_PROVINCIAEXT' xsi:type='JPA:Property'>
+<anotations name='TER_PROVINCIAEXT' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo del Pais (FK - PAISES)&apos;' name='TER_PAI_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_PAI_CODIGO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Tel√àfono&apos;' name='TER_TELEFONO' xsi:type='JPA:Property'>
+<anotations name='TER_TELEFONO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fax&apos;' name='TER_FAX' xsi:type='JPA:Property'>
+<anotations name='TER_FAX' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Direccion de correo electronico&apos;' name='TER_MAIL' xsi:type='JPA:Property'>
+<anotations name='TER_MAIL' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;P¬∑gina Web&apos;' name='TER_WEB' xsi:type='JPA:Property'>
+<anotations name='TER_WEB' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Tipo ( NA-EX (Nacional, Extranjera) VA (Comun. Valenc) PR-PU-MT (Privada, Publica, Mixta) EM-EN-AD-IN (Empresa, IPSFL, Administracion, OPI) CE-AU-LO (Central, Autonomica, Local) )&apos;' name='TER_TIPO' xsi:type='JPA:Property'>
+<anotations name='TER_TIPO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo del Tercero Superior (FK - OTG_TERCEROS)&apos;' name='TER_TER_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TER_TER_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='TERCEROS_TERCEROS_FK2' referencedPropertyName='
+ TER_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Domicilio de correspondencia&apos;' name='TER_DOMICILIOF' xsi:type='JPA:Property'>
+<anotations name='TER_DOMICILIOF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo Postal de correspondencia&apos;' name='TER_CPF' xsi:type='JPA:Property'>
+<anotations name='TER_CPF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la Poblacion correspondencia (FK - PUEBLOS)&apos;' name='TER_PUE_CODIGOF' xsi:type='JPA:Property'>
+<anotations name='TER_PUE_CODIGOF' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Poblacion correspondencia (extranjeros)&apos;' name='TER_POBLACIONEXTF' xsi:type='JPA:Property'>
+<anotations name='TER_POBLACIONEXTF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo del pais correspondencia (FK - PAISES)&apos;' name='TER_PAI_CODIGOF' xsi:type='JPA:Property'>
+<anotations name='TER_PAI_CODIGOF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la provincia correspondencia (FK - PROVINCIAS)&apos;' name='TER_PRO_CODIGOF' xsi:type='JPA:Property'>
+<anotations name='TER_PRO_CODIGOF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Provincia correspondencia (extranjeros)&apos;' name='TER_PROVINCIAEXTF' xsi:type='JPA:Property'>
+<anotations name='TER_PROVINCIAEXTF' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;En desuso (S, N).&apos;' name='TER_ANTIGUO' xsi:type='JPA:Property'>
+<anotations name='TER_ANTIGUO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo Log&apos;' name='LOG' xsi:type='JPA:Property'>
+<anotations name='LOG' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Na de Cuenta&apos;' name='TER_NCC' xsi:type='JPA:Property'>
+<anotations name='TER_NCC' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_TERCEROS' xsi:type='JPA:Table'/>
+<anotations name='OTG_TERCEROS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ TER_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Convocatorias Nacionales&apos;' name='OTG_CONVOCATORIAS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno (Secuencia S_CON_CODIGO)&apos;' name='CON_CODIGO' xsi:type='JPA:Property'>
+<anotations name='CON_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_CONVOCATORIAS' name='TCONVOCATOR_CONVOCATORIAS_FK1' referencedPropertyName='
+ CON_CODIGO 
+' type='one2one' xsi:type='JPA:OneToOne'/>
+<anotations referencedEntityName='OTG_ACTIVIDADES' name='ACTIVIDADES_CONVOCATORIAS_FK1' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;Codigo O.T.R.I.&apos;' name='CON_CODIGOOTRI' xsi:type='JPA:Property'>
+<anotations name='CON_CODIGOOTRI' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='CON_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='CON_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha de publicacion&apos;' name='CON_FPUB' xsi:type='JPA:Property'>
+<anotations name='CON_FPUB' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha de resolucion&apos;' name='CON_FRES' xsi:type='JPA:Property'>
+<anotations name='CON_FRES' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha de 1a correccion&apos;' name='CON_FCOR1' xsi:type='JPA:Property'>
+<anotations name='CON_FCOR1' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha de 2a correccion&apos;' name='CON_FCOR2' xsi:type='JPA:Property'>
+<anotations name='CON_FCOR2' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Lugar donde se encuentra accesible la documentacion&apos;' name='CON_ACCESO' xsi:type='JPA:Property'>
+<anotations name='CON_ACCESO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Tipo de Convocatoria (R: Regional, N: Nacional)&apos;' name='CON_TIPO' xsi:type='JPA:Property'>
+<anotations name='CON_TIPO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la Publicacion Oficial (FK - OTG_PUBLICAOFI)&apos;' name='CON_PUB_CODIGO' xsi:type='JPA:Property'>
+<anotations name='CON_PUB_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_PUBLICAOFI' name='CONVOCATORIAS_PUBLICAOFI_FK1' referencedPropertyName='
+ PUB_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Codigo Log&apos;' name='LOG' xsi:type='JPA:Property'>
+<anotations name='LOG' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Localizacion de informacion&apos;' name='CON_INFOR' xsi:type='JPA:Property'>
+<anotations name='CON_INFOR' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Obsoleto&apos;' name='CON_DEDICA' xsi:type='JPA:Property'>
+<anotations name='CON_DEDICA' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties name='CON_TIPOWEB' xsi:type='JPA:Property'>
+<anotations name='CON_TIPOWEB' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties name='CON_WEB' xsi:type='JPA:Property'>
+<anotations name='CON_WEB' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_CONVOCATORIAS' xsi:type='JPA:Table'/>
+<anotations name='OTG_CONVOCATORIAS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ CON_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Modos de  participacion (Terceros)&apos;' name='OTG_PTCONVOCATORIAS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno&apos;' name='PTC_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PTC_CODIGO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TCONVOCATORIAS' name='TCONVOCATOR_PTCONVOCATOR_FK3' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='PTC_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='PTC_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_PTCONVOCATORIAS' xsi:type='JPA:Table'/>
+<anotations name='OTG_PTCOVOCATORIAS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ PTC_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Procedencia de Terceros&apos;' name='OTG_PTERCEROS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo del Tercero (FK - OTG_TERCEROS)&apos;' name='PTE_TER_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PTE_TER_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='PTERCEROS_TERCEROS_FK1' referencedPropertyName='
+ TER_CODIGO 
+' type='one2one-mappedby' xsi:type='JPA:OneToOne'/>
+</properties>
+<properties comment='&apos;Codigo del Tercero de procedencia (FK - OTG_TERCEROS)&apos;' name='PTE_TER_CODIGOP' xsi:type='JPA:Property'>
+<anotations name='PTE_TER_CODIGOP' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='PTERCEROS_TERCEROS_FK2' referencedPropertyName='
+ TER_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<anotations name='OTG_PTERCEROS' xsi:type='JPA:Table'/>
+<anotations name='OTG_PTERCEROS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ PTE_TER_CODIGO 
+' xsi:type='JPA:Property'/>
+<properties name='
+ PTE_TER_CODIGOP 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Plazos de las convocatorias&apos;' name='OTG_PCONVOCATORIAS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno (Secuencia S_PCO_CODIGO)&apos;' name='PCO_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PCO_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo de la actividad (FK - OTG_ACTIVIDADES)&apos;' name='PCO_ACT_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PCO_ACT_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_ACTIVIDADES' name='PCONVOCATORIAS_ACTIVIDADES_FK1' referencedPropertyName='
+ ACT_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Codigo de la Modalidad (FK -  OTG_MODALIDADES)&apos;' name='PCO_MOD_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PCO_MOD_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_MODALIDADES' name='PCONVOCATORIAS_MODALIDADES_FK1' referencedPropertyName='
+ MOD_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Fecha inicio de solicitud&apos;' name='PCO_FINIS' xsi:type='JPA:Property'>
+<anotations name='PCO_FINIS' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha fin de solicitud&apos;' name='PCO_FFINS' xsi:type='JPA:Property'>
+<anotations name='PCO_FFINS' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Fecha fin de aceptacion O.T.R.I.&apos;' name='PCO_FFINA' xsi:type='JPA:Property'>
+<anotations name='PCO_FFINA' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;A√±o de la convocatoria&apos;' name='PCO_ANO' xsi:type='JPA:Property'>
+<anotations name='PCO_ANO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Plazo de Justificacion&apos;' name='PCO_FJUST' xsi:type='JPA:Property'>
+<anotations name='PCO_FJUST' fetch='LAZY' type='java.util.Date' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_PCONVOCATORIAS' xsi:type='JPA:Table'/>
+<anotations name='OTG_PCONVOCATORIAS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ PCO_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Modalidades (Actividades de convocatorias)&apos;' name='OTG_MODALIDADES' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno (Secuencia S_MOD_CODIGO)&apos;' name='MOD_CODIGO' xsi:type='JPA:Property'>
+<anotations name='MOD_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_PCONVOCATORIAS' name='PCONVOCATORIAS_MODALIDADES_FK1' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;Codigo de la Acitvidad (FK - OTG_ACTIVIDADES)&apos;' name='MOD_ACT_CODIGO' xsi:type='JPA:Property'>
+<anotations name='MOD_ACT_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_ACTIVIDADES' name='MODALIDADES_ACTIVIDADES_FK1' referencedPropertyName='
+ ACT_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Codigo O.T.R.I.&apos;' name='MOD_CODIGOOTRI' xsi:type='JPA:Property'>
+<anotations name='MOD_CODIGOOTRI' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='MOD_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='MOD_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Descripcion&apos;' name='MOD_DESCRIPCION' xsi:type='JPA:Property'>
+<anotations name='MOD_DESCRIPCION' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Destinatarios&apos;' name='MOD_DESTINATARIO' xsi:type='JPA:Property'>
+<anotations name='MOD_DESTINATARIO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Objetivos&apos;' name='MOD_OBJETIVOS' xsi:type='JPA:Property'>
+<anotations name='MOD_OBJETIVOS' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Financiacion&apos;' name='MOD_FINANCIACION' xsi:type='JPA:Property'>
+<anotations name='MOD_FINANCIACION' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Condiciones&apos;' name='MOD_CONDICIONES' xsi:type='JPA:Property'>
+<anotations name='MOD_CONDICIONES' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo Log&apos;' name='LOG' xsi:type='JPA:Property'>
+<anotations name='LOG' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Contabilidad horaria&apos;' name='MOD_DEDICA' xsi:type='JPA:Property'>
+<anotations name='MOD_DEDICA' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_MODALIDADES' xsi:type='JPA:Table'/>
+<anotations name='OTG_MODALIDADES_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ MOD_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Terceros (Convocatorias)&apos;' name='OTG_TCONVOCATORIAS' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo de la convocatoria (FK - OTG_CONVOCATORIAS)&apos;' name='TCO_CON_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TCO_CON_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_CONVOCATORIAS' name='TCONVOCATOR_CONVOCATORIAS_FK1' referencedPropertyName='
+ CON_CODIGO 
+' type='one2one-mappedby' xsi:type='JPA:OneToOne'/>
+</properties>
+<properties comment='&apos;Codigo del tercero (FK - OTG_TERCEROS)&apos;' name='TCO_TER_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TCO_TER_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_TERCEROS' name='TCONVOCATOR_TERCEROS_FK2' referencedPropertyName='
+ TER_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Codigo del tipo de participacion (FK - OTG_PTCONVOCATORIAS)&apos;' name='TCO_PTC_CODIGO' xsi:type='JPA:Property'>
+<anotations name='TCO_PTC_CODIGO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_PTCONVOCATORIAS' name='TCONVOCATOR_PTCONVOCATOR_FK3' referencedPropertyName='
+ PTC_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<anotations name='OTG_TCONVOCATORIAS' xsi:type='JPA:Table'/>
+<anotations name='OTG_TCONVOCATORIAS_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ TCO_CON_CODIGO 
+' xsi:type='JPA:Property'/>
+<properties name='
+ TCO_TER_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Publicaciones Oficiales&apos;' name='OTG_PUBLICAOFI' xsi:type='JPA:Entity'>
+<properties comment='&apos;C√≥digo Intero (Secuencia S_PUB_CODIGO)&apos;' name='PUB_CODIGO' xsi:type='JPA:Property'>
+<anotations name='PUB_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_CONVOCATORIAS' name='CONVOCATORIAS_PUBLICAOFI_FK1' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='PUB_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='PUB_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_PUBLICAOFI' xsi:type='JPA:Table'/>
+<anotations name='OTG_PUBLICAOFI_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ PUB_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+<entities comment='&apos;Actividades (convocatorias)&apos;' name='OTG_ACTIVIDADES' xsi:type='JPA:Entity'>
+<properties comment='&apos;Codigo Interno (Secuencia S_ACT_CODIGO)&apos;' name='ACT_CODIGO' xsi:type='JPA:Property'>
+<anotations name='ACT_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_MODALIDADES' name='MODALIDADES_ACTIVIDADES_FK1' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+<anotations referencedEntityName='OTG_PCONVOCATORIAS' name='PCONVOCATORIAS_ACTIVIDADES_FK1' type='one2many-mappedby' xsi:type='JPA:OneToMany'/>
+</properties>
+<properties comment='&apos;Codigo de la convocatoria (FK - OTG_CONVOCATORIAS)&apos;' name='ACT_CON_CODIGO' xsi:type='JPA:Property'>
+<anotations name='ACT_CON_CODIGO' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+<anotations referencedEntityName='OTG_CONVOCATORIAS' name='ACTIVIDADES_CONVOCATORIAS_FK1' referencedPropertyName='
+ CON_CODIGO 
+' type='many2one' xsi:type='JPA:ManyToOne'/>
+</properties>
+<properties comment='&apos;Codigo O.T.R.I.&apos;' name='ACT_CODIGOOTRI' xsi:type='JPA:Property'>
+<anotations name='ACT_CODIGOOTRI' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Nombre&apos;' name='ACT_NOMBRE' xsi:type='JPA:Property'>
+<anotations name='ACT_NOMBRE' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Descripcion&apos;' name='ACT_DESCRIPCION' xsi:type='JPA:Property'>
+<anotations name='ACT_DESCRIPCION' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Destinatarios&apos;' name='ACT_DESTINATARIO' xsi:type='JPA:Property'>
+<anotations name='ACT_DESTINATARIO' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Objetivos&apos;' name='ACT_OBJETIVOS' xsi:type='JPA:Property'>
+<anotations name='ACT_OBJETIVOS' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Condiciones&apos;' name='ACT_CONDICIONES' xsi:type='JPA:Property'>
+<anotations name='ACT_CONDICIONES' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Financiacion&apos;' name='ACT_FINANCIACION' xsi:type='JPA:Property'>
+<anotations name='ACT_FINANCIACION' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Tipo de solicitud (P : Proyecto, B : Beca, I : Infraestructura, V : Viaje)&apos;' name='ACT_TIPOSOLI' xsi:type='JPA:Property'>
+<anotations name='ACT_TIPOSOLI' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Actividad con modalidades (S, N)&apos;' name='ACT_MODALIDADES' xsi:type='JPA:Property'>
+<anotations name='ACT_MODALIDADES' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Codigo LOG&apos;' name='LOG' xsi:type='JPA:Property'>
+<anotations name='LOG' fetch='LAZY' type='int' xsi:type='JPA:Column'/>
+</properties>
+<properties comment='&apos;Contabilidad horaria&apos;' name='ACT_DEDICA' xsi:type='JPA:Property'>
+<anotations name='ACT_DEDICA' fetch='LAZY' type='String' xsi:type='JPA:Column'/>
+</properties>
+<anotations name='OTG_ACTIVIDADES' xsi:type='JPA:Table'/>
+<anotations name='OTG_ACTIVIDADES_KEY' xsi:type='JPA:EntityPk'>
+<properties name='
+ ACT_CODIGO 
+' xsi:type='JPA:Property'/>
+</anotations>
+</entities>
+</JPA:PersistenceUnit>

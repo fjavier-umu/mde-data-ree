@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="errors"
+    nsURI="http://modelum.es/Error" nsPrefix="ERR">
+  <eClassifiers xsi:type="ecore:EClass" name="Errores">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="errores" upperBound="-1"
+        eType="#//Error" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Error">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apply" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForeignError" eSuperTypes="#//Error">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="porcent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableCont" eType="ecore:EClass DML_DDL.ecore#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableRef" eType="ecore:EClass DML_DDL.ecore#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fkColumns" upperBound="-1"
+        eType="ecore:EClass DML_DDL.ecore#//Column"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fk" eType="ecore:EClass DML_DDL.ecore#//Fk"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registriesFk" upperBound="-1"
+        eType="ecore:EClass DML_DDL.ecore#//Registry"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckError" eSuperTypes="#//Error">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="porcent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ck" eType="ecore:EClass DML_DDL.ecore#//Ck"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="ecore:EClass DML_DDL.ecore#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registriesCk" upperBound="-1"
+        eType="ecore:EClass DML_DDL.ecore#//Registry"/>
+  </eClassifiers>
+</ecore:EPackage>
