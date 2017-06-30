@@ -11,10 +11,10 @@ M_F3_es.modelum.detErrores : <br> -- "Reestrucuturing stage in <strong>DAS-M</st
 mofscript-gen-MoJPA2CoJPA.m2t : <br> -- "Forward engineering stage - powered by AGE + RubyTL + MOFScript" <br>
 <br>
 <strong>"Projects for the MDE-based data reengineering process, including the data quality improvement stage. Version for the Models4Migration tool (https://goo.gl/6Z88Z7). Each project corresponds to each stage of the data modernization process."</strong><br><br>
-CDTI_DDL2JPAInvokeByAnt<br>
-CDTI_F1_DDL<br>
-CDTI_F1_DML<br>
-CDTI_F2_6_DataModernization<br>
+CDTI_F1_DDL : <br> -- "Reverse Engineering stage by injecting DDL models. Cartridge for Models4Migration tool." <br>
+CDTI_F1_DML : <br> -- "Reverse Engineering stage by injecting DML models. Cartridge for Models4Migration tool." <br>
+CDTI_F2_6_DataModernization : <br> -- "Reestructuring stage. Cartridge for Models4Migration tool." <br>
+CDTI_DDL2JPAInvokeByAnt : <br> -- "Forward Engineering stage. Cartridge for Models4Migration tool." <br>
 <br>
 <strong>"Projects for the automated normalisation process. Each project corresponds to each stage of the normalisation process."</strong><br><br>
 Y_F1_CodeAnalysisFindingDefects<br>
