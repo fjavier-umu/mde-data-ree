@@ -32,7 +32,7 @@ Projects have been implemented by using the next MDE tools:<br>
 - AGE. Age Generative Environement : http://gts.inf.um.es/age<br>
 - RubyTL : http://rubytl.rubyforge.org/<br>
 - Gra2Mol : http://modelum.es/trac/gra2mol/<br>
-- MODScript : https://eclipse.org/gmt/mofscript/<br>
+- MOFScript : https://eclipse.org/gmt/mofscript/<br>
 
 Please, follow instructions indicated in the tool websites in order to execute the projects. If more information is needed to test the projects, it can be requested at: <strong>fjavier (at) um (dot) es</strong><br>
 <br>
