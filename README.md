@@ -2,13 +2,13 @@
 Model-Driven Engineering in Data Reengineering
 
 <strong>"Projects for the MDE-based data reengineering process, including the data quality improvement stage. Each project corresponds to each stage of the data modernization process"</strong><br><br>
-JB_F1_DataModernization : <br> * "Reverse engineering stage for FK and CK discovering. <strong>DAS-D</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br> 
-JB_F2_aplicacion_swt_jfaces : <br> * "Wizard for confirming FK and CK discovered - powered by SWT + JFaces" <br>
-JB_F3_DataModernization : "Reestrucuturing and forward engineering stages. powered by AGE + RubyTL + Templates in RubyTL" <br>
-M_F1_DDL : "Reverse engineering stage by injecting DDL models. <strong>DAS-M</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br> <br>
-M_F2_DML : "Reverse engineering stage by injecting DML models. <strong>DAS-M</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br>
-M_F3_es.modelum.detErrores : "Reestrucuturing stage in <strong>DAS-M</strong> strategy - powered by AGE + RubyTL " <br>
-mofscript-gen-MoJPA2CoJPA.m2t : "Forward engineering stage - powered by AGE + RubyTL + MOFScript" <br>
+JB_F1_DataModernization : <br> -- "Reverse engineering stage for FK and CK discovering. <strong>DAS-D</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br> 
+JB_F2_aplicacion_swt_jfaces : <br> -- "Wizard for confirming FK and CK discovered - powered by SWT + JFaces" <br>
+JB_F3_DataModernization : <br> -- "Reestrucuturing and forward engineering stages. powered by AGE + RubyTL + Templates in RubyTL" <br>
+M_F1_DDL : <br> -- "Reverse engineering stage by injecting DDL models. <strong>DAS-M</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br> <br>
+M_F2_DML : <br> -- "Reverse engineering stage by injecting DML models. <strong>DAS-M</strong> strategy - powered by Gra2MOL + AGE + RubyTL" <br>
+M_F3_es.modelum.detErrores : <br> -- "Reestrucuturing stage in <strong>DAS-M</strong> strategy - powered by AGE + RubyTL " <br>
+mofscript-gen-MoJPA2CoJPA.m2t : <br> -- "Forward engineering stage - powered by AGE + RubyTL + MOFScript" <br>
 <br>
 <strong>"Projects for the MDE-based data reengineering process, including the data quality improvement stage. Version for the Models4Migration tool (https://goo.gl/6Z88Z7). Each project corresponds to each stage of the data modernization process."</strong><br><br>
 CDTI_DDL2JPAInvokeByAnt<br>
