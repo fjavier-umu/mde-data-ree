@@ -16,16 +16,16 @@ CDTI_F1_DML : <br> -- "Reverse Engineering stage by injecting DML models. Cartri
 CDTI_F2_6_DataModernization : <br> -- "Reestructuring stage. Cartridge for Models4Migration tool." <br>
 CDTI_DDL2JPAInvokeByAnt : <br> -- "Forward Engineering stage. Cartridge for Models4Migration tool." <br>
 <br>
-<strong>"Projects for the automated normalisation process. Each project corresponds to each stage of the normalisation process."</strong><br><br>
-Y_F1_CodeAnalysisFindingDefects<br>
-Y_F1_conexp2fdsWithDuplicateColumns<br>
-Y_F2_database2cexFiles<br>
-Y_F4_conexpFile2fdsWithDuplicateColumns<br>
-Y_F5_fdsWithDuplicateColumns2fdsCks<br>
-Y_F6_fds_DDLDenormalized2fdsDDLDenormalized<br>
-Y_F7_fdsDDLDenormalized2fdsDDLNormalized<br>
-Y_F8_DDLDenormalized_fdsDDLNormalized2DDLNormalized<br>
-Y_F9_DDLNormalized2JPA<br>
+<strong>"Projects for the CAS strategy and the automated normalisation process. Each project corresponds to each stage of the normalisation process."</strong><br><br>
+Y_F1_CodeAnalysisFindingDefects : <br> -- "Reverse Engineering stage. <strong>CAS</strong> strategy - powered by AGE + RubyTL." <br>
+Y_F1_conexp2fdsWithDuplicateColumns : <br> -- "Normalisation stage - powered by AGE + RubyTL."<br>
+Y_F2_database2cexFiles : <br> -- "Normalisation stage - powered by RubyTL + MOFScript."<br>
+Y_F4_conexpFile2fdsWithDuplicateColumns : <br> -- "Normalisation stage - powered by RubyTL + Gra2Mol."<br>
+Y_F5_fdsWithDuplicateColumns2fdsCks : <br> -- "Normalisation stage - powered by AGE + RubyTL"<br>
+Y_F6_fds_DDLDenormalized2fdsDDLDenormalized : <br> -- "Normalisation stage - powered by AGE + RubyTL."<br>
+Y_F7_fdsDDLDenormalized2fdsDDLNormalized  : <br> -- "Normalisation stage - powered by AGE + RubyTL."<br>
+Y_F8_DDLDenormalized_fdsDDLNormalized2DDLNormalized : <br> -- "Normalisation stage - powered by AGE + RubyTL."<br>
+Y_F9_DDLNormalized2JPA : <br> -- "Normalisation stage - powered by AGE + RubyTL + MOFScript."<br>
 <br>
 <br>
 Projects have been implemented by using the next MDE tools:<br>
